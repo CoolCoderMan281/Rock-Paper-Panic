@@ -1,0 +1,116 @@
+[gd_scene load_steps=9 format=3 uid="uid://bu6j0v2aj8gfi"]
+
+[ext_resource type="PackedScene" uid="uid://dloss8g1wf8sk" path="res://Scenes/player.tscn" id="1_kt7qu"]
+[ext_resource type="PackedScene" uid="uid://yx3vha0rue74" path="res://Scenes/enemy.tscn" id="2_h05fk"]
+[ext_resource type="Texture2D" uid="uid://dtqytyxqc6isg" path="res://Assets/Placeholder/pngtree-close-up-of-big-stone-isolated-big-rock-png-image_10211347.png" id="3_77b6n"]
+[ext_resource type="Texture2D" uid="uid://5lde36f46cob" path="res://Assets/Placeholder/paper.png" id="4_lfdjh"]
+[ext_resource type="Texture2D" uid="uid://cyhqv1mopvf21" path="res://Assets/Placeholder/scissors.png" id="5_uj5bi"]
+[ext_resource type="Script" path="res://Code/Lose.gd" id="6_4ru4c"]
+[ext_resource type="Script" path="res://Countdown.gd" id="7_hbh5k"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hgbc"]
+bg_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
+
+[node name="Main" type="Node2D"]
+position = Vector2(345, 221)
+
+[node name="Player" parent="." instance=ExtResource("1_kt7qu")]
+
+[node name="Enemy" parent="." instance=ExtResource("2_h05fk")]
+position = Vector2(364, -25)
+
+[node name="Rock" type="TextureButton" parent="."]
+offset_left = -202.0
+offset_top = -98.0
+offset_right = 158.0
+offset_bottom = 262.0
+scale = Vector2(0.352973, 0.331675)
+texture_normal = ExtResource("3_77b6n")
+metadata/_edit_use_anchors_ = true
+
+[node name="Paper" type="TextureButton" parent="."]
+offset_left = -195.0
+offset_top = 20.0
+offset_right = 765.0
+offset_bottom = 740.0
+scale = Vector2(0.117459, 0.158841)
+texture_normal = ExtResource("4_lfdjh")
+metadata/_edit_use_anchors_ = true
+
+[node name="Scissors" type="TextureButton" parent="."]
+offset_left = -187.0
+offset_top = 155.0
+offset_right = 699.0
+offset_bottom = 993.0
+scale = Vector2(0.130766, 0.125702)
+texture_normal = ExtResource("5_uj5bi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Lose" type="CanvasLayer" parent="."]
+visible = false
+script = ExtResource("6_4ru4c")
+
+[node name="ColorRect" type="ColorRect" parent="Lose"]
+offset_right = 1161.0
+offset_bottom = 657.0
+color = Color(0, 0.454902, 0.454902, 1)
+
+[node name="Label" type="Label" parent="Lose"]
+offset_left = 292.0
+offset_top = 42.0
+offset_right = 802.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 100
+text = "YOU LOSE!"
+horizontal_alignment = 1
+
+[node name="Button" type="Button" parent="Lose"]
+offset_left = 452.0
+offset_top = 386.0
+offset_right = 691.0
+offset_bottom = 449.0
+theme_override_font_sizes/font_size = 40
+text = "PLAY AGAIN"
+
+[node name="Countdown" type="CanvasLayer" parent="."]
+script = ExtResource("7_hbh5k")
+
+[node name="Panel" type="Panel" parent="Countdown"]
+offset_left = 147.0
+offset_top = 81.0
+offset_right = 262.0
+offset_bottom = 121.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_7hgbc")
+metadata/_edit_use_anchors_ = true
+
+[node name="Second" type="Label" parent="Countdown"]
+offset_left = 146.0
+offset_top = 80.0
+offset_right = 261.0
+offset_bottom = 122.0
+theme_override_font_sizes/font_size = 30
+text = "5"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Timer" type="Timer" parent="Countdown"]
+autostart = true
+
+[node name="Score" type="Label" parent="."]
+offset_left = 98.0
+offset_top = 194.0
+offset_right = 312.0
+offset_bottom = 263.0
+theme_override_font_sizes/font_size = 50
+text = "SCORE: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Rock" to="Player" method="_on_rock_pressed"]
+[connection signal="pressed" from="Paper" to="Player" method="_on_paper_pressed"]
+[connection signal="pressed" from="Scissors" to="Player" method="_on_scissors_pressed"]
+[connection signal="pressed" from="Lose/Button" to="Lose" method="_on_button_pressed"]
+[connection signal="pressed" from="Lose/Button" to="Countdown" method="_on_button_pressed"]
+[connection signal="timeout" from="Countdown/Timer" to="Countdown" method="_on_timer_timeout"]
