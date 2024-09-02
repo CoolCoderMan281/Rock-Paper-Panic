@@ -1,40 +1,24 @@
-[gd_scene load_steps=7 format=3 uid="uid://yx3vha0rue74"]
+[gd_scene load_steps=5 format=3 uid="uid://yx3vha0rue74"]
 
 [ext_resource type="Script" path="res://Code/Enemy.gd" id="1_731pn"]
-[ext_resource type="Texture2D" uid="uid://ch4tibfoill8m" path="res://Assets/Placeholder/EVIL godot.png" id="2_ou601"]
 [ext_resource type="Texture2D" uid="uid://dtqytyxqc6isg" path="res://Assets/Placeholder/pngtree-close-up-of-big-stone-isolated-big-rock-png-image_10211347.png" id="3_hjqp6"]
 [ext_resource type="Texture2D" uid="uid://5lde36f46cob" path="res://Assets/Placeholder/paper.png" id="4_ev31q"]
 [ext_resource type="Texture2D" uid="uid://cyhqv1mopvf21" path="res://Assets/Placeholder/scissors.png" id="5_ch54p"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_mulcd"]
-size = Vector2(183, 183)
-
-[node name="Enemy" type="Area2D"]
+[node name="Node2D" type="Node2D"]
 script = ExtResource("1_731pn")
 
-[node name="EvilGodot" type="Sprite2D" parent="."]
-position = Vector2(94, 93)
-scale = Vector2(0.355469, 0.355469)
-texture = ExtResource("2_ou601")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(94.5, 93.5)
-shape = SubResource("RectangleShape2D_mulcd")
-
 [node name="Rock" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(312, 98)
+position = Vector2(87.2498, 77.5)
 scale = Vector2(0.427778, 0.436111)
 texture = ExtResource("3_hjqp6")
 
 [node name="Paper" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(305, 98)
+position = Vector2(80, 74)
 scale = Vector2(0.160937, 0.19375)
 texture = ExtResource("4_ev31q")
 
 [node name="Scissors" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(306, 100)
+position = Vector2(81.2498, 79.5)
 scale = Vector2(0.174944, 0.169451)
 texture = ExtResource("5_ch54p")
