@@ -1,12 +1,19 @@
 [gd_scene load_steps=9 format=3 uid="uid://bu6j0v2aj8gfi"]
 
-[ext_resource type="PackedScene" uid="uid://dloss8g1wf8sk" path="res://Scenes/player.tscn" id="1_kt7qu"]
-[ext_resource type="PackedScene" uid="uid://yx3vha0rue74" path="res://Scenes/enemy.tscn" id="2_h05fk"]
-[ext_resource type="Texture2D" uid="uid://dtqytyxqc6isg" path="res://Assets/Placeholder/pngtree-close-up-of-big-stone-isolated-big-rock-png-image_10211347.png" id="3_77b6n"]
+[ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
+[ext_resource type="Script" path="res://Code/Enemy.gd" id="1_oxske"]
+[ext_resource type="Texture2D" uid="uid://dtqytyxqc6isg" path="res://Assets/Placeholder/rock.png" id="3_77b6n"]
 [ext_resource type="Texture2D" uid="uid://5lde36f46cob" path="res://Assets/Placeholder/paper.png" id="4_lfdjh"]
 [ext_resource type="Texture2D" uid="uid://cyhqv1mopvf21" path="res://Assets/Placeholder/scissors.png" id="5_uj5bi"]
-[ext_resource type="Script" path="res://Code/Lose.gd" id="6_4ru4c"]
 [ext_resource type="Script" path="res://Countdown.gd" id="7_hbh5k"]
+
+[sub_resource type="GDScript" id="GDScript_a5fcu"]
+script/source = "extends CanvasLayer
+
+
+func _on_button_pressed():
+	%Lose.visible = false
+"
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hgbc"]
 bg_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
@@ -14,12 +21,16 @@ bg_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
 [node name="Main" type="Node2D"]
 position = Vector2(345, 221)
 
-[node name="Player" parent="." instance=ExtResource("1_kt7qu")]
-position = Vector2(550, 61)
+[node name="Enemy" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(228, 25)
+scale = Vector2(0.399999, 0.399999)
+texture = ExtResource("5_uj5bi")
+script = ExtResource("1_oxske")
 
-[node name="Enemy" parent="." instance=ExtResource("2_h05fk")]
-position = Vector2(15, -158)
-scale = Vector2(2.5, 2.5)
+[node name="Player" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_kolsd")
 
 [node name="Rock" type="TextureButton" parent="."]
 offset_left = -239.0
@@ -49,8 +60,9 @@ texture_normal = ExtResource("5_uj5bi")
 metadata/_edit_use_anchors_ = true
 
 [node name="Lose" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 visible = false
-script = ExtResource("6_4ru4c")
+script = SubResource("GDScript_a5fcu")
 
 [node name="ColorRect" type="ColorRect" parent="Lose"]
 offset_right = 1161.0
@@ -75,6 +87,7 @@ theme_override_font_sizes/font_size = 40
 text = "PLAY AGAIN"
 
 [node name="Countdown" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
 script = ExtResource("7_hbh5k")
 
 [node name="Panel" type="Panel" parent="Countdown"]
@@ -89,6 +102,7 @@ theme_override_styles/panel = SubResource("StyleBoxFlat_7hgbc")
 metadata/_edit_use_anchors_ = true
 
 [node name="Second" type="Label" parent="Countdown"]
+unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = -0.132813
 anchor_bottom = 0.143519
@@ -102,14 +116,16 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Timer" type="Timer" parent="Countdown"]
+[node name="Countdown_Timer" type="Timer" parent="Countdown"]
+unique_name_in_owner = true
 autostart = true
 
-[node name="Score" type="Label" parent="."]
-offset_left = -318.0
-offset_top = -201.0
-offset_right = -104.0
-offset_bottom = -132.0
+[node name="Score" type="Label" parent="Countdown"]
+unique_name_in_owner = true
+offset_left = 27.0
+offset_top = 20.0
+offset_right = 241.0
+offset_bottom = 89.0
 theme_override_font_sizes/font_size = 50
 text = "SCORE: 0"
 horizontal_alignment = 1
@@ -121,4 +137,4 @@ metadata/_edit_use_anchors_ = true
 [connection signal="pressed" from="Scissors" to="Player" method="_on_scissors_pressed"]
 [connection signal="pressed" from="Lose/Button" to="Lose" method="_on_button_pressed"]
 [connection signal="pressed" from="Lose/Button" to="Countdown" method="_on_button_pressed"]
-[connection signal="timeout" from="Countdown/Timer" to="Countdown" method="_on_timer_timeout"]
+[connection signal="timeout" from="Countdown/Countdown_Timer" to="Countdown" method="_on_timer_timeout"]

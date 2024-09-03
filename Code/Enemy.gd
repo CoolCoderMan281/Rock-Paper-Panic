@@ -1,33 +1,20 @@
-extends Node2D
+extends Sprite2D
+
+var options: Array[String] = ["Rock", "Paper", "Scissors"]
+var resoursePrefix: String = "res://Assets/Placeholder/"
+var choice: String = options.pick_random()
 
 
-@onready var player = $/root/Main/Player
-@onready var rock = $Rock
-@onready var paper = $Paper
-@onready var scissors = $Scissors
-var options = ["Rock", "Paper", "Scissors"]
-@onready var choice = options.pick_random()
-
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _process(_delta):
 	if choice == "Rock":
-		rock.visible = true
-	else:
-		rock.visible = false
-	if choice == "Paper":
-		paper.visible = true
-	else: paper.visible = false
-	if choice == "Scissors":
-		scissors.visible = true
-	else:
-		scissors.visible = false
-	 
-
-	
+		change_texture("rock.png")
+	elif choice == "Paper":
+		change_texture("paper.png")
+	elif choice == "Scissors":
+		change_texture("scissors.png")
 
 
+func change_texture(new_path: String) -> void:
+	var new_texture: Texture2D = load(resoursePrefix+new_path)
+	if new_texture:
+		texture = new_texture

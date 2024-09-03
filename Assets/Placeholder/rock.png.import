@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtqytyxqc6isg"
-path="res://.godot/imported/pngtree-close-up-of-big-stone-isolated-big-rock-png-image_10211347.png-7095314f29bc31cba4a831f1605463d3.ctex"
+path="res://.godot/imported/rock.png-057d33ef3a9359c7f6860164a8295025.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholder/pngtree-close-up-of-big-stone-isolated-big-rock-png-image_10211347.png"
-dest_files=["res://.godot/imported/pngtree-close-up-of-big-stone-isolated-big-rock-png-image_10211347.png-7095314f29bc31cba4a831f1605463d3.ctex"]
+source_file="res://Assets/Placeholder/rock.png"
+dest_files=["res://.godot/imported/rock.png-057d33ef3a9359c7f6860164a8295025.ctex"]
 
 [params]
 
