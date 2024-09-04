@@ -1,0 +1,41 @@
+[gd_scene load_steps=2 format=3 uid="uid://cm60yvvsf5rso"]
+
+[ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
+
+[node name="Mainmenu" type="Node2D"]
+script = ExtResource("1_glogx")
+
+[node name="Background" type="ColorRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.24, 16.56)
+color = Color(0.160784, 0.247059, 0.184314, 1)
+
+[node name="Title" type="Label" parent="."]
+offset_left = 5.0
+offset_top = 12.0
+offset_right = 138.0
+offset_bottom = 35.0
+scale = Vector2(8.73685, 10.24)
+text = "Rock Paper Panic"
+
+[node name="Quit" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 102.0
+offset_top = 306.0
+offset_right = 143.0
+offset_bottom = 337.0
+scale = Vector2(9.34971, 8.24674)
+text = "Play"
+
+[node name="Play" type="Button" parent="."]
+unique_name_in_owner = true
+offset_left = 643.0
+offset_top = 305.0
+offset_right = 684.0
+offset_bottom = 336.0
+scale = Vector2(9.34971, 8.24674)
+text = "Play"
+
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
