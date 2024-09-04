@@ -9,7 +9,7 @@ func logic(choice: String):
 	
 	if outcomes[choice] == enemy_choice:
 		score += 1
-		%Enemy.choice = %Enemy.options.pick_random()
+		%Enemy.new_choice()
 		%Countdown.reset_timer()
 	elif outcomes[enemy_choice] == choice:
 		score = 0
