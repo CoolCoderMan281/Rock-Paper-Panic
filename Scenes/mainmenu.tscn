@@ -5,13 +5,15 @@
 [node name="Mainmenu" type="Node2D"]
 script = ExtResource("1_glogx")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="ActualMainMenu" type="Node2D" parent="."]
+
+[node name="Background" type="ColorRect" parent="ActualMainMenu"]
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(29.24, 16.56)
 color = Color(0.160784, 0.247059, 0.184314, 1)
 
-[node name="Title" type="Label" parent="."]
+[node name="Title" type="Label" parent="ActualMainMenu"]
 offset_left = 5.0
 offset_top = 12.0
 offset_right = 138.0
@@ -19,7 +21,7 @@ offset_bottom = 35.0
 scale = Vector2(8.73685, 10.24)
 text = "Rock Paper Panic"
 
-[node name="Quit" type="Button" parent="."]
+[node name="Quit" type="Button" parent="ActualMainMenu"]
 unique_name_in_owner = true
 offset_left = 102.0
 offset_top = 306.0
@@ -28,7 +30,7 @@ offset_bottom = 337.0
 scale = Vector2(9.34971, 8.24674)
 text = "Play"
 
-[node name="Play" type="Button" parent="."]
+[node name="Play" type="Button" parent="ActualMainMenu"]
 unique_name_in_owner = true
 offset_left = 643.0
 offset_top = 305.0
@@ -37,5 +39,72 @@ offset_bottom = 336.0
 scale = Vector2(9.34971, 8.24674)
 text = "Play"
 
-[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
+[node name="Settings_To" type="Button" parent="ActualMainMenu"]
+offset_left = 491.0
+offset_top = 556.0
+offset_right = 578.0
+offset_bottom = 603.0
+scale = Vector2(2.00602, 2.00602)
+text = "Settings"
+
+[node name="Settings" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Background" type="ColorRect" parent="Settings"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.24, 16.56)
+color = Color(0.160784, 0.247059, 0.184314, 1)
+
+[node name="Title" type="Label" parent="Settings"]
+offset_left = 408.0
+offset_right = 470.0
+offset_bottom = 23.0
+scale = Vector2(4.92, 4.92)
+text = "Settings"
+
+[node name="Volume_Label" type="Label" parent="Settings"]
+offset_left = 355.0
+offset_top = 132.0
+offset_right = 455.0
+offset_bottom = 155.0
+scale = Vector2(1.32, 1.32)
+text = "Volume: 50%"
+
+[node name="Volume" type="HSlider" parent="Settings"]
+offset_left = 357.0
+offset_top = 170.0
+offset_right = 760.0
+offset_bottom = 186.0
+step = 2.0
+value = 50.0
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Windowed" type="Button" parent="Settings"]
+offset_left = 356.0
+offset_top = 256.0
+offset_right = 555.0
+offset_bottom = 327.0
+disabled = true
+text = "Windowed"
+
+[node name="Fullscreen" type="Button" parent="Settings"]
+offset_left = 555.0
+offset_top = 256.0
+offset_right = 754.0
+offset_bottom = 327.0
+text = "Fullscreen"
+
+[node name="Back" type="Button" parent="Settings"]
+offset_left = 497.0
+offset_top = 554.0
+offset_right = 584.0
+offset_bottom = 601.0
+text = "Back"
+
+[connection signal="pressed" from="ActualMainMenu/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ActualMainMenu/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="ActualMainMenu/Settings_To" to="." method="_on_settings_to_pressed"]
+[connection signal="pressed" from="Settings/Back" to="." method="_on_back_pressed"]
