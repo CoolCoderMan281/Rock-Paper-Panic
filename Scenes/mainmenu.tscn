@@ -65,6 +65,7 @@ scale = Vector2(4.92, 4.92)
 text = "Settings"
 
 [node name="Volume_Label" type="Label" parent="Settings"]
+unique_name_in_owner = true
 offset_left = 355.0
 offset_top = 132.0
 offset_right = 455.0
@@ -73,6 +74,7 @@ scale = Vector2(1.32, 1.32)
 text = "Volume: 50%"
 
 [node name="Volume" type="HSlider" parent="Settings"]
+unique_name_in_owner = true
 offset_left = 357.0
 offset_top = 170.0
 offset_right = 760.0
@@ -83,6 +85,7 @@ tick_count = 10
 ticks_on_borders = true
 
 [node name="Windowed" type="Button" parent="Settings"]
+unique_name_in_owner = true
 offset_left = 356.0
 offset_top = 256.0
 offset_right = 555.0
@@ -91,6 +94,7 @@ disabled = true
 text = "Windowed"
 
 [node name="Fullscreen" type="Button" parent="Settings"]
+unique_name_in_owner = true
 offset_left = 555.0
 offset_top = 256.0
 offset_right = 754.0
@@ -107,4 +111,7 @@ text = "Back"
 [connection signal="pressed" from="ActualMainMenu/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="ActualMainMenu/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="ActualMainMenu/Settings_To" to="." method="_on_settings_to_pressed"]
+[connection signal="value_changed" from="Settings/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="pressed" from="Settings/Windowed" to="." method="_on_windowed_pressed"]
+[connection signal="pressed" from="Settings/Fullscreen" to="." method="_on_fullscreen_pressed"]
 [connection signal="pressed" from="Settings/Back" to="." method="_on_back_pressed"]
