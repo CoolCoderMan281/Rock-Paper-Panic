@@ -23,28 +23,28 @@ text = "Rock Paper Panic"
 
 [node name="Quit" type="Button" parent="ActualMainMenu"]
 unique_name_in_owner = true
-offset_left = 102.0
-offset_top = 306.0
-offset_right = 143.0
-offset_bottom = 337.0
-scale = Vector2(9.34971, 8.24674)
-text = "Play"
+offset_left = 831.0
+offset_top = 374.0
+offset_right = 873.0
+offset_bottom = 405.0
+scale = Vector2(5, 4.41)
+text = "Quit"
 
 [node name="Play" type="Button" parent="ActualMainMenu"]
 unique_name_in_owner = true
-offset_left = 643.0
-offset_top = 305.0
-offset_right = 684.0
-offset_bottom = 336.0
-scale = Vector2(9.34971, 8.24674)
+offset_left = 109.0
+offset_top = 383.0
+offset_right = 150.0
+offset_bottom = 414.0
+scale = Vector2(5, 4.41)
 text = "Play"
 
 [node name="Settings_To" type="Button" parent="ActualMainMenu"]
-offset_left = 491.0
-offset_top = 556.0
-offset_right = 578.0
-offset_bottom = 603.0
-scale = Vector2(2.00602, 2.00602)
+offset_left = 466.0
+offset_top = 384.0
+offset_right = 553.0
+offset_bottom = 431.0
+scale = Vector2(3, 3)
 text = "Settings"
 
 [node name="Settings" type="Node2D" parent="."]
