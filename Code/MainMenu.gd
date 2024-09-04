@@ -2,7 +2,13 @@ extends Node
 
 
 func _ready():
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
+		%Windowed.disabled = true
+		%Fullscreen.disabled = false
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+	else:
+		%Windowed.disabled = false
+		%Fullscreen.disabled = true
 
 
 func _on_play_pressed():
