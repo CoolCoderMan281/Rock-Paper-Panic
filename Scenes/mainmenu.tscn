@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm60yvvsf5rso"]
+[gd_scene load_steps=6 format=3 uid="uid://ddbaywnq8p2hd"]
 
 [ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
+[ext_resource type="Texture2D" uid="uid://4kkfvoxk3fvx" path="res://Sprites/clipboard_mainmenu.png" id="2_8gdd1"]
+[ext_resource type="Texture2D" uid="uid://1iowybfmj5ta" path="res://Sprites/buttons/button_quit.png" id="3_5wduh"]
+[ext_resource type="Texture2D" uid="uid://bb3tk7ww6eseo" path="res://Sprites/buttons/button_play.png" id="4_rcaw5"]
+[ext_resource type="Texture2D" uid="uid://dgkdutyj5gu0d" path="res://Sprites/buttons/button_settings.png" id="5_gcn2c"]
 
 [node name="Mainmenu" type="Node2D"]
 script = ExtResource("1_glogx")
@@ -13,39 +17,63 @@ offset_bottom = 40.0
 scale = Vector2(29.24, 16.56)
 color = Color(0.160784, 0.247059, 0.184314, 1)
 
-[node name="Title" type="Label" parent="ActualMainMenu"]
-offset_left = 5.0
-offset_top = 12.0
-offset_right = 138.0
-offset_bottom = 35.0
-scale = Vector2(8.73685, 10.24)
-text = "Rock Paper Panic"
+[node name="Backing" type="Sprite2D" parent="ActualMainMenu"]
+position = Vector2(587.125, 407)
+scale = Vector2(0.692778, 0.692778)
+skew = -0.0296706
+texture = ExtResource("2_8gdd1")
+
+[node name="Title" type="RichTextLabel" parent="ActualMainMenu"]
+offset_right = 1152.0
+offset_bottom = 222.0
+theme_override_font_sizes/normal_font_size = 70
+bbcode_enabled = true
+text = "[center]Rock Paper 
+[center]Panic"
 
 [node name="Quit" type="Button" parent="ActualMainMenu"]
 unique_name_in_owner = true
-offset_left = 831.0
-offset_top = 374.0
-offset_right = 873.0
-offset_bottom = 405.0
-scale = Vector2(5, 4.41)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 532.0
+offset_top = 488.0
+offset_right = 632.0
+offset_bottom = 527.0
+theme_override_font_sizes/font_size = 20
 text = "Quit"
+
+[node name="quit_button" type="Sprite2D" parent="ActualMainMenu/Quit"]
+position = Vector2(55, 20)
+scale = Vector2(0.528736, 0.528736)
+texture = ExtResource("3_5wduh")
 
 [node name="Play" type="Button" parent="ActualMainMenu"]
 unique_name_in_owner = true
-offset_left = 109.0
-offset_top = 383.0
-offset_right = 150.0
-offset_bottom = 414.0
-scale = Vector2(5, 4.41)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 533.0
+offset_top = 391.0
+offset_right = 633.0
+offset_bottom = 436.0
+theme_override_font_sizes/font_size = 25
 text = "Play"
 
+[node name="play_button" type="Sprite2D" parent="ActualMainMenu/Play"]
+position = Vector2(53, 23)
+scale = Vector2(0.551724, 0.551724)
+texture = ExtResource("4_rcaw5")
+
 [node name="Settings_To" type="Button" parent="ActualMainMenu"]
-offset_left = 466.0
-offset_top = 384.0
-offset_right = 553.0
-offset_bottom = 431.0
-scale = Vector2(3, 3)
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 498.0
+offset_top = 443.0
+offset_right = 673.0
+offset_bottom = 486.0
+theme_override_font_sizes/font_size = 25
 text = "Settings"
+
+[node name="settings_button" type="Sprite2D" parent="ActualMainMenu/Settings_To"]
+position = Vector2(87, 20)
+scale = Vector2(0.597701, 0.597701)
+texture = ExtResource("5_gcn2c")
 
 [node name="Settings" type="Node2D" parent="."]
 unique_name_in_owner = true
