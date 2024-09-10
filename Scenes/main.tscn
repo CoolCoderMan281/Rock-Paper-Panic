@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://dtqytyxqc6isg" path="res://Assets/Placeholder/rock.png" id="3_77b6n"]
 [ext_resource type="Texture2D" uid="uid://5lde36f46cob" path="res://Assets/Placeholder/paper.png" id="4_lfdjh"]
 [ext_resource type="Texture2D" uid="uid://cyhqv1mopvf21" path="res://Assets/Placeholder/scissors.png" id="5_uj5bi"]
-[ext_resource type="Script" path="res://Countdown.gd" id="7_hbh5k"]
+[ext_resource type="Script" path="res://Code/Countdown.gd" id="7_hbh5k"]
 
 [sub_resource type="GDScript" id="GDScript_a5fcu"]
 script/source = "extends CanvasLayer

@@ -1,0 +1,69 @@
+[gd_scene load_steps=2 format=3 uid="uid://dte58gpdscy8f"]
+
+[ext_resource type="Script" path="res://Code/GameplaySelect.gd" id="1_7t0e7"]
+
+[node name="Gameplayselect" type="Node2D"]
+script = ExtResource("1_7t0e7")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1164.0
+offset_bottom = 662.0
+color = Color(0.589096, 0.589096, 0.589096, 1)
+
+[node name="Easy" type="Button" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 503.0
+offset_top = 85.0
+offset_right = 652.0
+offset_bottom = 136.0
+text = "Small"
+
+[node name="Normal" type="Button" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 499.0
+offset_top = 188.0
+offset_right = 648.0
+offset_bottom = 239.0
+text = "Medium"
+
+[node name="Hard" type="Button" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 508.0
+offset_top = 332.0
+offset_right = 657.0
+offset_bottom = 383.0
+text = "LArge"
+
+[node name="Back" type="Button" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 504.0
+offset_top = 558.0
+offset_right = 653.0
+offset_bottom = 609.0
+text = "Back"
+
+[node name="Title" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 478.0
+offset_top = -1.0
+offset_right = 551.0
+offset_bottom = 30.0
+scale = Vector2(3.85606, 3.86121)
+text = "Scared?"
+
+[node name="NoTouchNotice" type="Label" parent="ColorRect"]
+layout_mode = 0
+offset_left = 848.0
+offset_top = 571.0
+offset_right = 1114.0
+offset_bottom = 594.0
+text = "dont touch my beutiful menuis >:|"
+
+[connection signal="pressed" from="ColorRect/Easy" to="." method="_on_easy_pressed"]
+[connection signal="pressed" from="ColorRect/Normal" to="." method="_on_normal_pressed"]
+[connection signal="pressed" from="ColorRect/Hard" to="." method="_on_hard_pressed"]
+[connection signal="pressed" from="ColorRect/Back" to="." method="_on_back_pressed"]

@@ -12,8 +12,12 @@ config_version=5
 
 config/name="Rock Paper Panic"
 run/main_scene="res://Scenes/mainmenu.tscn"
-config/features=PackedStringArray("4.2", "Forward Plus")
+config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://Assets/Placeholder/icon.svg"
+
+[autoload]
+
+Globals="*res://Code/Globals.gd"
 
 [display]
 
