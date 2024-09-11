@@ -33,6 +33,7 @@ unique_name_in_owner = true
 script = ExtResource("1_kolsd")
 
 [node name="Rock" type="TextureButton" parent="."]
+unique_name_in_owner = true
 offset_left = -239.0
 offset_top = 288.0
 offset_right = 121.0
@@ -42,6 +43,7 @@ texture_normal = ExtResource("3_77b6n")
 metadata/_edit_use_anchors_ = true
 
 [node name="Paper" type="TextureButton" parent="."]
+unique_name_in_owner = true
 offset_left = 169.0
 offset_top = 286.0
 offset_right = 1129.0
@@ -51,6 +53,7 @@ texture_normal = ExtResource("4_lfdjh")
 metadata/_edit_use_anchors_ = true
 
 [node name="Scissors" type="TextureButton" parent="."]
+unique_name_in_owner = true
 offset_left = 546.0
 offset_top = 291.0
 offset_right = 1432.0
