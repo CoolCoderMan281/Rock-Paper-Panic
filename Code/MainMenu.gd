@@ -2,10 +2,19 @@ extends Node
 
 
 func _ready():
+	var required_assets = [
+		"res://Assets/Important/DifficultySelect.webp",
+		"res://Assets/Important/OhYea.webp",
+	]
+	for asset in required_assets:
+		if !FileAccess.file_exists(asset):
+			# Crash the game by asserting false
+			assert(false, "null")
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
 		%Windowed.disabled = true
 		%Fullscreen.disabled = false
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+		# List of required assets
 	else:
 		%Windowed.disabled = false
 		%Fullscreen.disabled = true

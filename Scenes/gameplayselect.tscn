@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://dte58gpdscy8f"]
+[gd_scene load_steps=4 format=3 uid="uid://dte58gpdscy8f"]
 
 [ext_resource type="Script" path="res://Code/GameplaySelect.gd" id="1_7t0e7"]
+[ext_resource type="Texture2D" uid="uid://y6ffehlb7qxf" path="res://Assets/Important/DifficultySelect.webp" id="2_alkbb"]
+[ext_resource type="Texture2D" uid="uid://b2u4sv21o8goj" path="res://Assets/Important/OhYea.webp" id="3_5rjww"]
 
 [node name="Gameplayselect" type="Node2D"]
 script = ExtResource("1_7t0e7")
@@ -17,7 +19,7 @@ offset_left = 506.0
 offset_top = 108.0
 offset_right = 655.0
 offset_bottom = 159.0
-text = "Easy"
+text = "Small"
 
 [node name="Normal" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
@@ -26,7 +28,7 @@ offset_left = 510.0
 offset_top = 216.0
 offset_right = 659.0
 offset_bottom = 267.0
-text = "Normal"
+text = "Medium"
 
 [node name="Hard" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
@@ -35,7 +37,7 @@ offset_left = 513.0
 offset_top = 327.0
 offset_right = 662.0
 offset_bottom = 378.0
-text = "Hard"
+text = "LArge"
 
 [node name="Back" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
@@ -57,11 +59,22 @@ text = "Scared?"
 
 [node name="NoTouchNotice" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 848.0
-offset_top = 571.0
-offset_right = 1114.0
-offset_bottom = 594.0
-text = " touch my beutiful menuis >:|"
+offset_left = 661.0
+offset_top = 505.0
+offset_right = 927.0
+offset_bottom = 528.0
+scale = Vector2(1.95434, 5.83307)
+text = "no fixing my beutiful menuis >:|"
+
+[node name="DifficultySelect" type="Sprite2D" parent="."]
+position = Vector2(232, 337)
+scale = Vector2(0.610677, 0.606445)
+texture = ExtResource("2_alkbb")
+
+[node name="OhYea" type="Sprite2D" parent="."]
+position = Vector2(918, 281)
+scale = Vector2(0.55, 0.309302)
+texture = ExtResource("3_5rjww")
 
 [connection signal="pressed" from="ColorRect/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="ColorRect/Normal" to="." method="_on_normal_pressed"]
