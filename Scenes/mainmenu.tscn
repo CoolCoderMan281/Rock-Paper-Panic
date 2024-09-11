@@ -1,6 +1,8 @@
-[gd_scene load_steps=2 format=3 uid="uid://cm60yvvsf5rso"]
+[gd_scene load_steps=4 format=3 uid="uid://cm60yvvsf5rso"]
 
 [ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
+[ext_resource type="Texture2D" uid="uid://mucng4bkmbqs" path="res://Assets/Important/RobloxTycoon.webp" id="2_673up"]
+[ext_resource type="Texture2D" uid="uid://bfwxbjpa4yof5" path="res://Assets/Important/DoubleClick.jpg" id="3_2nrr8"]
 
 [node name="Mainmenu" type="Node2D"]
 script = ExtResource("1_glogx")
@@ -107,6 +109,36 @@ offset_top = 554.0
 offset_right = 584.0
 offset_bottom = 601.0
 text = "Back"
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="RobloxTycoon" type="Sprite2D" parent="Node2D"]
+modulate = Color(1, 1, 1, 0.145098)
+position = Vector2(583, 588)
+scale = Vector2(1.35608, 0.340457)
+texture = ExtResource("2_673up")
+
+[node name="DoubleClick" type="Sprite2D" parent="Node2D"]
+modulate = Color(1, 1, 1, 0.109804)
+position = Vector2(586, 270)
+scale = Vector2(5.32, 2.12)
+texture = ExtResource("3_2nrr8")
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = 31.0
+offset_top = 11.0
+offset_right = 405.0
+offset_bottom = 34.0
+scale = Vector2(2.92, 1.92)
+text = "Who will groom me to night? Thats the question!"
+
+[node name="Label2" type="Label" parent="Node2D"]
+offset_left = 405.0
+offset_top = 581.0
+offset_right = 779.0
+offset_bottom = 604.0
+scale = Vector2(1.24, 1.92)
+text = "The menus are bad on purpose 🤓"
 
 [connection signal="pressed" from="ActualMainMenu/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="ActualMainMenu/Play" to="." method="_on_play_pressed"]

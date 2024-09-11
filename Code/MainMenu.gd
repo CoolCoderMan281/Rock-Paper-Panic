@@ -5,6 +5,8 @@ func _ready():
 	var required_assets = [
 		"res://Assets/Important/DifficultySelect.webp",
 		"res://Assets/Important/OhYea.webp",
+		"res://Assets/Important/RobloxTycoon.webp",
+		"res://Assets/Important/DoubleClick.jpg"
 	]
 	for asset in required_assets:
 		if !FileAccess.file_exists(asset):
