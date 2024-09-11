@@ -13,29 +13,29 @@ color = Color(0.589096, 0.589096, 0.589096, 1)
 [node name="Easy" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 503.0
-offset_top = 85.0
-offset_right = 652.0
-offset_bottom = 136.0
-text = "Small"
+offset_left = 506.0
+offset_top = 108.0
+offset_right = 655.0
+offset_bottom = 159.0
+text = "Easy"
 
 [node name="Normal" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 499.0
-offset_top = 188.0
-offset_right = 648.0
-offset_bottom = 239.0
-text = "Medium"
+offset_left = 510.0
+offset_top = 216.0
+offset_right = 659.0
+offset_bottom = 267.0
+text = "Normal"
 
 [node name="Hard" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 508.0
-offset_top = 332.0
-offset_right = 657.0
-offset_bottom = 383.0
-text = "LArge"
+offset_left = 513.0
+offset_top = 327.0
+offset_right = 662.0
+offset_bottom = 378.0
+text = "Hard"
 
 [node name="Back" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
@@ -48,10 +48,10 @@ text = "Back"
 
 [node name="Title" type="Label" parent="ColorRect"]
 layout_mode = 0
-offset_left = 478.0
-offset_top = -1.0
-offset_right = 551.0
-offset_bottom = 30.0
+offset_left = 473.0
+offset_top = 3.0
+offset_right = 546.0
+offset_bottom = 34.0
 scale = Vector2(3.85606, 3.86121)
 text = "Scared?"
 
@@ -61,7 +61,7 @@ offset_left = 848.0
 offset_top = 571.0
 offset_right = 1114.0
 offset_bottom = 594.0
-text = "dont touch my beutiful menuis >:|"
+text = " touch my beutiful menuis >:|"
 
 [connection signal="pressed" from="ColorRect/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="ColorRect/Normal" to="." method="_on_normal_pressed"]
