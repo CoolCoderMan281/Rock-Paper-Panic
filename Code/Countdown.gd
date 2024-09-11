@@ -40,11 +40,12 @@ func reset_timer():
 	%Countdown.visible = true
 	# Here we are going to "assume" that they won, as it doesn't reset otherwise anyway..
 	win_tracker += 1
-	if (win_tracker >= win_req && INITIAL_TIME > timer_min):
-		print("Wins: "+str(win_tracker)+" of: "+str(win_req))
-		win_tracker = 0
-		INITIAL_TIME -= 1
-		print("-1 Second on the timer!")
+	if (win_tracker >= win_req):
+		if(INITIAL_TIME > timer_min):
+			print("Wins: "+str(win_tracker)+" of: "+str(win_req))
+			win_tracker = 0
+			INITIAL_TIME -= 1
+			print("-1 Second on the timer!")
 		# Im cheating!!! Im also applying the option randomizer here MUHAUHAUHA!
 		var objects: Array[TextureButton] = [%Rock, %Paper, %Scissors]
 		var objectPos: Array[Vector2] = []
