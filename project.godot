@@ -12,6 +12,8 @@ config_version=5
 
 config/name="Rock Paper Panic"
 run/main_scene="res://Scenes/mainmenu.tscn"
+config/use_custom_user_dir=true
+config/custom_user_dir_name="NeededFiles"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://Assets/Placeholder/icon.svg"
 

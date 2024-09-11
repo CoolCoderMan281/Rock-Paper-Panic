@@ -1,5 +1,18 @@
 extends Node
 
+# C:\Users\[USERNAME]\AppData\Roaming\NeededFiles
+# var required_assets = {
+#		"image1" : "DifficultySelect.webp",
+#		"image2" : "OhYea.webp",
+#		"image3" : "RobloxTycoon.webp",
+#		"image4" : "DoubleClick.jpg"
+# }
+
+# for asset in reqired_assets:
+# 	if not FileAccess.file_exists("user://", asset):
+#		# Crash game... but with COOL OS alert message
+# 		OS.alert('BLUD DONT DELETE THOSE IMAGES', 'Alert!')
+# 		get_tree().quit()
 
 func _ready():
 	var required_assets = [
