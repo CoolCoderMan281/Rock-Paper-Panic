@@ -50,6 +50,7 @@ func reset_timer():
 			INITIAL_TIME -= 1
 			print("-1 Second on the timer!")
 		# Im cheating!!! Im also applying the option randomizer here MUHAUHAUHA!
+		selection_swap()
 
 
 func selection_swap():
