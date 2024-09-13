@@ -34,7 +34,7 @@ script = ExtResource("1_oxske")
 unique_name_in_owner = true
 script = ExtResource("1_kolsd")
 
-[node name="Rock" type="TextureButton" parent="."]
+[node name="Rock" type="TextureButton" parent="Player"]
 unique_name_in_owner = true
 offset_left = -239.0
 offset_top = 288.0
@@ -44,7 +44,7 @@ scale = Vector2(0.352973, 0.331675)
 texture_normal = ExtResource("3_77b6n")
 metadata/_edit_use_anchors_ = true
 
-[node name="Paper" type="TextureButton" parent="."]
+[node name="Paper" type="TextureButton" parent="Player"]
 unique_name_in_owner = true
 offset_left = 169.0
 offset_top = 286.0
@@ -54,7 +54,7 @@ scale = Vector2(0.117459, 0.158841)
 texture_normal = ExtResource("4_lfdjh")
 metadata/_edit_use_anchors_ = true
 
-[node name="Scissors" type="TextureButton" parent="."]
+[node name="Scissors" type="TextureButton" parent="Player"]
 unique_name_in_owner = true
 offset_left = 546.0
 offset_top = 291.0
@@ -62,6 +62,18 @@ offset_right = 1432.0
 offset_bottom = 1129.0
 scale = Vector2(0.130766, 0.125702)
 texture_normal = ExtResource("5_uj5bi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Score" type="Label" parent="Player"]
+unique_name_in_owner = true
+offset_left = -318.0
+offset_top = -201.0
+offset_right = -104.0
+offset_bottom = -132.0
+theme_override_font_sizes/font_size = 50
+text = "SCORE: 0"
+horizontal_alignment = 1
+vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
 [node name="Lose" type="CanvasLayer" parent="."]
@@ -107,6 +119,18 @@ offset_bottom = 605.0
 theme_override_font_sizes/font_size = 40
 text = "QUIT"
 
+[node name="Final_Score" type="Label" parent="Lose"]
+unique_name_in_owner = true
+offset_left = 413.0
+offset_top = 189.0
+offset_right = 752.0
+offset_bottom = 258.0
+theme_override_font_sizes/font_size = 50
+text = "FINAL SCORE: "
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
 [node name="Countdown" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 script = ExtResource("7_hbh5k")
@@ -133,18 +157,6 @@ offset_right = 1132.0
 offset_bottom = 28.0
 theme_override_font_sizes/font_size = 50
 text = "3"
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
-[node name="Score" type="Label" parent="Countdown"]
-unique_name_in_owner = true
-offset_left = 27.0
-offset_top = 20.0
-offset_right = 241.0
-offset_bottom = 89.0
-theme_override_font_sizes/font_size = 50
-text = "SCORE: 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -264,9 +276,9 @@ offset_bottom = -79.0
 scale = Vector2(1.72046, 1.68708)
 text = "Debug Options:"
 
-[connection signal="pressed" from="Rock" to="Player" method="_on_rock_pressed"]
-[connection signal="pressed" from="Paper" to="Player" method="_on_paper_pressed"]
-[connection signal="pressed" from="Scissors" to="Player" method="_on_scissors_pressed"]
+[connection signal="pressed" from="Player/Rock" to="Player" method="_on_rock_pressed"]
+[connection signal="pressed" from="Player/Paper" to="Player" method="_on_paper_pressed"]
+[connection signal="pressed" from="Player/Scissors" to="Player" method="_on_scissors_pressed"]
 [connection signal="pressed" from="Lose/Retry" to="Player" method="retry"]
 [connection signal="pressed" from="Lose/MainMenu" to="Player" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Lose/Quit" to="Player" method="_on_quit_pressed"]

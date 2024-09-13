@@ -31,6 +31,7 @@ func update_selection_images():
 
 func update_score():
 	%Score.text = "SCORE: " + str(score)
+	%Final_Score.text = "FINAL SCORE: " + str(score)
 
 
 func _on_rock_pressed():
