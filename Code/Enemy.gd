@@ -19,6 +19,10 @@ func update_display():
 		change_texture("scissors.png")
 
 
+func reload_texture():
+	change_texture(choice.to_lower() + ".png")
+
+
 func change_texture(new_path: String):
 	var new_texture: Texture2D = load(resourcePrefix + new_path)
 	if new_texture:

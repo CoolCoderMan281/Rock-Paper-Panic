@@ -43,3 +43,5 @@ func _on_debug_selection_swap_pressed():
 
 func _on_debug_resource_path_set_pressed():
 	%Enemy.resourcePrefix = %Debug_ResourcePath.text
+	%Player.update_selection_images()
+	%Enemy.reload_texture()

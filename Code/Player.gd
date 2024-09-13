@@ -23,6 +23,12 @@ func logic(choice: String = ""):
 	update_score()
 
 
+func update_selection_images():
+	%Rock.texture_normal = load(%Enemy.resourcePrefix+"rock.png")
+	%Paper.texture_normal = load(%Enemy.resourcePrefix+"paper.png")
+	%Scissors.texture_normal = load(%Enemy.resourcePrefix+"scissors.png")
+
+
 func update_score():
 	%Score.text = "SCORE: " + str(score)
 
