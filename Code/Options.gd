@@ -11,4 +11,4 @@ func _on_quit_pressed():
 
 
 func _on_mainmenu_pressed():
-	get_tree().change_scene_to_file("res://Scenes/mainmenu.tscn")
+	Globals.set_scene("res://Scenes/mainmenu.tscn")

@@ -1,6 +1,6 @@
 extends Node
 
-enum difficulties { easy, normal, hard, unset }
+enum difficulties { easy, normal, hard, custom, unset }
 var difficulty: difficulties = difficulties.unset
 
 var debug_enabled: bool = true

@@ -27,20 +27,18 @@ func _ready():
 	]
 	for asset in required_assets:
 		if !FileAccess.file_exists(asset):
-			# Crash the game by asserting false
 			assert(false, "null")
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
 		%Windowed.disabled = true
 		%Fullscreen.disabled = false
-		# List of required assets
 	else:
 		%Windowed.disabled = false
 		%Fullscreen.disabled = true
 
 
 func _on_play_pressed():
-	get_tree().change_scene_to_file("res://Scenes/gameplayselect.tscn")
+	Globals.set_scene("res://Scenes/gameplayselect.tscn")
 
 
 func _on_quit_pressed():
