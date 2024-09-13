@@ -3,6 +3,10 @@ extends Node2D
 var score: int = 0
 
 
+func _ready() -> void:
+	update_selection_images()
+
+
 func logic(choice: String = ""):
 	var outcomes = {"Rock": "Scissors", "Paper": "Rock", "Scissors": "Paper"}
 	var enemy_choice = %Enemy.choice

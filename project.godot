@@ -15,7 +15,7 @@ run/main_scene="res://Scenes/mainmenu.tscn"
 config/use_custom_user_dir=true
 config/custom_user_dir_name="NeededFiles"
 config/features=PackedStringArray("4.3", "Forward Plus")
-config/icon="res://Assets/Placeholder/icon.svg"
+config/icon="res://Assets/Default/game_logo.png"
 
 [autoload]
 

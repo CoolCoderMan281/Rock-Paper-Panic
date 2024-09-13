@@ -66,6 +66,15 @@ offset_bottom = 528.0
 scale = Vector2(1.95434, 5.83307)
 text = "no fixing my beutiful menuis >:|"
 
+[node name="VectorMode" type="CheckButton" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 499.0
+offset_top = 416.0
+offset_right = 645.0
+offset_bottom = 467.0
+text = "Vector Mode"
+
 [node name="DifficultySelect" type="Sprite2D" parent="."]
 position = Vector2(232, 337)
 scale = Vector2(0.610677, 0.606445)
@@ -80,3 +89,4 @@ texture = ExtResource("3_5rjww")
 [connection signal="pressed" from="ColorRect/Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="ColorRect/Hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="ColorRect/Back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="ColorRect/VectorMode" to="." method="_on_check_button_toggled"]
