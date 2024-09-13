@@ -4,6 +4,7 @@ extends Node2D
 func _ready():
 	%Debug_AutoPlay.button_pressed = Globals.debug_autoplay
 	%Debug_StopTime.button_pressed = Globals.debug_stoptime
+	%Debug_ResourcePath.text = %Enemy.resourcePrefix
 
 
 func _input(event):
@@ -38,3 +39,7 @@ func _on_debug_countdown_set_pressed():
 
 func _on_debug_selection_swap_pressed():
 	%Countdown.selection_swap()
+
+
+func _on_debug_resource_path_set_pressed():
+	%Enemy.resourcePrefix = %Debug_ResourcePath.text

@@ -174,69 +174,86 @@ text = "main menu"
 
 [node name="Debug" type="Node2D" parent="."]
 visible = false
+position = Vector2(0, -25)
 script = ExtResource("8_1kwu8")
 
 [node name="Debug_AutoPlay" type="CheckBox" parent="Debug"]
 unique_name_in_owner = true
 offset_left = 570.0
-offset_top = -55.0
+offset_top = -69.0
 offset_right = 672.0
-offset_bottom = -24.0
+offset_bottom = -38.0
 scale = Vector2(1.76373, 1.82742)
 text = "Auto Play"
 
 [node name="Debug_StopTime" type="CheckBox" parent="Debug"]
 unique_name_in_owner = true
 offset_left = 570.0
-offset_top = -2.0
-offset_right = 672.0
-offset_bottom = 29.0
+offset_top = -28.0
+offset_right = 676.0
+offset_bottom = 3.0
 scale = Vector2(1.76373, 1.82742)
 text = "Stop Time"
 
 [node name="Debug_ScoreIn" type="LineEdit" parent="Debug"]
 unique_name_in_owner = true
 offset_left = 578.0
-offset_top = 53.0
+offset_top = 33.0
 offset_right = 695.0
-offset_bottom = 93.0
+offset_bottom = 73.0
 placeholder_text = "New Score"
 
 [node name="Debug_ScoreSet" type="Button" parent="Debug"]
 offset_left = 700.0
-offset_top = 53.0
+offset_top = 33.0
 offset_right = 789.0
-offset_bottom = 93.0
+offset_bottom = 73.0
 text = "Set"
 
 [node name="Debug_CountdownIn" type="LineEdit" parent="Debug"]
 unique_name_in_owner = true
-offset_left = 576.0
-offset_top = 107.0
-offset_right = 712.0
-offset_bottom = 147.0
+offset_left = 578.0
+offset_top = 86.0
+offset_right = 714.0
+offset_bottom = 126.0
 placeholder_text = "Countdown Max"
 expand_to_text_length = true
 
+[node name="Debug_ResourcePath" type="LineEdit" parent="Debug"]
+unique_name_in_owner = true
+offset_left = 578.0
+offset_top = 133.0
+offset_right = 730.0
+offset_bottom = 173.0
+placeholder_text = "Resource Path"
+alignment = 2
+
 [node name="Debug_CountdownSet" type="Button" parent="Debug"]
-offset_left = 719.0
-offset_top = 107.0
+offset_left = 721.0
+offset_top = 86.0
 offset_right = 789.0
-offset_bottom = 147.0
+offset_bottom = 126.0
+text = "Set"
+
+[node name="Debug_ResourcePathSet" type="Button" parent="Debug"]
+offset_left = 738.0
+offset_top = 133.0
+offset_right = 789.0
+offset_bottom = 173.0
 text = "Set"
 
 [node name="Debug_SkipRound" type="Button" parent="Debug"]
 offset_left = 578.0
-offset_top = 159.0
+offset_top = 180.0
 offset_right = 790.0
-offset_bottom = 200.0
+offset_bottom = 221.0
 text = "Skip Round"
 
 [node name="Debug_SelectionSwap" type="Button" parent="Debug"]
 offset_left = 578.0
-offset_top = 212.0
+offset_top = 233.0
 offset_right = 790.0
-offset_bottom = 253.0
+offset_bottom = 274.0
 text = "Selection Swap"
 
 [node name="Debug_Label" type="Label" parent="Debug"]
@@ -259,5 +276,6 @@ text = "Debug Options:"
 [connection signal="pressed" from="Debug/Debug_StopTime" to="Debug" method="_on_debug_stop_time_pressed"]
 [connection signal="pressed" from="Debug/Debug_ScoreSet" to="Debug" method="_on_debug_score_set_pressed"]
 [connection signal="pressed" from="Debug/Debug_CountdownSet" to="Debug" method="_on_debug_countdown_set_pressed"]
+[connection signal="pressed" from="Debug/Debug_ResourcePathSet" to="Debug" method="_on_debug_resource_path_set_pressed"]
 [connection signal="pressed" from="Debug/Debug_SkipRound" to="Debug" method="_on_debug_skip_round_pressed"]
 [connection signal="pressed" from="Debug/Debug_SelectionSwap" to="Debug" method="_on_debug_selection_swap_pressed"]
