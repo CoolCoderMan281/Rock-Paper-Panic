@@ -28,3 +28,9 @@ func _on_debug_auto_play_pressed():
 
 func _on_debug_skip_round_pressed():
 	%Player.logic()
+
+
+func _on_debug_countdown_set_pressed():
+	var time: int = 10
+	time = %Debug_CountdownIn.text.to_int()
+	%Countdown.INITIAL_TIME = time
