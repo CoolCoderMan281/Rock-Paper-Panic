@@ -24,7 +24,7 @@ func logic(choice: String = ""):
 
 
 func update_score():
-	%Score.text = "Score: " + str(score)
+	%Score.text = "SCORE: " + str(score)
 
 
 func _on_rock_pressed():
