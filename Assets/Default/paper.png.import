@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch4tibfoill8m"
-path="res://.godot/imported/EVIL godot.png-23d23154830a0e5dc6c74e9fb60e76b7.ctex"
+uid="uid://5lde36f46cob"
+path="res://.godot/imported/paper.png-2cb1bc9eecdd1391fab849c81d9c82e5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Placeholder/EVIL godot.png"
-dest_files=["res://.godot/imported/EVIL godot.png-23d23154830a0e5dc6c74e9fb60e76b7.ctex"]
+source_file="res://Assets/Default/paper.png"
+dest_files=["res://.godot/imported/paper.png-2cb1bc9eecdd1391fab849c81d9c82e5.ctex"]
 
 [params]
 
