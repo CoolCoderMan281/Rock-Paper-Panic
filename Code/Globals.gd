@@ -13,6 +13,9 @@ var default_resource_path: String = resource_path
 
 func quit():
 	if OS.get_name() == "Web":
-		if OS.has_feature("JavaScript"):
-			JavaScriptBridge.eval("window.close()")
+		set_scene("res://Scenes/web_close.tscn")
 	get_tree().quit()
+
+
+func set_scene(scenePath: String):
+	get_tree().change_scene_to_file(scenePath)
