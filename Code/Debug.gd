@@ -24,3 +24,7 @@ func _on_debug_stop_time_pressed():
 
 func _on_debug_auto_play_pressed():
 	Globals.debug_autoplay = !Globals.debug_autoplay
+
+
+func _on_debug_skip_round_pressed():
+	%Player.logic()
