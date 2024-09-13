@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dxvf24u7n7rsk"
-path="res://.godot/imported/placeholder_stickynote.png-0fb4021ed8c5a84484411d2bc0b53793.ctex"
+uid="uid://cv4qplsnmnw8j"
+path="res://.godot/imported/button_settings.png-21e7af9baf9ba37cb0f1dc727771a63f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/placeholder_stickynote.png"
-dest_files=["res://.godot/imported/placeholder_stickynote.png-0fb4021ed8c5a84484411d2bc0b53793.ctex"]
+source_file="res://Assets/Default/button_settings.png"
+dest_files=["res://.godot/imported/button_settings.png-21e7af9baf9ba37cb0f1dc727771a63f.ctex"]
 
 [params]
 

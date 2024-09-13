@@ -68,3 +68,27 @@ func _on_fullscreen_pressed():
 	%Windowed.disabled = false
 	%Fullscreen.disabled = true
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
+
+
+
+func _on_quit_mouse_exited():
+	%Quit.modulate = Color(1, 1, 1, 1)
+
+
+func _on_quit_mouse_entered():
+	%Quit.modulate = Color(1, 1, 1, 0.5)
+
+
+func _on_settings_to_mouse_exited():
+	%Settings_To.modulate = Color(1, 1, 1, 1)
+
+
+func _on_settings_to_mouse_entered():
+	%Settings_To.modulate = Color(1, 1, 1, 0.5)
+
+func _on_play_mouse_exited():
+	%Play.modulate = Color(1, 1, 1, 1)
+
+func _on_play_mouse_entered():
+	%Play.modulate = Color(1, 1, 1, 0.5)

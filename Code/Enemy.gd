@@ -1,7 +1,6 @@
 extends Sprite2D
 
 var options: Array[String] = ["Rock", "Paper", "Scissors"]
-var resourcePrefix: String = "res://Assets/Placeholder/"
 var choice: String
 var pastChoice: String
 
@@ -24,7 +23,7 @@ func reload_texture():
 
 
 func change_texture(new_path: String):
-	var new_texture: Texture2D = load(resourcePrefix + new_path)
+	var new_texture: Texture2D = load(Globals.resource_path + new_path)
 	if new_texture:
 		texture = new_texture
 

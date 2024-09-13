@@ -24,9 +24,9 @@ func logic(choice: String = ""):
 
 
 func update_selection_images():
-	%Rock.texture_normal = load(%Enemy.resourcePrefix+"rock.png")
-	%Paper.texture_normal = load(%Enemy.resourcePrefix+"paper.png")
-	%Scissors.texture_normal = load(%Enemy.resourcePrefix+"scissors.png")
+	%Rock.texture_normal = load(Globals.resource_path+"rock.png")
+	%Paper.texture_normal = load(Globals.resource_path+"paper.png")
+	%Scissors.texture_normal = load(Globals.resource_path+"scissors.png")
 
 
 func update_score():

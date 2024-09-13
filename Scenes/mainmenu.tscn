@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
 [ext_resource type="Texture2D" uid="uid://mucng4bkmbqs" path="res://Assets/Important/RobloxTycoon.webp" id="2_673up"]
-[ext_resource type="Texture2D" uid="uid://ck0y2y4ha7q7s" path="res://Assets/clipboard_mainmenu.png" id="2_llpiq"]
+[ext_resource type="Texture2D" uid="uid://ck0y2y4ha7q7s" path="res://Assets/Default/clipboard_mainmenu.png" id="2_llpiq"]
 [ext_resource type="Texture2D" uid="uid://bfwxbjpa4yof5" path="res://Assets/Important/DoubleClick.jpg" id="3_2nrr8"]
-[ext_resource type="Texture2D" uid="uid://j2lu7nhq6vvv" path="res://Assets/button_play.png" id="3_mmdr2"]
-[ext_resource type="Texture2D" uid="uid://cv4qplsnmnw8j" path="res://Assets/button_settings.png" id="4_f5b87"]
-[ext_resource type="Texture2D" uid="uid://dxye0udu82lus" path="res://Assets/button_quit.png" id="5_dd2cq"]
+[ext_resource type="Texture2D" uid="uid://j2lu7nhq6vvv" path="res://Assets/Default/button_play.png" id="3_mmdr2"]
+[ext_resource type="Texture2D" uid="uid://cv4qplsnmnw8j" path="res://Assets/Default/button_settings.png" id="4_f5b87"]
+[ext_resource type="Texture2D" uid="uid://dxye0udu82lus" path="res://Assets/Default/button_quit.png" id="5_dd2cq"]
 
 [node name="Mainmenu" type="Node2D"]
 script = ExtResource("1_glogx")
@@ -63,6 +63,7 @@ scale = Vector2(0.35, 0.35)
 texture = ExtResource("3_mmdr2")
 
 [node name="Settings_To" type="Button" parent="ActualMainMenu/UI"]
+unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 91.0
@@ -212,8 +213,14 @@ offset_bottom = 604.0
 scale = Vector2(1.24, 1.92)
 text = "The menus are bad on purpose 🤓"
 
+[connection signal="mouse_entered" from="ActualMainMenu/UI/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="ActualMainMenu/UI/Play" to="." method="_on_play_mouse_exited"]
 [connection signal="pressed" from="ActualMainMenu/UI/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="ActualMainMenu/UI/Settings_To" to="." method="_on_settings_to_mouse_entered"]
+[connection signal="mouse_exited" from="ActualMainMenu/UI/Settings_To" to="." method="_on_settings_to_mouse_exited"]
 [connection signal="pressed" from="ActualMainMenu/UI/Settings_To" to="." method="_on_settings_to_pressed"]
+[connection signal="mouse_entered" from="ActualMainMenu/UI/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="ActualMainMenu/UI/Quit" to="." method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="ActualMainMenu/UI/Quit" to="." method="_on_quit_pressed"]
 [connection signal="value_changed" from="Settings/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="pressed" from="Settings/Windowed" to="." method="_on_windowed_pressed"]
