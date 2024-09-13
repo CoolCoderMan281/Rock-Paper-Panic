@@ -3,18 +3,27 @@ extends Node2D
 var score: int = 0
 
 
-func logic(choice: String):
+func logic(choice: String = ""):
 	var outcomes = {"Rock": "Scissors", "Paper": "Rock", "Scissors": "Paper"}
 	var enemy_choice = %Enemy.choice
 	
-	if outcomes[choice] == enemy_choice:
+	if choice != "":
+		if outcomes[choice] == enemy_choice:
+			score += 1
+			%Enemy.new_choice()
+			%Countdown.reset_timer()
+		elif outcomes[enemy_choice] == choice:
+			score = 0
+			%Countdown.end_game("lose")
+	else:
 		score += 1
 		%Enemy.new_choice()
 		%Countdown.reset_timer()
-	elif outcomes[enemy_choice] == choice:
-		score = 0
-		%Countdown.end_game("lose")
 	
+	update_score()
+
+
+func update_score():
 	%Score.text = "Score: " + str(score)
 
 

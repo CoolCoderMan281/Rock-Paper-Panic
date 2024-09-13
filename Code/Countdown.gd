@@ -20,14 +20,17 @@ func _ready():
 	reset_timer()
 
 func _process(delta: float):
-	last_update_time += delta
-	if last_update_time >= 1.0:
-		last_update_time -= 1.0
-		time_left -= 1
-		update_display()
-		
-		if time_left <= 0:
-			end_game("lose")
+	if !Globals.debug_stoptime:
+		last_update_time += delta
+		if last_update_time >= 1.0:
+			last_update_time -= 1.0
+			time_left -= 1
+			update_display()
+			if time_left <= 0:
+				if Globals.debug_autoplay:
+					%Player.logic()
+				else:
+					end_game("lose")
 
 func update_display():
 	%Second.text = str(time_left)

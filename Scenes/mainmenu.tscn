@@ -47,6 +47,7 @@ texture = ExtResource("2_llpiq")
 [node name="Play" type="Button" parent="ActualMainMenu/UI"]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 79.0
 offset_top = 337.0
 offset_right = 181.0
@@ -63,6 +64,7 @@ texture = ExtResource("3_mmdr2")
 
 [node name="Settings_To" type="Button" parent="ActualMainMenu/UI"]
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 91.0
 offset_top = 499.0
 offset_right = 194.0
@@ -80,6 +82,7 @@ texture = ExtResource("4_f5b87")
 [node name="Quit" type="Button" parent="ActualMainMenu/UI"]
 unique_name_in_owner = true
 self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 91.0
 offset_top = 654.0
 offset_right = 179.0

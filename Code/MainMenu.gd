@@ -15,6 +15,8 @@ extends Node
 # 		get_tree().quit()
 
 func _ready():
+	if Globals.debug_enabled:
+		print("Debug Mode is Enabled!")
 	var required_assets = [
 		"res://Assets/Important/DifficultySelect.webp",
 		"res://Assets/Important/OhYea.webp",

@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://bu6j0v2aj8gfi"]
+[gd_scene load_steps=11 format=3 uid="uid://bu6j0v2aj8gfi"]
 
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
 [ext_resource type="Script" path="res://Code/Enemy.gd" id="1_oxske"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cyhqv1mopvf21" path="res://Assets/Placeholder/scissors.png" id="5_uj5bi"]
 [ext_resource type="Script" path="res://Code/Options.gd" id="7_1iy2a"]
 [ext_resource type="Script" path="res://Code/Countdown.gd" id="7_hbh5k"]
+[ext_resource type="Script" path="res://Code/Debug.gd" id="8_1kwu8"]
 
 [sub_resource type="GDScript" id="GDScript_a5fcu"]
 script/source = "extends CanvasLayer
@@ -171,6 +172,51 @@ offset_bottom = 97.0
 scale = Vector2(4.88, 2.92)
 text = "main menu"
 
+[node name="Debug" type="Node2D" parent="."]
+visible = false
+script = ExtResource("8_1kwu8")
+
+[node name="Debug_AutoPlay" type="CheckBox" parent="Debug"]
+unique_name_in_owner = true
+offset_left = 570.0
+offset_top = -55.0
+offset_right = 672.0
+offset_bottom = -24.0
+scale = Vector2(1.76373, 1.82742)
+text = "Auto Play"
+
+[node name="Debug_StopTime" type="CheckBox" parent="Debug"]
+unique_name_in_owner = true
+offset_left = 570.0
+offset_top = -2.0
+offset_right = 672.0
+offset_bottom = 29.0
+scale = Vector2(1.76373, 1.82742)
+text = "Stop Time"
+
+[node name="Debug_ScoreIn" type="LineEdit" parent="Debug"]
+unique_name_in_owner = true
+offset_left = 578.0
+offset_top = 53.0
+offset_right = 695.0
+offset_bottom = 93.0
+placeholder_text = "New Score"
+
+[node name="Debug_ScoreSet" type="Button" parent="Debug"]
+offset_left = 700.0
+offset_top = 53.0
+offset_right = 789.0
+offset_bottom = 94.0
+text = "Set"
+
+[node name="Debug_Label" type="Label" parent="Debug"]
+offset_left = 582.0
+offset_top = -102.0
+offset_right = 702.0
+offset_bottom = -79.0
+scale = Vector2(1.72046, 1.68708)
+text = "Debug Options:"
+
 [connection signal="pressed" from="Rock" to="Player" method="_on_rock_pressed"]
 [connection signal="pressed" from="Paper" to="Player" method="_on_paper_pressed"]
 [connection signal="pressed" from="Scissors" to="Player" method="_on_scissors_pressed"]
@@ -179,3 +225,6 @@ text = "main menu"
 [connection signal="pressed" from="Lose/Quit" to="Player" method="_on_quit_pressed"]
 [connection signal="pressed" from="Pause/quit" to="Pause" method="_on_quit_pressed"]
 [connection signal="pressed" from="Pause/mainmenu" to="Pause" method="_on_mainmenu_pressed"]
+[connection signal="pressed" from="Debug/Debug_AutoPlay" to="Debug" method="_on_debug_auto_play_pressed"]
+[connection signal="pressed" from="Debug/Debug_StopTime" to="Debug" method="_on_debug_stop_time_pressed"]
+[connection signal="pressed" from="Debug/Debug_ScoreSet" to="Debug" method="_on_debug_score_set_pressed"]
