@@ -211,9 +211,9 @@ text = "Set"
 
 [node name="Debug_CountdownIn" type="LineEdit" parent="Debug"]
 unique_name_in_owner = true
-offset_left = 578.0
+offset_left = 576.0
 offset_top = 107.0
-offset_right = 695.0
+offset_right = 712.0
 offset_bottom = 147.0
 placeholder_text = "Countdown Max"
 expand_to_text_length = true
@@ -231,6 +231,13 @@ offset_top = 159.0
 offset_right = 790.0
 offset_bottom = 200.0
 text = "Skip Round"
+
+[node name="Debug_SelectionSwap" type="Button" parent="Debug"]
+offset_left = 578.0
+offset_top = 212.0
+offset_right = 790.0
+offset_bottom = 253.0
+text = "Selection Swap"
 
 [node name="Debug_Label" type="Label" parent="Debug"]
 offset_left = 582.0
@@ -253,3 +260,4 @@ text = "Debug Options:"
 [connection signal="pressed" from="Debug/Debug_ScoreSet" to="Debug" method="_on_debug_score_set_pressed"]
 [connection signal="pressed" from="Debug/Debug_CountdownSet" to="Debug" method="_on_debug_countdown_set_pressed"]
 [connection signal="pressed" from="Debug/Debug_SkipRound" to="Debug" method="_on_debug_skip_round_pressed"]
+[connection signal="pressed" from="Debug/Debug_SelectionSwap" to="Debug" method="_on_debug_selection_swap_pressed"]

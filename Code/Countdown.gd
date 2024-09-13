@@ -50,15 +50,18 @@ func reset_timer():
 			INITIAL_TIME -= 1
 			print("-1 Second on the timer!")
 		# Im cheating!!! Im also applying the option randomizer here MUHAUHAUHA!
-		var objects: Array[TextureButton] = [%Rock, %Paper, %Scissors]
-		var objectPos: Array[Vector2] = []
-		
-		for obj in objects: # Steal all positions
-			objectPos.append(obj.global_position)
-			print(obj.global_position)
-		objectPos.shuffle()
-		for i in range(objects.size()): # Swap the positions
-			objects[i].global_position = objectPos[i]
+
+
+func selection_swap():
+	var objects: Array[TextureButton] = [%Rock, %Paper, %Scissors]
+	var objectPos: Array[Vector2] = []
+	
+	for obj in objects: # Steal all positions
+		objectPos.append(obj.global_position)
+		print(obj.global_position)
+	objectPos.shuffle()
+	for i in range(objects.size()): # Swap the positions
+		objects[i].global_position = objectPos[i]
 
 
 func end_game(state: String):

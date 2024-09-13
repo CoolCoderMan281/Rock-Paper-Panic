@@ -34,3 +34,7 @@ func _on_debug_countdown_set_pressed():
 	var time: int = 10
 	time = %Debug_CountdownIn.text.to_int()
 	%Countdown.INITIAL_TIME = time
+
+
+func _on_debug_selection_swap_pressed():
+	%Countdown.selection_swap()
