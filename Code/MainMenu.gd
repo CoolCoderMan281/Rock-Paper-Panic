@@ -17,6 +17,7 @@ extends Node
 func _ready():
 	if Globals.debug_enabled:
 		print("Debug Mode is Enabled!")
+		%DebugNotice.visible = true
 	var required_assets = [
 		"res://Assets/Important/DifficultySelect.webp",
 		"res://Assets/Important/OhYea.webp",

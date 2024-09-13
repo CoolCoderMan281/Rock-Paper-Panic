@@ -97,6 +97,17 @@ offset_bottom = 103.0
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("5_dd2cq")
 
+[node name="DebugNotice" type="Label" parent="ActualMainMenu"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.498039)
+offset_left = 860.0
+offset_top = 584.0
+offset_right = 1111.0
+offset_bottom = 633.0
+scale = Vector2(1.13423, 1.16)
+text = "Debug Menu is enabled, if this 
+is a mistake you need to rebuild."
+
 [node name="Title" type="RichTextLabel" parent="."]
 offset_left = 510.0
 offset_top = 45.0
