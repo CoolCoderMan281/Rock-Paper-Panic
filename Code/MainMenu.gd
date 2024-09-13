@@ -18,6 +18,7 @@ func _ready():
 	if Globals.debug_enabled:
 		print("Debug Mode is Enabled!")
 		%DebugNotice.visible = true
+	%Feedback.visible = Globals.feedback_welcome
 	var required_assets = [
 		"res://Assets/Important/DifficultySelect.webp",
 		"res://Assets/Important/OhYea.webp",
@@ -43,7 +44,7 @@ func _on_play_pressed():
 
 
 func _on_quit_pressed():
-	get_tree().quit()
+	Globals.quit()
 
 
 func _on_back_pressed():
@@ -92,3 +93,7 @@ func _on_play_mouse_exited():
 
 func _on_play_mouse_entered():
 	%Play.modulate = Color(1, 1, 1, 0.5)
+
+
+func _on_feedback_pressed() -> void:
+	OS.shell_open(Globals.feedback_url)

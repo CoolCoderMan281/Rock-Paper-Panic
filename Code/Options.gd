@@ -7,7 +7,7 @@ func _input(event):
 
 
 func _on_quit_pressed():
-	get_tree().quit()
+	Globals.quit()
 
 
 func _on_mainmenu_pressed():

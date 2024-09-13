@@ -59,4 +59,4 @@ func _on_main_menu_pressed():
 
 
 func _on_quit_pressed():
-	get_tree().quit()
+	Globals.quit()
