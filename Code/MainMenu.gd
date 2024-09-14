@@ -13,7 +13,7 @@ extends Node
 #		# Crash game... but with COOL OS alert message
 # 		OS.alert('BLUD DONT DELETE THOSE IMAGES', 'Alert!')
 # 		get_tree().quit()
-
+# Test push :D
 func _ready():
 	if Globals.debug_enabled:
 		print("Debug Mode is Enabled!")
