@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://cm60yvvsf5rso"]
+[gd_scene load_steps=12 format=3 uid="uid://cm60yvvsf5rso"]
 
 [ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
 [ext_resource type="Texture2D" uid="uid://mucng4bkmbqs" path="res://Assets/Important/RobloxTycoon.webp" id="2_673up"]
@@ -7,6 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://j2lu7nhq6vvv" path="res://Assets/Default/button_play.png" id="3_mmdr2"]
 [ext_resource type="Texture2D" uid="uid://cv4qplsnmnw8j" path="res://Assets/Default/button_settings.png" id="4_f5b87"]
 [ext_resource type="Texture2D" uid="uid://dxye0udu82lus" path="res://Assets/Default/button_quit.png" id="5_dd2cq"]
+[ext_resource type="Texture2D" uid="uid://dxvf24u7n7rsk" path="res://Assets/Default/placeholder_stickynote.png" id="6_mlnkw"]
+[ext_resource type="Texture2D" uid="uid://cxlli8mf0wy2l" path="res://Assets/Default/game_logo.png" id="7_ina6n"]
+[ext_resource type="Theme" uid="uid://ro5pv5fiidmj" path="res://Assets/Fonts/Fake Handwritten FONT.tres" id="7_si1of"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56r7i"]
 
 [node name="Mainmenu" type="Node2D"]
 script = ExtResource("1_glogx")
@@ -17,16 +22,16 @@ script = ExtResource("1_glogx")
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(29.24, 16.56)
-color = Color(0.160784, 0.247059, 0.184314, 1)
+color = Color(0.87451, 0.682353, 0.298039, 1)
 
 [node name="UI" type="Control" parent="ActualMainMenu"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 24.0
-offset_top = -343.0
-offset_right = 677.0
-offset_bottom = 556.0
-scale = Vector2(1.15, 1.15)
+offset_left = 320.0
+offset_top = -358.0
+offset_right = 973.0
+offset_bottom = 541.0
+scale = Vector2(1.25, 1.25)
 
 [node name="Clipboard" type="TextureRect" parent="ActualMainMenu/UI"]
 layout_mode = 1
@@ -101,34 +106,63 @@ texture = ExtResource("5_dd2cq")
 [node name="DebugNotice" type="Label" parent="ActualMainMenu"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.498039)
-offset_left = 860.0
+offset_left = 13.0
 offset_top = 584.0
-offset_right = 1111.0
+offset_right = 264.0
 offset_bottom = 633.0
 scale = Vector2(1.13423, 1.16)
+theme_override_colors/font_color = Color(0.768627, 0.384314, 0, 1)
+theme_override_font_sizes/font_size = 16
 text = "Debug Menu is enabled, if this 
 is a mistake you need to rebuild."
 
+[node name="feedback_stickynote" type="TextureRect" parent="ActualMainMenu"]
+offset_left = 36.5468
+offset_top = 393.0
+offset_right = 1111.55
+offset_bottom = 1384.0
+rotation = 0.0872665
+scale = Vector2(0.265, 0.18)
+texture = ExtResource("6_mlnkw")
+
 [node name="Feedback" type="Button" parent="ActualMainMenu"]
 unique_name_in_owner = true
-offset_left = 878.0
-offset_top = 410.0
-offset_right = 960.0
-offset_bottom = 441.0
-scale = Vector2(2.38042, 2.38042)
+modulate = Color(0, 0, 0, 1)
+offset_left = 68.5468
+offset_top = 440.0
+offset_right = 328.547
+offset_bottom = 591.0
+rotation = -0.0579116
+scale = Vector2(0.85, 0.85)
+theme = ExtResource("7_si1of")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_56r7i")
 text = "Feedback"
 
-[node name="Title" type="RichTextLabel" parent="."]
-offset_left = 510.0
-offset_top = 45.0
-offset_right = 2446.0
-offset_bottom = 911.0
-rotation = -0.0464232
-scale = Vector2(0.311, 0.365)
-theme_override_font_sizes/normal_font_size = 300
-bbcode_enabled = true
-text = "[center]Rock Paper 
-Panic"
+[node name="Logo" type="Control" parent="ActualMainMenu"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 201.0
+offset_top = 157.0
+offset_right = 450.0
+offset_bottom = 366.0
+rotation = 0.13439
+scale = Vector2(0.35, 0.35)
+
+[node name="stickynote_back" type="TextureRect" parent="ActualMainMenu/Logo"]
+offset_left = -548.0
+offset_top = -439.0
+offset_right = 527.0
+offset_bottom = 552.0
+texture = ExtResource("6_mlnkw")
+
+[node name="game_logo" type="TextureRect" parent="ActualMainMenu/Logo"]
+layout_mode = 0
+offset_left = -500.0
+offset_top = -500.0
+offset_right = 500.0
+offset_bottom = 500.0
+texture = ExtResource("7_ina6n")
 
 [node name="Settings" type="Node2D" parent="."]
 unique_name_in_owner = true

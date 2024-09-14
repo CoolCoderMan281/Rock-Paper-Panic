@@ -1,12 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://bu6j0v2aj8gfi"]
+[gd_scene load_steps=13 format=3 uid="uid://bu6j0v2aj8gfi"]
 
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
 [ext_resource type="Script" path="res://Code/Enemy.gd" id="1_oxske"]
-[ext_resource type="Texture2D" uid="uid://dtqytyxqc6isg" path="res://Assets/Default/rock.png" id="3_77b6n"]
-[ext_resource type="Texture2D" uid="uid://5lde36f46cob" path="res://Assets/Default/paper.png" id="4_lfdjh"]
+[ext_resource type="Texture2D" uid="uid://cwajpnla84nbj" path="res://Assets/Default/battle_background.png" id="1_pv84b"]
+[ext_resource type="Texture2D" uid="uid://cwokik5d7211o" path="res://Assets/Default/rock_button.png" id="5_53pyb"]
 [ext_resource type="Texture2D" uid="uid://cyhqv1mopvf21" path="res://Assets/Default/scissors.png" id="5_uj5bi"]
+[ext_resource type="Texture2D" uid="uid://dbehc3e3yt71g" path="res://Assets/Default/paper_button.png" id="6_ls8lb"]
 [ext_resource type="Script" path="res://Code/Options.gd" id="7_1iy2a"]
+[ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="7_gp2xf"]
 [ext_resource type="Script" path="res://Code/Countdown.gd" id="7_hbh5k"]
+[ext_resource type="Texture2D" uid="uid://dbsmavvenkgo2" path="res://Assets/Default/scissors_button.png" id="7_ydmfk"]
 [ext_resource type="Script" path="res://Code/Debug.gd" id="8_1kwu8"]
 
 [sub_resource type="GDScript" id="GDScript_a5fcu"]
@@ -17,18 +20,30 @@ func _on_button_pressed():
 	%Lose.visible = false
 "
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7hgbc"]
-bg_color = Color(0.0196078, 0.0196078, 0.0196078, 1)
-
 [node name="Main" type="Node2D"]
 position = Vector2(345, 221)
 
 [node name="Enemy" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(228, 25)
-scale = Vector2(0.399999, 0.399999)
+position = Vector2(229, 55)
+scale = Vector2(0.25, 0.25)
 texture = ExtResource("5_uj5bi")
 script = ExtResource("1_oxske")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -345.0
+offset_top = -221.0
+offset_right = -305.0
+offset_bottom = -181.0
+scale = Vector2(0.72, 0.72)
+
+[node name="battle_bg" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_pv84b")
 
 [node name="Player" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -36,42 +51,49 @@ script = ExtResource("1_kolsd")
 
 [node name="Rock" type="TextureButton" parent="Player"]
 unique_name_in_owner = true
-offset_left = -239.0
-offset_top = 288.0
-offset_right = 121.0
-offset_bottom = 648.0
-scale = Vector2(0.352973, 0.331675)
-texture_normal = ExtResource("3_77b6n")
+offset_left = 31.0
+offset_top = 197.0
+offset_right = 231.0
+offset_bottom = 397.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("5_53pyb")
 metadata/_edit_use_anchors_ = true
 
 [node name="Paper" type="TextureButton" parent="Player"]
 unique_name_in_owner = true
-offset_left = 169.0
-offset_top = 286.0
-offset_right = 1129.0
-offset_bottom = 1006.0
-scale = Vector2(0.117459, 0.158841)
-texture_normal = ExtResource("4_lfdjh")
+offset_left = 183.0
+offset_top = 195.0
+offset_right = 383.0
+offset_bottom = 395.0
+scale = Vector2(0.55, 0.55)
+texture_normal = ExtResource("6_ls8lb")
 metadata/_edit_use_anchors_ = true
 
 [node name="Scissors" type="TextureButton" parent="Player"]
 unique_name_in_owner = true
-offset_left = 546.0
-offset_top = 291.0
-offset_right = 1432.0
-offset_bottom = 1129.0
-scale = Vector2(0.130766, 0.125702)
-texture_normal = ExtResource("5_uj5bi")
+offset_left = 330.0
+offset_top = 189.0
+offset_right = 530.0
+offset_bottom = 389.0
+scale = Vector2(0.55, 0.55)
+texture_normal = ExtResource("7_ydmfk")
 metadata/_edit_use_anchors_ = true
 
-[node name="Score" type="Label" parent="Player"]
+[node name="Score Text" type="Node2D" parent="Player"]
+position = Vector2(-220, 261)
+skew = 0.244346
+
+[node name="Score" type="Label" parent="Player/Score Text"]
 unique_name_in_owner = true
-offset_left = -318.0
-offset_top = -201.0
-offset_right = -104.0
-offset_bottom = -132.0
-theme_override_font_sizes/font_size = 50
-text = "SCORE: 0"
+offset_left = 5.24932
+offset_top = 1.0306
+offset_right = 616.249
+offset_bottom = 140.031
+rotation = 0.0385689
+theme = ExtResource("7_gp2xf")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
@@ -135,27 +157,24 @@ metadata/_edit_use_anchors_ = true
 unique_name_in_owner = true
 script = ExtResource("7_hbh5k")
 
-[node name="Panel" type="Panel" parent="Countdown"]
-anchors_preset = -1
-anchor_left = -0.0677083
-anchor_bottom = 0.0540123
-offset_left = 980.0
-offset_top = 16.0
-offset_right = 1095.0
-offset_bottom = 56.0
-theme_override_styles/panel = SubResource("StyleBoxFlat_7hgbc")
-metadata/_edit_use_anchors_ = true
+[node name="Timer Text" type="Node2D" parent="Countdown"]
+position = Vector2(652, 524)
+rotation = -0.0215411
+scale = Vector2(0.95, 0.85)
+skew = -0.296706
 
-[node name="Second" type="Label" parent="Countdown"]
+[node name="Second" type="Label" parent="Countdown/Timer Text"]
 unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = -0.132813
 anchor_bottom = 0.143519
-offset_left = 1017.0
-offset_top = -14.0
-offset_right = 1132.0
-offset_bottom = 28.0
-theme_override_font_sizes/font_size = 50
+offset_left = -6.55615
+offset_top = 19.6525
+offset_right = 170.444
+offset_bottom = 74.6525
+theme = ExtResource("7_gp2xf")
+theme_override_colors/font_color = Color(0, 1, 0.2, 1)
+theme_override_font_sizes/font_size = 40
 text = "10"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -185,9 +204,15 @@ scale = Vector2(4.88, 2.92)
 text = "main menu"
 
 [node name="Debug" type="Node2D" parent="."]
-visible = false
 position = Vector2(0, -25)
 script = ExtResource("8_1kwu8")
+
+[node name="ColorRect" type="ColorRect" parent="Debug"]
+offset_left = 566.0
+offset_top = -110.0
+offset_right = 802.0
+offset_bottom = 397.0
+color = Color(0.46, 0.294707, 0.00919999, 1)
 
 [node name="Debug_AutoPlay" type="CheckBox" parent="Debug"]
 unique_name_in_owner = true
