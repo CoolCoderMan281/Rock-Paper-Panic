@@ -7,7 +7,7 @@ var debug_enabled: bool = true
 var debug_stoptime: bool = false
 var debug_autoplay: bool = false
 var feedback_welcome: bool = true
-var feedback_url: String = "https://example.com"
+var feedback_url: String = "https://forms.gle/Ws9qj8pPWxE9waaRA"
 var resource_path: String = "res://Assets/Default/"
 var default_resource_path: String = resource_path
 
