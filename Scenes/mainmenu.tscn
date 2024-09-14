@@ -150,6 +150,7 @@ rotation = 0.13439
 scale = Vector2(0.35, 0.35)
 
 [node name="stickynote_back" type="TextureRect" parent="ActualMainMenu/Logo"]
+layout_mode = 0
 offset_left = -548.0
 offset_top = -439.0
 offset_right = 527.0
