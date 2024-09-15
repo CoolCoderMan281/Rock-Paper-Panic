@@ -7,6 +7,7 @@ func _ready() -> void:
 	score = 0
 	update_score()
 	update_selection_images()
+	$"%Music".play()
 
 
 func logic(choice: String = ""):
@@ -20,6 +21,7 @@ func logic(choice: String = ""):
 			%Countdown.reset_timer()
 		elif outcomes[enemy_choice] == choice:
 			%Countdown.end_game("lose")
+			$"%Music".stop()
 	else:
 		score += 1
 		%Enemy.new_choice()

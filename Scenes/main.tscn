@@ -23,6 +23,9 @@ func _on_button_pressed():
 [node name="Main" type="Node2D"]
 position = Vector2(345, 221)
 
+[node name="Music" type="AudioStreamPlayer" parent="."]
+unique_name_in_owner = true
+
 [node name="Enemy" type="Sprite2D" parent="."]
 unique_name_in_owner = true
 position = Vector2(229, 55)
