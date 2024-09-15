@@ -7,7 +7,6 @@ func _ready() -> void:
 	score = 0
 	update_score()
 	update_selection_images()
-	$"%Music".play()
 
 
 func logic(choice: String = ""):

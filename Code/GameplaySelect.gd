@@ -1,25 +1,20 @@
 extends Node2D
-
-
 func _ready() -> void:
 	%VectorMode.button_pressed = Globals.resource_path == "res://Assets/Vector/"
 
 
 func _on_easy_pressed() -> void:
 	Globals.difficulty = Globals.difficulties.easy
-	$%Music.set_stream(preload("res://Music/easy_mode_placeholder.ogg"))
 	Globals.set_scene("res://Scenes/main.tscn")
 
 
 func _on_normal_pressed() -> void:
 	Globals.difficulty = Globals.difficulties.normal
-	$%Music.set_stream(preload("res://Music/normal_mode_placeholder.ogg"))
 	Globals.set_scene("res://Scenes/main.tscn")
 
 
 func _on_hard_pressed() -> void:
 	Globals.difficulty = Globals.difficulties.hard
-	$%Music.set_stream(preload("res://Music/hard_mode.ogg"))
 	Globals.set_scene("res://Scenes/main.tscn")
 
 
