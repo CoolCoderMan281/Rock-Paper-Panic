@@ -4,6 +4,8 @@ var score: int = 0
 
 
 func _ready() -> void:
+	score = 0
+	update_score()
 	update_selection_images()
 
 
@@ -17,7 +19,6 @@ func logic(choice: String = ""):
 			%Enemy.new_choice()
 			%Countdown.reset_timer()
 		elif outcomes[enemy_choice] == choice:
-			score = 0
 			%Countdown.end_game("lose")
 	else:
 		score += 1
