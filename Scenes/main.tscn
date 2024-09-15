@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bu6j0v2aj8gfi"]
+[gd_scene load_steps=14 format=3 uid="uid://bu6j0v2aj8gfi"]
 
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
 [ext_resource type="Script" path="res://Code/Enemy.gd" id="1_oxske"]
@@ -11,6 +11,8 @@
 [ext_resource type="Script" path="res://Code/Countdown.gd" id="7_hbh5k"]
 [ext_resource type="Texture2D" uid="uid://dbsmavvenkgo2" path="res://Assets/Default/scissors_button.png" id="7_ydmfk"]
 [ext_resource type="Script" path="res://Code/Debug.gd" id="8_1kwu8"]
+
+[sub_resource type="AudioStreamOggVorbis" id="AudioStreamOggVorbis_kdb1y"]
 
 [sub_resource type="GDScript" id="GDScript_a5fcu"]
 script/source = "extends CanvasLayer
@@ -25,6 +27,7 @@ position = Vector2(345, 221)
 
 [node name="Music" type="AudioStreamPlayer" parent="."]
 unique_name_in_owner = true
+stream = SubResource("AudioStreamOggVorbis_kdb1y")
 
 [node name="Enemy" type="Sprite2D" parent="."]
 unique_name_in_owner = true
