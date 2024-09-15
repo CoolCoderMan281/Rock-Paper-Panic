@@ -28,13 +28,14 @@ func _ready():
 	for asset in required_assets:
 		if !FileAccess.file_exists(asset):
 			assert(false, "null")
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+		#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
 		%Windowed.disabled = true
 		%Fullscreen.disabled = false
 	else:
 		%Windowed.disabled = false
 		%Fullscreen.disabled = true
+	AudioServer.set_bus_volume_db(0, Globals.global_audio)
 
 
 func _on_play_pressed():
@@ -47,15 +48,18 @@ func _on_quit_pressed():
 
 func _on_back_pressed():
 	%Settings.hide()
+	Globals.global_audio = AudioServer.get_bus_volume_db(0)
 
 
 func _on_settings_to_pressed():
 	%Settings.show()
+	%Volume.value = Globals.global_audio 
 
 
 func _on_volume_value_changed(value:float):
-	%Volume_Label.text = "Volume: " + str(value) + "%"
+	%Volume_Label.text = "Volume: " + str(value * 100) + "%"
 	AudioServer.set_bus_volume_db(0, value)
+	Globals.global_audio = AudioServer.get_bus_volume_db(0)
 
 func _on_windowed_pressed():
 	%Windowed.disabled = true

@@ -16,6 +16,8 @@ var feedback_url: String = "https://forms.gle/Ws9qj8pPWxE9waaRA"
 var resource_path: String = "res://Assets/Default/"
 var default_resource_path: String = resource_path
 
+var global_audio: float = 0.5
+
 func quit():
 	if OS.get_name() == "Web":
 		set_scene("res://Scenes/web_close.tscn")

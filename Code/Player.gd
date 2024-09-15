@@ -20,7 +20,6 @@ func logic(choice: String = ""):
 			%Countdown.reset_timer()
 		elif outcomes[enemy_choice] == choice:
 			%Countdown.end_game("lose")
-			$"%Music".stop()
 	else:
 		score += 1
 		%Enemy.new_choice()

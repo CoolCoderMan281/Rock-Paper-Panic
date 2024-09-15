@@ -12,9 +12,18 @@ func _ready():
 		
 	elif Globals.difficulty == Globals.difficulties.hard:
 		self.set_stream(preload(Globals.hard_theme))
+		
+	self.volume_db = -5 * -Globals.global_audio
+	
+	if Globals.global_audio <= 0.3:
+		self.volume_db = -10
+	elif Globals.global_audio <= 0.1:
+		self.volume_db = -25
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if not self.is_playing() and %Lose.visible == false:
 		self.play()
+	if %Lose.visible == true:
+		self.stop()
