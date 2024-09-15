@@ -7,7 +7,7 @@ func _ready() -> void:
 
 func _on_easy_pressed() -> void:
 	Globals.difficulty = Globals.difficulties.easy
-	$"%Music".set_stream("res://Music/easy_mode_placeholder.ogg")
+	$"%Music".set_stream(preload("res://Music/easy_mode_placeholder.ogg"))
 	Globals.set_scene("res://Scenes/main.tscn")
 
 
