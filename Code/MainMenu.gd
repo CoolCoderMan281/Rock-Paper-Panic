@@ -7,6 +7,8 @@ extends Node
 #		"image3" : "RobloxTycoon.webp",
 #		"image4" : "DoubleClick.jpg"
 # }
+var fullscreen = false
+var windowed = true
 
 # for asset in reqired_assets:
 # 	if not FileAccess.file_exists("user://", asset):
@@ -28,13 +30,13 @@ func _ready():
 	for asset in required_assets:
 		if !FileAccess.file_exists(asset):
 			assert(false, "null")
-		#DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
-		%Windowed.disabled = true
-		%Fullscreen.disabled = false
+		fullscreen = false
+		windowed = true
 	else:
-		%Windowed.disabled = false
-		%Fullscreen.disabled = true
+		fullscreen = true
+		windowed = false
 	AudioServer.set_bus_volume_db(0, Globals.global_audio)
 
 
@@ -61,18 +63,33 @@ func _on_volume_value_changed(value:float):
 	AudioServer.set_bus_volume_db(0, value)
 	Globals.global_audio = AudioServer.get_bus_volume_db(0)
 
-func _on_windowed_pressed():
-	%Windowed.disabled = true
-	%Fullscreen.disabled = false
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+#func _on_windowed_pressed():
+#	%Windowed.disabled = true
+#	%Fullscreen.disabled = false
+#	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+#	%lever.flip_v = false
 
-	
-func _on_fullscreen_pressed():
-	%Windowed.disabled = false
-	%Fullscreen.disabled = true
-	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+#func _on_fullscreen_pressed():
+#	%Windowed.disabled = false
+#	%Fullscreen.disabled = true
+#	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+#	%lever.flip_v = true
 
 
+func _on_lever_button_pressed():
+	# Move to Windowed Mode
+	if windowed == false and fullscreen == true:
+		fullscreen = false
+		windowed = true
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+		%lever.flip_v = false
+		
+	# Move to Fullscreen Mode
+	elif windowed == true and fullscreen == false:
+		fullscreen = true
+		windowed = false
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+		%lever.flip_v = true
 
 
 func _on_quit_mouse_exited():
