@@ -4,14 +4,14 @@
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
 [ext_resource type="Script" path="res://Code/Enemy.gd" id="1_oxske"]
 [ext_resource type="Texture2D" uid="uid://cwajpnla84nbj" path="res://Assets/Default/battle_background.png" id="1_pv84b"]
-[ext_resource type="Texture2D" uid="uid://cwokik5d7211o" path="res://Assets/Default/rock_button.png" id="5_53pyb"]
 [ext_resource type="Texture2D" uid="uid://cyhqv1mopvf21" path="res://Assets/Default/scissors.png" id="5_uj5bi"]
+[ext_resource type="Texture2D" uid="uid://b36pof77p2gd" path="res://Assets/Default/Buttons/Rock/Center/rock_center.png" id="6_kk75n"]
 [ext_resource type="Texture2D" uid="uid://dbehc3e3yt71g" path="res://Assets/Default/paper_button.png" id="6_ls8lb"]
 [ext_resource type="Script" path="res://Code/Options.gd" id="7_1iy2a"]
 [ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="7_gp2xf"]
 [ext_resource type="Script" path="res://Code/Countdown.gd" id="7_hbh5k"]
-[ext_resource type="Texture2D" uid="uid://dbsmavvenkgo2" path="res://Assets/Default/scissors_button.png" id="7_ydmfk"]
 [ext_resource type="Script" path="res://Code/Debug.gd" id="8_1kwu8"]
+[ext_resource type="Texture2D" uid="uid://blyjptyotgnm7" path="res://Assets/Default/Buttons/Scissors/Center/scissors_center.png" id="8_2cgpk"]
 
 [sub_resource type="GDScript" id="GDScript_a5fcu"]
 script/source = "extends CanvasLayer
@@ -61,7 +61,7 @@ offset_top = 197.0
 offset_right = 231.0
 offset_bottom = 397.0
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("5_53pyb")
+texture_normal = ExtResource("6_kk75n")
 metadata/_edit_use_anchors_ = true
 
 [node name="Paper" type="TextureButton" parent="Player"]
@@ -81,7 +81,7 @@ offset_top = 189.0
 offset_right = 530.0
 offset_bottom = 389.0
 scale = Vector2(0.55, 0.55)
-texture_normal = ExtResource("7_ydmfk")
+texture_normal = ExtResource("8_2cgpk")
 metadata/_edit_use_anchors_ = true
 
 [node name="Score Text" type="Node2D" parent="Player"]

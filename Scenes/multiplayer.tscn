@@ -67,6 +67,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="RoomCode" type="LineEdit" parent="Main"]
+layout_mode = 0
 offset_left = 365.0
 offset_top = 301.0
 offset_right = 466.0
@@ -75,6 +76,7 @@ scale = Vector2(2.12896, 2.12896)
 placeholder_text = "Room Code"
 
 [node name="RoomJoin" type="Button" parent="Main"]
+layout_mode = 0
 offset_left = 636.0
 offset_top = 295.0
 offset_right = 708.0
@@ -83,6 +85,7 @@ scale = Vector2(2.43316, 2.43316)
 text = "Connect"
 
 [node name="CreateRoom" type="Button" parent="Main"]
+layout_mode = 0
 offset_left = 632.0
 offset_top = 85.0
 offset_right = 741.0
@@ -91,6 +94,7 @@ scale = Vector2(1.97582, 1.97582)
 text = "Create Room"
 
 [node name="DifficultySelect" type="OptionButton" parent="Main"]
+layout_mode = 0
 offset_left = 129.0
 offset_top = 80.0
 offset_right = 266.0
