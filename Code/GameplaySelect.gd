@@ -27,3 +27,7 @@ func _on_check_button_toggled(toggled_on: bool) -> void:
 		Globals.resource_path = "res://Assets/Vector/"
 	else:
 		Globals.resource_path = Globals.default_resource_path
+
+
+func _on_multiplayer_pressed() -> void:
+	Globals.set_scene("res://Scenes/multiplayer.tscn")

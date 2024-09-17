@@ -48,6 +48,15 @@ offset_right = 653.0
 offset_bottom = 609.0
 text = "Back"
 
+[node name="Multiplayer" type="Button" parent="ColorRect"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 723.0
+offset_top = 15.0
+offset_right = 1141.0
+offset_bottom = 66.0
+text = "Multiplayer"
+
 [node name="Title" type="Label" parent="ColorRect"]
 layout_mode = 0
 offset_left = 473.0
@@ -89,4 +98,5 @@ texture = ExtResource("3_5rjww")
 [connection signal="pressed" from="ColorRect/Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="ColorRect/Hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="ColorRect/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="ColorRect/Multiplayer" to="." method="_on_multiplayer_pressed"]
 [connection signal="toggled" from="ColorRect/VectorMode" to="." method="_on_check_button_toggled"]
