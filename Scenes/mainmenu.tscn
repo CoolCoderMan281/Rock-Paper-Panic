@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cm60yvvsf5rso"]
+[gd_scene load_steps=19 format=3 uid="uid://cm60yvvsf5rso"]
 
 [ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
 [ext_resource type="Texture2D" uid="uid://mucng4bkmbqs" path="res://Assets/Important/RobloxTycoon.webp" id="2_673up"]
@@ -13,7 +13,10 @@
 [ext_resource type="Texture2D" uid="uid://bnf0rfadrqu8a" path="res://Assets/Settings/switch_backing.png" id="9_7xfr5"]
 [ext_resource type="Texture2D" uid="uid://bbgoserrvm42x" path="res://Assets/Settings/windowed_tag.png" id="9_kr4ux"]
 [ext_resource type="Texture2D" uid="uid://dpk32bytsp4v3" path="res://Assets/Settings/fullscreen_tag.png" id="10_3d68q"]
+[ext_resource type="Texture2D" uid="uid://c8802aln5x5ap" path="res://Assets/Settings/volume_bar.png" id="10_3v6ml"]
 [ext_resource type="Texture2D" uid="uid://wumf6iahaseu" path="res://Assets/Settings/switch_lever.png" id="10_p0k6m"]
+[ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="11_juhrv"]
+[ext_resource type="Texture2D" uid="uid://cm75f1mfjwy3a" path="res://Assets/Settings/credits_clipboard.png" id="13_bhj24"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56r7i"]
 
@@ -177,30 +180,47 @@ visible = false
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(29.24, 16.56)
-color = Color(0.160784, 0.247059, 0.184314, 1)
+color = Color(0.558361, 0.422722, 0.140128, 1)
+
+[node name="credits_panel" type="TextureRect" parent="Settings"]
+offset_left = 116.0
+offset_top = 19.0
+offset_right = 604.0
+offset_bottom = 638.0
+texture = ExtResource("13_bhj24")
 
 [node name="Title" type="TextureRect" parent="Settings"]
-offset_left = 155.0
-offset_top = 27.0
-offset_right = 447.0
-offset_bottom = 114.0
+offset_left = 212.0
+offset_top = 63.0
+offset_right = 504.0
+offset_bottom = 150.0
 texture = ExtResource("4_f5b87")
+
+[node name="volume_main" type="TextureRect" parent="Settings"]
+offset_left = 705.0
+offset_top = 35.0
+offset_right = 1117.0
+offset_bottom = 166.0
+texture = ExtResource("10_3v6ml")
 
 [node name="Volume_Label" type="Label" parent="Settings"]
 unique_name_in_owner = true
-offset_left = 712.0
-offset_top = 71.0
-offset_right = 812.0
-offset_bottom = 97.0
-scale = Vector2(1.32, 1.32)
+offset_left = 714.0
+offset_top = 42.0
+offset_right = 1073.0
+offset_bottom = 98.0
+scale = Vector2(0.445, 0.445)
+theme = ExtResource("11_juhrv")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 76
 text = "Volume: 50%"
 
 [node name="Volume" type="HSlider" parent="Settings"]
 unique_name_in_owner = true
-offset_left = 714.0
-offset_top = 109.0
-offset_right = 1117.0
-offset_bottom = 125.0
+offset_left = 704.0
+offset_top = 89.0
+offset_right = 1107.0
+offset_bottom = 105.0
 max_value = 1.0
 step = 0.01
 value = 0.5
@@ -228,32 +248,32 @@ text = "Fullscreen"
 
 [node name="Back" type="Button" parent="Settings"]
 offset_left = 846.0
-offset_top = 554.0
+offset_top = 578.0
 offset_right = 933.0
-offset_bottom = 601.0
+offset_bottom = 625.0
 text = "Back"
 
 [node name="windowed_tag" type="TextureRect" parent="Settings"]
 offset_left = 760.0
-offset_top = 153.0
+offset_top = 185.0
 offset_right = 1037.0
-offset_bottom = 222.0
+offset_bottom = 254.0
 texture = ExtResource("9_kr4ux")
 
 [node name="fullscreen_tag" type="TextureRect" parent="Settings"]
 offset_left = 760.0
-offset_top = 461.0
+offset_top = 493.0
 offset_right = 1038.0
-offset_bottom = 531.0
+offset_bottom = 563.0
 texture = ExtResource("10_3d68q")
 
 [node name="window_switch" type="Control" parent="Settings"]
 layout_mode = 3
 anchors_preset = 0
 offset_left = 815.0
-offset_top = 217.0
+offset_top = 249.0
 offset_right = 1049.0
-offset_bottom = 543.0
+offset_bottom = 575.0
 scale = Vector2(0.75, 0.75)
 
 [node name="backing" type="TextureRect" parent="Settings/window_switch"]
