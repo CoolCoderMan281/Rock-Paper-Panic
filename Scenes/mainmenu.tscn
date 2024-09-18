@@ -13,7 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://bnf0rfadrqu8a" path="res://Assets/Settings/switch_backing.png" id="9_7xfr5"]
 [ext_resource type="Texture2D" uid="uid://bbgoserrvm42x" path="res://Assets/Settings/windowed_tag.png" id="9_kr4ux"]
 [ext_resource type="Texture2D" uid="uid://dpk32bytsp4v3" path="res://Assets/Settings/fullscreen_tag.png" id="10_3d68q"]
-[ext_resource type="Texture2D" uid="uid://c8802aln5x5ap" path="res://Assets/Settings/volume_bar.png" id="10_3v6ml"]
+[ext_resource type="Texture2D" uid="uid://da0xcyg54gcoc" path="res://Assets/Settings/volume_bar.png" id="10_3v6ml"]
 [ext_resource type="Texture2D" uid="uid://wumf6iahaseu" path="res://Assets/Settings/switch_lever.png" id="10_p0k6m"]
 [ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="11_juhrv"]
 [ext_resource type="Texture2D" uid="uid://cm75f1mfjwy3a" path="res://Assets/Settings/credits_clipboard.png" id="13_bhj24"]
@@ -174,7 +174,6 @@ texture = ExtResource("7_ina6n")
 
 [node name="Settings" type="Node2D" parent="."]
 unique_name_in_owner = true
-visible = false
 
 [node name="Background" type="ColorRect" parent="Settings"]
 offset_right = 40.0
