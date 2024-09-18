@@ -209,7 +209,6 @@ scale = Vector2(4.88, 2.92)
 text = "main menu"
 
 [node name="Debug" type="Node2D" parent="."]
-visible = false
 position = Vector2(0, -25)
 script = ExtResource("8_1kwu8")
 
@@ -306,6 +305,24 @@ offset_right = 702.0
 offset_bottom = -79.0
 scale = Vector2(1.72046, 1.68708)
 text = "Debug Options:"
+
+[node name="Debug_FPS_Label" type="Label" parent="Debug"]
+unique_name_in_owner = true
+offset_left = 578.0
+offset_top = 282.0
+offset_right = 610.0
+offset_bottom = 305.0
+scale = Vector2(2.15302, 2.15302)
+text = "FPS:"
+
+[node name="Debug_FPS_Label2" type="Label" parent="Debug"]
+unique_name_in_owner = true
+offset_left = 578.0
+offset_top = 341.0
+offset_right = 649.0
+offset_bottom = 364.0
+scale = Vector2(1.71181, 1.71181)
+text = "FPS Goal:"
 
 [connection signal="pressed" from="Player/Rock" to="Player" method="_on_rock_pressed"]
 [connection signal="pressed" from="Player/Paper" to="Player" method="_on_paper_pressed"]

@@ -8,6 +8,7 @@ const custom_theme = null
 enum difficulties { easy, normal, hard, custom, unset }
 var difficulty: difficulties = difficulties.unset
 
+var fps_goal: float = DisplayServer.screen_get_refresh_rate()
 var debug_enabled: bool = true
 var debug_stoptime: bool = false
 var debug_autoplay: bool = false
@@ -28,3 +29,10 @@ func quit():
 
 func set_scene(scenePath: String):
 	get_tree().change_scene_to_file(scenePath)
+
+
+func _ready():
+	if fps_goal == -1.0:
+		fps_goal = 60.0
+	Engine.max_fps = int(fps_goal)
+	print(Engine.max_fps)

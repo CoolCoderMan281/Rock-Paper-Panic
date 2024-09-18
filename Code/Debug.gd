@@ -45,3 +45,9 @@ func _on_debug_resource_path_set_pressed():
 	Globals.resource_path = %Debug_ResourcePath.text
 	%Player.update_selection_images()
 	%Enemy.reload_texture()
+
+
+func _process(_delta):
+	if Globals.debug_enabled and visible:
+		%Debug_FPS_Label.text = "FPS: "+str(Engine.get_frames_per_second())
+		%Debug_FPS_Label2.text = "FPS Goal: "+str(Globals.fps_goal)
