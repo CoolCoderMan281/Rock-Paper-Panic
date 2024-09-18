@@ -41,6 +41,7 @@ func _ready():
 	else:
 		fullscreen = true
 		windowed = false
+	_on_volume_value_changed(%Volume.value)
 	AudioServer.set_bus_volume_db(0, Globals.global_audio)
 
 
