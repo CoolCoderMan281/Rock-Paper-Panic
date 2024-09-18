@@ -209,6 +209,7 @@ scale = Vector2(4.88, 2.92)
 text = "main menu"
 
 [node name="Debug" type="Node2D" parent="."]
+visible = false
 position = Vector2(0, -25)
 script = ExtResource("8_1kwu8")
 

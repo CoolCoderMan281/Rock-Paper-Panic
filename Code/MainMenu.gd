@@ -9,6 +9,8 @@ extends Node
 # }
 var fullscreen = false
 var windowed = true
+var volumeCoverSizeX = 0
+var volumeCoverPosX = 0
 
 # for asset in reqired_assets:
 # 	if not FileAccess.file_exists("user://", asset):
@@ -21,6 +23,8 @@ func _ready():
 		print("Debug Mode is Enabled!")
 		%DebugNotice.visible = true
 	%Feedback.visible = Globals.feedback_welcome
+	volumeCoverSizeX = %Volume_Cover.size.x
+	volumeCoverPosX = %Volume_Cover.position.x
 	var required_assets = [
 		"res://Assets/Important/DifficultySelect.webp",
 		"res://Assets/Important/OhYea.webp",
@@ -62,6 +66,8 @@ func _on_volume_value_changed(value:float):
 	%Volume_Label.text = "Volume: " + str(value * 100) + "%"
 	AudioServer.set_bus_volume_db(0, value)
 	Globals.global_audio = AudioServer.get_bus_volume_db(0)
+	%Volume_Cover.size.x = volumeCoverSizeX-(volumeCoverSizeX*value)
+	%Volume_Cover.position.x = volumeCoverPosX+(volumeCoverSizeX*value)
 
 #func _on_windowed_pressed():
 #	%Windowed.disabled = true

@@ -174,6 +174,7 @@ texture = ExtResource("7_ina6n")
 
 [node name="Settings" type="Node2D" parent="."]
 unique_name_in_owner = true
+visible = false
 
 [node name="Background" type="ColorRect" parent="Settings"]
 offset_right = 40.0
@@ -202,6 +203,13 @@ offset_right = 1117.0
 offset_bottom = 166.0
 texture = ExtResource("10_3v6ml")
 
+[node name="Volume_Cover" type="ColorRect" parent="Settings/volume_main"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 412.0
+offset_bottom = 131.0
+color = Color(0, 0, 0, 0.862745)
+
 [node name="Volume_Label" type="Label" parent="Settings"]
 unique_name_in_owner = true
 offset_left = 714.0
@@ -216,10 +224,10 @@ text = "Volume: 50%"
 
 [node name="Volume" type="HSlider" parent="Settings"]
 unique_name_in_owner = true
-offset_left = 704.0
-offset_top = 89.0
-offset_right = 1107.0
-offset_bottom = 105.0
+offset_left = 705.0
+offset_top = 161.0
+offset_right = 1117.0
+offset_bottom = 177.0
 max_value = 1.0
 step = 0.01
 value = 0.5
