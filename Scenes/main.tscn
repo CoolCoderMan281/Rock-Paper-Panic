@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://bu6j0v2aj8gfi"]
+[gd_scene load_steps=19 format=3 uid="uid://bu6j0v2aj8gfi"]
 
 [ext_resource type="Script" path="res://Code/BattleMusic.gd" id="1_cxxti"]
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://1o50x80pi0v6" path="res://Assets/Game Over/over_retry.png" id="10_dmq57"]
 [ext_resource type="Texture2D" uid="uid://4svxata1gobm" path="res://Assets/Game Over/over_main.png" id="11_f2tlh"]
 [ext_resource type="Texture2D" uid="uid://b28ik3602dudw" path="res://Assets/Game Over/over_quit.png" id="12_a5uiq"]
+[ext_resource type="SpriteFrames" uid="uid://dquwprippf000" path="res://Assets/Default/Enemy Conveyor/conveyor_belt.tres" id="17_jt7j4"]
 
 [sub_resource type="GDScript" id="GDScript_a5fcu"]
 script/source = "extends CanvasLayer
@@ -31,6 +32,23 @@ position = Vector2(345, 221)
 [node name="Music" type="AudioStreamPlayer" parent="."]
 volume_db = -10.0
 script = ExtResource("1_cxxti")
+
+[node name="Enemy_Animated" type="AnimatedSprite2D" parent="."]
+position = Vector2(210, -12)
+scale = Vector2(0.360903, 0.360903)
+sprite_frames = ExtResource("17_jt7j4")
+animation = &"rock_idle"
+
+[node name="README" type="Label" parent="Enemy_Animated"]
+offset_left = -1485.16
+offset_top = -3341.62
+offset_right = 1594.84
+offset_bottom = -2288.62
+theme_override_font_sizes/font_size = 191
+text = "This is currently here for when all
+animations are imported; Scissor
+animations are missing, so this
+AnimatedSprite2D is hidden!"
 
 [node name="Enemy" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -171,6 +189,7 @@ theme_override_font_sizes/font_size = 40
 text = "PLAY AGAIN"
 
 [node name="retry_texture" type="TextureRect" parent="Lose/Retry"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("10_dmq57")
