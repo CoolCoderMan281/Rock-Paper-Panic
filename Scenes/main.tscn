@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bu6j0v2aj8gfi"]
+[gd_scene load_steps=19 format=3 uid="uid://bu6j0v2aj8gfi"]
 
 [ext_resource type="Script" path="res://Code/BattleMusic.gd" id="1_cxxti"]
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
@@ -12,6 +12,11 @@
 [ext_resource type="Script" path="res://Code/Countdown.gd" id="7_hbh5k"]
 [ext_resource type="Script" path="res://Code/Debug.gd" id="8_1kwu8"]
 [ext_resource type="Texture2D" uid="uid://blyjptyotgnm7" path="res://Assets/Default/Buttons/Scissors/Center/scissors_center.png" id="8_2cgpk"]
+[ext_resource type="Texture2D" uid="uid://c7kqkhsw3pfuq" path="res://Assets/Game Over/fired_graphic.png" id="10_7dql5"]
+[ext_resource type="Texture2D" uid="uid://1o50x80pi0v6" path="res://Assets/Game Over/over_retry.png" id="10_dmq57"]
+[ext_resource type="Texture2D" uid="uid://4svxata1gobm" path="res://Assets/Game Over/over_main.png" id="11_f2tlh"]
+[ext_resource type="Texture2D" uid="uid://b28ik3602dudw" path="res://Assets/Game Over/over_quit.png" id="12_a5uiq"]
+[ext_resource type="SpriteFrames" uid="uid://dquwprippf000" path="res://Assets/Default/Enemy Conveyor/conveyor_belt.tres" id="17_jt7j4"]
 
 [sub_resource type="GDScript" id="GDScript_a5fcu"]
 script/source = "extends CanvasLayer
@@ -27,6 +32,23 @@ position = Vector2(345, 221)
 [node name="Music" type="AudioStreamPlayer" parent="."]
 volume_db = -10.0
 script = ExtResource("1_cxxti")
+
+[node name="Enemy_Animated" type="AnimatedSprite2D" parent="."]
+position = Vector2(210, -12)
+scale = Vector2(0.360903, 0.360903)
+sprite_frames = ExtResource("17_jt7j4")
+animation = &"rock_idle"
+
+[node name="README" type="Label" parent="Enemy_Animated"]
+offset_left = -1485.16
+offset_top = -3341.62
+offset_right = 1594.84
+offset_bottom = -2288.62
+theme_override_font_sizes/font_size = 191
+text = "This is currently here for when all
+animations are imported; Scissor
+animations are missing, so this
+AnimatedSprite2D is hidden!"
 
 [node name="Enemy" type="Sprite2D" parent="."]
 unique_name_in_owner = true
@@ -103,61 +125,6 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Lose" type="CanvasLayer" parent="."]
-unique_name_in_owner = true
-visible = false
-script = SubResource("GDScript_a5fcu")
-
-[node name="ColorRect" type="ColorRect" parent="Lose"]
-offset_right = 1161.0
-offset_bottom = 657.0
-color = Color(0, 0.454902, 0.454902, 1)
-
-[node name="Label" type="Label" parent="Lose"]
-offset_left = 292.0
-offset_top = 42.0
-offset_right = 802.0
-offset_bottom = 179.0
-theme_override_font_sizes/font_size = 100
-text = "YOU LOSE!"
-horizontal_alignment = 1
-
-[node name="Retry" type="Button" parent="Lose"]
-offset_left = 452.0
-offset_top = 386.0
-offset_right = 691.0
-offset_bottom = 449.0
-theme_override_font_sizes/font_size = 40
-text = "PLAY AGAIN"
-
-[node name="MainMenu" type="Button" parent="Lose"]
-offset_left = 452.0
-offset_top = 471.0
-offset_right = 692.0
-offset_bottom = 534.0
-theme_override_font_sizes/font_size = 40
-text = "MAIN MENU"
-
-[node name="Quit" type="Button" parent="Lose"]
-offset_left = 452.0
-offset_top = 542.0
-offset_right = 692.0
-offset_bottom = 605.0
-theme_override_font_sizes/font_size = 40
-text = "QUIT"
-
-[node name="Final_Score" type="Label" parent="Lose"]
-unique_name_in_owner = true
-offset_left = 413.0
-offset_top = 189.0
-offset_right = 752.0
-offset_bottom = 258.0
-theme_override_font_sizes/font_size = 50
-text = "FINAL SCORE: "
-horizontal_alignment = 1
-vertical_alignment = 1
-metadata/_edit_use_anchors_ = true
-
 [node name="Countdown" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 script = ExtResource("7_hbh5k")
@@ -181,6 +148,97 @@ theme = ExtResource("7_gp2xf")
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
 text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Lose" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+script = SubResource("GDScript_a5fcu")
+
+[node name="ColorRect" type="ColorRect" parent="Lose"]
+offset_right = 1161.0
+offset_bottom = 657.0
+color = Color(0.0611451, 0.0336918, 0, 1)
+
+[node name="fired_graphic" type="TextureRect" parent="Lose"]
+offset_left = 29.0
+offset_top = 29.0
+offset_right = 707.0
+offset_bottom = 414.0
+texture = ExtResource("10_7dql5")
+
+[node name="Label" type="Label" parent="Lose"]
+visible = false
+offset_left = 292.0
+offset_top = 42.0
+offset_right = 802.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 100
+text = "YOU LOSE!"
+horizontal_alignment = 1
+
+[node name="Retry" type="Button" parent="Lose"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 138.0
+offset_top = 471.0
+offset_right = 433.0
+offset_bottom = 587.0
+theme_override_font_sizes/font_size = 40
+text = "PLAY AGAIN"
+
+[node name="retry_texture" type="TextureRect" parent="Lose/Retry"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_dmq57")
+
+[node name="MainMenu" type="Button" parent="Lose"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 452.0
+offset_top = 471.0
+offset_right = 747.0
+offset_bottom = 587.0
+theme_override_font_sizes/font_size = 40
+text = "MAIN MENU"
+
+[node name="main_texture" type="TextureRect" parent="Lose/MainMenu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_f2tlh")
+
+[node name="Quit" type="Button" parent="Lose"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 763.0
+offset_top = 471.0
+offset_right = 1058.0
+offset_bottom = 587.0
+theme_override_font_sizes/font_size = 40
+text = "QUIT"
+
+[node name="quit_texture" type="TextureRect" parent="Lose/Quit"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_a5uiq")
+
+[node name="Final_Score" type="Label" parent="Lose"]
+unique_name_in_owner = true
+offset_left = 741.0
+offset_top = 137.0
+offset_right = 1334.0
+offset_bottom = 228.0
+scale = Vector2(0.6, 0.6)
+theme = ExtResource("7_gp2xf")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.46, 0, 0.276, 0.364706)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/font_size = 125
+text = "FINAL SCORE: 
+"
 horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true

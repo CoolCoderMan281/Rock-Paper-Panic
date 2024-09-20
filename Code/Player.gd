@@ -50,7 +50,7 @@ func update_selection_images():
 
 func update_score():
 	%Score.text = str(score)
-	%Final_Score.text = "FINAL SCORE: " + str(score)
+	%Final_Score.text = "FINAL SCORE: \n" + str(score)
 
 
 func _on_rock_pressed():

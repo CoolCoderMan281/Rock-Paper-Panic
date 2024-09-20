@@ -124,6 +124,7 @@ text = "Debug Menu is enabled, if this
 is a mistake you need to rebuild."
 
 [node name="feedback_stickynote" type="TextureRect" parent="ActualMainMenu"]
+modulate = Color(0.971749, 0.858816, 0.771244, 1)
 offset_left = 36.5468
 offset_top = 393.0
 offset_right = 1111.55
@@ -149,14 +150,15 @@ text = "Feedback"
 [node name="Logo" type="Control" parent="ActualMainMenu"]
 layout_mode = 3
 anchors_preset = 0
-offset_left = 201.0
-offset_top = 157.0
-offset_right = 450.0
-offset_bottom = 366.0
+offset_left = 180.0
+offset_top = 160.0
+offset_right = 429.0
+offset_bottom = 369.0
 rotation = 0.13439
 scale = Vector2(0.35, 0.35)
 
 [node name="stickynote_back" type="TextureRect" parent="ActualMainMenu/Logo"]
+visible = false
 layout_mode = 0
 offset_left = -548.0
 offset_top = -439.0

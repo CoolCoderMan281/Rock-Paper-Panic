@@ -1,8 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://dte58gpdscy8f"]
+[gd_scene load_steps=9 format=3 uid="uid://dte58gpdscy8f"]
 
 [ext_resource type="Script" path="res://Code/GameplaySelect.gd" id="1_7t0e7"]
 [ext_resource type="Texture2D" uid="uid://y6ffehlb7qxf" path="res://Assets/Important/DifficultySelect.webp" id="2_alkbb"]
+[ext_resource type="Texture2D" uid="uid://bf664mr7jv37f" path="res://Assets/Difficulty Selection/easy_mode.png" id="2_jl80h"]
+[ext_resource type="Texture2D" uid="uid://b1oyytvcj1n8v" path="res://Assets/Difficulty Selection/normal_mode.png" id="3_0qsjh"]
 [ext_resource type="Texture2D" uid="uid://b2u4sv21o8goj" path="res://Assets/Important/OhYea.webp" id="3_5rjww"]
+[ext_resource type="Texture2D" uid="uid://mxg17mxkenkw" path="res://Assets/Difficulty Selection/hard_mode.png" id="4_v682s"]
+[ext_resource type="Texture2D" uid="uid://b0bmxj08dmkag" path="res://Assets/Difficulty Selection/back_button.png" id="5_vaooo"]
+[ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="6_wjp4v"]
 
 [node name="Gameplayselect" type="Node2D"]
 script = ExtResource("1_7t0e7")
@@ -10,63 +15,109 @@ script = ExtResource("1_7t0e7")
 [node name="ColorRect" type="ColorRect" parent="."]
 offset_right = 1164.0
 offset_bottom = 662.0
-color = Color(0.589096, 0.589096, 0.589096, 1)
+color = Color(0.711581, 0.568947, 0.200846, 1)
 
 [node name="Easy" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 506.0
-offset_top = 108.0
-offset_right = 655.0
-offset_bottom = 159.0
+offset_left = 52.0
+offset_top = 195.0
+offset_right = 328.0
+offset_bottom = 311.0
+scale = Vector2(1.25, 1.25)
 text = "Small"
+
+[node name="easy_texture" type="TextureRect" parent="ColorRect/Easy"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("2_jl80h")
 
 [node name="Normal" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 510.0
-offset_top = 216.0
+offset_left = 384.0
+offset_top = 340.0
 offset_right = 659.0
-offset_bottom = 267.0
+offset_bottom = 456.0
+scale = Vector2(1.25, 1.25)
 text = "Medium"
+
+[node name="normal_texture" type="TextureRect" parent="ColorRect/Normal"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("3_0qsjh")
 
 [node name="Hard" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 513.0
-offset_top = 327.0
-offset_right = 662.0
-offset_bottom = 378.0
+offset_left = 738.0
+offset_top = 486.0
+offset_right = 1013.0
+offset_bottom = 602.0
+scale = Vector2(1.25, 1.25)
 text = "LArge"
+
+[node name="hard_texture" type="TextureRect" parent="ColorRect/Hard"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("4_v682s")
 
 [node name="Back" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 504.0
-offset_top = 558.0
-offset_right = 653.0
-offset_bottom = 609.0
+offset_left = 28.0
+offset_top = 548.0
+offset_right = 273.0
+offset_bottom = 639.0
 text = "Back"
+
+[node name="back_text" type="TextureRect" parent="ColorRect/Back"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("5_vaooo")
 
 [node name="Multiplayer" type="Button" parent="ColorRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 723.0
-offset_top = 15.0
-offset_right = 1141.0
-offset_bottom = 66.0
+offset_left = 717.0
+offset_top = 32.0
+offset_right = 1135.0
+offset_bottom = 83.0
 text = "Multiplayer"
 
 [node name="Title" type="Label" parent="ColorRect"]
+modulate = Color(1, 0, 0, 1)
 layout_mode = 0
-offset_left = 473.0
-offset_top = 3.0
-offset_right = 546.0
-offset_bottom = 34.0
-scale = Vector2(3.85606, 3.86121)
-text = "Scared?"
+offset_left = 38.0
+offset_top = 28.0
+offset_right = 3229.0
+offset_bottom = 695.0
+scale = Vector2(0.2, 0.2)
+theme = ExtResource("6_wjp4v")
+theme_override_font_sizes/font_size = 456
+text = "Difficulty Select"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/Title"]
+show_behind_parent = true
+layout_mode = 0
+offset_left = -105.0
+offset_top = -61.0
+offset_right = 3292.0
+offset_bottom = 760.0
+color = Color(0, 0, 0, 1)
 
 [node name="NoTouchNotice" type="Label" parent="ColorRect"]
+visible = false
 layout_mode = 0
 offset_left = 661.0
 offset_top = 505.0
@@ -78,18 +129,20 @@ text = "no fixing my beutiful menuis >:|"
 [node name="VectorMode" type="CheckButton" parent="ColorRect"]
 unique_name_in_owner = true
 layout_mode = 0
-offset_left = 499.0
-offset_top = 416.0
-offset_right = 645.0
-offset_bottom = 467.0
+offset_left = 725.0
+offset_top = 104.0
+offset_right = 871.0
+offset_bottom = 155.0
 text = "Vector Mode"
 
 [node name="DifficultySelect" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(232, 337)
 scale = Vector2(0.610677, 0.606445)
 texture = ExtResource("2_alkbb")
 
 [node name="OhYea" type="Sprite2D" parent="."]
+visible = false
 position = Vector2(918, 281)
 scale = Vector2(0.55, 0.309302)
 texture = ExtResource("3_5rjww")

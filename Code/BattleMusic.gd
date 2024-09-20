@@ -5,7 +5,8 @@ extends AudioStreamPlayer
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if Globals.difficulty == Globals.difficulties.easy:
-		self.set_stream(preload(Globals.easy_theme))
+		#self.set_stream(preload(Globals.easy_theme))
+		pass
 		
 	elif Globals.difficulty == Globals.difficulties.normal:
 		self.set_stream(preload(Globals.normal_theme))
