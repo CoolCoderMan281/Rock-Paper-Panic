@@ -18,20 +18,21 @@ offset_right = 195.0
 offset_bottom = 634.0
 text = "Matchmaking Backend: "
 
-[node name="Control" type="Control" parent="."]
+[node name="Username_Prompt" type="Control" parent="."]
+unique_name_in_owner = true
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Background" type="ColorRect" parent="Control"]
+[node name="Background" type="ColorRect" parent="Username_Prompt"]
 layout_mode = 0
 offset_left = 42.0
 offset_top = 34.0
 offset_right = 1069.0
 offset_bottom = 606.0
 
-[node name="Username_Label" type="Label" parent="Control"]
+[node name="Username_Label" type="Label" parent="Username_Prompt"]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 0
 offset_left = 160.0
@@ -41,7 +42,7 @@ offset_bottom = 73.0
 scale = Vector2(9.07054, 5.78157)
 text = "Username:"
 
-[node name="Username_IN" type="LineEdit" parent="Control"]
+[node name="Username_IN" type="LineEdit" parent="Username_Prompt"]
 unique_name_in_owner = true
 layout_mode = 0
 offset_left = 102.0
@@ -50,7 +51,7 @@ offset_right = 169.063
 offset_bottom = 262.0
 scale = Vector2(13.2989, 5.78949)
 
-[node name="Username_SET" type="Button" parent="Control"]
+[node name="Username_SET" type="Button" parent="Username_Prompt"]
 layout_mode = 0
 offset_left = 300.0
 offset_top = 429.0
@@ -60,6 +61,7 @@ scale = Vector2(15.4857, 4.82892)
 text = "Set"
 
 [node name="Main" type="Control" parent="."]
+unique_name_in_owner = true
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -106,6 +108,7 @@ item_count = 1
 popup/item_0/text = "Its only LArge"
 
 [node name="CreatedRoom" type="Control" parent="."]
+unique_name_in_owner = true
 visible = false
 layout_mode = 3
 anchors_preset = 0
@@ -148,5 +151,6 @@ offset_bottom = 284.0
 scale = Vector2(6.44723, 6.44723)
 text = "Cancel"
 
+[connection signal="pressed" from="Username_Prompt/Username_SET" to="." method="_on_username_set_pressed"]
 [connection signal="pressed" from="Main/RoomJoin" to="." method="_on_room_join_pressed"]
 [connection signal="pressed" from="Main/CreateRoom" to="." method="_on_create_room_pressed"]

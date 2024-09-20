@@ -11,3 +11,9 @@ func _on_room_join_pressed() -> void:
 
 func _on_create_room_pressed() -> void:
 	var server_url = Globals.multiplayer_host+"create_room"
+
+
+func _on_username_set_pressed():
+	Globals.multiplayer_username = %Username_IN.text
+	%Username_Prompt.visible = false
+	%Main.visible = true
