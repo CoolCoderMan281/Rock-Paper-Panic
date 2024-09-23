@@ -6,7 +6,7 @@ var choice: String
 var pastChoice: String
 
 
-var base_path: String = "res://Assets/Default/Conveyor/"
+const base_path: String = "res://Assets/Default/Conveyor/"
 var choice_paths: Dictionary = {
 	"Rock": "Rock/",
 	"Paper": "Paper/",
@@ -14,41 +14,57 @@ var choice_paths: Dictionary = {
 }
 
 
-var transition_texture: String = base_path + "RPS_Transition.png"
+const transition_texture = preload(base_path + "RPS_Transition.png")
 var frame_counts: Dictionary = { "Rock": 3, "Paper": 5, "Scissors": 5 }
 
 
-var fps: int = 12  # Rayan using 12 for some reason :skull:
+var preloaded_textures: Dictionary = {
+	"Rock": [
+		preload(base_path + "Rock/rock_in_1.png"),
+		preload(base_path + "Rock/rock_in_2.png"),
+		preload(base_path + "Rock/rock_in_3.png"),
+		preload(base_path + "Rock/rock_idle.png")
+	],
+	"Paper": [
+		preload(base_path + "Paper/paper_in_1.png"),
+		preload(base_path + "Paper/paper_in_2.png"),
+		preload(base_path + "Paper/paper_in_3.png"),
+		preload(base_path + "Paper/paper_in_4.png"),
+		preload(base_path + "Paper/paper_in_5.png"),
+		preload(base_path + "Paper/paper_idle.png")
+	],
+	"Scissors": [
+		preload(base_path + "Scissors/scissors_in_1.png"),
+		preload(base_path + "Scissors/scissors_in_2.png"),
+		preload(base_path + "Scissors/scissors_in_3.png"),
+		preload(base_path + "Scissors/scissors_in_4.png"),
+		preload(base_path + "Scissors/scissors_in_5.png"),
+		preload(base_path + "Scissors/scissors_idle.png")
+	]
+}
 
+
+var fps: int = 12  # Rayan using 12 fps for some reason :skull:
 
 func _ready():
 	new_choice()
 
 
-
 func update_display() -> void:
-	change_texture(transition_texture)
+	texture = transition_texture
 	await get_tree().create_timer(0.2).timeout
 	await play_animation_frames()
-	change_texture(base_path + choice_paths.get(choice) + choice.to_lower() + "_idle.png")
+	texture = preloaded_textures[choice].back()
 
 
-func play_animation_frames() -> void: # Plays in_ frames
+func play_animation_frames() -> void:
 	var total_frames = frame_counts.get(choice)
 	var frame_delay = 1.0 / fps
 	
+
 	for i in range(total_frames):
-		var frame_path = base_path + choice_paths.get(choice) + choice + "_in_" + str(i + 1) + ".png"
-		change_texture(frame_path)
+		texture = preloaded_textures[choice][i]
 		await get_tree().create_timer(frame_delay).timeout
-
-
-func change_texture(new_path: String) -> void:
-	var new_texture: Texture2D = load(new_path)
-	if new_texture:
-		texture = new_texture
-	else:
-		print("Failed to load texture: " + new_path)
 
 
 func new_choice() -> void:
