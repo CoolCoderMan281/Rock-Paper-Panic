@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://s7802tp51tgs"
-path="res://.godot/imported/idle_rock.png-0006d14f07d29b936deb9ddb59592211.ctex"
+uid="uid://b5fe7dyd4ucnb"
+path="res://.godot/imported/scissors_in_2.png-338948c3e38d1aa541ae9511fb623eb5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Default/Enemy Conveyor/idle_rock.png"
-dest_files=["res://.godot/imported/idle_rock.png-0006d14f07d29b936deb9ddb59592211.ctex"]
+source_file="res://Assets/Default/Conveyor/Scissors/scissors_in_2.png"
+dest_files=["res://.godot/imported/scissors_in_2.png-338948c3e38d1aa541ae9511fb623eb5.ctex"]
 
 [params]
 

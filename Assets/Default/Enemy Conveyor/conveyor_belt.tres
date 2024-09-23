@@ -30,7 +30,7 @@
 [ext_resource type="Texture2D" uid="uid://chj3uxilbituk" path="res://Assets/Default/Enemy Conveyor/conveyor_transition/conveyor_transition0003.png" id="15_4e48e"]
 [ext_resource type="Texture2D" uid="uid://bjuv5nplcxeft" path="res://Assets/Default/Enemy Conveyor/conveyor_transition/conveyor_transition0004.png" id="16_sfdpk"]
 [ext_resource type="Texture2D" uid="uid://b6n5padkccggy" path="res://Assets/Default/Enemy Conveyor/conveyor_transition/conveyor_transition0005.png" id="17_p1h2e"]
-[ext_resource type="Texture2D" uid="uid://s7802tp51tgs" path="res://Assets/Default/Enemy Conveyor/idle_rock.png" id="20_yw3y2"]
+[ext_resource type="Texture2D" uid="uid://s7802tp51tgs" path="res://Assets/Default/Conveyor/Rock/rock_idle.png" id="20_yw3y2"]
 
 [resource]
 animations = [{
