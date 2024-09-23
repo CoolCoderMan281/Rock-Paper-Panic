@@ -34,6 +34,7 @@ volume_db = -10.0
 script = ExtResource("1_cxxti")
 
 [node name="Enemy_Animated" type="AnimatedSprite2D" parent="."]
+visible = false
 position = Vector2(210, -12)
 scale = Vector2(0.360903, 0.360903)
 sprite_frames = ExtResource("17_jt7j4")
