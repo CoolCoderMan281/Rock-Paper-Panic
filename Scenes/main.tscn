@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Code/BattleMusic.gd" id="1_cxxti"]
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
 [ext_resource type="Script" path="res://Code/Enemy.gd" id="1_oxske"]
-[ext_resource type="Texture2D" uid="uid://cwajpnla84nbj" path="res://Assets/Default/battle_background.png" id="1_pv84b"]
-[ext_resource type="Texture2D" uid="uid://cyhqv1mopvf21" path="res://Assets/Default/scissors.png" id="5_uj5bi"]
+[ext_resource type="Texture2D" uid="uid://bq4fmb7hlavyg" path="res://Assets/Default/battle_background.png" id="1_pv84b"]
+[ext_resource type="Texture2D" uid="uid://cbx3qlubqdacr" path="res://Assets/Default/Conveyor/Paper/paper_idle.png" id="3_4bkp2"]
 [ext_resource type="Texture2D" uid="uid://b36pof77p2gd" path="res://Assets/Default/Buttons/Rock/Center/rock_center.png" id="6_kk75n"]
 [ext_resource type="Texture2D" uid="uid://dbehc3e3yt71g" path="res://Assets/Default/paper_button.png" id="6_ls8lb"]
 [ext_resource type="Script" path="res://Code/Options.gd" id="7_1iy2a"]
@@ -53,9 +53,9 @@ AnimatedSprite2D is hidden!"
 
 [node name="Enemy" type="Sprite2D" parent="."]
 unique_name_in_owner = true
-position = Vector2(229, 55)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("5_uj5bi")
+position = Vector2(230, -16)
+scale = Vector2(0.410002, 0.370002)
+texture = ExtResource("3_4bkp2")
 script = ExtResource("1_oxske")
 
 [node name="Background" type="Control" parent="."]
@@ -69,8 +69,9 @@ scale = Vector2(0.72, 0.72)
 
 [node name="battle_bg" type="TextureRect" parent="Background"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 2057.0
+offset_bottom = 1157.0
+scale = Vector2(0.777778, 0.777778)
 texture = ExtResource("1_pv84b")
 
 [node name="Player" type="Node2D" parent="."]
@@ -79,30 +80,30 @@ script = ExtResource("1_kolsd")
 
 [node name="Rock" type="TextureButton" parent="Player"]
 unique_name_in_owner = true
-offset_left = 31.0
-offset_top = 197.0
-offset_right = 231.0
-offset_bottom = 397.0
+offset_left = -42.0
+offset_top = 181.0
+offset_right = 158.0
+offset_bottom = 381.0
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("6_kk75n")
 metadata/_edit_use_anchors_ = true
 
 [node name="Paper" type="TextureButton" parent="Player"]
 unique_name_in_owner = true
-offset_left = 183.0
-offset_top = 195.0
-offset_right = 383.0
-offset_bottom = 395.0
+offset_left = 185.0
+offset_top = 180.0
+offset_right = 385.0
+offset_bottom = 380.0
 scale = Vector2(0.55, 0.55)
 texture_normal = ExtResource("6_ls8lb")
 metadata/_edit_use_anchors_ = true
 
 [node name="Scissors" type="TextureButton" parent="Player"]
 unique_name_in_owner = true
-offset_left = 330.0
-offset_top = 189.0
-offset_right = 530.0
-offset_bottom = 389.0
+offset_left = 411.0
+offset_top = 177.0
+offset_right = 611.0
+offset_bottom = 377.0
 scale = Vector2(0.55, 0.55)
 texture_normal = ExtResource("8_2cgpk")
 metadata/_edit_use_anchors_ = true
@@ -113,10 +114,10 @@ skew = 0.244346
 
 [node name="Score" type="Label" parent="Player/Score Text"]
 unique_name_in_owner = true
-offset_left = 5.24932
-offset_top = 1.0306
-offset_right = 616.249
-offset_bottom = 140.031
+offset_left = -70.4933
+offset_top = -10.3061
+offset_right = 540.506
+offset_bottom = 128.694
 rotation = 0.0385689
 theme = ExtResource("7_gp2xf")
 theme_override_colors/font_color = Color(1, 0, 0, 1)
@@ -141,10 +142,10 @@ unique_name_in_owner = true
 anchors_preset = -1
 anchor_left = -0.132813
 anchor_bottom = 0.143519
-offset_left = -6.55615
-offset_top = 19.6525
-offset_right = 170.444
-offset_bottom = 74.6525
+offset_left = 64.8548
+offset_top = 12.7919
+offset_right = 241.855
+offset_bottom = 67.7919
 theme = ExtResource("7_gp2xf")
 theme_override_colors/font_color = Color(1, 0, 0, 1)
 theme_override_font_sizes/font_size = 40
