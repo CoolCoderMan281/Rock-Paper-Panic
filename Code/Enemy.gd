@@ -15,7 +15,7 @@ var choice_paths: Dictionary = {
 
 
 const transition_texture = preload(base_path + "RPS_Transition.png")
-var frame_counts: Dictionary = { "Rock": 3, "Paper": 5, "Scissors": 5 }
+var frame_counts: Dictionary = { "Rock": 4, "Paper": 6, "Scissors": 6 }
 
 
 var preloaded_textures: Dictionary = {
@@ -23,6 +23,7 @@ var preloaded_textures: Dictionary = {
 		preload(base_path + "Rock/rock_in_1.png"),
 		preload(base_path + "Rock/rock_in_2.png"),
 		preload(base_path + "Rock/rock_in_3.png"),
+		preload(base_path + "Rock/rock_in_4.png"),
 		preload(base_path + "Rock/rock_idle.png")
 	],
 	"Paper": [
@@ -31,6 +32,7 @@ var preloaded_textures: Dictionary = {
 		preload(base_path + "Paper/paper_in_3.png"),
 		preload(base_path + "Paper/paper_in_4.png"),
 		preload(base_path + "Paper/paper_in_5.png"),
+		preload(base_path + "Paper/paper_in_6.png"),
 		preload(base_path + "Paper/paper_idle.png")
 	],
 	"Scissors": [
@@ -39,6 +41,7 @@ var preloaded_textures: Dictionary = {
 		preload(base_path + "Scissors/scissors_in_3.png"),
 		preload(base_path + "Scissors/scissors_in_4.png"),
 		preload(base_path + "Scissors/scissors_in_5.png"),
+		preload(base_path + "Scissors/scissors_in_6.png"),
 		preload(base_path + "Scissors/scissors_idle.png")
 	]
 }
