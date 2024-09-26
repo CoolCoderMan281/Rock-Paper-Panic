@@ -8,12 +8,11 @@ var win_req: int = 0
 var timer_min: int = 2
 
 func _ready():
-	if Globals.difficulty == Globals.difficulties.easy:
-		win_req = 20
-	elif Globals.difficulty == Globals.difficulties.normal:
+	if Globals.difficulty == Globals.difficulties.normal:
 		win_req = 10
 	elif Globals.difficulty == Globals.difficulties.hard:
 		win_req = 5
+		INITIAL_TIME = 5
 	else:
 		print("Something has gone seriously wrong, there is no difficulty..")
 		win_req = 999
