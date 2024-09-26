@@ -1,11 +1,6 @@
 extends Node2D
 
 
-func _on_easy_pressed() -> void:
-	Globals.difficulty = Globals.difficulties.easy
-	Globals.set_scene("res://Scenes/main.tscn")
-
-
 func _on_normal_pressed() -> void:
 	Globals.difficulty = Globals.difficulties.normal
 	Globals.set_scene("res://Scenes/main.tscn")

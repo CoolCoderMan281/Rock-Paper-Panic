@@ -101,6 +101,7 @@ offset_bottom = 532.0
 scale = Vector2(1.25, 1.25)
 
 [node name="Background" type="ColorRect" parent="Clipboard"]
+layout_mode = 0
 offset_left = -620.0
 offset_top = 48.0
 offset_right = -550.0
