@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://dte58gpdscy8f"]
+[gd_scene load_steps=7 format=3 uid="uid://dte58gpdscy8f"]
 
 [ext_resource type="Script" path="res://Code/GameplaySelect.gd" id="1_7t0e7"]
 [ext_resource type="Texture2D" uid="uid://bf664mr7jv37f" path="res://Assets/Difficulty Selection/easy_mode.png" id="2_jl80h"]
@@ -6,12 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://mxg17mxkenkw" path="res://Assets/Difficulty Selection/hard_mode.png" id="4_v682s"]
 [ext_resource type="Texture2D" uid="uid://b0bmxj08dmkag" path="res://Assets/Difficulty Selection/back_button.png" id="5_vaooo"]
 [ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="6_wjp4v"]
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6vxp7"]
-load_path = "res://.godot/imported/DifficultySelect.webp-333d139df1b020bd90f1658b831f92d9.ctex"
-
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2v8qx"]
-load_path = "res://.godot/imported/OhYea.webp-27042276a8fde1ce3dc356ffcebd47f1.ctex"
 
 [node name="Gameplayselect" type="Node2D"]
 script = ExtResource("1_7t0e7")
@@ -88,15 +82,6 @@ offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("5_vaooo")
 
-[node name="Multiplayer" type="Button" parent="ColorRect"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 717.0
-offset_top = 32.0
-offset_right = 1135.0
-offset_bottom = 83.0
-text = "Multiplayer"
-
 [node name="Title" type="Label" parent="ColorRect"]
 modulate = Color(1, 0, 0, 1)
 layout_mode = 0
@@ -120,40 +105,7 @@ offset_right = 3292.0
 offset_bottom = 760.0
 color = Color(0, 0, 0, 1)
 
-[node name="NoTouchNotice" type="Label" parent="ColorRect"]
-visible = false
-layout_mode = 0
-offset_left = 661.0
-offset_top = 505.0
-offset_right = 927.0
-offset_bottom = 528.0
-scale = Vector2(1.95434, 5.83307)
-text = "no fixing my beutiful menuis >:|"
-
-[node name="VectorMode" type="CheckButton" parent="ColorRect"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 725.0
-offset_top = 104.0
-offset_right = 871.0
-offset_bottom = 155.0
-text = "Vector Mode"
-
-[node name="DifficultySelect" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(232, 337)
-scale = Vector2(0.610677, 0.606445)
-texture = SubResource("CompressedTexture2D_6vxp7")
-
-[node name="OhYea" type="Sprite2D" parent="."]
-visible = false
-position = Vector2(918, 281)
-scale = Vector2(0.55, 0.309302)
-texture = SubResource("CompressedTexture2D_2v8qx")
-
 [connection signal="pressed" from="ColorRect/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="ColorRect/Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="ColorRect/Hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="ColorRect/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="ColorRect/Multiplayer" to="." method="_on_multiplayer_pressed"]
-[connection signal="toggled" from="ColorRect/VectorMode" to="." method="_on_check_button_toggled"]

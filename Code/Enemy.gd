@@ -90,11 +90,9 @@ func update_display() -> void:
 
 
 func play_leave_animation() -> void:
-	var total_frames = 6
 	var frame_delay = 1.0 / fps
 
 	for i in range(1,6):
-		print(pastChoice+"_out_"+str(i))
 		texture = preloaded_textures_out[pastChoice][i]
 		await get_tree().create_timer(frame_delay).timeout
 
