@@ -7,18 +7,17 @@ const custom_theme = null
 
 enum difficulties { easy, normal, hard, custom, unset }
 var difficulty: difficulties = difficulties.unset
+enum gamemode { default, lizard_hunter, unset }
+var mode: gamemode = gamemode.unset
 
 var fps_goal: float = DisplayServer.screen_get_refresh_rate()
 var debug_enabled: bool = true
 var debug_stoptime: bool = false
 var debug_autoplay: bool = false
-var multiplayer_host: String = "https://awesnap.dev/"
-var multiplayer_username: String = "undefined"
 var feedback_welcome: bool = true
 var feedback_url: String = "https://forms.gle/Ws9qj8pPWxE9waaRA"
 var resource_path: String = "res://Assets/Default/"
 var default_resource_path: String = resource_path
-
 var global_audio: float = 0.5
 
 func quit():

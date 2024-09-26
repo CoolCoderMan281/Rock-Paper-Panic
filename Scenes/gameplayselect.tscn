@@ -27,8 +27,10 @@ text = "Medium"
 
 [node name="normal_texture" type="TextureRect" parent="ColorRect/Normal"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = 284.0
+offset_top = -12.0
+offset_right = 559.0
+offset_bottom = 104.0
 texture = ExtResource("3_0qsjh")
 
 [node name="Hard" type="Button" parent="ColorRect"]
@@ -81,12 +83,39 @@ vertical_alignment = 1
 [node name="ColorRect" type="ColorRect" parent="ColorRect/Title"]
 show_behind_parent = true
 layout_mode = 0
-offset_left = -105.0
-offset_top = -61.0
-offset_right = 3292.0
-offset_bottom = 760.0
+offset_left = -225.0
+offset_top = -130.0
+offset_right = 5660.0
+offset_bottom = 785.0
 color = Color(0, 0, 0, 1)
+
+[node name="Mode_Select" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RPS_Mode" type="CheckBox" parent="Mode_Select"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 227.0
+offset_right = 384.0
+offset_bottom = 266.0
+scale = Vector2(2.45867, 2.45867)
+button_pressed = true
+text = "Rock Paper Scissors"
+
+[node name="Zuckerberg_Mode" type="CheckBox" parent="Mode_Select"]
+layout_mode = 0
+offset_left = 83.0
+offset_top = 293.0
+offset_right = 384.0
+offset_bottom = 332.0
+scale = Vector2(2.53286, 2.53286)
+text = "Zuckerberg Mode"
 
 [connection signal="pressed" from="ColorRect/Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="ColorRect/Hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="ColorRect/Back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="Mode_Select/RPS_Mode" to="." method="_on_rps_mode_toggled"]
+[connection signal="toggled" from="Mode_Select/Zuckerberg_Mode" to="." method="_on_zuckerberg_mode_toggled"]
