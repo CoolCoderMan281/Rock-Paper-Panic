@@ -16,66 +16,10 @@ var choice_paths: Dictionary = {
 
 const transition_texture = preload(base_path + "RPS_Transition.png")
 var frame_counts: Dictionary = { "Rock": 4, "Paper": 6, "Scissors": 6 }
-
-
-var preloaded_textures: Dictionary = {
-	"Rock": [
-		preload(base_path + "Rock/rock_in_1.png"),
-		preload(base_path + "Rock/rock_in_2.png"),
-		preload(base_path + "Rock/rock_in_3.png"),
-		preload(base_path + "Rock/rock_in_4.png"),
-		preload(base_path + "Rock/rock_idle.png")
-	],
-	"Paper": [
-		preload(base_path + "Paper/paper_in_1.png"),
-		preload(base_path + "Paper/paper_in_2.png"),
-		preload(base_path + "Paper/paper_in_3.png"),
-		preload(base_path + "Paper/paper_in_4.png"),
-		preload(base_path + "Paper/paper_in_5.png"),
-		preload(base_path + "Paper/paper_in_6.png"),
-		preload(base_path + "Paper/paper_idle.png")
-	],
-	"Scissors": [
-		preload(base_path + "Scissors/scissors_in_1.png"),
-		preload(base_path + "Scissors/scissors_in_2.png"),
-		preload(base_path + "Scissors/scissors_in_3.png"),
-		preload(base_path + "Scissors/scissors_in_4.png"),
-		preload(base_path + "Scissors/scissors_in_5.png"),
-		preload(base_path + "Scissors/scissors_in_6.png"),
-		preload(base_path + "Scissors/scissors_idle.png")
-	]
-}
-
-
-var preloaded_textures_out: Dictionary = {
-	"Rock": [
-		preload(base_path + "Rock/rock_out_1.png"),
-		preload(base_path + "Rock/rock_out_2.png"),
-		preload(base_path + "Rock/rock_out_3.png"),
-		preload(base_path + "Rock/rock_out_4.png"),
-		preload(base_path + "Rock/rock_out_5.png"),
-		preload(base_path + "Rock/rock_out_6.png")
-	],
-	"Paper": [
-		preload(base_path + "Paper/paper_out_1.png"),
-		preload(base_path + "Paper/paper_out_2.png"),
-		preload(base_path + "Paper/paper_out_3.png"),
-		preload(base_path + "Paper/paper_out_4.png"),
-		preload(base_path + "Paper/paper_out_5.png"),
-		preload(base_path + "Paper/paper_out_6.png")
-	],
-	"Scissors": [
-		preload(base_path + "Scissors/scissors_out_1.png"),
-		preload(base_path + "Scissors/scissors_out_2.png"),
-		preload(base_path + "Scissors/scissors_out_3.png"),
-		preload(base_path + "Scissors/scissors_out_4.png"),
-		preload(base_path + "Scissors/scissors_out_5.png"),
-		preload(base_path + "Scissors/scissors_out_6.png")
-	]
-}
-
+var texture_cache: Dictionary = {}
 
 var fps: int = 12  # Rayan using 12 fps for some reason :skull:
+
 
 func _ready():
 	new_choice()
@@ -84,26 +28,47 @@ func _ready():
 func update_display() -> void:
 	await get_tree().create_timer(0.2).timeout
 	await play_leave_animation()
+
 	texture = transition_texture
-	await play_animation_frames()
-	texture = preloaded_textures[choice].back()
+	queue_redraw()
+	await get_tree().create_timer(0.2).timeout
+
+	await play_enter_animation()
+
+	texture = get_texture_from_cache(choice, "idle")
+	queue_redraw()
 
 
 func play_leave_animation() -> void:
 	var frame_delay = 1.0 / fps
+	var total_frames = 6
 
-	for i in range(1,6):
-		texture = preloaded_textures_out[pastChoice][i]
+	for i in range(total_frames):
+		texture = get_texture_from_cache(pastChoice, "out_" + str(i + 1))
+		queue_redraw()
 		await get_tree().create_timer(frame_delay).timeout
 
 
-func play_animation_frames() -> void:
+func play_enter_animation() -> void:
 	var total_frames = frame_counts.get(choice)
 	var frame_delay = 1.0 / fps
 
 	for i in range(total_frames):
-		texture = preloaded_textures[choice][i]
+		texture = get_texture_from_cache(choice, "in_" + str(i + 1))
+		queue_redraw()
 		await get_tree().create_timer(frame_delay).timeout
+
+
+func get_texture_from_cache(type: String, frame: String) -> Texture2D:
+	if !texture_cache.has(type):
+		texture_cache[type] = {}
+	
+	if !texture_cache[type].has(frame):
+		var texture_path = base_path + choice_paths[type] + type.to_lower() + "_" + frame + ".png"
+		var new_texture = load(texture_path)
+		texture_cache[type][frame] = new_texture
+	
+	return texture_cache[type][frame]
 
 
 func new_choice() -> void:
@@ -113,4 +78,5 @@ func new_choice() -> void:
 		choice = possible_choices.pick_random()
 		if choice != pastChoice:
 			break
+
 	update_display()
