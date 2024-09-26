@@ -1,13 +1,17 @@
 [gd_scene load_steps=9 format=3 uid="uid://dte58gpdscy8f"]
 
 [ext_resource type="Script" path="res://Code/GameplaySelect.gd" id="1_7t0e7"]
-[ext_resource type="Texture2D" uid="uid://y6ffehlb7qxf" path="res://Assets/Important/DifficultySelect.webp" id="2_alkbb"]
 [ext_resource type="Texture2D" uid="uid://bf664mr7jv37f" path="res://Assets/Difficulty Selection/easy_mode.png" id="2_jl80h"]
 [ext_resource type="Texture2D" uid="uid://b1oyytvcj1n8v" path="res://Assets/Difficulty Selection/normal_mode.png" id="3_0qsjh"]
-[ext_resource type="Texture2D" uid="uid://b2u4sv21o8goj" path="res://Assets/Important/OhYea.webp" id="3_5rjww"]
 [ext_resource type="Texture2D" uid="uid://mxg17mxkenkw" path="res://Assets/Difficulty Selection/hard_mode.png" id="4_v682s"]
 [ext_resource type="Texture2D" uid="uid://b0bmxj08dmkag" path="res://Assets/Difficulty Selection/back_button.png" id="5_vaooo"]
 [ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="6_wjp4v"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6vxp7"]
+load_path = "res://.godot/imported/DifficultySelect.webp-333d139df1b020bd90f1658b831f92d9.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2v8qx"]
+load_path = "res://.godot/imported/OhYea.webp-27042276a8fde1ce3dc356ffcebd47f1.ctex"
 
 [node name="Gameplayselect" type="Node2D"]
 script = ExtResource("1_7t0e7")
@@ -139,13 +143,13 @@ text = "Vector Mode"
 visible = false
 position = Vector2(232, 337)
 scale = Vector2(0.610677, 0.606445)
-texture = ExtResource("2_alkbb")
+texture = SubResource("CompressedTexture2D_6vxp7")
 
 [node name="OhYea" type="Sprite2D" parent="."]
 visible = false
 position = Vector2(918, 281)
 scale = Vector2(0.55, 0.309302)
-texture = ExtResource("3_5rjww")
+texture = SubResource("CompressedTexture2D_2v8qx")
 
 [connection signal="pressed" from="ColorRect/Easy" to="." method="_on_easy_pressed"]
 [connection signal="pressed" from="ColorRect/Normal" to="." method="_on_normal_pressed"]
