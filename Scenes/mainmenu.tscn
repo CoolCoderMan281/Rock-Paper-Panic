@@ -1,10 +1,7 @@
-[gd_scene load_steps=17 format=3 uid="uid://cm60yvvsf5rso"]
+[gd_scene load_steps=20 format=3 uid="uid://cm60yvvsf5rso"]
 
 [ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
-[ext_resource type="Texture2D" uid="uid://ck0y2y4ha7q7s" path="res://Assets/Default/clipboard_mainmenu.png" id="2_llpiq"]
-[ext_resource type="Texture2D" uid="uid://j2lu7nhq6vvv" path="res://Assets/Default/button_play.png" id="3_mmdr2"]
 [ext_resource type="Texture2D" uid="uid://cv4qplsnmnw8j" path="res://Assets/Default/button_settings.png" id="4_f5b87"]
-[ext_resource type="Texture2D" uid="uid://dxye0udu82lus" path="res://Assets/Default/button_quit.png" id="5_dd2cq"]
 [ext_resource type="Texture2D" uid="uid://dxvf24u7n7rsk" path="res://Assets/Default/placeholder_stickynote.png" id="6_mlnkw"]
 [ext_resource type="Texture2D" uid="uid://cxlli8mf0wy2l" path="res://Assets/Default/game_logo.png" id="7_ina6n"]
 [ext_resource type="Theme" uid="uid://ro5pv5fiidmj" path="res://Assets/Fonts/Fake Handwritten FONT.tres" id="7_si1of"]
@@ -15,6 +12,12 @@
 [ext_resource type="Texture2D" uid="uid://wumf6iahaseu" path="res://Assets/Settings/switch_lever.png" id="10_p0k6m"]
 [ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="11_juhrv"]
 [ext_resource type="Texture2D" uid="uid://cm75f1mfjwy3a" path="res://Assets/Settings/credits_clipboard.png" id="13_bhj24"]
+[ext_resource type="Texture2D" uid="uid://dfogsn5vna7vg" path="res://Assets/Default/MenuClipboard/Clipboard.png" id="13_tjvie"]
+[ext_resource type="Texture2D" uid="uid://b81j7k0e7d0ky" path="res://Assets/Default/MenuClipboard/Clipboard_Play.png" id="14_uvh60"]
+[ext_resource type="Texture2D" uid="uid://lnc0qn86v6tk" path="res://Assets/Default/MenuClipboard/Clipboard_Tutorial.png" id="15_7blyu"]
+[ext_resource type="Texture2D" uid="uid://di23p201j05di" path="res://Assets/Default/MenuClipboard/Clipboard_Settings.png" id="16_wb5wj"]
+[ext_resource type="Texture2D" uid="uid://cqug1l022ycq6" path="res://Assets/Default/MenuClipboard/Clipboard_Credits.png" id="17_4b6ji"]
+[ext_resource type="Texture2D" uid="uid://dbnwyd5pp1gpx" path="res://Assets/Default/MenuClipboard/Clipboard_Quit.png" id="18_kwkl8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56r7i"]
 
@@ -22,91 +25,7 @@
 script = ExtResource("1_glogx")
 
 [node name="ActualMainMenu" type="Node2D" parent="."]
-
-[node name="Background" type="ColorRect" parent="ActualMainMenu"]
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(29.24, 16.56)
-color = Color(0.87451, 0.682353, 0.298039, 1)
-
-[node name="UI" type="Control" parent="ActualMainMenu"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 320.0
-offset_top = -358.0
-offset_right = 973.0
-offset_bottom = 541.0
-scale = Vector2(1.25, 1.25)
-
-[node name="Clipboard" type="TextureRect" parent="ActualMainMenu/UI"]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -326.5
-offset_top = -449.5
-offset_right = 123.5
-offset_bottom = 170.5
-grow_horizontal = 2
-grow_vertical = 2
-scale = Vector2(1.45, 1.45)
-texture = ExtResource("2_llpiq")
-
-[node name="Play" type="Button" parent="ActualMainMenu/UI"]
-unique_name_in_owner = true
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 79.0
-offset_top = 337.0
-offset_right = 181.0
-offset_bottom = 368.0
-scale = Vector2(4.75, 4.19)
-text = "Play"
-
-[node name="play_texture" type="TextureRect" parent="ActualMainMenu/UI/Play"]
-layout_mode = 0
-offset_right = 292.0
-offset_bottom = 89.0
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("3_mmdr2")
-
-[node name="Settings_To" type="Button" parent="ActualMainMenu/UI"]
-unique_name_in_owner = true
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 91.0
-offset_top = 499.0
-offset_right = 194.0
-offset_bottom = 530.0
-scale = Vector2(4.35, 4.35)
-text = "Settings"
-
-[node name="settings_texture" type="TextureRect" parent="ActualMainMenu/UI/Settings_To"]
-layout_mode = 0
-offset_right = 294.0
-offset_bottom = 88.0
-scale = Vector2(0.35, 0.35)
-texture = ExtResource("4_f5b87")
-
-[node name="Quit" type="Button" parent="ActualMainMenu/UI"]
-unique_name_in_owner = true
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 91.0
-offset_top = 654.0
-offset_right = 179.0
-offset_bottom = 685.0
-scale = Vector2(5, 4.41)
-text = "Quit"
-
-[node name="quit_texture" type="TextureRect" parent="ActualMainMenu/UI/Quit"]
-layout_mode = 0
-offset_right = 293.0
-offset_bottom = 103.0
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_dd2cq")
+visible = false
 
 [node name="DebugNotice" type="Label" parent="ActualMainMenu"]
 unique_name_in_owner = true
@@ -171,6 +90,88 @@ offset_top = -500.0
 offset_right = 500.0
 offset_bottom = 500.0
 texture = ExtResource("7_ina6n")
+
+[node name="Clipboard" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 317.0
+offset_top = -367.0
+offset_right = 970.0
+offset_bottom = 532.0
+scale = Vector2(1.25, 1.25)
+
+[node name="Background" type="ColorRect" parent="Clipboard"]
+offset_left = -620.0
+offset_top = 48.0
+offset_right = -550.0
+offset_bottom = 135.0
+scale = Vector2(29.24, 16.56)
+color = Color(0.87451, 0.682353, 0.298039, 1)
+
+[node name="Clipboard" type="Sprite2D" parent="Clipboard"]
+position = Vector2(208.8, 856.8)
+scale = Vector2(0.6744, 0.5664)
+texture = ExtResource("13_tjvie")
+
+[node name="ClipboardPlay" type="Sprite2D" parent="Clipboard"]
+position = Vector2(206.4, 812.8)
+scale = Vector2(0.6016, 0.4436)
+texture = ExtResource("14_uvh60")
+
+[node name="Play" type="Button" parent="Clipboard/ClipboardPlay"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -609.0
+offset_top = -539.0
+offset_right = 629.0
+offset_bottom = -236.0
+
+[node name="ClipboardTutorial" type="Sprite2D" parent="Clipboard"]
+position = Vector2(195.2, 836)
+scale = Vector2(0.6464, 0.5007)
+texture = ExtResource("15_7blyu")
+
+[node name="Tutorial" type="Button" parent="Clipboard/ClipboardTutorial"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -573.0
+offset_top = -227.0
+offset_right = 611.0
+offset_bottom = 50.0
+
+[node name="ClipboardSettings" type="Sprite2D" parent="Clipboard"]
+position = Vector2(202.4, 844.8)
+scale = Vector2(0.612, 0.4468)
+texture = ExtResource("16_wb5wj")
+
+[node name="Settings" type="Button" parent="Clipboard/ClipboardSettings"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -596.078
+offset_top = 35.8102
+offset_right = 587.922
+offset_bottom = 312.81
+
+[node name="ClipboardCredits" type="Sprite2D" parent="Clipboard"]
+position = Vector2(189.6, 856.8)
+scale = Vector2(0.6152, 0.4608)
+texture = ExtResource("17_4b6ji")
+
+[node name="Credits" type="Button" parent="Clipboard/ClipboardCredits"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -553.966
+offset_top = 302.083
+offset_right = 630.034
+offset_bottom = 579.083
+
+[node name="ClipboardQuit" type="Sprite2D" parent="Clipboard"]
+position = Vector2(222.8, 898.4)
+scale = Vector2(0.6524, 0.4376)
+texture = ExtResource("18_kwkl8")
+
+[node name="Quit" type="Button" parent="Clipboard/ClipboardQuit"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -613.734
+offset_top = 550.274
+offset_right = 570.266
+offset_bottom = 827.274
 
 [node name="Settings" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -308,16 +309,10 @@ offset_bottom = 275.0
 mouse_filter = 2
 texture = ExtResource("10_p0k6m")
 
-[connection signal="mouse_entered" from="ActualMainMenu/UI/Play" to="." method="_on_play_mouse_entered"]
-[connection signal="mouse_exited" from="ActualMainMenu/UI/Play" to="." method="_on_play_mouse_exited"]
-[connection signal="pressed" from="ActualMainMenu/UI/Play" to="." method="_on_play_pressed"]
-[connection signal="mouse_entered" from="ActualMainMenu/UI/Settings_To" to="." method="_on_settings_to_mouse_entered"]
-[connection signal="mouse_exited" from="ActualMainMenu/UI/Settings_To" to="." method="_on_settings_to_mouse_exited"]
-[connection signal="pressed" from="ActualMainMenu/UI/Settings_To" to="." method="_on_settings_to_pressed"]
-[connection signal="mouse_entered" from="ActualMainMenu/UI/Quit" to="." method="_on_quit_mouse_entered"]
-[connection signal="mouse_exited" from="ActualMainMenu/UI/Quit" to="." method="_on_quit_mouse_exited"]
-[connection signal="pressed" from="ActualMainMenu/UI/Quit" to="." method="_on_quit_pressed"]
 [connection signal="pressed" from="ActualMainMenu/Feedback" to="." method="_on_feedback_pressed"]
+[connection signal="pressed" from="Clipboard/ClipboardPlay/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Clipboard/ClipboardSettings/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Clipboard/ClipboardQuit/Quit" to="." method="_on_quit_pressed"]
 [connection signal="value_changed" from="Settings/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="pressed" from="Settings/Windowed" to="." method="_on_windowed_pressed"]
 [connection signal="pressed" from="Settings/Fullscreen" to="." method="_on_fullscreen_pressed"]

@@ -1,23 +1,13 @@
 extends Node
 
-# C:\Users\[USERNAME]\AppData\Roaming\NeededFiles
-# var required_assets = {
-#		"image1" : "DifficultySelect.webp",
-#		"image2" : "OhYea.webp",
-#		"image3" : "RobloxTycoon.webp",
-#		"image4" : "DoubleClick.jpg"
-# }
 var fullscreen = false
 var windowed = true
 var volumeCoverSizeX = 0
 var volumeCoverPosX = 0
+var speed: float = 200
+var min_y: float = -350
+var max_y: float = -1100
 
-# for asset in reqired_assets:
-# 	if not FileAccess.file_exists("user://", asset):
-#		# Crash game... but with COOL OS alert message
-# 		OS.alert('BLUD DONT DELETE THOSE IMAGES', 'Alert!')
-# 		get_tree().quit()
-# Test push :D
 func _ready():
 	if Globals.debug_enabled:
 		print("Debug Mode is Enabled!")
@@ -25,13 +15,6 @@ func _ready():
 	%Feedback.visible = Globals.feedback_welcome
 	volumeCoverSizeX = %Volume_Cover.size.x
 	volumeCoverPosX = %Volume_Cover.position.x
-	var required_assets = [
-		
-	]
-	for asset in required_assets:
-		if !FileAccess.file_exists(asset):
-			assert(false, "null")
-		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
 		fullscreen = false
 		windowed = true
@@ -120,3 +103,17 @@ func _on_play_mouse_entered():
 
 func _on_feedback_pressed() -> void:
 	OS.shell_open(Globals.feedback_url)
+
+
+func _on_settings_pressed():
+	%Settings.show()
+	%Volume.value = Globals.global_audio 
+
+
+func _input(event):
+	if event is InputEventMouseMotion:
+		var mouse_movement = event.relative
+		var new_position = $Clipboard.position
+		new_position.y -= mouse_movement.y * speed * get_process_delta_time()
+		new_position.y = clamp(new_position.y, max_y, min_y)
+		$Clipboard.position = new_position
