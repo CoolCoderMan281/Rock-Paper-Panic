@@ -4,7 +4,7 @@ var fullscreen = false
 var windowed = true
 var volumeCoverSizeX = 0
 var volumeCoverPosX = 0
-var speed: float = 200
+var speed: float = 700
 var min_y: float = -350
 var max_y: float = -1100
 
@@ -49,18 +49,6 @@ func _on_volume_value_changed(value:float):
 	Globals.global_audio = AudioServer.get_bus_volume_db(0)
 	%Volume_Cover.size.x = volumeCoverSizeX-(volumeCoverSizeX*value)
 	%Volume_Cover.position.x = volumeCoverPosX+(volumeCoverSizeX*value)
-
-#func _on_windowed_pressed():
-#	%Windowed.disabled = true
-#	%Fullscreen.disabled = false
-#	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
-#	%lever.flip_v = false
-
-#func _on_fullscreen_pressed():
-#	%Windowed.disabled = false
-#	%Fullscreen.disabled = true
-#	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-#	%lever.flip_v = true
 
 
 func _on_lever_button_pressed():
