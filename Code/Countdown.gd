@@ -4,18 +4,22 @@ var INITIAL_TIME: int = 10
 var time_left: int = INITIAL_TIME
 var last_update_time: float = 0.0
 var win_tracker:int = -1
+var difficulty: String = "unset"
 var win_req: int = 0
 var timer_min: int = 2
 
 func _ready():
 	if Globals.difficulty == Globals.difficulties.normal:
+		difficulty = "normal"
 		win_req = 10
 	elif Globals.difficulty == Globals.difficulties.hard:
+		difficulty = "hard"
 		win_req = 5
 		INITIAL_TIME = 5
 	else:
 		print("Something has gone seriously wrong, there is no difficulty..")
 		win_req = 999
+	Globals.generic_telemetry("Difficulty: ",difficulty)
 	reset_timer()
 
 func _process(delta: float):
@@ -67,3 +71,5 @@ func selection_swap():
 func end_game(state: String):
 	%Countdown.visible = false
 	%Lose.visible = (state == "lose")
+	%Countdown.queue_free()
+	Globals.generic_telemetry("Final Score: ",str(%Player.score))
