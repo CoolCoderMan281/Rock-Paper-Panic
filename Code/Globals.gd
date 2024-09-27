@@ -7,6 +7,9 @@ var mode: gamemode = gamemode.unset
 enum client_types { Windows, macOS, Linux, Web, unset }
 var client_type: client_types = client_types.unset
 var client_uuid: String
+var mainmenu_theme: AudioStreamMP3 = preload("res://Assets/Default/Music/mainmenu_theme.mp3")
+var rpp_hard_theme: AudioStreamMP3 = preload("res://Assets/Default/Music/rpp_hard_theme.mp3")
+var rpp_normal_theme: AudioStreamMP3 = preload("res://Assets/Default/Music/rpp_normal_theme.mp3")
 
 var fps_goal: float = DisplayServer.screen_get_refresh_rate()
 var debug_enabled: bool = true
@@ -73,3 +76,6 @@ func _ready():
 	add_child(http)
 	var http_headers = ["Content-Type: application/json"]
 	http.request(telemetry_url,http_headers,HTTPClient.METHOD_POST,JSON.stringify(telemetry))
+	mainmenu_theme.loop = true
+	rpp_hard_theme.loop = true
+	rpp_normal_theme.loop = true
