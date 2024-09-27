@@ -9,6 +9,8 @@ enum difficulties { easy, normal, hard, custom, unset }
 var difficulty: difficulties = difficulties.unset
 enum gamemode { default, lizard_hunter, unset }
 var mode: gamemode = gamemode.unset
+enum client_types { Windows, macOS, Linux, Web, unset }
+var client_type: client_types = client_types.unset
 
 var fps_goal: float = DisplayServer.screen_get_refresh_rate()
 var debug_enabled: bool = true
@@ -34,4 +36,12 @@ func _ready():
 	if fps_goal == -1.0:
 		fps_goal = 60.0
 	Engine.max_fps = int(fps_goal)
-	print(Engine.max_fps)
+	match OS.get_name():
+		"Windows":
+			client_type = client_types.Windows
+		"macOS":
+			client_type = client_types.macOS
+		"Linux":
+			client_type = client_types.Linux
+		"Web":
+			client_type = client_types.Web

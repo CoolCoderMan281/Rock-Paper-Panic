@@ -23,6 +23,8 @@ func _ready():
 		windowed = false
 	_on_volume_value_changed(%Volume.value)
 	AudioServer.set_bus_volume_db(0, Globals.global_audio)
+	if Globals.client_type == Globals.client_types.Web:
+		speed *= 2
 
 
 func _on_play_pressed():
