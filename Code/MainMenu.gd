@@ -105,3 +105,15 @@ func _input(event):
 		new_position.y -= mouse_movement.y * speed * get_process_delta_time()
 		new_position.y = clamp(new_position.y, max_y, min_y)
 		$Clipboard.position = new_position
+
+
+func _on_tutorial_pressed() -> void:
+	pass
+
+
+func _on_back_2_pressed() -> void:
+	$Credits.hide()
+
+
+func _on_credits_pressed() -> void:
+	$Credits.show()
