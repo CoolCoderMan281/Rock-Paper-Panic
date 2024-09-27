@@ -1,10 +1,5 @@
 extends Node
 
-const easy_theme = null
-const normal_theme = "res://Music/normal_mode_placeholder.ogg"
-const hard_theme = "res://Music/hard_mode.ogg"
-const custom_theme = null
-
 enum difficulties { easy, normal, hard, custom, unset }
 var difficulty: difficulties = difficulties.unset
 enum gamemode { default, lizard_hunter, unset }
