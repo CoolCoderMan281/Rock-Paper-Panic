@@ -282,6 +282,7 @@ mouse_filter = 2
 texture = ExtResource("10_p0k6m")
 
 [node name="Credits" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
