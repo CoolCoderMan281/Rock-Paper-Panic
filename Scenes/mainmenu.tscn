@@ -1,0 +1,337 @@
+[gd_scene load_steps=19 format=3 uid="uid://ciqq51h6yi2e2"]
+
+[ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
+[ext_resource type="Texture2D" uid="uid://cv4qplsnmnw8j" path="res://Assets/Default/button_settings.png" id="4_f5b87"]
+[ext_resource type="Texture2D" uid="uid://dxvf24u7n7rsk" path="res://Assets/Default/placeholder_stickynote.png" id="6_mlnkw"]
+[ext_resource type="Theme" uid="uid://ro5pv5fiidmj" path="res://Assets/Fonts/Fake Handwritten FONT.tres" id="7_si1of"]
+[ext_resource type="Texture2D" uid="uid://bnf0rfadrqu8a" path="res://Assets/Settings/switch_backing.png" id="9_7xfr5"]
+[ext_resource type="Texture2D" uid="uid://bbgoserrvm42x" path="res://Assets/Settings/windowed_tag.png" id="9_kr4ux"]
+[ext_resource type="Texture2D" uid="uid://dpk32bytsp4v3" path="res://Assets/Settings/fullscreen_tag.png" id="10_3d68q"]
+[ext_resource type="Texture2D" uid="uid://da0xcyg54gcoc" path="res://Assets/Settings/volume_bar.png" id="10_3v6ml"]
+[ext_resource type="Texture2D" uid="uid://wumf6iahaseu" path="res://Assets/Settings/switch_lever.png" id="10_p0k6m"]
+[ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="11_juhrv"]
+[ext_resource type="Texture2D" uid="uid://cm75f1mfjwy3a" path="res://Assets/Settings/credits_clipboard.png" id="13_bhj24"]
+[ext_resource type="Texture2D" uid="uid://dfogsn5vna7vg" path="res://Assets/Default/MenuClipboard/Clipboard.png" id="13_tjvie"]
+[ext_resource type="Texture2D" uid="uid://b81j7k0e7d0ky" path="res://Assets/Default/MenuClipboard/Clipboard_Play.png" id="14_uvh60"]
+[ext_resource type="Texture2D" uid="uid://lnc0qn86v6tk" path="res://Assets/Default/MenuClipboard/Clipboard_Tutorial.png" id="15_7blyu"]
+[ext_resource type="Texture2D" uid="uid://di23p201j05di" path="res://Assets/Default/MenuClipboard/Clipboard_Settings.png" id="16_wb5wj"]
+[ext_resource type="Texture2D" uid="uid://cqug1l022ycq6" path="res://Assets/Default/MenuClipboard/Clipboard_Credits.png" id="17_4b6ji"]
+[ext_resource type="Texture2D" uid="uid://dbnwyd5pp1gpx" path="res://Assets/Default/MenuClipboard/Clipboard_Quit.png" id="18_kwkl8"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56r7i"]
+
+[node name="Mainmenu" type="Node2D"]
+script = ExtResource("1_glogx")
+
+[node name="Clipboard" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 317.0
+offset_top = -367.0
+offset_right = 970.0
+offset_bottom = 532.0
+scale = Vector2(1.25, 1.25)
+
+[node name="Background" type="ColorRect" parent="Clipboard"]
+layout_mode = 0
+offset_left = -620.0
+offset_top = 48.0
+offset_right = -550.0
+offset_bottom = 135.0
+scale = Vector2(29.24, 16.56)
+color = Color(0.87451, 0.682353, 0.298039, 1)
+
+[node name="Clipboard" type="Sprite2D" parent="Clipboard"]
+position = Vector2(208.8, 856.8)
+scale = Vector2(0.6744, 0.5664)
+texture = ExtResource("13_tjvie")
+
+[node name="ClipboardPlay" type="Sprite2D" parent="Clipboard"]
+position = Vector2(206.4, 812.8)
+scale = Vector2(0.6016, 0.4436)
+texture = ExtResource("14_uvh60")
+
+[node name="Play" type="Button" parent="Clipboard/ClipboardPlay"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -609.0
+offset_top = -539.0
+offset_right = 629.0
+offset_bottom = -236.0
+
+[node name="ClipboardTutorial" type="Sprite2D" parent="Clipboard"]
+position = Vector2(195.2, 836)
+scale = Vector2(0.6464, 0.5007)
+texture = ExtResource("15_7blyu")
+
+[node name="Tutorial" type="Button" parent="Clipboard/ClipboardTutorial"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -573.0
+offset_top = -227.0
+offset_right = 611.0
+offset_bottom = 50.0
+
+[node name="ClipboardSettings" type="Sprite2D" parent="Clipboard"]
+position = Vector2(202.4, 844.8)
+scale = Vector2(0.612, 0.4468)
+texture = ExtResource("16_wb5wj")
+
+[node name="Settings" type="Button" parent="Clipboard/ClipboardSettings"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -596.078
+offset_top = 35.8102
+offset_right = 587.922
+offset_bottom = 312.81
+
+[node name="ClipboardCredits" type="Sprite2D" parent="Clipboard"]
+position = Vector2(189.6, 856.8)
+scale = Vector2(0.6152, 0.4608)
+texture = ExtResource("17_4b6ji")
+
+[node name="Credits" type="Button" parent="Clipboard/ClipboardCredits"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -553.966
+offset_top = 302.083
+offset_right = 630.034
+offset_bottom = 579.083
+
+[node name="ClipboardQuit" type="Sprite2D" parent="Clipboard"]
+position = Vector2(222.8, 898.4)
+scale = Vector2(0.6524, 0.4376)
+texture = ExtResource("18_kwkl8")
+
+[node name="Quit" type="Button" parent="Clipboard/ClipboardQuit"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -613.734
+offset_top = 550.274
+offset_right = 570.266
+offset_bottom = 827.274
+
+[node name="ActualMainMenu" type="Node2D" parent="."]
+
+[node name="DebugNotice" type="Label" parent="ActualMainMenu"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.498039)
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 259.0
+offset_bottom = 56.0
+scale = Vector2(1.13423, 1.16)
+theme_override_colors/font_color = Color(0.768627, 0.384314, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Debug Menu is enabled, if this 
+is a mistake you need to rebuild."
+
+[node name="feedback_stickynote" type="TextureRect" parent="ActualMainMenu"]
+modulate = Color(0.971749, 0.858816, 0.771244, 1)
+offset_left = 852.547
+offset_top = 1.00003
+offset_right = 1927.55
+offset_bottom = 992.0
+rotation = 0.0872665
+scale = Vector2(0.265, 0.18)
+texture = ExtResource("6_mlnkw")
+
+[node name="Feedback" type="Button" parent="ActualMainMenu"]
+unique_name_in_owner = true
+modulate = Color(0, 0, 0, 1)
+offset_left = 884.547
+offset_top = 48.0
+offset_right = 1144.55
+offset_bottom = 199.0
+rotation = -0.0579116
+scale = Vector2(0.85, 0.85)
+theme = ExtResource("7_si1of")
+theme_override_font_sizes/font_size = 70
+theme_override_styles/normal = SubResource("StyleBoxEmpty_56r7i")
+text = "Feedback"
+
+[node name="Settings" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+
+[node name="Background" type="ColorRect" parent="Settings"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.24, 16.56)
+color = Color(0.558361, 0.422722, 0.140128, 1)
+
+[node name="credits_panel" type="TextureRect" parent="Settings"]
+offset_left = 116.0
+offset_top = 19.0
+offset_right = 604.0
+offset_bottom = 638.0
+texture = ExtResource("13_bhj24")
+
+[node name="Title" type="TextureRect" parent="Settings"]
+offset_left = 212.0
+offset_top = 63.0
+offset_right = 504.0
+offset_bottom = 150.0
+texture = ExtResource("4_f5b87")
+
+[node name="volume_main" type="TextureRect" parent="Settings"]
+offset_left = 705.0
+offset_top = 35.0
+offset_right = 1117.0
+offset_bottom = 166.0
+texture = ExtResource("10_3v6ml")
+
+[node name="Volume_Cover" type="ColorRect" parent="Settings/volume_main"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_right = 412.0
+offset_bottom = 131.0
+color = Color(0, 0, 0, 0.862745)
+
+[node name="Volume_Label" type="Label" parent="Settings"]
+unique_name_in_owner = true
+offset_left = 714.0
+offset_top = 42.0
+offset_right = 1073.0
+offset_bottom = 98.0
+scale = Vector2(0.445, 0.445)
+theme = ExtResource("11_juhrv")
+theme_override_colors/font_color = Color(0, 1, 0, 1)
+theme_override_font_sizes/font_size = 76
+text = "Volume: 50%"
+
+[node name="Volume" type="HSlider" parent="Settings"]
+unique_name_in_owner = true
+offset_left = 705.0
+offset_top = 161.0
+offset_right = 1117.0
+offset_bottom = 177.0
+max_value = 1.0
+step = 0.01
+value = 0.5
+tick_count = 10
+ticks_on_borders = true
+
+[node name="Windowed" type="Button" parent="Settings"]
+unique_name_in_owner = true
+visible = false
+offset_left = 705.0
+offset_top = 182.0
+offset_right = 904.0
+offset_bottom = 253.0
+disabled = true
+text = "Windowed"
+
+[node name="Fullscreen" type="Button" parent="Settings"]
+unique_name_in_owner = true
+visible = false
+offset_left = 904.0
+offset_top = 182.0
+offset_right = 1103.0
+offset_bottom = 253.0
+text = "Fullscreen"
+
+[node name="Back" type="Button" parent="Settings"]
+offset_left = 846.0
+offset_top = 578.0
+offset_right = 933.0
+offset_bottom = 625.0
+text = "Back"
+
+[node name="windowed_tag" type="TextureRect" parent="Settings"]
+offset_left = 760.0
+offset_top = 185.0
+offset_right = 1037.0
+offset_bottom = 254.0
+texture = ExtResource("9_kr4ux")
+
+[node name="fullscreen_tag" type="TextureRect" parent="Settings"]
+offset_left = 760.0
+offset_top = 493.0
+offset_right = 1038.0
+offset_bottom = 563.0
+texture = ExtResource("10_3d68q")
+
+[node name="window_switch" type="Control" parent="Settings"]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 815.0
+offset_top = 249.0
+offset_right = 1049.0
+offset_bottom = 575.0
+scale = Vector2(0.75, 0.75)
+
+[node name="backing" type="TextureRect" parent="Settings/window_switch"]
+layout_mode = 0
+offset_right = 233.0
+offset_bottom = 326.0
+texture = ExtResource("9_7xfr5")
+
+[node name="lever_button" type="Button" parent="Settings/window_switch"]
+unique_name_in_owner = true
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 60.0
+offset_top = 35.0
+offset_right = 173.0
+offset_bottom = 272.0
+
+[node name="lever" type="TextureRect" parent="Settings/window_switch"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 60.0
+offset_top = 34.0
+offset_right = 174.0
+offset_bottom = 275.0
+mouse_filter = 2
+texture = ExtResource("10_p0k6m")
+
+[node name="Credits" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="Credits"]
+layout_mode = 0
+offset_left = -319.0
+offset_top = -199.0
+offset_right = -249.0
+offset_bottom = -112.0
+scale = Vector2(29.24, 16.56)
+color = Color(0.87451, 0.682353, 0.298039, 1)
+
+[node name="Credits_label" type="Label" parent="Credits"]
+layout_mode = 0
+offset_left = 50.0
+offset_top = 44.0
+offset_right = 372.0
+offset_bottom = 275.0
+scale = Vector2(2.32019, 2.32019)
+text = "Credits:
+
+Ethan Mikes - Programmer
+
+Ayden Ionesu - Game Designer / Producer
+
+Rayan Awad - Assets / OST
+
+Idk else"
+
+[node name="Back2" type="Button" parent="Credits"]
+layout_mode = 0
+offset_left = 877.0
+offset_top = 508.0
+offset_right = 1120.0
+offset_bottom = 634.0
+theme_override_font_sizes/font_size = 86
+text = "Back"
+
+[connection signal="pressed" from="Clipboard/ClipboardPlay/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="Clipboard/ClipboardTutorial/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="pressed" from="Clipboard/ClipboardSettings/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="Clipboard/ClipboardCredits/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Clipboard/ClipboardQuit/Quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="ActualMainMenu/Feedback" to="." method="_on_feedback_pressed"]
+[connection signal="value_changed" from="Settings/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="pressed" from="Settings/Windowed" to="." method="_on_windowed_pressed"]
+[connection signal="pressed" from="Settings/Fullscreen" to="." method="_on_fullscreen_pressed"]
+[connection signal="pressed" from="Settings/Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="Settings/window_switch/lever_button" to="." method="_on_lever_button_pressed"]
+[connection signal="pressed" from="Credits/Back2" to="." method="_on_back_2_pressed"]

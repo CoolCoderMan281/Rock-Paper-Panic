@@ -7,51 +7,63 @@ var volumeCoverPosX = 0
 var speed: float = 700
 var min_y: float = -350
 var max_y: float = -1100
+var player = AudioStreamPlayer.new()
 
 func _ready():
 	if Globals.debug_enabled:
 		print("Debug Mode is Enabled!")
-		%DebugNotice.visible = true
 	%Feedback.visible = Globals.feedback_welcome
+	
+	# Initialize the volume cover sizes
 	volumeCoverSizeX = %Volume_Cover.size.x
 	volumeCoverPosX = %Volume_Cover.position.x
-	if DisplayServer.window_get_mode() != DisplayServer.WINDOW_MODE_FULLSCREEN:
-		fullscreen = false
-		windowed = true
-	else:
-		fullscreen = true
-		windowed = false
-	_on_volume_value_changed(%Volume.value)
-	AudioServer.set_bus_volume_db(0, Globals.global_audio)
+	
+	# Print the current volume
+	print("Current Globals.volume (dB):", Globals.volume)
+
+	# Convert Globals.volume from dB to a normalized value (0 to 1)
+	%Volume.value = (Globals.volume + 30) / 30  # Normalize from -30 to 0 dB to 0 to 1
+
+	# Update the UI based on the volume
+	_on_volume_value_changed(%Volume.value)  
+
+	# Other initialization code...
 	if Globals.client_type == Globals.client_types.Web:
 		speed /= 2
-
+	
+	add_child(player)
+	player.stream = Globals.mainmenu_theme
+	player.volume_db = Globals.volume
+	player.play()
 
 func _on_play_pressed():
 	Globals.set_scene("res://Scenes/gameplayselect.tscn")
 
-
 func _on_quit_pressed():
 	Globals.quit()
 
-
 func _on_back_pressed():
 	%Settings.hide()
-	Globals.global_audio = AudioServer.get_bus_volume_db(0)
-
+	Globals.volume = AudioServer.get_bus_volume_db(0)
 
 func _on_settings_to_pressed():
 	%Settings.show()
 	%Volume.value = Globals.global_audio 
 
+func _on_volume_value_changed(value: float):
+	%Volume_Label.text = "Volume: " + str(int(value * 100)) + "%"
+	
+	# Convert the normalized value back to dB in the range of -30 to 0
+	var volume_db = lerp(-30, 0, value)
+	AudioServer.set_bus_volume_db(0, volume_db)
 
-func _on_volume_value_changed(value:float):
-	%Volume_Label.text = "Volume: " + str(value * 100) + "%"
-	AudioServer.set_bus_volume_db(0, value)
-	Globals.global_audio = AudioServer.get_bus_volume_db(0)
-	%Volume_Cover.size.x = volumeCoverSizeX-(volumeCoverSizeX*value)
-	%Volume_Cover.position.x = volumeCoverPosX+(volumeCoverSizeX*value)
+	Globals.volume = volume_db  # Update the global volume in dB
+	player.volume_db = Globals.volume  # Update the player's volume
 
+	# Update the volume cover UI
+	%Volume_Cover.size.x = volumeCoverSizeX - (volumeCoverSizeX * value)
+	%Volume_Cover.position.x = volumeCoverPosX + (volumeCoverSizeX * value)
+	print(player.volume_db)
 
 func _on_lever_button_pressed():
 	# Move to Windowed Mode
@@ -68,18 +80,14 @@ func _on_lever_button_pressed():
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
 		%lever.flip_v = true
 
-
 func _on_quit_mouse_exited():
 	%Quit.modulate = Color(1, 1, 1, 1)
-
 
 func _on_quit_mouse_entered():
 	%Quit.modulate = Color(1, 1, 1, 0.5)
 
-
 func _on_settings_to_mouse_exited():
 	%Settings_To.modulate = Color(1, 1, 1, 1)
-
 
 func _on_settings_to_mouse_entered():
 	%Settings_To.modulate = Color(1, 1, 1, 0.5)
@@ -90,15 +98,12 @@ func _on_play_mouse_exited():
 func _on_play_mouse_entered():
 	%Play.modulate = Color(1, 1, 1, 0.5)
 
-
 func _on_feedback_pressed() -> void:
 	OS.shell_open(Globals.feedback_url)
 
-
 func _on_settings_pressed():
 	%Settings.show()
-	%Volume.value = Globals.global_audio 
-
+	%Volume.value = Globals.volume 
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -108,14 +113,11 @@ func _input(event):
 		new_position.y = clamp(new_position.y, max_y, min_y)
 		$Clipboard.position = new_position
 
-
 func _on_tutorial_pressed() -> void:
 	pass
 
-
 func _on_back_2_pressed() -> void:
 	$Credits.hide()
-
 
 func _on_credits_pressed() -> void:
 	$Credits.show()

@@ -20,7 +20,8 @@ var telemetry_url: String = "https://awesnap.dev/telemetry"
 var feedback_url: String = "https://forms.gle/Ws9qj8pPWxE9waaRA"
 var resource_path: String = "res://Assets/Default/"
 var default_resource_path: String = resource_path
-var global_audio: float = 0.5
+var volume: float = 0.5
+var volume_db: float = -80
 
 func quit():
 	if OS.get_name() == "Web":
@@ -61,6 +62,7 @@ func _ready():
 	if fps_goal == -1.0:
 		fps_goal = 60.0
 	Engine.max_fps = int(fps_goal)
+	AudioServer.set_bus_volume_db(0, volume)
 	match OS.get_name():
 		"Windows":
 			client_type = client_types.Windows
