@@ -7,20 +7,26 @@ var win_tracker:int = -1
 var difficulty: String = "unset"
 var win_req: int = 0
 var timer_min: int = 2
+var player = AudioStreamPlayer.new()
 
 func _ready():
+	add_child(player)
 	if Globals.difficulty == Globals.difficulties.normal:
 		difficulty = "normal"
 		win_req = 10
+		player.stream = Globals.rpp_normal_theme
 	elif Globals.difficulty == Globals.difficulties.hard:
 		difficulty = "hard"
 		win_req = 5
 		INITIAL_TIME = 5
+		player.stream = Globals.rpp_hard_theme
 	else:
 		print("Something has gone seriously wrong, there is no difficulty..")
 		win_req = 999
 	Globals.generic_telemetry("Difficulty: ",difficulty)
 	reset_timer()
+	player.volume_db = Globals.volume
+	player.play()
 
 func _process(delta: float):
 	if !Globals.debug_stoptime:

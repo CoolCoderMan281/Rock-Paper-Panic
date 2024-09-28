@@ -17,9 +17,6 @@ func _ready():
 	# Initialize the volume cover sizes
 	volumeCoverSizeX = %Volume_Cover.size.x
 	volumeCoverPosX = %Volume_Cover.position.x
-	
-	# Print the current volume
-	print("Current Globals.volume (dB):", Globals.volume)
 
 	# Convert Globals.volume from dB to a normalized value (0 to 1)
 	%Volume.value = (Globals.volume + 30) / 30  # Normalize from -30 to 0 dB to 0 to 1
