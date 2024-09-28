@@ -46,9 +46,6 @@ func _on_back_pressed():
 	%Settings.hide()
 	Globals.volume = AudioServer.get_bus_volume_db(0)
 
-func _on_settings_to_pressed():
-	%Settings.show()
-	%Volume.value = Globals.global_audio 
 
 func _on_volume_value_changed(value: float):
 	%Volume_Label.text = "Volume: " + str(int(value * 100)) + "%"
@@ -63,7 +60,6 @@ func _on_volume_value_changed(value: float):
 	# Update the volume cover UI
 	%Volume_Cover.size.x = volumeCoverSizeX - (volumeCoverSizeX * value)
 	%Volume_Cover.position.x = volumeCoverPosX + (volumeCoverSizeX * value)
-	print(player.volume_db)
 
 func _on_lever_button_pressed():
 	# Move to Windowed Mode
@@ -101,9 +97,6 @@ func _on_play_mouse_entered():
 func _on_feedback_pressed() -> void:
 	OS.shell_open(Globals.feedback_url)
 
-func _on_settings_pressed():
-	%Settings.show()
-	%Volume.value = Globals.volume 
 
 func _input(event):
 	if event is InputEventMouseMotion:
@@ -121,3 +114,10 @@ func _on_back_2_pressed() -> void:
 
 func _on_credits_pressed() -> void:
 	$Credits.show()
+
+
+func _on_settings_pressed() -> void:
+	%Settings.show()
+	%Volume.value = (Globals.volume + 30) / 30
+	print(Globals.volume)
+	print((Globals.volume+30)/30)
