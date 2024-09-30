@@ -81,3 +81,4 @@ func _ready():
 	mainmenu_theme.loop = true
 	rpp_hard_theme.loop = true
 	rpp_normal_theme.loop = true
+	selection_theme.loop = true
