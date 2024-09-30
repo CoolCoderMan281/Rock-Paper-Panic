@@ -8,9 +8,12 @@ var difficulty: String = "unset"
 var win_req: int = 0
 var timer_min: int = 2
 var player = AudioStreamPlayer.new()
+var lh_mode: bool = false
 
 func _ready():
 	add_child(player)
+	if Globals.mode == Globals.gamemode.lizard_hunter:
+		lh_mode = true
 	Globals.debug_autoplay = false
 	Globals.debug_stoptime = false
 	if Globals.difficulty == Globals.difficulties.normal:
@@ -65,7 +68,11 @@ func reset_timer():
 
 
 func selection_swap():
-	var objects: Array[TextureButton] = [%Rock, %Paper, %Scissors]
+	var objects: Array[TextureButton]
+	if lh_mode:
+		objects = [%Rock, %Paper, %Scissors, %Lizard, %Hunter]
+	else:
+		objects = [%Rock, %Paper, %Scissors]
 	var objectPos: Array[Vector2] = []
 	
 	for obj in objects: # Steal all positions
