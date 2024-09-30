@@ -317,6 +317,12 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="Background2" type="ColorRect" parent="Credits"]
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.24, 16.56)
+color = Color(0.556863, 0.423529, 0.141176, 0)
+
 [node name="CreditsMenu" type="Sprite2D" parent="Credits"]
 position = Vector2(576, 324)
 scale = Vector2(0.6, 0.6)
