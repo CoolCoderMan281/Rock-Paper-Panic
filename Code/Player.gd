@@ -28,14 +28,14 @@ func visual_pressed(button: String):
 		%Lizard.texture_normal = load(Globals.resource_path+"Buttons/Lizard/Center/pressed_lizard_center.png")
 	elif button == "Hunter":
 		%Hunter.texture_normal = load(Globals.resource_path+"Buttons/Hunter/Center/pressed_hunter_center.png")
-
-	can_press = false
 	pressed_timer.start()
 
 
 func logic(choice: String = ""):
+	print(can_press)
 	if !can_press:
 		return
+	visual_pressed(choice)
 	var outcomes = {
 		"Rock": ["Scissors", "Lizard"],
 		"Scissors": ["Paper", "Lizard"],
@@ -71,7 +71,6 @@ func update_selection_images():
 	%Scissors.texture_normal = load(Globals.resource_path+"Buttons/Scissors/Center/scissors_center.png")
 	%Lizard.texture_normal = load(Globals.resource_path+"Buttons/Lizard/Center/lizard_center.png")
 	%Hunter.texture_normal = load(Globals.resource_path+"Buttons/Hunter/Center/hunter_center.png")
-	can_press = true
 
 
 func update_score():
@@ -81,27 +80,22 @@ func update_score():
 
 func _on_rock_pressed():
 	logic("Rock")
-	visual_pressed("Rock")
 
 
 func _on_paper_pressed():
 	logic("Paper")
-	visual_pressed("Paper")
 
 
 func _on_scissors_pressed():
 	logic("Scissors")
-	visual_pressed("Scissors")
 
 
 func _on_hunter_pressed():
 	logic("Hunter")
-	visual_pressed("Hunter")
 
 
 func _on_lizard_pressed():
 	logic("Lizard")
-	visual_pressed("Lizard")
 
 
 func retry():

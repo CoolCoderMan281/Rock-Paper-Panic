@@ -31,6 +31,7 @@ func update_display() -> void:
 	# If an animation is already playing, stop it
 	if is_animating:
 		stop_current_animation()
+	%Player.can_press = false
 	await get_tree().create_timer(0.2).timeout
 	await play_leave_animation()
 
@@ -42,6 +43,7 @@ func update_display() -> void:
 
 	texture = get_texture_from_cache(choice, "idle")
 	queue_redraw()
+	%Player.can_press = true
 
 func play_leave_animation() -> void:
 	is_animating = true

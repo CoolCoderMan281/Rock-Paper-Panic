@@ -74,22 +74,22 @@ func _on_lever_button_pressed():
 		%lever.flip_v = true
 
 func _on_quit_mouse_exited():
-	%Quit.modulate = Color(1, 1, 1, 1)
+	$Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit.modulate = Color(1, 1, 1, 1)
 
 func _on_quit_mouse_entered():
-	%Quit.modulate = Color(1, 1, 1, 0.5)
+	$Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit.modulate = Color(1, 1, 1, 0.5)
 
-func _on_settings_to_mouse_exited():
-	%Settings_To.modulate = Color(1, 1, 1, 1)
+func _on_settings_mouse_exited():
+	$Clipboard/ScrollContainer/VBoxContainer/ClipboardSettings.modulate = Color(1, 1, 1, 1)
 
-func _on_settings_to_mouse_entered():
-	%Settings_To.modulate = Color(1, 1, 1, 0.5)
+func _on_settings_mouse_entered():
+	$Clipboard/ScrollContainer/VBoxContainer/ClipboardSettings.modulate = Color(1, 1, 1, 0.5)
 
 func _on_play_mouse_exited():
-	%Play.modulate = Color(1, 1, 1, 1)
+	$Clipboard/ScrollContainer/VBoxContainer/ClipboardPlay.modulate = Color(1, 1, 1, 1)
 
 func _on_play_mouse_entered():
-	%Play.modulate = Color(1, 1, 1, 0.5)
+	$Clipboard/ScrollContainer/VBoxContainer/ClipboardPlay.modulate = Color(1, 1, 1, 0.5)
 
 func _on_feedback_pressed() -> void:
 	OS.shell_open(Globals.feedback_url)
@@ -110,3 +110,19 @@ func _on_settings_pressed() -> void:
 	%Volume.value = (Globals.volume + 30) / 30
 	print(Globals.volume)
 	print((Globals.volume+30)/30)
+
+
+func _on_tutorial_mouse_entered() -> void:
+	$Clipboard/ScrollContainer/VBoxContainer/ClipboardTutorial.modulate = Color(1, 1, 1, 0.5)
+
+
+func _on_tutorial_mouse_exited() -> void:
+	$Clipboard/ScrollContainer/VBoxContainer/ClipboardTutorial.modulate = Color(1, 1, 1, 1)
+
+
+func _on_credits_mouse_entered() -> void:
+	$Clipboard/ScrollContainer/VBoxContainer/ClipboardCredits.modulate = Color(1, 1, 1, 0.5)
+
+
+func _on_credits_mouse_exited() -> void:
+	$Clipboard/ScrollContainer/VBoxContainer/ClipboardCredits.modulate = Color(1, 1, 1, 1)
