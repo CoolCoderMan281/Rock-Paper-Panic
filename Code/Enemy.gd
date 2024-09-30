@@ -10,18 +10,24 @@ const base_path: String = "res://Assets/Default/Conveyor/"
 var choice_paths: Dictionary = {
 	"Rock": "Rock/",
 	"Paper": "Paper/",
-	"Scissors": "Scissors/"
+	"Scissors": "Scissors/",
+	"Lizard": "Lizard/",
+	"Hunter": "Hunter/"
 }
 
 
 const transition_texture = preload(base_path + "RPS_Transition.png")
-var frame_counts: Dictionary = { "Rock": 4, "Paper": 6, "Scissors": 6 }
+var frame_counts: Dictionary = { "Rock": 4, "Paper": 6, "Scissors": 6, "Lizard": 6, "Hunter":6}
 var texture_cache: Dictionary = {}
 
 var fps: int = 12  # Rayan using 12 fps for some reason :skull:
 
 
 func _ready():
+	if Globals.mode == Globals.gamemode.lizard_hunter:
+		options += ["Lizard", "Hunter"]
+		%Lizard.visible = true
+		%Hunter.visible = true
 	new_choice()
 
 
