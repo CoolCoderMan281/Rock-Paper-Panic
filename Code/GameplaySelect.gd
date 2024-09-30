@@ -19,7 +19,7 @@ func _on_normal_pressed() -> void:
 
 func _on_hard_pressed() -> void:
 	Globals.difficulty = Globals.difficulties.hard
-	Globals.set_scene("res://Scenes/main.tscn")
+	$Consent_HARD.visible = true
 
 
 func _on_back_pressed() -> void:
@@ -42,3 +42,7 @@ func _on_zuckerberg_mode_toggled(toggled_on:bool):
 	else:
 		Globals.mode = Globals.gamemode.default
 		$Mode_Select/RPS_Mode.button_pressed = true
+
+
+func _on_consent_continue_pressed() -> void:
+	Globals.set_scene("res://Scenes/main.tscn")

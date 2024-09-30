@@ -1,9 +1,10 @@
-[gd_scene load_steps=6 format=3 uid="uid://dte58gpdscy8f"]
+[gd_scene load_steps=7 format=3 uid="uid://dte58gpdscy8f"]
 
 [ext_resource type="Script" path="res://Code/GameplaySelect.gd" id="1_7t0e7"]
 [ext_resource type="Texture2D" uid="uid://b1oyytvcj1n8v" path="res://Assets/Difficulty Selection/normal_mode.png" id="3_0qsjh"]
 [ext_resource type="Texture2D" uid="uid://mxg17mxkenkw" path="res://Assets/Difficulty Selection/hard_mode.png" id="4_v682s"]
 [ext_resource type="Texture2D" uid="uid://b0bmxj08dmkag" path="res://Assets/Difficulty Selection/back_button.png" id="5_vaooo"]
+[ext_resource type="Texture2D" uid="uid://cgpo8po2mh4kv" path="res://Assets/Default/paper_backing.png" id="6_q6a0p"]
 [ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="6_wjp4v"]
 
 [node name="Gameplayselect" type="Node2D"]
@@ -114,8 +115,71 @@ offset_bottom = 332.0
 scale = Vector2(2.53286, 2.53286)
 text = "Zuckerberg Mode"
 
+[node name="Consent_HARD" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ColorRect2" type="ColorRect" parent="Consent_HARD"]
+offset_right = 1164.0
+offset_bottom = 662.0
+color = Color(0.711581, 0.568947, 0.200846, 1)
+
+[node name="PaperBacking" type="Sprite2D" parent="Consent_HARD"]
+position = Vector2(272, 560)
+scale = Vector2(1.40169, 1.40517)
+texture = ExtResource("6_q6a0p")
+
+[node name="Label" type="Label" parent="Consent_HARD/PaperBacking"]
+modulate = Color(0.0253638, 0.0253638, 0.0253638, 1)
+offset_left = -122.709
+offset_top = -24.908
+offset_right = 60.2914
+offset_bottom = 44.092
+rotation = -0.0990041
+theme_override_font_sizes/font_size = 50
+text = "ACCEPT"
+metadata/_edit_use_anchors_ = true
+
+[node name="PaperBacking2" type="Sprite2D" parent="Consent_HARD"]
+position = Vector2(915, 560)
+scale = Vector2(1.40169, 1.40517)
+texture = ExtResource("6_q6a0p")
+
+[node name="Label" type="Label" parent="Consent_HARD/PaperBacking2"]
+modulate = Color(0.0253638, 0.0253638, 0.0253638, 1)
+offset_left = -122.709
+offset_top = -24.908
+offset_right = 60.2914
+offset_bottom = 44.092
+rotation = -0.0990041
+theme_override_font_sizes/font_size = 50
+text = "ACCEPT"
+metadata/_edit_use_anchors_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Consent_HARD"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 4.0
+offset_right = 1145.0
+offset_bottom = 446.0
+theme_override_font_sizes/normal_font_size = 48
+text = "Whereas the Player voluntarily participates in the interactive activity known as 'Rock, Paper, Panic!' (hereinafter referred to as 'The Activity'), the Player acknowledges and agrees that participation may expose them to both inherent and unforeseeable risks. These risks include, but are not limited to: repetitive stress injuries (such as carpal tunnel syndrome) from repeated button-pressing, accidental finger entrapment in conveyor belt mechanisms, mental strain from high-paced decision-making leading to fatigue, and temporary or permanent auditory impairment from exposure to high-decibel alarm sounds.
+The Player further understands that 'The Activity' involves operational hazards wherein objects (including, but not limited to, rocks, scissors, and explosive devices) are subject to breaking, crushing, or covering by the Player’s input. Malfunctions in the machinery may result in explosions, projectile debris, or electrical shock scenarios, none of which shall give rise to claims of negligence or liability on behalf of the creators, facilitators, or distributors of 'The Activity.'
+The Player explicitly agrees to waive any and all claims related to bodily injury (including sprains, broken digits, or wrist fractures), mental anguish (including panic attacks, increased heart rate, or heightened stress levels), and property damage (such as destruction of electronic equipment) arising from but not limited to excessive button mashing, improper gesture timing, or failure to meet operational objectives. These and all other injuries—whether minor or catastrophic—are deemed foreseeable and unavoidable in the context of industrial participation and are therefore not covered under any implied or express warranties."
+
+[node name="Consent_Continue" type="Button" parent="Consent_HARD"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_top = 465.0
+offset_right = 1158.0
+offset_bottom = 653.0
+
 [connection signal="pressed" from="ColorRect/Normal" to="." method="_on_normal_pressed"]
 [connection signal="pressed" from="ColorRect/Hard" to="." method="_on_hard_pressed"]
 [connection signal="pressed" from="ColorRect/Back" to="." method="_on_back_pressed"]
 [connection signal="toggled" from="Mode_Select/RPS_Mode" to="." method="_on_rps_mode_toggled"]
 [connection signal="toggled" from="Mode_Select/Zuckerberg_Mode" to="." method="_on_zuckerberg_mode_toggled"]
+[connection signal="pressed" from="Consent_HARD/Consent_Continue" to="." method="_on_consent_continue_pressed"]

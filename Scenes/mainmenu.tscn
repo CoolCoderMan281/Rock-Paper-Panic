@@ -299,16 +299,16 @@ color = Color(0.87451, 0.682353, 0.298039, 1)
 
 [node name="Credits_label" type="Label" parent="Credits"]
 layout_mode = 0
-offset_left = 48.0
+offset_left = 5.0
 offset_top = -8.0
-offset_right = 370.0
+offset_right = 486.0
 offset_bottom = 275.0
 scale = Vector2(2.32019, 2.32019)
 text = "Credits:
 
 Ethan Mikes - Programmer
 
-Logan Jenkins - Assets / Keeping programmer sane
+Just call me 'L' - Assets / Keeping programmer sane
 
 Ayden Ionesu - Game Designer / Producer
 
