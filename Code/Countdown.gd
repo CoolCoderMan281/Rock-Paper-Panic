@@ -11,6 +11,8 @@ var player = AudioStreamPlayer.new()
 
 func _ready():
 	add_child(player)
+	Globals.debug_autoplay = false
+	Globals.debug_stoptime = false
 	if Globals.difficulty == Globals.difficulties.normal:
 		difficulty = "normal"
 		win_req = 10
