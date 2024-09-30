@@ -1,10 +1,10 @@
-[gd_scene load_steps=51 format=3 uid="uid://bu6j0v2aj8gfi"]
+[gd_scene load_steps=52 format=3 uid="uid://bu6j0v2aj8gfi"]
 
+[ext_resource type="Texture2D" uid="uid://cpnx38wjlkphy" path="res://Assets/Default/Conveyor/Paper/paper_in_6.png" id="1_0l1lu"]
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
 [ext_resource type="Script" path="res://Code/Enemy.gd" id="1_oxske"]
 [ext_resource type="Texture2D" uid="uid://bq4fmb7hlavyg" path="res://Assets/Default/battle_background.png" id="1_pv84b"]
 [ext_resource type="Texture2D" uid="uid://s7802tp51tgs" path="res://Assets/Default/Conveyor/Rock/rock_idle.png" id="2_78lwk"]
-[ext_resource type="Texture2D" uid="uid://cbx3qlubqdacr" path="res://Assets/Default/Conveyor/Paper/paper_idle.png" id="3_4bkp2"]
 [ext_resource type="Texture2D" uid="uid://b36pof77p2gd" path="res://Assets/Default/Buttons/Rock/Center/rock_center.png" id="6_kk75n"]
 [ext_resource type="Script" path="res://Code/Options.gd" id="7_1iy2a"]
 [ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="7_gp2xf"]
@@ -129,10 +129,13 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("CompressedTexture2D_waend")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_0l1lu")
 }],
 "loop": false,
 "name": &"paper_enter",
-"speed": 12.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -240,6 +243,9 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xyrgs"]
+load_path = "res://.godot/imported/paper_idle.png-ff15289806a9704c53943c10aa6e49bb.ctex"
+
 [sub_resource type="GDScript" id="GDScript_a5fcu"]
 script/source = "extends CanvasLayer
 
@@ -256,7 +262,9 @@ visible = false
 position = Vector2(210, -12)
 scale = Vector2(0.360903, 0.360903)
 sprite_frames = SubResource("SpriteFrames_8jqtc")
-animation = &"rock_idle"
+animation = &"paper_enter"
+frame = 6
+frame_progress = 1.0
 
 [node name="README" type="Label" parent="Enemy_Animated"]
 offset_left = -1485.16
@@ -273,7 +281,7 @@ AnimatedSprite2D is hidden!"
 unique_name_in_owner = true
 position = Vector2(230, -16)
 scale = Vector2(0.410002, 0.370002)
-texture = ExtResource("3_4bkp2")
+texture = SubResource("CompressedTexture2D_xyrgs")
 script = ExtResource("1_oxske")
 
 [node name="Background" type="Control" parent="."]
