@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://bu6j0v2aj8gfi"]
+[gd_scene load_steps=51 format=3 uid="uid://bu6j0v2aj8gfi"]
 
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
 [ext_resource type="Script" path="res://Code/Enemy.gd" id="1_oxske"]
@@ -12,6 +12,8 @@
 [ext_resource type="Script" path="res://Code/Debug.gd" id="8_1kwu8"]
 [ext_resource type="Texture2D" uid="uid://blyjptyotgnm7" path="res://Assets/Default/Buttons/Scissors/Center/scissors_center.png" id="8_2cgpk"]
 [ext_resource type="Texture2D" uid="uid://bcqu33v1hj56y" path="res://Assets/Default/Buttons/Paper/Center/paper_center.png" id="8_wt8no"]
+[ext_resource type="Texture2D" uid="uid://cfw20bpli0v6r" path="res://Assets/Default/Buttons/Lizard/Center/lizard_center.png" id="9_7va1h"]
+[ext_resource type="Texture2D" uid="uid://dxhmf3tly8icy" path="res://Assets/Default/Buttons/Hunter/Center/hunter_center.png" id="9_rdvo0"]
 [ext_resource type="Texture2D" uid="uid://c7kqkhsw3pfuq" path="res://Assets/Game Over/fired_graphic.png" id="10_7dql5"]
 [ext_resource type="Texture2D" uid="uid://1o50x80pi0v6" path="res://Assets/Game Over/over_retry.png" id="10_dmq57"]
 [ext_resource type="Texture2D" uid="uid://4svxata1gobm" path="res://Assets/Game Over/over_main.png" id="11_f2tlh"]
@@ -296,9 +298,9 @@ script = ExtResource("1_kolsd")
 
 [node name="Rock" type="TextureButton" parent="Player"]
 unique_name_in_owner = true
-offset_left = -42.0
+offset_left = -67.0
 offset_top = 181.0
-offset_right = 158.0
+offset_right = 133.0
 offset_bottom = 381.0
 scale = Vector2(0.5, 0.5)
 texture_normal = ExtResource("6_kk75n")
@@ -316,12 +318,34 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Scissors" type="TextureButton" parent="Player"]
 unique_name_in_owner = true
-offset_left = 411.0
-offset_top = 174.0
-offset_right = 611.0
-offset_bottom = 374.0
+offset_left = 450.0
+offset_top = 176.0
+offset_right = 650.0
+offset_bottom = 376.0
 scale = Vector2(0.55, 0.55)
 texture_normal = ExtResource("8_2cgpk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Hunter" type="TextureButton" parent="Player"]
+unique_name_in_owner = true
+visible = false
+offset_left = 42.0
+offset_top = 204.0
+offset_right = 685.0
+offset_bottom = 564.0
+scale = Vector2(0.157527, 0.157527)
+texture_normal = ExtResource("9_rdvo0")
+metadata/_edit_use_anchors_ = true
+
+[node name="Lizard" type="TextureButton" parent="Player"]
+unique_name_in_owner = true
+visible = false
+offset_left = 312.0
+offset_top = 196.0
+offset_right = 872.0
+offset_bottom = 556.0
+scale = Vector2(0.197142, 0.197142)
+texture_normal = ExtResource("9_7va1h")
 metadata/_edit_use_anchors_ = true
 
 [node name="Score Text" type="Node2D" parent="Player"]
@@ -604,6 +628,8 @@ text = "FPS Goal:"
 [connection signal="pressed" from="Player/Rock" to="Player" method="_on_rock_pressed"]
 [connection signal="pressed" from="Player/Paper" to="Player" method="_on_paper_pressed"]
 [connection signal="pressed" from="Player/Scissors" to="Player" method="_on_scissors_pressed"]
+[connection signal="pressed" from="Player/Hunter" to="Player" method="_on_hunter_pressed"]
+[connection signal="pressed" from="Player/Lizard" to="Player" method="_on_lizard_pressed"]
 [connection signal="pressed" from="Lose/Retry" to="Player" method="retry"]
 [connection signal="pressed" from="Lose/MainMenu" to="Player" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Lose/Quit" to="Player" method="_on_quit_pressed"]
