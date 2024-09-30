@@ -2,6 +2,7 @@ extends Node2D
 
 var score: int = 0
 var pressed_timer: Timer
+var can_press: bool = true
 
 func _ready() -> void:
 	score = 0
@@ -15,6 +16,8 @@ func _ready() -> void:
 
 
 func visual_pressed(button: String):
+	if !can_press:
+		return
 	if button == "Rock":
 		%Rock.texture_normal = load(Globals.resource_path+"Buttons/Rock/Center/pressed_rock_center.png")
 	elif button == "Paper":
@@ -26,10 +29,13 @@ func visual_pressed(button: String):
 	elif button == "Hunter":
 		%Hunter.texture_normal = load(Globals.resource_path+"Buttons/Hunter/Center/pressed_hunter_center.png")
 
+	can_press = false
 	pressed_timer.start()
 
 
 func logic(choice: String = ""):
+	if !can_press:
+		return
 	var outcomes = {
 		"Rock": ["Scissors", "Lizard"],
 		"Scissors": ["Paper", "Lizard"],
@@ -65,6 +71,7 @@ func update_selection_images():
 	%Scissors.texture_normal = load(Globals.resource_path+"Buttons/Scissors/Center/scissors_center.png")
 	%Lizard.texture_normal = load(Globals.resource_path+"Buttons/Lizard/Center/lizard_center.png")
 	%Hunter.texture_normal = load(Globals.resource_path+"Buttons/Hunter/Center/hunter_center.png")
+	can_press = true
 
 
 func update_score():
