@@ -1,7 +1,12 @@
 extends Node2D
 
+var player = AudioStreamPlayer.new()
 
 func _ready():
+	add_child(player)
+	player.volume_db = Globals.volume
+	player.stream = Globals.selection_theme
+	player.play()
 	if Globals.mode == Globals.gamemode.default:
 		$Mode_Select/RPS_Mode.button_pressed = true
 		$Mode_Select/Zuckerberg_Mode.button_pressed = false
