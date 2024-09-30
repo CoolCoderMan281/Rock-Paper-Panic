@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ciqq51h6yi2e2"]
+[gd_scene load_steps=20 format=3 uid="uid://ciqq51h6yi2e2"]
 
 [ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
 [ext_resource type="Texture2D" uid="uid://cv4qplsnmnw8j" path="res://Assets/Default/button_settings.png" id="4_f5b87"]
@@ -16,6 +16,7 @@
 [ext_resource type="Texture2D" uid="uid://lnc0qn86v6tk" path="res://Assets/Default/MenuClipboard/Clipboard_Tutorial.png" id="15_7blyu"]
 [ext_resource type="Texture2D" uid="uid://di23p201j05di" path="res://Assets/Default/MenuClipboard/Clipboard_Settings.png" id="16_wb5wj"]
 [ext_resource type="Texture2D" uid="uid://cqug1l022ycq6" path="res://Assets/Default/MenuClipboard/Clipboard_Credits.png" id="17_4b6ji"]
+[ext_resource type="Texture2D" uid="uid://c678nsdoixu2" path="res://Assets/Default/Credits/Credits_Menu.png" id="18_8bscp"]
 [ext_resource type="Texture2D" uid="uid://dbnwyd5pp1gpx" path="res://Assets/Default/MenuClipboard/Clipboard_Quit.png" id="18_kwkl8"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56r7i"]
@@ -288,42 +289,18 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Background" type="ColorRect" parent="Credits"]
-layout_mode = 0
-offset_left = -319.0
-offset_top = -199.0
-offset_right = -249.0
-offset_bottom = -112.0
-scale = Vector2(29.24, 16.56)
-color = Color(0.87451, 0.682353, 0.298039, 1)
-
-[node name="Credits_label" type="Label" parent="Credits"]
-layout_mode = 0
-offset_left = 5.0
-offset_top = -8.0
-offset_right = 486.0
-offset_bottom = 275.0
-scale = Vector2(2.32019, 2.32019)
-text = "Credits:
-
-Ethan Mikes - Programmer
-
-Just call me 'L' - Assets / Keeping programmer sane
-
-Ayden Ionesu - Game Designer / Producer
-
-Rayan Awad - Assets / OST
-
-Idk else"
+[node name="CreditsMenu" type="Sprite2D" parent="Credits"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("18_8bscp")
 
 [node name="Back2" type="Button" parent="Credits"]
-layout_mode = 0
-offset_left = 877.0
-offset_top = 508.0
-offset_right = 1120.0
-offset_bottom = 634.0
+modulate = Color(1, 1, 1, 0)
+offset_left = 92.0
+offset_top = 541.0
+offset_right = 424.0
+offset_bottom = 667.0
 theme_override_font_sizes/font_size = 86
-text = "Back"
 
 [connection signal="pressed" from="Clipboard/ClipboardPlay/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Clipboard/ClipboardTutorial/Tutorial" to="." method="_on_tutorial_pressed"]

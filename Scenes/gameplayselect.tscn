@@ -123,6 +123,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="ColorRect2" type="ColorRect" parent="Consent_HARD"]
+layout_mode = 0
 offset_right = 1164.0
 offset_bottom = 662.0
 color = Color(0.711581, 0.568947, 0.200846, 1)
