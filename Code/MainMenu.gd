@@ -95,14 +95,6 @@ func _on_feedback_pressed() -> void:
 	OS.shell_open(Globals.feedback_url)
 
 
-func _input(event):
-	if event is InputEventMouseMotion:
-		var mouse_movement = event.relative
-		var new_position = $Clipboard.position
-		new_position.y -= mouse_movement.y * speed * get_process_delta_time()
-		new_position.y = clamp(new_position.y, max_y, min_y)
-		$Clipboard.position = new_position
-
 func _on_tutorial_pressed() -> void:
 	pass
 
