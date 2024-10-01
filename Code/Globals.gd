@@ -25,6 +25,7 @@ var volume: float = 0
 
 func quit():
 	if OS.get_name() == "Web":
+		JavaScriptBridge.eval("window.close()")
 		set_scene("res://Scenes/web_close.tscn")
 	get_tree().quit()
 
