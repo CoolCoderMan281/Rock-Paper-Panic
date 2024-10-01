@@ -96,7 +96,7 @@ func _on_feedback_pressed() -> void:
 
 
 func _on_tutorial_pressed() -> void:
-	pass
+	$Tutorial.show()
 
 func _on_back_2_pressed() -> void:
 	$Credits.hide()
@@ -126,3 +126,7 @@ func _on_credits_mouse_entered() -> void:
 
 func _on_credits_mouse_exited() -> void:
 	$Clipboard/ScrollContainer/VBoxContainer/ClipboardCredits.modulate = Color(1, 1, 1, 1)
+
+
+func _on_back_3_pressed() -> void:
+	$Tutorial.hide()
