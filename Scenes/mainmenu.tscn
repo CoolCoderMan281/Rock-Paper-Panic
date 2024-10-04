@@ -319,6 +319,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Background2" type="ColorRect" parent="Credits"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(29.24, 16.56)
@@ -331,6 +332,7 @@ texture = ExtResource("18_8bscp")
 
 [node name="Back2" type="Button" parent="Credits"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 92.0
 offset_top = 541.0
 offset_right = 424.0
@@ -345,6 +347,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Background2" type="ColorRect" parent="Tutorial"]
+layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 scale = Vector2(29.24, 16.56)
@@ -436,6 +439,7 @@ scale = Vector2(2.505, 1.385)
 texture = ExtResource("19_24viw")
 
 [node name="Back3" type="Button" parent="Tutorial"]
+layout_mode = 0
 offset_top = 389.0
 offset_right = 65.0
 offset_bottom = 869.0
