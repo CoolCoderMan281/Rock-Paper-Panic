@@ -63,6 +63,7 @@ func _on_lever_button_pressed():
 	if windowed == false and fullscreen == true:
 		fullscreen = false
 		windowed = true
+		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 		%lever.flip_v = false
 		
@@ -108,8 +109,6 @@ func _on_credits_pressed() -> void:
 func _on_settings_pressed() -> void:
 	%Settings.show()
 	%Volume.value = (Globals.volume + 30) / 30
-	print(Globals.volume)
-	print((Globals.volume+30)/30)
 
 
 func _on_tutorial_mouse_entered() -> void:

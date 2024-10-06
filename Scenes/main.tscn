@@ -5,109 +5,79 @@
 [ext_resource type="Script" path="res://Code/Enemy.gd" id="1_oxske"]
 [ext_resource type="Texture2D" uid="uid://bq4fmb7hlavyg" path="res://Assets/Default/battle_background.png" id="1_pv84b"]
 [ext_resource type="Texture2D" uid="uid://s7802tp51tgs" path="res://Assets/Default/Conveyor/Rock/rock_idle.png" id="2_78lwk"]
-[ext_resource type="Texture2D" uid="uid://b36pof77p2gd" path="res://Assets/Default/Buttons/Rock/Center/rock_center.png" id="6_kk75n"]
+[ext_resource type="Texture2D" uid="uid://07ev3kxs2ngu" path="res://Assets/Default/Buttons/Rock/idle.png" id="6_5jrsc"]
+[ext_resource type="Texture2D" uid="uid://2k7dnktwowel" path="res://Assets/Default/Buttons/Scissors/idle.png" id="6_u3ah1"]
 [ext_resource type="Script" path="res://Code/Options.gd" id="7_1iy2a"]
 [ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="7_gp2xf"]
 [ext_resource type="Script" path="res://Code/Countdown.gd" id="7_hbh5k"]
+[ext_resource type="Texture2D" uid="uid://cohwaydqpd0iu" path="res://Assets/Default/Buttons/Paper/idle.png" id="7_hfe7r"]
 [ext_resource type="Script" path="res://Code/Debug.gd" id="8_1kwu8"]
-[ext_resource type="Texture2D" uid="uid://blyjptyotgnm7" path="res://Assets/Default/Buttons/Scissors/Center/scissors_center.png" id="8_2cgpk"]
-[ext_resource type="Texture2D" uid="uid://bcqu33v1hj56y" path="res://Assets/Default/Buttons/Paper/Center/paper_center.png" id="8_wt8no"]
-[ext_resource type="Texture2D" uid="uid://cfw20bpli0v6r" path="res://Assets/Default/Buttons/Lizard/Center/lizard_center.png" id="9_7va1h"]
-[ext_resource type="Texture2D" uid="uid://dxhmf3tly8icy" path="res://Assets/Default/Buttons/Hunter/Center/hunter_center.png" id="9_rdvo0"]
+[ext_resource type="Texture2D" uid="uid://5lut1cddkj77" path="res://Assets/Default/Buttons/Hunter/pressed.png" id="9_f0o7p"]
+[ext_resource type="Texture2D" uid="uid://bjmp37jgq5cev" path="res://Assets/Default/Buttons/Lizard/idle.png" id="10_2hjgw"]
 [ext_resource type="Texture2D" uid="uid://c7kqkhsw3pfuq" path="res://Assets/Game Over/fired_graphic.png" id="10_7dql5"]
 [ext_resource type="Texture2D" uid="uid://1o50x80pi0v6" path="res://Assets/Game Over/over_retry.png" id="10_dmq57"]
 [ext_resource type="Texture2D" uid="uid://4svxata1gobm" path="res://Assets/Game Over/over_main.png" id="11_f2tlh"]
 [ext_resource type="Texture2D" uid="uid://b28ik3602dudw" path="res://Assets/Game Over/over_quit.png" id="12_a5uiq"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c3dky"]
-load_path = "res://.godot/imported/arrive_paper0001.png-aa657533d2f6b354a3210221a489ed4d.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wuk23"]
-load_path = "res://.godot/imported/arrive_paper0002.png-2d25dcd4a5c06aeb90514645085339bb.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p85ce"]
-load_path = "res://.godot/imported/arrive_paper0003.png-17641943593ac2aaf9a390bab25bee38.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pib5i"]
-load_path = "res://.godot/imported/arrive_paper0004.png-270603718dfc7d368e2665e3ed19aaa5.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hivkc"]
-load_path = "res://.godot/imported/arrive_paper0005.png-fc8a9c6ebbae73affa4994656c8d255a.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_waend"]
-load_path = "res://.godot/imported/arrive_paper0006.png-0b4a3565e60aab1334f88f2ea698e9fb.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1i7aq"]
-load_path = "res://.godot/imported/idle_paper.png-32410c0eb8f500bf1bdd218507cb04c6.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rungj"]
-load_path = "res://.godot/imported/leave_paper0001.png-957e57aeaca4c3ebf3e9779aca9fe875.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ey07h"]
-load_path = "res://.godot/imported/leave_paper0002.png-73bf1d1b1eb8378b6ba7149a8c32dfdb.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tg153"]
-load_path = "res://.godot/imported/leave_paper0003.png-8e270682086568bb5b163875631d93f2.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mfbjn"]
-load_path = "res://.godot/imported/leave_paper0004.png-11b4df936aa2da1174ced2796c4c58f6.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2cic6"]
-load_path = "res://.godot/imported/leave_paper0005.png-deb02a05f351c7d46380546b970f04fb.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w6mdn"]
-load_path = "res://.godot/imported/leave_paper0006.png-3e207f7fb6b3a3a9012ee0bd8278822a.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gpcga"]
-load_path = "res://.godot/imported/arrive_rock0001.png-3e20c1187321f48f77033c8852d6644d.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bsx0u"]
-load_path = "res://.godot/imported/arrive_rock0002.png-ba52d198348c7732458cb03d86fc95ff.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y6e8g"]
-load_path = "res://.godot/imported/arrive_rock0003.png-df53f8f6aaf59a40e77034390ebc44b4.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_enq2h"]
-load_path = "res://.godot/imported/arrive_rock0004.png-aed3648e8ee6845ce9335840d17824ab.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c1wdf"]
-load_path = "res://.godot/imported/arrive_rock0005.png-7302a572bded4f7517a8683c5d350b90.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6ex7q"]
-load_path = "res://.godot/imported/arrive_rock0006.png-b2b1a316a059be046ab998ea80cb2ade.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_swakb"]
-load_path = "res://.godot/imported/leave_rock0001.png-75202b0685dd6e8e038b58fed4965f1a.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i75dr"]
-load_path = "res://.godot/imported/leave_rock0002.png-4614dee280567309397d93510517b408.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a875q"]
-load_path = "res://.godot/imported/leave_rock0003.png-35a38309434faa45e430e101c017f859.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_84snj"]
-load_path = "res://.godot/imported/leave_rock0004.png-e9e540229940d1865e37efa0b9b92e12.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_35ckk"]
-load_path = "res://.godot/imported/leave_rock0005.png-eefb65550023789a9de4892e82ea260d.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qfmrq"]
-load_path = "res://.godot/imported/leave_rock0006.png-e0b567e183a41745c5205e37950359fa.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jdsr7"]
-load_path = "res://.godot/imported/conveyor_transition0001.png-20de7a818d6594267951a2587765387d.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6p67o"]
-load_path = "res://.godot/imported/conveyor_transition0002.png-98fc6950e647ac2d97577e0c13217f9e.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fwjqo"]
-load_path = "res://.godot/imported/conveyor_transition0003.png-8ac04662ce3bddfaff4a95eee765503c.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7rmrl"]
-load_path = "res://.godot/imported/conveyor_transition0004.png-dbc1f9ec68557a4509a00b66f72685d0.ctex"
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_50s6n"]
-load_path = "res://.godot/imported/conveyor_transition0005.png-d66e5308dcd2e409b66bd9aa77a90d2c.ctex"
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8jqtc"]
 animations = [{
@@ -311,7 +281,7 @@ offset_top = 181.0
 offset_right = 133.0
 offset_bottom = 381.0
 scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("6_kk75n")
+texture_normal = ExtResource("6_5jrsc")
 metadata/_edit_use_anchors_ = true
 
 [node name="Paper" type="TextureButton" parent="Player"]
@@ -321,7 +291,7 @@ offset_top = 173.0
 offset_right = 371.0
 offset_bottom = 373.0
 scale = Vector2(0.55, 0.55)
-texture_normal = ExtResource("8_wt8no")
+texture_normal = ExtResource("7_hfe7r")
 metadata/_edit_use_anchors_ = true
 
 [node name="Scissors" type="TextureButton" parent="Player"]
@@ -331,7 +301,7 @@ offset_top = 176.0
 offset_right = 650.0
 offset_bottom = 376.0
 scale = Vector2(0.55, 0.55)
-texture_normal = ExtResource("8_2cgpk")
+texture_normal = ExtResource("6_u3ah1")
 metadata/_edit_use_anchors_ = true
 
 [node name="Hunter" type="TextureButton" parent="Player"]
@@ -342,7 +312,7 @@ offset_top = 204.0
 offset_right = 685.0
 offset_bottom = 564.0
 scale = Vector2(0.157527, 0.157527)
-texture_normal = ExtResource("9_rdvo0")
+texture_normal = ExtResource("9_f0o7p")
 metadata/_edit_use_anchors_ = true
 
 [node name="Lizard" type="TextureButton" parent="Player"]
@@ -353,7 +323,7 @@ offset_top = 196.0
 offset_right = 872.0
 offset_bottom = 556.0
 scale = Vector2(0.197142, 0.197142)
-texture_normal = ExtResource("9_7va1h")
+texture_normal = ExtResource("10_2hjgw")
 metadata/_edit_use_anchors_ = true
 
 [node name="Score Text" type="Node2D" parent="Player"]

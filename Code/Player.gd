@@ -19,20 +19,19 @@ func visual_pressed(button: String):
 	if !can_press:
 		return
 	if button == "Rock":
-		%Rock.texture_normal = load(Globals.resource_path+"Buttons/Rock/Center/pressed_rock_center.png")
+		%Rock.texture_normal = load(Globals.resource_path+"Buttons/Rock/pressed.png")
 	elif button == "Paper":
-		%Paper.texture_normal = load(Globals.resource_path+"Buttons/Paper/Center/pressed_paper_center.png")
+		%Paper.texture_normal = load(Globals.resource_path+"Buttons/Paper/pressed.png")
 	elif button == "Scissors":
-		%Scissors.texture_normal = load(Globals.resource_path+"Buttons/Scissors/Center/pressed_scissors_center.png")
+		%Scissors.texture_normal = load(Globals.resource_path+"Buttons/Scissors/pressed.png")
 	elif button == "Lizard":
-		%Lizard.texture_normal = load(Globals.resource_path+"Buttons/Lizard/Center/pressed_lizard_center.png")
+		%Lizard.texture_normal = load(Globals.resource_path+"Buttons/Lizard/pressed.png")
 	elif button == "Hunter":
-		%Hunter.texture_normal = load(Globals.resource_path+"Buttons/Hunter/Center/pressed_hunter_center.png")
+		%Hunter.texture_normal = load(Globals.resource_path+"Buttons/Hunter/pressed.png")
 	pressed_timer.start()
 
 
 func logic(choice: String = ""):
-	print(can_press)
 	if !can_press:
 		return
 	visual_pressed(choice)
@@ -53,9 +52,6 @@ func logic(choice: String = ""):
 			%Countdown.reset_timer()
 		elif enemy_choice in outcomes and choice in outcomes[enemy_choice]:
 			%Countdown.end_game("lose")
-		else:
-			# If there's a tie
-			%Countdown.reset_timer()
 	else:
 		score += 1
 		%Enemy.new_choice()
@@ -66,11 +62,11 @@ func logic(choice: String = ""):
 
 
 func update_selection_images():
-	%Rock.texture_normal = load(Globals.resource_path+"Buttons/Rock/Center/rock_center.png")
-	%Paper.texture_normal = load(Globals.resource_path+"Buttons/Paper/Center/paper_center.png")
-	%Scissors.texture_normal = load(Globals.resource_path+"Buttons/Scissors/Center/scissors_center.png")
-	%Lizard.texture_normal = load(Globals.resource_path+"Buttons/Lizard/Center/lizard_center.png")
-	%Hunter.texture_normal = load(Globals.resource_path+"Buttons/Hunter/Center/hunter_center.png")
+	%Rock.texture_normal = load(Globals.resource_path+"Buttons/Rock/idle.png")
+	%Paper.texture_normal = load(Globals.resource_path+"Buttons/Paper/idle.png")
+	%Scissors.texture_normal = load(Globals.resource_path+"Buttons/Scissors/idle.png")
+	%Lizard.texture_normal = load(Globals.resource_path+"Buttons/Lizard/idle.png")
+	%Hunter.texture_normal = load(Globals.resource_path+"Buttons/Hunter/idle.png")
 
 
 func update_score():
