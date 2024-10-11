@@ -21,7 +21,7 @@ var telemetry_url: String = "https://awesnap.dev/telemetry"
 var feedback_url: String = "https://forms.gle/Ws9qj8pPWxE9waaRA"
 var resource_path: String = "res://Assets/Default/"
 var default_resource_path: String = resource_path
-var volume: float = 0
+var volume: float = -7.5
 
 func quit():
 	if OS.get_name() == "Web":

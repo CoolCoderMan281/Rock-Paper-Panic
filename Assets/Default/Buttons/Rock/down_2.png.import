@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bn7uflnys6jb3"
-path="res://.godot/imported/pressed.png-f8e4d03975cca533eb414b721d526dc6.ctex"
+uid="uid://bjslynw4xun6u"
+path="res://.godot/imported/down_2.png-0969ccf8d32bc3e13a0449fe77eb243e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Default/Buttons/Scissors/pressed.png"
-dest_files=["res://.godot/imported/pressed.png-f8e4d03975cca533eb414b721d526dc6.ctex"]
+source_file="res://Assets/Default/Buttons/Rock/down_2.png"
+dest_files=["res://.godot/imported/down_2.png-0969ccf8d32bc3e13a0449fe77eb243e.ctex"]
 
 [params]
 

@@ -12,7 +12,7 @@ var player = AudioStreamPlayer.new()
 func _ready():
 	if Globals.debug_enabled:
 		print("Debug Mode is Enabled!")
-	%Feedback.visible = Globals.feedback_welcome
+	$Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback.visible = Globals.feedback_welcome
 	
 	# Initialize the volume cover sizes
 	volumeCoverSizeX = %Volume_Cover.size.x
@@ -129,3 +129,11 @@ func _on_credits_mouse_exited() -> void:
 
 func _on_back_3_pressed() -> void:
 	$Tutorial.hide()
+
+
+func _on_feedback_mouse_entered() -> void:
+	$Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback.modulate = Color(1, 1, 1, 0.5)
+
+
+func _on_feedback_mouse_exited() -> void:
+	$Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback.modulate = Color(1, 1, 1, 1)

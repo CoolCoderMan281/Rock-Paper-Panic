@@ -1,9 +1,8 @@
-[gd_scene load_steps=21 format=3 uid="uid://ciqq51h6yi2e2"]
+[gd_scene load_steps=19 format=3 uid="uid://ciqq51h6yi2e2"]
 
 [ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
 [ext_resource type="Texture2D" uid="uid://cv4qplsnmnw8j" path="res://Assets/Default/button_settings.png" id="4_f5b87"]
-[ext_resource type="Texture2D" uid="uid://dxvf24u7n7rsk" path="res://Assets/Default/placeholder_stickynote.png" id="6_mlnkw"]
-[ext_resource type="Theme" uid="uid://ro5pv5fiidmj" path="res://Assets/Fonts/Fake Handwritten FONT.tres" id="7_si1of"]
+[ext_resource type="Texture2D" uid="uid://cvlxrq3sng4ct" path="res://Assets/Default/MenuClipboard/Clipboard_Feedback.png" id="7_yrppq"]
 [ext_resource type="Texture2D" uid="uid://bnf0rfadrqu8a" path="res://Assets/Settings/switch_backing.png" id="9_7xfr5"]
 [ext_resource type="Texture2D" uid="uid://bbgoserrvm42x" path="res://Assets/Settings/windowed_tag.png" id="9_kr4ux"]
 [ext_resource type="Texture2D" uid="uid://dpk32bytsp4v3" path="res://Assets/Settings/fullscreen_tag.png" id="10_3d68q"]
@@ -19,8 +18,6 @@
 [ext_resource type="Texture2D" uid="uid://c678nsdoixu2" path="res://Assets/Default/Credits/Credits_Menu.png" id="18_8bscp"]
 [ext_resource type="Texture2D" uid="uid://dbnwyd5pp1gpx" path="res://Assets/Default/MenuClipboard/Clipboard_Quit.png" id="18_kwkl8"]
 [ext_resource type="Texture2D" uid="uid://d2uss7fbflg76" path="res://Assets/Default/zuckrberg_window.webp" id="19_24viw"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_56r7i"]
 
 [node name="Mainmenu" type="Node2D"]
 script = ExtResource("1_glogx")
@@ -72,7 +69,7 @@ theme_override_font_sizes/font_size = 50
 text = "Scroll!"
 
 [node name="ClipboardPlay" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
-position = Vector2(459.6, 521.2)
+position = Vector2(459.6, 513.2)
 scale = Vector2(0.6016, 0.4436)
 texture = ExtResource("14_uvh60")
 
@@ -85,7 +82,7 @@ offset_bottom = -236.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ClipboardTutorial" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
-position = Vector2(448.4, 544.4)
+position = Vector2(448.4, 536.4)
 scale = Vector2(0.6464, 0.5007)
 texture = ExtResource("15_7blyu")
 
@@ -98,7 +95,7 @@ offset_bottom = 50.0
 metadata/_edit_use_anchors_ = true
 
 [node name="ClipboardSettings" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
-position = Vector2(455.6, 553.2)
+position = Vector2(455.6, 545.2)
 scale = Vector2(0.612, 0.4468)
 texture = ExtResource("16_wb5wj")
 
@@ -111,7 +108,7 @@ offset_bottom = 312.81
 metadata/_edit_use_anchors_ = true
 
 [node name="ClipboardCredits" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
-position = Vector2(442.8, 565.2)
+position = Vector2(442.8, 544.4)
 scale = Vector2(0.6152, 0.4608)
 texture = ExtResource("17_4b6ji")
 
@@ -123,8 +120,26 @@ offset_right = 630.034
 offset_bottom = 579.083
 metadata/_edit_use_anchors_ = true
 
+[node name="ClipboardFeedback" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
+position = Vector2(453.2, 632.4)
+scale = Vector2(0.6152, 0.4416)
+texture = ExtResource("7_yrppq")
+
+[node name="Feedback" type="Button" parent="Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = -1.69067e-05
+anchor_top = 0.0189711
+anchor_right = -1.69067e-05
+anchor_bottom = -0.0180289
+offset_left = -553.966
+offset_top = 384.058
+offset_right = 630.034
+offset_bottom = 661.058
+metadata/_edit_use_anchors_ = true
+
 [node name="ClipboardQuit" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
-position = Vector2(476, 606.8)
+position = Vector2(476, 671.6)
 scale = Vector2(0.6524, 0.4376)
 texture = ExtResource("18_kwkl8")
 
@@ -136,9 +151,9 @@ offset_right = 570.266
 offset_bottom = 827.274
 metadata/_edit_use_anchors_ = true
 
-[node name="ActualMainMenu" type="Node2D" parent="."]
+[node name="Overlay" type="Node2D" parent="."]
 
-[node name="DebugNotice" type="Label" parent="ActualMainMenu"]
+[node name="DebugNotice" type="Label" parent="Overlay"]
 unique_name_in_owner = true
 modulate = Color(1, 1, 1, 0.498039)
 offset_left = 8.0
@@ -150,30 +165,6 @@ theme_override_colors/font_color = Color(0.768627, 0.384314, 0, 1)
 theme_override_font_sizes/font_size = 16
 text = "Debug Menu is enabled, if this 
 is a mistake you need to rebuild."
-
-[node name="feedback_stickynote" type="TextureRect" parent="ActualMainMenu"]
-modulate = Color(0.971749, 0.858816, 0.771244, 1)
-offset_left = 852.547
-offset_top = 1.00003
-offset_right = 1927.55
-offset_bottom = 992.0
-rotation = 0.0872665
-scale = Vector2(0.265, 0.18)
-texture = ExtResource("6_mlnkw")
-
-[node name="Feedback" type="Button" parent="ActualMainMenu"]
-unique_name_in_owner = true
-modulate = Color(0, 0, 0, 1)
-offset_left = 884.547
-offset_top = 48.0
-offset_right = 1144.55
-offset_bottom = 199.0
-rotation = -0.0579116
-scale = Vector2(0.85, 0.85)
-theme = ExtResource("7_si1of")
-theme_override_font_sizes/font_size = 70
-theme_override_styles/normal = SubResource("StyleBoxEmpty_56r7i")
-text = "Feedback"
 
 [node name="Settings" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -462,10 +453,12 @@ K"
 [connection signal="mouse_entered" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardCredits/Credits" to="." method="_on_credits_mouse_entered"]
 [connection signal="mouse_exited" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardCredits/Credits" to="." method="_on_credits_mouse_exited"]
 [connection signal="pressed" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardCredits/Credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback/Feedback" to="." method="_on_feedback_mouse_entered"]
+[connection signal="mouse_exited" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback/Feedback" to="." method="_on_feedback_mouse_exited"]
+[connection signal="pressed" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback/Feedback" to="." method="_on_feedback_pressed"]
 [connection signal="mouse_entered" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit/Quit" to="." method="_on_quit_mouse_entered"]
 [connection signal="mouse_exited" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit/Quit" to="." method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit/Quit" to="." method="_on_quit_pressed"]
-[connection signal="pressed" from="ActualMainMenu/Feedback" to="." method="_on_feedback_pressed"]
 [connection signal="value_changed" from="Settings/Volume" to="." method="_on_volume_value_changed"]
 [connection signal="pressed" from="Settings/Windowed" to="." method="_on_windowed_pressed"]
 [connection signal="pressed" from="Settings/Fullscreen" to="." method="_on_fullscreen_pressed"]
