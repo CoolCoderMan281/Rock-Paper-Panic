@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://ciqq51h6yi2e2"]
+[gd_scene load_steps=22 format=3 uid="uid://ciqq51h6yi2e2"]
 
 [ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
 [ext_resource type="Texture2D" uid="uid://cv4qplsnmnw8j" path="res://Assets/Default/button_settings.png" id="4_f5b87"]
@@ -17,7 +17,10 @@
 [ext_resource type="Texture2D" uid="uid://cqug1l022ycq6" path="res://Assets/Default/MenuClipboard/Clipboard_Credits.png" id="17_4b6ji"]
 [ext_resource type="Texture2D" uid="uid://c678nsdoixu2" path="res://Assets/Default/Credits/Credits_Menu.png" id="18_8bscp"]
 [ext_resource type="Texture2D" uid="uid://dbnwyd5pp1gpx" path="res://Assets/Default/MenuClipboard/Clipboard_Quit.png" id="18_kwkl8"]
-[ext_resource type="Texture2D" uid="uid://d2uss7fbflg76" path="res://Assets/Default/zuckrberg_window.webp" id="19_24viw"]
+[ext_resource type="Texture2D" uid="uid://wg6hscr0sewi" path="res://Assets/Default/Tutorial/Tutorial-Intro.png" id="18_ty36c"]
+[ext_resource type="Texture2D" uid="uid://rhamnwgy52d7" path="res://Assets/Default/Tutorial/Tutorial-Back.png" id="19_qr86a"]
+[ext_resource type="Texture2D" uid="uid://bu5fmdqr8eus2" path="res://Assets/Default/Tutorial/Tutorial-Intro-Select.png" id="20_3jdgg"]
+[ext_resource type="Texture2D" uid="uid://bnq1jp3ae2jyu" path="res://Assets/Default/Tutorial/Tutorial-RPS-Select.png" id="21_jb6w5"]
 
 [node name="Mainmenu" type="Node2D"]
 script = ExtResource("1_glogx")
@@ -337,109 +340,61 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="Background2" type="ColorRect" parent="Tutorial"]
+[node name="ColorRect" type="ColorRect" parent="Tutorial"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-scale = Vector2(29.24, 16.56)
-color = Color(0.558361, 0.422722, 0.140128, 1)
+offset_right = 1173.0
+offset_bottom = 665.0
 
-[node name="Label" type="Label" parent="Tutorial"]
-layout_mode = 0
-offset_left = 60.0
-offset_top = 37.0
-offset_right = 134.0
-offset_bottom = 60.0
-scale = Vector2(3.86767, 3.86767)
-text = "Da Basics"
+[node name="Folder" type="Sprite2D" parent="Tutorial"]
+position = Vector2(661.5, 325)
+scale = Vector2(0.845313, 0.657407)
+texture = ExtResource("18_ty36c")
 
-[node name="Label4" type="Label" parent="Tutorial"]
-layout_mode = 0
-offset_left = 149.0
-offset_top = 420.0
-offset_right = 274.0
-offset_bottom = 469.0
-scale = Vector2(3.86767, 3.86767)
-text = "This is the lizard
-that you hunt ->"
+[node name="Tutorial-back" type="Sprite2D" parent="Tutorial"]
+position = Vector2(750, 265)
+texture = ExtResource("19_qr86a")
 
-[node name="Label2" type="Label" parent="Tutorial"]
-layout_mode = 0
-offset_left = 426.0
-offset_top = 34.0
-offset_right = 500.0
-offset_bottom = 57.0
-scale = Vector2(1.66767, 3.86767)
-text = "Rock Paper Scissors"
-
-[node name="Label3" type="Label" parent="Tutorial"]
-layout_mode = 0
-offset_left = 777.0
-offset_top = 41.0
-offset_right = 929.0
-offset_bottom = 64.0
-scale = Vector2(1.66767, 3.86767)
-text = "Zuckerberg hunter"
-
-[node name="RichTextLabel" type="RichTextLabel" parent="Tutorial"]
-layout_mode = 0
-offset_left = 43.0
-offset_top = 136.0
-offset_right = 359.0
-offset_bottom = 376.0
-text = "Welcome to Rock Paper Panic! The game where you play Rock Paper Scissors under a time limit! This tutorial is separated into 3 sections: Basics, Rock-Paper-Scissors, and Lizard-Hunter. Click the tabs above to read the tutorials for each section
-
-In Rock Paper Panic! There are two essential mechanics: The Timer, and Selection Swap. Depending on the difficulty, these two will change. The Timer starts at 10 seconds on normal mode and 5 seconds on hard mode. Every time you win a match, the timer will reset. Be careful, after every set amount of wins the timer cap will begin to decrease
-
-Selection swap occurs after a certain amount of wins is reached. Your options will move around and you need to adapt to your environment
-"
-
-[node name="RichTextLabel2" type="RichTextLabel" parent="Tutorial"]
-layout_mode = 0
-offset_left = 403.0
-offset_top = 129.0
-offset_right = 719.0
-offset_bottom = 369.0
-text = "In this game mode, there are three options: Rock, Paper, and Scissors. Rock beats scissors, scissors beats paper, and paper beats rock. On the big screen you’ll see one of those 3 options. Click on the button that beats it and you’ll win a match! Every time you win a match, your score increases by 1. Try and get the highest score possible!"
-
-[node name="RichTextLabel3" type="RichTextLabel" parent="Tutorial"]
-layout_mode = 0
-offset_left = 761.0
-offset_top = 126.0
-offset_right = 1077.0
-offset_bottom = 366.0
-text = "In this game mode, there are five options: Rock, Paper, Scissors, Lizard, and Hunter. The matchups work like this:
-
-Rock beats Scissors
-Scissors beats Paper
-Paper beats Rock
-Rock beats Lizard
-Lizard beats Hunter
-Hunter beats Scissors
-Scissors beats Lizard
-Lizard beats Paper
-Paper beats Hunter
-Hunter beats Rock
-
- On the big screen you’ll see one of those 5 options. Click on the button that beats it and you’ll win a match! Every time you win a match, your score increases by 1. Try and get the highest score possible!
-"
-
-[node name="ZuckrbergWindow" type="Sprite2D" parent="Tutorial"]
-position = Vector2(902.5, 509.5)
-scale = Vector2(2.505, 1.385)
-texture = ExtResource("19_24viw")
-
-[node name="Back3" type="Button" parent="Tutorial"]
-layout_mode = 0
-offset_top = 389.0
-offset_right = 65.0
-offset_bottom = 869.0
+[node name="Back3" type="Button" parent="Tutorial/Tutorial-back"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -597.0
+offset_top = 203.0
+offset_right = -522.0
+offset_bottom = 356.0
 scale = Vector2(2.23739, 0.547341)
 theme_override_font_sizes/font_size = 86
-text = "B
-A
-C
-K"
+
+[node name="Intro-Button" type="Button" parent="Tutorial"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 44.0
+offset_top = 20.0
+offset_right = 160.0
+offset_bottom = 117.0
+
+[node name="RPS-Button" type="Button" parent="Tutorial"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 163.0
+offset_right = 273.0
+offset_bottom = 97.0
+
+[node name="Tutorial-intro-select" type="Sprite2D" parent="Tutorial"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(740, 447)
+texture = ExtResource("20_3jdgg")
+
+[node name="Tutorial-rps-select" type="Sprite2D" parent="Tutorial"]
+unique_name_in_owner = true
+visible = false
+position = Vector2(732, 469)
+texture = ExtResource("21_jb6w5")
+
+[node name="LH-Button" type="Button" parent="Tutorial"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 278.0
+offset_top = -6.0
+offset_right = 388.0
+offset_bottom = 91.0
 
 [connection signal="mouse_entered" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardPlay/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardPlay/Play" to="." method="_on_play_mouse_exited"]
@@ -465,4 +420,7 @@ K"
 [connection signal="pressed" from="Settings/Back" to="." method="_on_back_pressed"]
 [connection signal="pressed" from="Settings/window_switch/lever_button" to="." method="_on_lever_button_pressed"]
 [connection signal="pressed" from="Credits/Back2" to="." method="_on_back_2_pressed"]
-[connection signal="pressed" from="Tutorial/Back3" to="." method="_on_back_3_pressed"]
+[connection signal="pressed" from="Tutorial/Tutorial-back/Back3" to="." method="_on_back_3_pressed"]
+[connection signal="pressed" from="Tutorial/Intro-Button" to="." method="_on_intro_button_pressed"]
+[connection signal="pressed" from="Tutorial/RPS-Button" to="." method="_on_rps_button_pressed"]
+[connection signal="pressed" from="Tutorial/LH-Button" to="." method="_on_lh_button_pressed"]
