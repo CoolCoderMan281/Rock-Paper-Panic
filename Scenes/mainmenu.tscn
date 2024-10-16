@@ -332,11 +332,13 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="ColorRect" type="ColorRect" parent="Tutorial"]
-modulate = Color(0, 0, 0, 0.878431)
-layout_mode = 0
-offset_right = 1173.0
-offset_bottom = 665.0
+[node name="Background" type="ColorRect" parent="Tutorial"]
+offset_left = -620.0
+offset_top = -38.0
+offset_right = -550.0
+offset_bottom = 54.0
+scale = Vector2(29.24, 16.56)
+color = Color(0.87451, 0.682353, 0.298039, 1)
 
 [node name="Folder" type="Sprite2D" parent="Tutorial"]
 position = Vector2(661.5, 325)
