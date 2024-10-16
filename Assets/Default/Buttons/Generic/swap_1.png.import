@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://otu6u4t5sphc"
-path="res://.godot/imported/up_2.png-f414f010acf92b3c5716516534b28548.ctex"
+uid="uid://evixq68pe1vh"
+path="res://.godot/imported/swap_1.png-ea1a1f343b105f14e9994d44f6c20d20.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Default/Buttons/Scissors/up_2.png"
-dest_files=["res://.godot/imported/up_2.png-f414f010acf92b3c5716516534b28548.ctex"]
+source_file="res://Assets/Default/Buttons/Generic/swap_1.png"
+dest_files=["res://.godot/imported/swap_1.png-ea1a1f343b105f14e9994d44f6c20d20.ctex"]
 
 [params]
 

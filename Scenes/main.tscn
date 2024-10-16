@@ -1,19 +1,40 @@
-[gd_scene load_steps=52 format=3 uid="uid://bu6j0v2aj8gfi"]
+[gd_scene load_steps=74 format=3 uid="uid://bu6j0v2aj8gfi"]
 
 [ext_resource type="Texture2D" uid="uid://cpnx38wjlkphy" path="res://Assets/Default/Conveyor/Paper/paper_in_6.png" id="1_0l1lu"]
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
 [ext_resource type="Script" path="res://Code/Enemy.gd" id="1_oxske"]
 [ext_resource type="Texture2D" uid="uid://bq4fmb7hlavyg" path="res://Assets/Default/battle_background.png" id="1_pv84b"]
 [ext_resource type="Texture2D" uid="uid://s7802tp51tgs" path="res://Assets/Default/Conveyor/Rock/rock_idle.png" id="2_78lwk"]
-[ext_resource type="Texture2D" uid="uid://d24w5snqwb3k6" path="res://Assets/Default/Buttons/Rock/idle.png" id="6_5jrsc"]
+[ext_resource type="Texture2D" uid="uid://chob5ot3qp2i1" path="res://Assets/Default/Buttons/Rock/idle.png" id="6_5jrsc"]
 [ext_resource type="Script" path="res://Code/Options.gd" id="7_1iy2a"]
 [ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="7_gp2xf"]
 [ext_resource type="Script" path="res://Code/Countdown.gd" id="7_hbh5k"]
+[ext_resource type="Texture2D" uid="uid://8r1kunsmkchb" path="res://Assets/Default/Buttons/Rock/down_1.png" id="7_sa4tn"]
 [ext_resource type="Script" path="res://Code/Debug.gd" id="8_1kwu8"]
+[ext_resource type="Texture2D" uid="uid://bmqlume52cbuf" path="res://Assets/Default/Buttons/Rock/pressed.png" id="8_kih3g"]
+[ext_resource type="Texture2D" uid="uid://bk1tnh84r6a0m" path="res://Assets/Default/Buttons/Rock/up_1.png" id="9_stxtg"]
 [ext_resource type="Texture2D" uid="uid://c7kqkhsw3pfuq" path="res://Assets/Game Over/fired_graphic.png" id="10_7dql5"]
 [ext_resource type="Texture2D" uid="uid://1o50x80pi0v6" path="res://Assets/Game Over/over_retry.png" id="10_dmq57"]
+[ext_resource type="Texture2D" uid="uid://evixq68pe1vh" path="res://Assets/Default/Buttons/Generic/swap_1.png" id="10_fhc2l"]
+[ext_resource type="Texture2D" uid="uid://bn8ll4hunsg5c" path="res://Assets/Default/Buttons/Generic/swap_2.png" id="11_32k0f"]
 [ext_resource type="Texture2D" uid="uid://4svxata1gobm" path="res://Assets/Game Over/over_main.png" id="11_f2tlh"]
+[ext_resource type="Texture2D" uid="uid://d0a06553a4pu6" path="res://Assets/Default/Buttons/Paper/idle.png" id="12_4dk2a"]
 [ext_resource type="Texture2D" uid="uid://b28ik3602dudw" path="res://Assets/Game Over/over_quit.png" id="12_a5uiq"]
+[ext_resource type="Texture2D" uid="uid://b3gj7xxu0tdh0" path="res://Assets/Default/Buttons/Paper/down_1.png" id="13_uasrl"]
+[ext_resource type="Texture2D" uid="uid://cpmmgx3b4yjph" path="res://Assets/Default/Buttons/Paper/pressed.png" id="14_udtok"]
+[ext_resource type="Texture2D" uid="uid://cmrgrlulurkll" path="res://Assets/Default/Buttons/Paper/up_1.png" id="15_5uy8s"]
+[ext_resource type="Texture2D" uid="uid://dhof58gkwn5wj" path="res://Assets/Default/Buttons/Scissors/idle.png" id="16_di70a"]
+[ext_resource type="Texture2D" uid="uid://c1325mygyvuu3" path="res://Assets/Default/Buttons/Scissors/down_1.png" id="17_38kub"]
+[ext_resource type="Texture2D" uid="uid://bfpswktuuvrgq" path="res://Assets/Default/Buttons/Scissors/pressed.png" id="18_ie1kk"]
+[ext_resource type="Texture2D" uid="uid://0ej2eyn0axy0" path="res://Assets/Default/Buttons/Scissors/up_1.png" id="19_b7owd"]
+[ext_resource type="Texture2D" uid="uid://d2cm6ahgtyl20" path="res://Assets/Default/Buttons/Lizard/idle.png" id="20_ola5f"]
+[ext_resource type="Texture2D" uid="uid://ck2mqkyqkrtq4" path="res://Assets/Default/Buttons/Lizard/down_1.png" id="21_e842l"]
+[ext_resource type="Texture2D" uid="uid://cpmdgg8t2xhwo" path="res://Assets/Default/Buttons/Lizard/pressed.png" id="22_thht2"]
+[ext_resource type="Texture2D" uid="uid://c6ox2cksue3o6" path="res://Assets/Default/Buttons/Lizard/up_1.png" id="23_opwan"]
+[ext_resource type="Texture2D" uid="uid://cqejkyc6ktg8l" path="res://Assets/Default/Buttons/Hunter/idle.png" id="24_eshyq"]
+[ext_resource type="Texture2D" uid="uid://bkp40ng2pol7s" path="res://Assets/Default/Buttons/Hunter/down_1.png" id="25_261ld"]
+[ext_resource type="Texture2D" uid="uid://bovx7q2pvnplq" path="res://Assets/Default/Buttons/Hunter/pressed.png" id="26_gnesw"]
+[ext_resource type="Texture2D" uid="uid://bmfr8murlo20f" path="res://Assets/Default/Buttons/Hunter/up_1.png" id="27_x0xqs"]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c3dky"]
 
@@ -212,15 +233,280 @@ animations = [{
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xyrgs"]
 load_path = "res://.godot/imported/paper_idle.png-ff15289806a9704c53943c10aa6e49bb.ctex"
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_5ycww"]
-load_path = "res://.godot/imported/idle.png-16360154b1797522c1257620919742d2.ctex"
+[sub_resource type="SpriteFrames" id="SpriteFrames_srto4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5jrsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sa4tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kih3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_stxtg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5jrsc")
+}],
+"loop": false,
+"name": &"press",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5jrsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sa4tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kih3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kih3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sa4tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5jrsc")
+}],
+"loop": false,
+"name": &"selection_swap",
+"speed": 12.0
+}]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_77i65"]
-load_path = "res://.godot/imported/idle.png-de2331da723bcc01398494e79bcd0d57.ctex"
+[sub_resource type="SpriteFrames" id="SpriteFrames_6qivr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_4dk2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uasrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_udtok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5uy8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4dk2a")
+}],
+"loop": false,
+"name": &"press",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_4dk2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uasrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_udtok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_udtok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uasrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4dk2a")
+}],
+"loop": false,
+"name": &"selection_swap",
+"speed": 12.0
+}]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gbgnf"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_3b5bm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_di70a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_38kub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ie1kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_b7owd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_di70a")
+}],
+"loop": false,
+"name": &"press",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_di70a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_38kub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ie1kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ie1kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_38kub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_di70a")
+}],
+"loop": false,
+"name": &"selection_swap",
+"speed": 12.0
+}]
 
-[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_0mlve"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_cjg1o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_ola5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_e842l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_thht2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_opwan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ola5f")
+}],
+"loop": false,
+"name": &"press",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_ola5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_e842l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_thht2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_thht2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_e842l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ola5f")
+}],
+"loop": false,
+"name": &"selection_swap",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pqwk1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_eshyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_261ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gnesw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_x0xqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_eshyq")
+}],
+"loop": false,
+"name": &"press",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_eshyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_261ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gnesw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gnesw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_261ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_eshyq")
+}],
+"loop": false,
+"name": &"selection_swap",
+"speed": 12.0
+}]
 
 [sub_resource type="GDScript" id="GDScript_a5fcu"]
 script/source = "extends CanvasLayer
@@ -280,57 +566,77 @@ texture = ExtResource("1_pv84b")
 unique_name_in_owner = true
 script = ExtResource("1_kolsd")
 
-[node name="Rock" type="TextureButton" parent="Player"]
+[node name="Rock" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
-offset_left = 293.0
-offset_top = 338.0
-offset_right = 2213.0
-offset_bottom = 1418.0
-scale = Vector2(0.5, 0.5)
-texture_normal = ExtResource("6_5jrsc")
-metadata/_edit_use_anchors_ = true
+position = Vector2(-45, 225)
+scale = Vector2(0.175, 0.181597)
+sprite_frames = SubResource("SpriteFrames_srto4")
+animation = &"selection_swap"
 
-[node name="Paper" type="TextureButton" parent="Player"]
+[node name="Rock_Trigger" type="Button" parent="Player/Rock"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -366.0
+offset_top = -286.0
+offset_right = 365.0
+offset_bottom = 331.0
+
+[node name="Paper" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
-offset_left = 171.0
-offset_top = 173.0
-offset_right = 371.0
-offset_bottom = 373.0
-scale = Vector2(0.55, 0.55)
-texture_normal = SubResource("CompressedTexture2D_5ycww")
-metadata/_edit_use_anchors_ = true
+position = Vector2(228, 225)
+scale = Vector2(0.175, 0.181597)
+sprite_frames = SubResource("SpriteFrames_6qivr")
+animation = &"selection_swap"
 
-[node name="Scissors" type="TextureButton" parent="Player"]
+[node name="Paper_Trigger" type="Button" parent="Player/Paper"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -366.0
+offset_top = -286.0
+offset_right = 365.0
+offset_bottom = 331.0
+
+[node name="Scissors" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
-offset_left = 450.0
-offset_top = 176.0
-offset_right = 650.0
-offset_bottom = 376.0
-scale = Vector2(0.55, 0.55)
-texture_normal = SubResource("CompressedTexture2D_77i65")
-metadata/_edit_use_anchors_ = true
+position = Vector2(532, 225)
+scale = Vector2(0.175, 0.181597)
+sprite_frames = SubResource("SpriteFrames_3b5bm")
+animation = &"press"
 
-[node name="Hunter" type="TextureButton" parent="Player"]
+[node name="Scissors_Trigger" type="Button" parent="Player/Scissors"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -366.0
+offset_top = -286.0
+offset_right = 365.0
+offset_bottom = 331.0
+
+[node name="Lizard" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
 visible = false
-offset_left = 42.0
-offset_top = 204.0
-offset_right = 685.0
-offset_bottom = 564.0
-scale = Vector2(0.157527, 0.157527)
-texture_normal = SubResource("CompressedTexture2D_gbgnf")
-metadata/_edit_use_anchors_ = true
+position = Vector2(385, 225)
+scale = Vector2(0.175, 0.181597)
+sprite_frames = SubResource("SpriteFrames_cjg1o")
+animation = &"selection_swap"
 
-[node name="Lizard" type="TextureButton" parent="Player"]
+[node name="Lizard_Trigger" type="Button" parent="Player/Lizard"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -366.0
+offset_top = -286.0
+offset_right = 365.0
+offset_bottom = 331.0
+
+[node name="Hunter" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
 visible = false
-offset_left = 312.0
-offset_top = 196.0
-offset_right = 872.0
-offset_bottom = 556.0
-scale = Vector2(0.197142, 0.197142)
-texture_normal = SubResource("CompressedTexture2D_0mlve")
-metadata/_edit_use_anchors_ = true
+position = Vector2(91, 225)
+scale = Vector2(0.175, 0.181597)
+sprite_frames = SubResource("SpriteFrames_pqwk1")
+animation = &"selection_swap"
+
+[node name="Hunter_Trigger" type="Button" parent="Player/Hunter"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -366.0
+offset_top = -286.0
+offset_right = 365.0
+offset_bottom = 331.0
 
 [node name="Score Text" type="Node2D" parent="Player"]
 position = Vector2(-220, 261)
@@ -609,11 +915,12 @@ offset_bottom = 364.0
 scale = Vector2(1.71181, 1.71181)
 text = "FPS Goal:"
 
-[connection signal="pressed" from="Player/Rock" to="Player" method="_on_rock_pressed"]
-[connection signal="pressed" from="Player/Paper" to="Player" method="_on_paper_pressed"]
-[connection signal="pressed" from="Player/Scissors" to="Player" method="_on_scissors_pressed"]
-[connection signal="pressed" from="Player/Hunter" to="Player" method="_on_hunter_pressed"]
-[connection signal="pressed" from="Player/Lizard" to="Player" method="_on_lizard_pressed"]
+[connection signal="frame_changed" from="Player/Rock" to="Countdown" method="_on_rock_frame_changed"]
+[connection signal="pressed" from="Player/Rock/Rock_Trigger" to="Player" method="_on_rock_trigger_pressed"]
+[connection signal="pressed" from="Player/Paper/Paper_Trigger" to="Player" method="_on_paper_trigger_pressed"]
+[connection signal="pressed" from="Player/Scissors/Scissors_Trigger" to="Player" method="_on_scissors_trigger_pressed"]
+[connection signal="pressed" from="Player/Lizard/Lizard_Trigger" to="Player" method="_on_lizard_trigger_pressed"]
+[connection signal="pressed" from="Player/Hunter/Hunter_Trigger" to="Player" method="_on_hunter_trigger_pressed"]
 [connection signal="pressed" from="Lose/Retry" to="Player" method="retry"]
 [connection signal="pressed" from="Lose/MainMenu" to="Player" method="_on_main_menu_pressed"]
 [connection signal="pressed" from="Lose/Quit" to="Player" method="_on_quit_pressed"]

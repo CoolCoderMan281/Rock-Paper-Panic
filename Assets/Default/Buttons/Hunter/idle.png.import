@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ci3icp0x65glr"
-path="res://.godot/imported/down_2.png-050c03bc831022f51d6a00127e955ed8.ctex"
+uid="uid://cqejkyc6ktg8l"
+path="res://.godot/imported/idle.png-ab1b5b9794bc1eeaaf95005716799d3c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Default/Buttons/Scissors/down_2.png"
-dest_files=["res://.godot/imported/down_2.png-050c03bc831022f51d6a00127e955ed8.ctex"]
+source_file="res://Assets/Default/Buttons/Hunter/idle.png"
+dest_files=["res://.godot/imported/idle.png-ab1b5b9794bc1eeaaf95005716799d3c.ctex"]
 
 [params]
 

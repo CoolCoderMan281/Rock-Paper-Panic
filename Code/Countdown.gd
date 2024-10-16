@@ -68,19 +68,30 @@ func reset_timer():
 
 
 func selection_swap():
-	var objects: Array[TextureButton]
+	var objects: Array[AnimatedSprite2D]
 	if lh_mode:
 		objects = [%Rock, %Paper, %Scissors, %Lizard, %Hunter]
 	else:
 		objects = [%Rock, %Paper, %Scissors]
-	var objectPos: Array[Vector2] = []
 	
-	for obj in objects: # Steal all positions
-		objectPos.append(obj.global_position)
-		print(obj.global_position)
-	objectPos.shuffle()
-	for i in range(objects.size()): # Swap the positions
-		objects[i].global_position = objectPos[i]
+	for obj in objects:
+		obj.play("selection_swap")
+
+func _on_rock_frame_changed() -> void:
+	if %Rock.animation == "selection_swap" and %Rock.frame == 4:
+		var objects: Array[AnimatedSprite2D]
+		if lh_mode:
+			objects = [%Rock, %Paper, %Scissors, %Lizard, %Hunter]
+		else:
+			objects = [%Rock, %Paper, %Scissors]
+		var objectPos: Array[Vector2] = []
+		
+		for obj in objects: # Steal all positions
+			objectPos.append(obj.global_position)
+			print(obj.global_position)
+		objectPos.shuffle()
+		for i in range(objects.size()): # Swap the positions
+			objects[i].global_position = objectPos[i]
 
 
 func end_game(state: String):

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://doayl7kcq0vkb"
-path="res://.godot/imported/up_2.png-53ab5a20ab03e790218412704ff653b4.ctex"
+uid="uid://bovx7q2pvnplq"
+path="res://.godot/imported/pressed.png-d080c8e571eb63597abf7019c3f8dc17.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Default/Buttons/Rock/up_2.png"
-dest_files=["res://.godot/imported/up_2.png-53ab5a20ab03e790218412704ff653b4.ctex"]
+source_file="res://Assets/Default/Buttons/Hunter/pressed.png"
+dest_files=["res://.godot/imported/pressed.png-d080c8e571eb63597abf7019c3f8dc17.ctex"]
 
 [params]
 
