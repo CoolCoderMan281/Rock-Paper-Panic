@@ -63,14 +63,6 @@ position = Vector2(462, 565.2)
 scale = Vector2(0.6744, 0.5664)
 texture = ExtResource("13_tjvie")
 
-[node name="Label" type="Label" parent="Clipboard/ScrollContainer/VBoxContainer/Clipboard"]
-offset_left = -75.9191
-offset_top = -628.531
-offset_right = 70.0809
-offset_bottom = -559.531
-theme_override_font_sizes/font_size = 50
-text = "Scroll!"
-
 [node name="ClipboardPlay" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
 position = Vector2(459.6, 513.2)
 scale = Vector2(0.6016, 0.4436)
