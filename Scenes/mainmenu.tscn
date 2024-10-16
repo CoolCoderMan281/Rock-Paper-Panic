@@ -358,6 +358,7 @@ theme_override_font_sizes/font_size = 86
 
 [node name="Intro-Button" type="Button" parent="Tutorial"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 44.0
 offset_top = 20.0
 offset_right = 160.0
@@ -365,6 +366,7 @@ offset_bottom = 117.0
 
 [node name="RPS-Button" type="Button" parent="Tutorial"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 163.0
 offset_right = 273.0
 offset_bottom = 97.0
@@ -383,6 +385,7 @@ texture = ExtResource("21_jb6w5")
 
 [node name="LH-Button" type="Button" parent="Tutorial"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 278.0
 offset_top = -6.0
 offset_right = 388.0
