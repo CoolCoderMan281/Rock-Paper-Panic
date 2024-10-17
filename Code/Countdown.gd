@@ -8,6 +8,7 @@ var difficulty: String = "unset"
 var win_req: int = 0
 var timer_min: int = 2
 var player = AudioStreamPlayer.new()
+var sfx = AudioStreamPlayer.new()
 var lh_mode: bool = false
 
 func _ready():
@@ -76,6 +77,7 @@ func selection_swap():
 	
 	for obj in objects:
 		obj.play("selection_swap")
+	sfx_play(Globals.sfx_switch)
 
 func _on_rock_frame_changed() -> void:
 	if %Rock.animation == "selection_swap" and %Rock.frame == 4:
@@ -101,3 +103,8 @@ func end_game(state: String):
 	player.stream = Globals.lose_theme
 	player.play()
 	Globals.generic_telemetry("Final Score: ",str(%Player.score))
+
+
+func sfx_play(name: AudioStreamMP3):
+	sfx.stream = name
+	sfx.play()

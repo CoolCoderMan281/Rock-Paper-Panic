@@ -3,6 +3,7 @@ extends Node2D
 var score: int = 0
 var pressed_timer: Timer
 var can_press: bool = true
+var sfx = AudioStreamPlayer.new()
 
 func _ready() -> void:
 	%Factory_Background.play("default")
@@ -32,6 +33,8 @@ func logic(choice: String = ""):
 	if !can_press:
 		return
 	visual_pressed(choice)
+	sfx.stream = Globals.sfx_press
+	sfx.play()
 
 	var outcomes = {
 		"Rock": ["Scissors", "Lizard"],

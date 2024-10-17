@@ -12,6 +12,9 @@ var rpp_hard_theme: AudioStreamMP3 = preload("res://Assets/Default/Music/rpp_har
 var rpp_normal_theme: AudioStreamMP3 = preload("res://Assets/Default/Music/rpp_normal_theme.mp3")
 var selection_theme: AudioStreamMP3 = preload("res://Assets/Default/Music/selection_theme.mp3")
 var lose_theme: AudioStreamMP3 = preload("res://Assets/Default/Music/rpp_lose.mp3")
+var sfx_conveyor: AudioStreamMP3 = preload("res://Assets/Default/SFX/conveyor.mp3")
+var sfx_press: AudioStreamMP3 = preload("res://Assets/Default/SFX/press.mp3")
+var sfx_switch: AudioStreamMP3 = preload("res://Assets/Default/SFX/switch.mp3")
 
 var fps_goal: float = DisplayServer.screen_get_refresh_rate()
 var debug_enabled: bool = true

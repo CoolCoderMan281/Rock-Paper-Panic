@@ -16,7 +16,7 @@ var choice_paths: Dictionary = {
 const transition_texture = preload(base_path + "RPS_Transition.png")
 var frame_counts: Dictionary = { "Rock": 4, "Paper": 6, "Scissors": 6, "Lizard": 6, "Hunter": 6 }
 var texture_cache: Dictionary = {}
-
+var conveyor = AudioStreamPlayer.new()
 var fps: int = 12
 var is_animating: bool = false  # Track if an animation is playing
 
@@ -31,6 +31,8 @@ func update_display() -> void:
 	# If an animation is already playing, stop it
 	if is_animating:
 		stop_current_animation()
+	conveyor.stream = Globals.sfx_conveyor
+	conveyor.play()
 	%Player.can_press = false
 	await get_tree().create_timer(0.2).timeout
 	await play_leave_animation()
