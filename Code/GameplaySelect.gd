@@ -8,13 +8,13 @@ func _ready():
 	player.stream = Globals.selection_theme
 	player.play()
 	if Globals.mode == Globals.gamemode.default:
-		$Mode_Select/RPS_Mode.button_pressed = true
-		$Mode_Select/Zuckerberg_Mode.button_pressed = false
+		$Menu/Buttons/RPS_Mode.button_pressed = true
+		$Menu/Buttons/Zuckerberg_Mode.button_pressed = false
 	elif Globals.mode == Globals.gamemode.lizard_hunter:
-		$Mode_Select/RPS_Mode.button_pressed = false
-		$Mode_Select/Zuckerberg_Mode.button_pressed = true
+		$Menu/Buttons/RPS_Mode.button_pressed = false
+		$Menu/Buttons/Zuckerberg_Mode.button_pressed = true
 	else:
-		$Mode_Select/RPS_Mode.button_pressed = true
+		$Menu/Buttons/RPS_Mode.button_pressed = true
 
 
 func _on_normal_pressed() -> void:
@@ -34,19 +34,19 @@ func _on_back_pressed() -> void:
 func _on_rps_mode_toggled(toggled_on:bool):
 	if toggled_on:
 		Globals.mode = Globals.gamemode.default
-		$Mode_Select/Zuckerberg_Mode.button_pressed = false
+		$Menu/Buttons/Zuckerberg_Mode.button_pressed = false
 	else:
 		Globals.mode = Globals.gamemode.lizard_hunter
-		$Mode_Select/Zuckerberg_Mode.button_pressed = true
+		$Menu/Buttons/Zuckerberg_Mode.button_pressed = true
 
 
 func _on_zuckerberg_mode_toggled(toggled_on:bool):
 	if toggled_on:
 		Globals.mode = Globals.gamemode.lizard_hunter
-		$Mode_Select/RPS_Mode.button_pressed = false
+		$Menu/Buttons/RPS_Mode.button_pressed = false
 	else:
 		Globals.mode = Globals.gamemode.default
-		$Mode_Select/RPS_Mode.button_pressed = true
+		$Menu/Buttons/RPS_Mode.button_pressed = true
 
 
 func _on_consent_continue_pressed() -> void:
