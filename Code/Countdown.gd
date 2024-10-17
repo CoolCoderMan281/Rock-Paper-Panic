@@ -98,4 +98,6 @@ func end_game(state: String):
 	%Countdown.visible = false
 	%Lose.visible = (state == "lose")
 	%Countdown.queue_free()
+	player.stream = Globals.lose_theme
+	player.play()
 	Globals.generic_telemetry("Final Score: ",str(%Player.score))

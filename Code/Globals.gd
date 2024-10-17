@@ -11,6 +11,7 @@ var mainmenu_theme: AudioStreamMP3 = preload("res://Assets/Default/Music/mainmen
 var rpp_hard_theme: AudioStreamMP3 = preload("res://Assets/Default/Music/rpp_hard_theme.mp3")
 var rpp_normal_theme: AudioStreamMP3 = preload("res://Assets/Default/Music/rpp_normal_theme.mp3")
 var selection_theme: AudioStreamMP3 = preload("res://Assets/Default/Music/selection_theme.mp3")
+var lose_theme: AudioStreamMP3 = preload("res://Assets/Default/Music/rpp_lose.mp3")
 
 var fps_goal: float = DisplayServer.screen_get_refresh_rate()
 var debug_enabled: bool = true
