@@ -24,7 +24,7 @@ func _on_normal_pressed() -> void:
 
 func _on_hard_pressed() -> void:
 	Globals.difficulty = Globals.difficulties.hard
-	$Consent_HARD.visible = true
+	Globals.set_scene("res://Scenes/main.tscn")
 
 
 func _on_back_pressed() -> void:
@@ -50,4 +50,8 @@ func _on_zuckerberg_mode_toggled(toggled_on:bool):
 
 
 func _on_consent_continue_pressed() -> void:
-	Globals.set_scene("res://Scenes/main.tscn")
+	$Consent_HARD.visible = false
+
+
+func _on_contract_pressed():
+	$Consent_HARD.visible = true
