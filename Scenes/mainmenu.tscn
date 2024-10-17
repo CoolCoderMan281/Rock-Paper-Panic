@@ -333,6 +333,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Background" type="ColorRect" parent="Tutorial"]
+layout_mode = 0
 offset_left = -620.0
 offset_top = -38.0
 offset_right = -550.0

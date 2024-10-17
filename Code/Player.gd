@@ -5,6 +5,7 @@ var pressed_timer: Timer
 var can_press: bool = true
 
 func _ready() -> void:
+	%Factory_Background.play("default")
 	score = 0
 	update_score()
 	pressed_timer = Timer.new()

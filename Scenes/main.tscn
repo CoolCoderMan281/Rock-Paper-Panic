@@ -1,9 +1,11 @@
-[gd_scene load_steps=74 format=3 uid="uid://bu6j0v2aj8gfi"]
+[gd_scene load_steps=77 format=3 uid="uid://bu6j0v2aj8gfi"]
 
 [ext_resource type="Texture2D" uid="uid://cpnx38wjlkphy" path="res://Assets/Default/Conveyor/Paper/paper_in_6.png" id="1_0l1lu"]
+[ext_resource type="Texture2D" uid="uid://bgn1t0ghmm0fb" path="res://Assets/Default/factory_background_1.png" id="1_bhy67"]
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
 [ext_resource type="Script" path="res://Code/Enemy.gd" id="1_oxske"]
 [ext_resource type="Texture2D" uid="uid://bq4fmb7hlavyg" path="res://Assets/Default/battle_background.png" id="1_pv84b"]
+[ext_resource type="Texture2D" uid="uid://cvia3kunv6a62" path="res://Assets/Default/factory_background_2.png" id="2_2ctvc"]
 [ext_resource type="Texture2D" uid="uid://s7802tp51tgs" path="res://Assets/Default/Conveyor/Rock/rock_idle.png" id="2_78lwk"]
 [ext_resource type="Texture2D" uid="uid://chob5ot3qp2i1" path="res://Assets/Default/Buttons/Rock/idle.png" id="6_5jrsc"]
 [ext_resource type="Script" path="res://Code/Options.gd" id="7_1iy2a"]
@@ -35,6 +37,20 @@
 [ext_resource type="Texture2D" uid="uid://bkp40ng2pol7s" path="res://Assets/Default/Buttons/Hunter/down_1.png" id="25_261ld"]
 [ext_resource type="Texture2D" uid="uid://bovx7q2pvnplq" path="res://Assets/Default/Buttons/Hunter/pressed.png" id="26_gnesw"]
 [ext_resource type="Texture2D" uid="uid://bmfr8murlo20f" path="res://Assets/Default/Buttons/Hunter/up_1.png" id="27_x0xqs"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5ph2p"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bhy67")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2ctvc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c3dky"]
 
@@ -518,6 +534,13 @@ func _on_button_pressed():
 
 [node name="Main" type="Node2D"]
 position = Vector2(345, 221)
+
+[node name="Factory_Background" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(237.5, -2)
+scale = Vector2(0.409896, 0.331481)
+sprite_frames = SubResource("SpriteFrames_5ph2p")
+frame_progress = 0.0570801
 
 [node name="Enemy_Animated" type="AnimatedSprite2D" parent="."]
 visible = false
