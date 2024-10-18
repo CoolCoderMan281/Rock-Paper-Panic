@@ -45,6 +45,8 @@ func logic(choice: String = ""):
 			queued_lose_option = "mainmenu"
 		elif choice == "Scissors":
 			queued_lose_option = "quit"
+		else:
+			return
 		var objects = [%Rock, %Paper, %Scissors, %Lizard, %Hunter]
 		for obj in objects:
 			obj.play("end_end_game")
