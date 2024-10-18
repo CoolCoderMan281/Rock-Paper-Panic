@@ -169,8 +169,11 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_left = -85.0
+offset_top = -72.0
+offset_right = -45.0
+offset_bottom = -32.0
+scale = Vector2(1.18759, 1.18759)
 
 [node name="Background" type="ColorRect" parent="Settings"]
 layout_mode = 0
