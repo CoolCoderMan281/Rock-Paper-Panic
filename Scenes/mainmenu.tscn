@@ -1,9 +1,11 @@
-[gd_scene load_steps=20 format=3 uid="uid://ciqq51h6yi2e2"]
+[gd_scene load_steps=22 format=3 uid="uid://ciqq51h6yi2e2"]
 
 [ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
 [ext_resource type="Texture2D" uid="uid://cvlxrq3sng4ct" path="res://Assets/Default/MenuClipboard/Clipboard_Feedback.png" id="7_yrppq"]
-[ext_resource type="Texture2D" uid="uid://b0p7dyn2yu130" path="res://Assets/Default/Settings/settings_background.png" id="9_v2hv4"]
+[ext_resource type="Texture2D" uid="uid://dduxxa0cjmh6h" path="res://Assets/Default/Settings/settings_background.png" id="9_v2hv4"]
+[ext_resource type="FontFile" uid="uid://bwre6pl00l4mr" path="res://Assets/Fonts/digital-7.ttf" id="13_jh33e"]
 [ext_resource type="Texture2D" uid="uid://dfogsn5vna7vg" path="res://Assets/Default/MenuClipboard/Clipboard.png" id="13_tjvie"]
+[ext_resource type="Texture2D" uid="uid://cnf40e5k136oa" path="res://Assets/Default/Settings/settings_back.png" id="14_bpjlv"]
 [ext_resource type="Texture2D" uid="uid://b81j7k0e7d0ky" path="res://Assets/Default/MenuClipboard/Clipboard_Play.png" id="14_uvh60"]
 [ext_resource type="Texture2D" uid="uid://lnc0qn86v6tk" path="res://Assets/Default/MenuClipboard/Clipboard_Tutorial.png" id="15_7blyu"]
 [ext_resource type="Texture2D" uid="uid://ber4iuqt5sjkt" path="res://Assets/Default/Settings/settings_marker.png" id="15_qmt6g"]
@@ -164,13 +166,13 @@ is a mistake you need to rebuild."
 
 [node name="Settings" type="Control" parent="."]
 unique_name_in_owner = true
-visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Background" type="ColorRect" parent="Settings"]
+layout_mode = 0
 offset_left = -21.0
 offset_top = -3.0
 offset_right = 20.0
@@ -212,6 +214,45 @@ visible = false
 position = Vector2(473, 265)
 scale = Vector2(0.0786666, 0.064)
 texture = SubResource("CompressedTexture2D_vo7qb")
+
+[node name="full_on" type="Button" parent="Settings"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 708.0
+offset_top = 302.0
+offset_right = 774.0
+offset_bottom = 363.0
+
+[node name="full_off" type="Button" parent="Settings"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 794.0
+offset_top = 294.0
+offset_right = 860.0
+offset_bottom = 355.0
+
+[node name="VolumeLabel" type="Label" parent="Settings"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 260.0
+offset_top = 297.0
+offset_right = 382.0
+offset_bottom = 351.0
+theme_override_fonts/font = ExtResource("13_jh33e")
+theme_override_font_sizes/font_size = 74
+text = "100F"
+
+[node name="SettingsBack" type="Sprite2D" parent="Settings"]
+position = Vector2(593, 359)
+scale = Vector2(0.127667, 0.128)
+texture = ExtResource("14_bpjlv")
+
+[node name="Settings_Back" type="Button" parent="Settings/SettingsBack"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -376.0
+offset_top = -133.0
+offset_right = 376.0
+offset_bottom = 141.0
 
 [node name="Credits" type="Control" parent="."]
 visible = false
@@ -329,6 +370,9 @@ offset_bottom = 91.0
 [connection signal="mouse_exited" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit/Quit" to="." method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit/Quit" to="." method="_on_quit_pressed"]
 [connection signal="value_changed" from="Settings/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="pressed" from="Settings/full_on" to="." method="_on_full_on_pressed"]
+[connection signal="pressed" from="Settings/full_off" to="." method="_on_full_off_pressed"]
+[connection signal="pressed" from="Settings/SettingsBack/Settings_Back" to="." method="_on_settings_back_pressed"]
 [connection signal="pressed" from="Credits/Back2" to="." method="_on_back_2_pressed"]
 [connection signal="pressed" from="Tutorial/Tutorial-back/Back3" to="." method="_on_back_3_pressed"]
 [connection signal="pressed" from="Tutorial/Intro-Button" to="." method="_on_intro_button_pressed"]

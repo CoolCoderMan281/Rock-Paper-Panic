@@ -15,8 +15,9 @@ func _ready():
 	$Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback.visible = Globals.feedback_welcome
 
 	# Convert Globals.volume from dB to a normalized value (0 to 1)
-	%Volume.value = (Globals.volume + 30) / 30  # Normalize from -30 to 0 dB to 0 to 1
-
+	%Volume.value = ((Globals.volume + 30) / 30)*100
+	print(((Globals.volume + 30) / 30)*100)
+	%VolumeLabel.text = ""+str(%Volume.value)+"F"
 	# Update the UI based on the volume
 	_on_volume_value_changed(%Volume.value)  
 	if AudioServer.get_bus_effect_count(0) >= 1:
@@ -50,6 +51,7 @@ func _on_volume_value_changed(value: float):
 	Globals.volume = volume_db  # Update the global volume in dB
 	player.volume_db = Globals.volume  # Update the player's volume
 	print(Globals.volume)
+	%VolumeLabel.text = ""+str(%Volume.value)+"F"
 
 	# Update the volume cover UI
 	#%Volume_Cover.size.x = volumeCoverSizeX - (volumeCoverSizeX * value)
@@ -105,10 +107,6 @@ func _on_credits_pressed() -> void:
 
 func _on_settings_pressed() -> void:
 	%Settings.show()
-	%Volume.value = (Globals.volume + 30) / 30
-	print(%Volume.value)
-	print(Globals.volume)
-	print((Globals.volume+30)/30)
 
 
 func _on_tutorial_mouse_entered() -> void:
@@ -155,3 +153,16 @@ func _on_intro_button_pressed() -> void:
 	$Tutorial/Folder.texture = load("res://Assets/Default/Tutorial/Tutorial-Intro.png")
 	%"Tutorial-intro-select".visible = false
 	%"Tutorial-rps-select".visible = false
+
+
+
+func _on_full_off_pressed():
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
+
+func _on_full_on_pressed():
+	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+
+
+func _on_settings_back_pressed():
+	%Settings.visible = false
