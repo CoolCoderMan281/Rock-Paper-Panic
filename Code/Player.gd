@@ -82,6 +82,11 @@ func retry():
 func lose_music():
 	sfx.stream = Globals.lose_theme
 	sfx.play()
+	var sfx1 = AudioStreamPlayer.new()
+	sfx1.volume_db = Globals.volume
+	add_child(sfx1)
+	sfx1.stream = Globals.sfx_lose
+	sfx1.play()
 	%Rock.play("end_game",true)
 	%Paper.play("end_game",true)
 	%Scissors.play("end_game",true)
