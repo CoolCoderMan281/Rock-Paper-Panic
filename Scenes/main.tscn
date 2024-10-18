@@ -1,28 +1,40 @@
-[gd_scene load_steps=44 format=3 uid="uid://bu6j0v2aj8gfi"]
+[gd_scene load_steps=61 format=3 uid="uid://bu6j0v2aj8gfi"]
 
 [ext_resource type="Texture2D" uid="uid://bgn1t0ghmm0fb" path="res://Assets/Default/factory_background_1.png" id="1_bhy67"]
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
 [ext_resource type="Script" path="res://Code/Enemy.gd" id="1_oxske"]
 [ext_resource type="Texture2D" uid="uid://bq4fmb7hlavyg" path="res://Assets/Default/battle_background.png" id="1_pv84b"]
 [ext_resource type="Texture2D" uid="uid://cvia3kunv6a62" path="res://Assets/Default/factory_background_2.png" id="2_2ctvc"]
+[ext_resource type="Texture2D" uid="uid://cadk4m03ehy0n" path="res://Assets/Default/LoseAnimation/lose_1.png" id="4_2lxt5"]
+[ext_resource type="Texture2D" uid="uid://b78yiohpn7hkk" path="res://Assets/Default/LoseAnimation/lose_2.png" id="5_xrjvi"]
 [ext_resource type="Texture2D" uid="uid://chob5ot3qp2i1" path="res://Assets/Default/Buttons/Rock/idle.png" id="6_5jrsc"]
+[ext_resource type="Texture2D" uid="uid://cxqf0t4tflcmy" path="res://Assets/Default/LoseAnimation/lose_3.png" id="6_u1dmq"]
 [ext_resource type="Script" path="res://Code/Options.gd" id="7_1iy2a"]
+[ext_resource type="Texture2D" uid="uid://bbvf60e3q6gbk" path="res://Assets/Default/LoseAnimation/lose_4.png" id="7_2usor"]
 [ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="7_gp2xf"]
 [ext_resource type="Script" path="res://Code/Countdown.gd" id="7_hbh5k"]
 [ext_resource type="Texture2D" uid="uid://8r1kunsmkchb" path="res://Assets/Default/Buttons/Rock/down_1.png" id="7_sa4tn"]
 [ext_resource type="Script" path="res://Code/Debug.gd" id="8_1kwu8"]
 [ext_resource type="Texture2D" uid="uid://bmqlume52cbuf" path="res://Assets/Default/Buttons/Rock/pressed.png" id="8_kih3g"]
+[ext_resource type="Texture2D" uid="uid://de3tbc1f6uk5o" path="res://Assets/Default/LoseAnimation/lose_5.png" id="8_l5dv6"]
+[ext_resource type="Texture2D" uid="uid://c46ytx7b7x5uy" path="res://Assets/Default/LoseAnimation/lose_6.png" id="9_33qmm"]
 [ext_resource type="Texture2D" uid="uid://bk1tnh84r6a0m" path="res://Assets/Default/Buttons/Rock/up_1.png" id="9_stxtg"]
 [ext_resource type="Texture2D" uid="uid://c7kqkhsw3pfuq" path="res://Assets/Game Over/fired_graphic.png" id="10_7dql5"]
 [ext_resource type="Texture2D" uid="uid://1o50x80pi0v6" path="res://Assets/Game Over/over_retry.png" id="10_dmq57"]
+[ext_resource type="Texture2D" uid="uid://dadkf120di04h" path="res://Assets/Default/LoseAnimation/lose_7.png" id="10_dxqow"]
 [ext_resource type="Texture2D" uid="uid://evixq68pe1vh" path="res://Assets/Default/Buttons/Generic/swap_1.png" id="10_fhc2l"]
 [ext_resource type="Texture2D" uid="uid://bn8ll4hunsg5c" path="res://Assets/Default/Buttons/Generic/swap_2.png" id="11_32k0f"]
 [ext_resource type="Texture2D" uid="uid://4svxata1gobm" path="res://Assets/Game Over/over_main.png" id="11_f2tlh"]
+[ext_resource type="Texture2D" uid="uid://c5mqbyw8wf358" path="res://Assets/Default/LoseAnimation/lose_8.png" id="11_gatvg"]
 [ext_resource type="Texture2D" uid="uid://d0a06553a4pu6" path="res://Assets/Default/Buttons/Paper/idle.png" id="12_4dk2a"]
+[ext_resource type="Texture2D" uid="uid://d0pojagxa1w2v" path="res://Assets/Default/LoseAnimation/lose_9.png" id="12_7v888"]
 [ext_resource type="Texture2D" uid="uid://b28ik3602dudw" path="res://Assets/Game Over/over_quit.png" id="12_a5uiq"]
+[ext_resource type="Texture2D" uid="uid://c6duqrxfbf24d" path="res://Assets/Default/LoseAnimation/lose_10.png" id="13_02x12"]
 [ext_resource type="Texture2D" uid="uid://b3gj7xxu0tdh0" path="res://Assets/Default/Buttons/Paper/down_1.png" id="13_uasrl"]
+[ext_resource type="Texture2D" uid="uid://dwhnaama28ucd" path="res://Assets/Default/LoseAnimation/lose_11.png" id="14_d3jrx"]
 [ext_resource type="Texture2D" uid="uid://cpmmgx3b4yjph" path="res://Assets/Default/Buttons/Paper/pressed.png" id="14_udtok"]
 [ext_resource type="Texture2D" uid="uid://cmrgrlulurkll" path="res://Assets/Default/Buttons/Paper/up_1.png" id="15_5uy8s"]
+[ext_resource type="Texture2D" uid="uid://cejilhu1nobpi" path="res://Assets/Default/LoseAnimation/lose_12.png" id="15_qsjr0"]
 [ext_resource type="Texture2D" uid="uid://dhof58gkwn5wj" path="res://Assets/Default/Buttons/Scissors/idle.png" id="16_di70a"]
 [ext_resource type="Texture2D" uid="uid://c1325mygyvuu3" path="res://Assets/Default/Buttons/Scissors/down_1.png" id="17_38kub"]
 [ext_resource type="Texture2D" uid="uid://bfpswktuuvrgq" path="res://Assets/Default/Buttons/Scissors/pressed.png" id="18_ie1kk"]
@@ -35,6 +47,10 @@
 [ext_resource type="Texture2D" uid="uid://bkp40ng2pol7s" path="res://Assets/Default/Buttons/Hunter/down_1.png" id="25_261ld"]
 [ext_resource type="Texture2D" uid="uid://bovx7q2pvnplq" path="res://Assets/Default/Buttons/Hunter/pressed.png" id="26_gnesw"]
 [ext_resource type="Texture2D" uid="uid://bmfr8murlo20f" path="res://Assets/Default/Buttons/Hunter/up_1.png" id="27_x0xqs"]
+[ext_resource type="Texture2D" uid="uid://dfogsn5vna7vg" path="res://Assets/Default/MenuClipboard/Clipboard.png" id="47_8fpml"]
+[ext_resource type="Texture2D" uid="uid://b4uhi0na3d3nx" path="res://Assets/Default/Pause/quit.png" id="48_nrhl8"]
+[ext_resource type="Texture2D" uid="uid://nva1uvinlueu" path="res://Assets/Default/Pause/resume.png" id="48_wahqt"]
+[ext_resource type="Texture2D" uid="uid://d2k11x0apsi5n" path="res://Assets/Default/Pause/main.png" id="49_d6bxl"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_5ph2p"]
 animations = [{
@@ -52,6 +68,50 @@ animations = [{
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xyrgs"]
 load_path = "res://.godot/imported/paper_idle.png-ff15289806a9704c53943c10aa6e49bb.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_3bpe1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_2lxt5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xrjvi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u1dmq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_2usor")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_l5dv6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_33qmm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_dxqow")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_gatvg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_7v888")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_02x12")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_d3jrx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_qsjr0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_srto4"]
 animations = [{
@@ -353,6 +413,20 @@ scale = Vector2(0.410002, 0.370002)
 texture = SubResource("CompressedTexture2D_xyrgs")
 script = ExtResource("1_oxske")
 
+[node name="Lose" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Lose_Animation" type="AnimatedSprite2D" parent="Lose"]
+unique_name_in_owner = true
+position = Vector2(238.25, 10.75)
+scale = Vector2(0.407031, 0.30787)
+sprite_frames = SubResource("SpriteFrames_3bpe1")
+
 [node name="Background" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 0
@@ -491,24 +565,24 @@ horizontal_alignment = 1
 vertical_alignment = 1
 metadata/_edit_use_anchors_ = true
 
-[node name="Lose" type="CanvasLayer" parent="."]
+[node name="OLD_LOSE" type="CanvasLayer" parent="."]
 unique_name_in_owner = true
 visible = false
 script = SubResource("GDScript_a5fcu")
 
-[node name="ColorRect" type="ColorRect" parent="Lose"]
+[node name="ColorRect" type="ColorRect" parent="OLD_LOSE"]
 offset_right = 1161.0
 offset_bottom = 657.0
 color = Color(0.0611451, 0.0336918, 0, 1)
 
-[node name="fired_graphic" type="TextureRect" parent="Lose"]
+[node name="fired_graphic" type="TextureRect" parent="OLD_LOSE"]
 offset_left = 29.0
 offset_top = 29.0
 offset_right = 707.0
 offset_bottom = 414.0
 texture = ExtResource("10_7dql5")
 
-[node name="Label" type="Label" parent="Lose"]
+[node name="Label" type="Label" parent="OLD_LOSE"]
 visible = false
 offset_left = 292.0
 offset_top = 42.0
@@ -518,7 +592,7 @@ theme_override_font_sizes/font_size = 100
 text = "YOU LOSE!"
 horizontal_alignment = 1
 
-[node name="Retry" type="Button" parent="Lose"]
+[node name="Retry" type="Button" parent="OLD_LOSE"]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 138.0
 offset_top = 471.0
@@ -527,13 +601,13 @@ offset_bottom = 587.0
 theme_override_font_sizes/font_size = 40
 text = "PLAY AGAIN"
 
-[node name="retry_texture" type="TextureRect" parent="Lose/Retry"]
+[node name="retry_texture" type="TextureRect" parent="OLD_LOSE/Retry"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("10_dmq57")
 
-[node name="MainMenu" type="Button" parent="Lose"]
+[node name="MainMenu" type="Button" parent="OLD_LOSE"]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 452.0
 offset_top = 471.0
@@ -542,13 +616,13 @@ offset_bottom = 587.0
 theme_override_font_sizes/font_size = 40
 text = "MAIN MENU"
 
-[node name="main_texture" type="TextureRect" parent="Lose/MainMenu"]
+[node name="main_texture" type="TextureRect" parent="OLD_LOSE/MainMenu"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("11_f2tlh")
 
-[node name="Quit" type="Button" parent="Lose"]
+[node name="Quit" type="Button" parent="OLD_LOSE"]
 self_modulate = Color(1, 1, 1, 0)
 offset_left = 763.0
 offset_top = 471.0
@@ -557,13 +631,13 @@ offset_bottom = 587.0
 theme_override_font_sizes/font_size = 40
 text = "QUIT"
 
-[node name="quit_texture" type="TextureRect" parent="Lose/Quit"]
+[node name="quit_texture" type="TextureRect" parent="OLD_LOSE/Quit"]
 layout_mode = 0
 offset_right = 40.0
 offset_bottom = 40.0
 texture = ExtResource("12_a5uiq")
 
-[node name="Final_Score" type="Label" parent="Lose"]
+[node name="Final_Score" type="Label" parent="OLD_LOSE"]
 unique_name_in_owner = true
 offset_left = 741.0
 offset_top = 137.0
@@ -587,23 +661,59 @@ unique_name_in_owner = true
 visible = false
 script = ExtResource("7_1iy2a")
 
-[node name="quit" type="Button" parent="Pause"]
-unique_name_in_owner = true
-offset_left = -324.0
-offset_top = -106.0
-offset_right = -285.0
-offset_bottom = -75.0
-scale = Vector2(8.24, 2.92)
-text = "quit"
+[node name="ColorRect" type="ColorRect" parent="Pause"]
+offset_left = -398.0
+offset_top = -260.0
+offset_right = 856.0
+offset_bottom = 462.0
+color = Color(0, 0, 0, 0.839216)
 
-[node name="mainmenu" type="Button" parent="Pause"]
+[node name="Clipboard" type="Sprite2D" parent="Pause"]
+position = Vector2(-175, 76)
+scale = Vector2(0.381, 0.502)
+texture = ExtResource("47_8fpml")
+
+[node name="Resume" type="Sprite2D" parent="Pause"]
+position = Vector2(-163, -64)
+scale = Vector2(0.4185, 0.4365)
+texture = ExtResource("48_wahqt")
+
+[node name="resume" type="Button" parent="Pause/Resume"]
 unique_name_in_owner = true
-offset_left = -323.0
-offset_top = 66.0
-offset_right = -226.0
-offset_bottom = 97.0
+modulate = Color(1, 1, 1, 0)
+offset_left = -349.0
+offset_top = -183.0
+offset_right = -260.0
+offset_bottom = -102.0
+scale = Vector2(8.24, 2.92)
+
+[node name="Quit" type="Sprite2D" parent="Pause"]
+position = Vector2(-145, 102)
+scale = Vector2(0.597875, 0.394)
+texture = ExtResource("48_nrhl8")
+
+[node name="quit" type="Button" parent="Pause/Quit"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+offset_left = -269.0
+offset_top = 520.0
+offset_right = -207.0
+offset_bottom = 588.0
+scale = Vector2(8.24, 2.92)
+
+[node name="Main" type="Sprite2D" parent="Pause"]
+position = Vector2(-110, -71)
+scale = Vector2(0.7285, 0.5095)
+texture = ExtResource("49_d6bxl")
+
+[node name="mainmenu" type="Button" parent="Pause/Main"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
+offset_left = -276.0
+offset_top = 296.0
+offset_right = -187.0
+offset_bottom = 363.0
 scale = Vector2(4.88, 2.92)
-text = "main menu"
 
 [node name="Debug" type="Node2D" parent="."]
 visible = false
@@ -728,11 +838,12 @@ text = "FPS Goal:"
 [connection signal="pressed" from="Player/Scissors/Scissors_Trigger" to="Player" method="_on_scissors_trigger_pressed"]
 [connection signal="pressed" from="Player/Lizard/Lizard_Trigger" to="Player" method="_on_lizard_trigger_pressed"]
 [connection signal="pressed" from="Player/Hunter/Hunter_Trigger" to="Player" method="_on_hunter_trigger_pressed"]
-[connection signal="pressed" from="Lose/Retry" to="Player" method="retry"]
-[connection signal="pressed" from="Lose/MainMenu" to="Player" method="_on_main_menu_pressed"]
-[connection signal="pressed" from="Lose/Quit" to="Player" method="_on_quit_pressed"]
-[connection signal="pressed" from="Pause/quit" to="Pause" method="_on_quit_pressed"]
-[connection signal="pressed" from="Pause/mainmenu" to="Pause" method="_on_mainmenu_pressed"]
+[connection signal="pressed" from="OLD_LOSE/Retry" to="Player" method="retry"]
+[connection signal="pressed" from="OLD_LOSE/MainMenu" to="Player" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="OLD_LOSE/Quit" to="Player" method="_on_quit_pressed"]
+[connection signal="pressed" from="Pause/Resume/resume" to="Pause" method="_on_resume_pressed"]
+[connection signal="pressed" from="Pause/Quit/quit" to="Pause" method="_on_quit_pressed"]
+[connection signal="pressed" from="Pause/Main/mainmenu" to="Pause" method="_on_mainmenu_pressed"]
 [connection signal="pressed" from="Debug/Debug_AutoPlay" to="Debug" method="_on_debug_auto_play_pressed"]
 [connection signal="pressed" from="Debug/Debug_StopTime" to="Debug" method="_on_debug_stop_time_pressed"]
 [connection signal="pressed" from="Debug/Debug_ScoreSet" to="Debug" method="_on_debug_score_set_pressed"]

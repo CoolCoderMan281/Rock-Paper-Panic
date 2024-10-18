@@ -34,6 +34,7 @@ func _ready():
 	reset_timer()
 	player.volume_db = Globals.volume
 	player.play()
+	sfx.volume_db = Globals.volume
 
 func _process(delta: float):
 	if !Globals.debug_stoptime:
@@ -99,11 +100,11 @@ func _on_rock_frame_changed() -> void:
 
 func end_game(state: String):
 	%Countdown.visible = false
-	%Lose.visible = (state == "lose")
+	%Lose.visible = true
+	%Lose_Animation.play()
 	%Countdown.queue_free()
-	player.stream = Globals.lose_theme
-	player.play()
 	Globals.generic_telemetry("Final Score: ",str(%Player.score))
+	%Player.lose_music()
 
 
 func sfx_play(name: AudioStreamMP3):

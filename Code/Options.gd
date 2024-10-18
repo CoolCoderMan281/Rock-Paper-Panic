@@ -13,3 +13,8 @@ func _on_quit_pressed():
 
 func _on_mainmenu_pressed():
 	Globals.set_scene("res://Scenes/mainmenu.tscn")
+
+
+func _on_resume_pressed() -> void:
+	visible = false
+	Globals.debug_stoptime = false

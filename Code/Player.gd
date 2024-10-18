@@ -55,6 +55,7 @@ func logic(choice: String = ""):
 			%Countdown.reset_timer()
 		elif enemy_choice in outcomes and choice in outcomes[enemy_choice]:
 			%Countdown.end_game("lose")
+			lose_music()
 	else:
 		score += 1
 		%Enemy.new_choice()
@@ -68,6 +69,10 @@ func update_score():
 
 func retry():
 	get_tree().reload_current_scene()
+
+func lose_music():
+	sfx.stream = Globals.lose_theme
+	sfx.play()
 
 func _on_main_menu_pressed():
 	Globals.set_scene("res://Scenes/mainmenu.tscn")
