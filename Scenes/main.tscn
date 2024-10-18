@@ -846,8 +846,6 @@ unique_name_in_owner = true
 position = Vector2(231, 103)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_j8bq6")
-frame = 12
-frame_progress = 1.0
 
 [node name="Player" type="Node2D" parent="."]
 unique_name_in_owner = true
