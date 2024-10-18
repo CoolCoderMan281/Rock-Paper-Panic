@@ -13,10 +13,6 @@ func _ready():
 	if Globals.debug_enabled:
 		print("Debug Mode is Enabled!")
 	$Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback.visible = Globals.feedback_welcome
-	
-	# Initialize the volume cover sizes
-	volumeCoverSizeX = %Volume_Cover.size.x
-	volumeCoverPosX = %Volume_Cover.position.x
 
 	# Convert Globals.volume from dB to a normalized value (0 to 1)
 	%Volume.value = (Globals.volume + 30) / 30  # Normalize from -30 to 0 dB to 0 to 1
@@ -46,18 +42,18 @@ func _on_back_pressed():
 
 
 func _on_volume_value_changed(value: float):
-	%Volume_Label.text = "Volume: " + str(int(value * 100)) + "%"
+	#%Volume_Label.text = "Volume: " + str(int(value * 100)) + "%"
 	
 	# Convert the normalized value back to dB in the range of -30 to 0
-	var volume_db = lerp(-30, 0, value)
+	var volume_db = lerp(-30, 0, value/100)
 	AudioServer.set_bus_volume_db(0, volume_db)
-
 	Globals.volume = volume_db  # Update the global volume in dB
 	player.volume_db = Globals.volume  # Update the player's volume
+	print(Globals.volume)
 
 	# Update the volume cover UI
-	%Volume_Cover.size.x = volumeCoverSizeX - (volumeCoverSizeX * value)
-	%Volume_Cover.position.x = volumeCoverPosX + (volumeCoverSizeX * value)
+	#%Volume_Cover.size.x = volumeCoverSizeX - (volumeCoverSizeX * value)
+	#%Volume_Cover.position.x = volumeCoverPosX + (volumeCoverSizeX * value)
 
 func _on_lever_button_pressed():
 	# Move to Windowed Mode
@@ -73,7 +69,7 @@ func _on_lever_button_pressed():
 		fullscreen = true
 		windowed = false
 		DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-		%lever.flip_v = true
+		#%lever.flip_v = true
 
 func _on_quit_mouse_exited():
 	$Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit.modulate = Color(1, 1, 1, 1)
@@ -110,6 +106,9 @@ func _on_credits_pressed() -> void:
 func _on_settings_pressed() -> void:
 	%Settings.show()
 	%Volume.value = (Globals.volume + 30) / 30
+	print(%Volume.value)
+	print(Globals.volume)
+	print((Globals.volume+30)/30)
 
 
 func _on_tutorial_mouse_entered() -> void:

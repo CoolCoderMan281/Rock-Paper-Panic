@@ -1,26 +1,27 @@
-[gd_scene load_steps=22 format=3 uid="uid://ciqq51h6yi2e2"]
+[gd_scene load_steps=20 format=3 uid="uid://ciqq51h6yi2e2"]
 
 [ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
-[ext_resource type="Texture2D" uid="uid://cv4qplsnmnw8j" path="res://Assets/Default/button_settings.png" id="4_f5b87"]
 [ext_resource type="Texture2D" uid="uid://cvlxrq3sng4ct" path="res://Assets/Default/MenuClipboard/Clipboard_Feedback.png" id="7_yrppq"]
-[ext_resource type="Texture2D" uid="uid://bnf0rfadrqu8a" path="res://Assets/Settings/switch_backing.png" id="9_7xfr5"]
-[ext_resource type="Texture2D" uid="uid://bbgoserrvm42x" path="res://Assets/Settings/windowed_tag.png" id="9_kr4ux"]
-[ext_resource type="Texture2D" uid="uid://dpk32bytsp4v3" path="res://Assets/Settings/fullscreen_tag.png" id="10_3d68q"]
-[ext_resource type="Texture2D" uid="uid://da0xcyg54gcoc" path="res://Assets/Settings/volume_bar.png" id="10_3v6ml"]
-[ext_resource type="Texture2D" uid="uid://wumf6iahaseu" path="res://Assets/Settings/switch_lever.png" id="10_p0k6m"]
-[ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="11_juhrv"]
-[ext_resource type="Texture2D" uid="uid://cm75f1mfjwy3a" path="res://Assets/Settings/credits_clipboard.png" id="13_bhj24"]
+[ext_resource type="Texture2D" uid="uid://b0p7dyn2yu130" path="res://Assets/Default/Settings/settings_background.png" id="9_v2hv4"]
 [ext_resource type="Texture2D" uid="uid://dfogsn5vna7vg" path="res://Assets/Default/MenuClipboard/Clipboard.png" id="13_tjvie"]
 [ext_resource type="Texture2D" uid="uid://b81j7k0e7d0ky" path="res://Assets/Default/MenuClipboard/Clipboard_Play.png" id="14_uvh60"]
 [ext_resource type="Texture2D" uid="uid://lnc0qn86v6tk" path="res://Assets/Default/MenuClipboard/Clipboard_Tutorial.png" id="15_7blyu"]
+[ext_resource type="Texture2D" uid="uid://ber4iuqt5sjkt" path="res://Assets/Default/Settings/settings_marker.png" id="15_qmt6g"]
+[ext_resource type="Texture2D" uid="uid://b5ukkw8fyc067" path="res://Assets/Default/Settings/settings_fullscreen_on.png" id="16_a7x13"]
 [ext_resource type="Texture2D" uid="uid://di23p201j05di" path="res://Assets/Default/MenuClipboard/Clipboard_Settings.png" id="16_wb5wj"]
 [ext_resource type="Texture2D" uid="uid://cqug1l022ycq6" path="res://Assets/Default/MenuClipboard/Clipboard_Credits.png" id="17_4b6ji"]
+[ext_resource type="Texture2D" uid="uid://ck54o275ix1be" path="res://Assets/Default/Settings/settings_fullscreen_off.png" id="17_ra8p7"]
 [ext_resource type="Texture2D" uid="uid://c678nsdoixu2" path="res://Assets/Default/Credits/Credits_Menu.png" id="18_8bscp"]
 [ext_resource type="Texture2D" uid="uid://dbnwyd5pp1gpx" path="res://Assets/Default/MenuClipboard/Clipboard_Quit.png" id="18_kwkl8"]
 [ext_resource type="Texture2D" uid="uid://wg6hscr0sewi" path="res://Assets/Default/Tutorial/Tutorial-Intro.png" id="18_ty36c"]
 [ext_resource type="Texture2D" uid="uid://rhamnwgy52d7" path="res://Assets/Default/Tutorial/Tutorial-Back.png" id="19_qr86a"]
 [ext_resource type="Texture2D" uid="uid://bu5fmdqr8eus2" path="res://Assets/Default/Tutorial/Tutorial-Intro-Select.png" id="20_3jdgg"]
 [ext_resource type="Texture2D" uid="uid://bnq1jp3ae2jyu" path="res://Assets/Default/Tutorial/Tutorial-RPS-Select.png" id="21_jb6w5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6j4f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vo7qb"]
+load_path = "res://.godot/imported/settings_marker.png-37a2d758db643558a855c5adb8211206.ctex"
 
 [node name="Mainmenu" type="Node2D"]
 script = ExtResource("1_glogx")
@@ -161,141 +162,56 @@ theme_override_font_sizes/font_size = 16
 text = "Debug Menu is enabled, if this 
 is a mistake you need to rebuild."
 
-[node name="Settings" type="Node2D" parent="."]
+[node name="Settings" type="Control" parent="."]
 unique_name_in_owner = true
 visible = false
-
-[node name="Background" type="ColorRect" parent="Settings"]
+layout_mode = 3
+anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="Settings"]
+offset_left = -21.0
+offset_top = -3.0
+offset_right = 20.0
+offset_bottom = 39.0
 scale = Vector2(29.24, 16.56)
-color = Color(0.558361, 0.422722, 0.140128, 1)
+color = Color(0.87451, 0.682353, 0.298039, 1)
 
-[node name="credits_panel" type="TextureRect" parent="Settings"]
-offset_left = 116.0
-offset_top = 19.0
-offset_right = 604.0
-offset_bottom = 638.0
-texture = ExtResource("13_bhj24")
+[node name="SettingsBackground" type="Sprite2D" parent="Settings"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_v2hv4")
 
-[node name="Title" type="TextureRect" parent="Settings"]
-offset_left = 212.0
-offset_top = 63.0
-offset_right = 504.0
-offset_bottom = 150.0
-texture = ExtResource("4_f5b87")
+[node name="SettingsFullscreenOn" type="Sprite2D" parent="Settings"]
+position = Vector2(740, 331)
+scale = Vector2(0.086, 0.0853334)
+texture = ExtResource("16_a7x13")
 
-[node name="volume_main" type="TextureRect" parent="Settings"]
-offset_left = 705.0
-offset_top = 35.0
-offset_right = 1117.0
-offset_bottom = 166.0
-texture = ExtResource("10_3v6ml")
-
-[node name="Volume_Cover" type="ColorRect" parent="Settings/volume_main"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_right = 412.0
-offset_bottom = 131.0
-color = Color(0, 0, 0, 0.862745)
-
-[node name="Volume_Label" type="Label" parent="Settings"]
-unique_name_in_owner = true
-offset_left = 714.0
-offset_top = 42.0
-offset_right = 1073.0
-offset_bottom = 98.0
-scale = Vector2(0.445, 0.445)
-theme = ExtResource("11_juhrv")
-theme_override_colors/font_color = Color(0, 1, 0, 1)
-theme_override_font_sizes/font_size = 76
-text = "Volume: 50%"
+[node name="SettingsFullscreenOff" type="Sprite2D" parent="Settings"]
+position = Vector2(826, 323)
+scale = Vector2(0.088, 0.08)
+texture = ExtResource("17_ra8p7")
 
 [node name="Volume" type="HSlider" parent="Settings"]
 unique_name_in_owner = true
-offset_left = 705.0
-offset_top = 161.0
-offset_right = 1117.0
-offset_bottom = 177.0
-max_value = 1.0
-step = 0.01
-value = 0.5
-tick_count = 10
+layout_mode = 0
+offset_left = 177.0
+offset_top = 243.0
+offset_right = 478.0
+offset_bottom = 293.0
+theme_override_icons/grabber = ExtResource("15_qmt6g")
+theme_override_icons/grabber_highlight = ExtResource("15_qmt6g")
+theme_override_icons/grabber_disabled = ExtResource("15_qmt6g")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_v6j4f")
+value = 100.0
 ticks_on_borders = true
 
-[node name="Windowed" type="Button" parent="Settings"]
-unique_name_in_owner = true
+[node name="SettingsMarker" type="Sprite2D" parent="Settings"]
 visible = false
-offset_left = 705.0
-offset_top = 182.0
-offset_right = 904.0
-offset_bottom = 253.0
-disabled = true
-text = "Windowed"
-
-[node name="Fullscreen" type="Button" parent="Settings"]
-unique_name_in_owner = true
-visible = false
-offset_left = 904.0
-offset_top = 182.0
-offset_right = 1103.0
-offset_bottom = 253.0
-text = "Fullscreen"
-
-[node name="Back" type="Button" parent="Settings"]
-offset_left = 846.0
-offset_top = 578.0
-offset_right = 933.0
-offset_bottom = 625.0
-text = "Back"
-
-[node name="windowed_tag" type="TextureRect" parent="Settings"]
-offset_left = 760.0
-offset_top = 185.0
-offset_right = 1037.0
-offset_bottom = 254.0
-texture = ExtResource("9_kr4ux")
-
-[node name="fullscreen_tag" type="TextureRect" parent="Settings"]
-offset_left = 760.0
-offset_top = 493.0
-offset_right = 1038.0
-offset_bottom = 563.0
-texture = ExtResource("10_3d68q")
-
-[node name="window_switch" type="Control" parent="Settings"]
-layout_mode = 3
-anchors_preset = 0
-offset_left = 815.0
-offset_top = 249.0
-offset_right = 1049.0
-offset_bottom = 575.0
-scale = Vector2(0.75, 0.75)
-
-[node name="backing" type="TextureRect" parent="Settings/window_switch"]
-layout_mode = 0
-offset_right = 233.0
-offset_bottom = 326.0
-texture = ExtResource("9_7xfr5")
-
-[node name="lever_button" type="Button" parent="Settings/window_switch"]
-unique_name_in_owner = true
-self_modulate = Color(1, 1, 1, 0)
-layout_mode = 0
-offset_left = 60.0
-offset_top = 35.0
-offset_right = 173.0
-offset_bottom = 272.0
-
-[node name="lever" type="TextureRect" parent="Settings/window_switch"]
-unique_name_in_owner = true
-layout_mode = 0
-offset_left = 60.0
-offset_top = 34.0
-offset_right = 174.0
-offset_bottom = 275.0
-mouse_filter = 2
-texture = ExtResource("10_p0k6m")
+position = Vector2(473, 265)
+scale = Vector2(0.0786666, 0.064)
+texture = SubResource("CompressedTexture2D_vo7qb")
 
 [node name="Credits" type="Control" parent="."]
 visible = false
@@ -413,10 +329,6 @@ offset_bottom = 91.0
 [connection signal="mouse_exited" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit/Quit" to="." method="_on_quit_mouse_exited"]
 [connection signal="pressed" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit/Quit" to="." method="_on_quit_pressed"]
 [connection signal="value_changed" from="Settings/Volume" to="." method="_on_volume_value_changed"]
-[connection signal="pressed" from="Settings/Windowed" to="." method="_on_windowed_pressed"]
-[connection signal="pressed" from="Settings/Fullscreen" to="." method="_on_fullscreen_pressed"]
-[connection signal="pressed" from="Settings/Back" to="." method="_on_back_pressed"]
-[connection signal="pressed" from="Settings/window_switch/lever_button" to="." method="_on_lever_button_pressed"]
 [connection signal="pressed" from="Credits/Back2" to="." method="_on_back_2_pressed"]
 [connection signal="pressed" from="Tutorial/Tutorial-back/Back3" to="." method="_on_back_3_pressed"]
 [connection signal="pressed" from="Tutorial/Intro-Button" to="." method="_on_intro_button_pressed"]
