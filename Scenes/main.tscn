@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://bu6j0v2aj8gfi"]
+[gd_scene load_steps=70 format=3 uid="uid://bu6j0v2aj8gfi"]
 
 [ext_resource type="Texture2D" uid="uid://bgn1t0ghmm0fb" path="res://Assets/Default/factory_background_1.png" id="1_bhy67"]
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
@@ -42,11 +42,20 @@
 [ext_resource type="Texture2D" uid="uid://d2cm6ahgtyl20" path="res://Assets/Default/Buttons/Lizard/idle.png" id="20_ola5f"]
 [ext_resource type="Texture2D" uid="uid://ck2mqkyqkrtq4" path="res://Assets/Default/Buttons/Lizard/down_1.png" id="21_e842l"]
 [ext_resource type="Texture2D" uid="uid://cpmdgg8t2xhwo" path="res://Assets/Default/Buttons/Lizard/pressed.png" id="22_thht2"]
+[ext_resource type="Texture2D" uid="uid://bssp0pnefw3i6" path="res://Assets/Default/Buttons/Lose_Buttons/menu_1.png" id="23_ieiv7"]
 [ext_resource type="Texture2D" uid="uid://c6ox2cksue3o6" path="res://Assets/Default/Buttons/Lizard/up_1.png" id="23_opwan"]
+[ext_resource type="Texture2D" uid="uid://c22cg4wvsk4a1" path="res://Assets/Default/Buttons/Lose_Buttons/reset_1.png" id="23_vtos1"]
+[ext_resource type="Texture2D" uid="uid://pjg7sqgcybuq" path="res://Assets/Default/Buttons/Lose_Buttons/reset_2.png" id="24_1xakk"]
+[ext_resource type="Texture2D" uid="uid://cklhgfmo7tt05" path="res://Assets/Default/Buttons/Lose_Buttons/menu_2.png" id="24_5fkr8"]
 [ext_resource type="Texture2D" uid="uid://cqejkyc6ktg8l" path="res://Assets/Default/Buttons/Hunter/idle.png" id="24_eshyq"]
 [ext_resource type="Texture2D" uid="uid://bkp40ng2pol7s" path="res://Assets/Default/Buttons/Hunter/down_1.png" id="25_261ld"]
 [ext_resource type="Texture2D" uid="uid://bovx7q2pvnplq" path="res://Assets/Default/Buttons/Hunter/pressed.png" id="26_gnesw"]
 [ext_resource type="Texture2D" uid="uid://bmfr8murlo20f" path="res://Assets/Default/Buttons/Hunter/up_1.png" id="27_x0xqs"]
+[ext_resource type="Texture2D" uid="uid://dfkcc82f8341e" path="res://Assets/Default/Buttons/Lose_Buttons/quit_1.png" id="33_xav28"]
+[ext_resource type="Texture2D" uid="uid://c54skck4aa4tx" path="res://Assets/Default/Buttons/Lose_Buttons/quit_2.png" id="34_j3bbp"]
+[ext_resource type="Texture2D" uid="uid://doclwahld106d" path="res://Assets/Default/Buttons/Generic/blank_pressed.png" id="39_386n4"]
+[ext_resource type="Texture2D" uid="uid://bj6cy6evggjs" path="res://Assets/Default/Buttons/Generic/blank_transition.png" id="39_tbftr"]
+[ext_resource type="Texture2D" uid="uid://cegsk0xrfnjt" path="res://Assets/Default/Buttons/Generic/blank_idle.png" id="41_uldva"]
 [ext_resource type="Texture2D" uid="uid://dfogsn5vna7vg" path="res://Assets/Default/MenuClipboard/Clipboard.png" id="47_8fpml"]
 [ext_resource type="Texture2D" uid="uid://b4uhi0na3d3nx" path="res://Assets/Default/Pause/quit.png" id="48_nrhl8"]
 [ext_resource type="Texture2D" uid="uid://nva1uvinlueu" path="res://Assets/Default/Pause/resume.png" id="48_wahqt"]
@@ -126,6 +135,35 @@ animations = [{
 "texture": ExtResource("8_kih3g")
 }, {
 "duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vtos1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_1xakk")
+}],
+"loop": false,
+"name": &"end_game",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_5jrsc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_sa4tn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kih3g")
+}, {
+"duration": 1.0,
 "texture": ExtResource("9_stxtg")
 }, {
 "duration": 1.0,
@@ -170,6 +208,35 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6qivr"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("12_4dk2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_uasrl")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_udtok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ieiv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_5fkr8")
+}],
+"loop": false,
+"name": &"end_game",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("12_4dk2a")
@@ -236,6 +303,35 @@ animations = [{
 "texture": ExtResource("18_ie1kk")
 }, {
 "duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xav28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_j3bbp")
+}],
+"loop": false,
+"name": &"end_game",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("16_di70a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_38kub")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ie1kk")
+}, {
+"duration": 1.0,
 "texture": ExtResource("19_b7owd")
 }, {
 "duration": 1.0,
@@ -291,6 +387,35 @@ animations = [{
 "texture": ExtResource("22_thht2")
 }, {
 "duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_tbftr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_386n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_uldva")
+}],
+"loop": false,
+"name": &"end_game",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_ola5f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_e842l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_thht2")
+}, {
+"duration": 1.0,
 "texture": ExtResource("23_opwan")
 }, {
 "duration": 1.0,
@@ -335,6 +460,35 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pqwk1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_eshyq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_261ld")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gnesw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_tbftr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_386n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("41_uldva")
+}],
+"loop": false,
+"name": &"end_game",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("24_eshyq")
@@ -450,9 +604,9 @@ script = ExtResource("1_kolsd")
 [node name="Rock" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
 position = Vector2(-45, 225)
-scale = Vector2(0.175, 0.181597)
+scale = Vector2(0.141685, 0.147026)
 sprite_frames = SubResource("SpriteFrames_srto4")
-animation = &"selection_swap"
+animation = &"end_game"
 
 [node name="Rock_Trigger" type="Button" parent="Player/Rock"]
 modulate = Color(1, 1, 1, 0)
@@ -460,13 +614,14 @@ offset_left = -366.0
 offset_top = -286.0
 offset_right = 365.0
 offset_bottom = 331.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Paper" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
 position = Vector2(228, 225)
-scale = Vector2(0.175, 0.181597)
+scale = Vector2(0.143306, 0.148708)
 sprite_frames = SubResource("SpriteFrames_6qivr")
-animation = &"selection_swap"
+animation = &"end_game"
 
 [node name="Paper_Trigger" type="Button" parent="Player/Paper"]
 modulate = Color(1, 1, 1, 0)
@@ -474,13 +629,14 @@ offset_left = -366.0
 offset_top = -286.0
 offset_right = 365.0
 offset_bottom = 331.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Scissors" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
 position = Vector2(532, 225)
-scale = Vector2(0.175, 0.181597)
+scale = Vector2(0.140862, 0.146172)
 sprite_frames = SubResource("SpriteFrames_3b5bm")
-animation = &"press"
+animation = &"end_game"
 
 [node name="Scissors_Trigger" type="Button" parent="Player/Scissors"]
 modulate = Color(1, 1, 1, 0)
@@ -488,13 +644,15 @@ offset_left = -366.0
 offset_top = -286.0
 offset_right = 365.0
 offset_bottom = 331.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Lizard" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(385, 225)
-scale = Vector2(0.175, 0.181597)
+scale = Vector2(0.143836, 0.149258)
 sprite_frames = SubResource("SpriteFrames_cjg1o")
-animation = &"selection_swap"
+animation = &"end_game"
 
 [node name="Lizard_Trigger" type="Button" parent="Player/Lizard"]
 modulate = Color(1, 1, 1, 0)
@@ -502,13 +660,15 @@ offset_left = -366.0
 offset_top = -286.0
 offset_right = 365.0
 offset_bottom = 331.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Hunter" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(91, 225)
-scale = Vector2(0.175, 0.181597)
+scale = Vector2(0.143111, 0.148506)
 sprite_frames = SubResource("SpriteFrames_pqwk1")
-animation = &"selection_swap"
+animation = &"end_game"
 
 [node name="Hunter_Trigger" type="Button" parent="Player/Hunter"]
 modulate = Color(1, 1, 1, 0)
@@ -516,6 +676,7 @@ offset_left = -366.0
 offset_top = -286.0
 offset_right = 365.0
 offset_bottom = 331.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Score Text" type="Node2D" parent="Player"]
 position = Vector2(-220, 261)

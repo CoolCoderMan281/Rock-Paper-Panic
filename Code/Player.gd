@@ -34,6 +34,15 @@ func visual_pressed(button: String):
 func logic(choice: String = ""):
 	if !can_press:
 		return
+	if %Lose.visible:
+		if choice == "Rock":
+			retry()
+		elif choice == "Paper":
+			_on_main_menu_pressed()
+		elif choice == "Scissors":
+			_on_quit_pressed()
+		else:
+			return
 	visual_pressed(choice)
 	sfx.stream = Globals.sfx_press
 	sfx.play()
@@ -73,6 +82,11 @@ func retry():
 func lose_music():
 	sfx.stream = Globals.lose_theme
 	sfx.play()
+	%Rock.play("end_game",true)
+	%Paper.play("end_game",true)
+	%Scissors.play("end_game",true)
+	%Lizard.play("end_game",true)
+	%Hunter.play("end_game",true)
 
 func _on_main_menu_pressed():
 	Globals.set_scene("res://Scenes/mainmenu.tscn")

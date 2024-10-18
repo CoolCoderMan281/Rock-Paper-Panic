@@ -93,5 +93,5 @@ func new_choice() -> void:
 		choice = possible_choices.pick_random()
 		if choice != pastChoice:
 			break
-
-	update_display()
+	if !%Lose.visible:
+		update_display()
