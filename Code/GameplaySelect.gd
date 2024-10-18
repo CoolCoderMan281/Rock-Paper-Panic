@@ -9,12 +9,17 @@ func _ready():
 	player.play()
 	if Globals.mode == Globals.gamemode.default:
 		$Menu/Buttons/RPS_Mode.button_pressed = true
+		$Menu/Graphics/DifficultyRps.modulate = Color(1, 1, 1, 0.5)
 		$Menu/Buttons/Zuckerberg_Mode.button_pressed = false
+		$Menu/Graphics/DifficultyLh.modulate = Color(1,1,1, 1)
 	elif Globals.mode == Globals.gamemode.lizard_hunter:
 		$Menu/Buttons/RPS_Mode.button_pressed = false
+		$Menu/Graphics/DifficultyRps.modulate = Color(1, 1, 1, 1)
 		$Menu/Buttons/Zuckerberg_Mode.button_pressed = true
+		$Menu/Graphics/DifficultyLh.modulate = Color(1,1,1, 0.5)
 	else:
 		$Menu/Buttons/RPS_Mode.button_pressed = true
+		$Menu/Graphics/DifficultyRps.modulate = Color(1,1,1, 0.5)
 
 
 func _on_normal_pressed() -> void:
@@ -35,18 +40,26 @@ func _on_rps_mode_toggled(toggled_on:bool):
 	if toggled_on:
 		Globals.mode = Globals.gamemode.default
 		$Menu/Buttons/Zuckerberg_Mode.button_pressed = false
+		$Menu/Graphics/DifficultyRps.modulate = Color(1, 1, 1, 0.5)
+		$Menu/Graphics/DifficultyLh.modulate = Color(1,1,1, 1)
 	else:
 		Globals.mode = Globals.gamemode.lizard_hunter
 		$Menu/Buttons/Zuckerberg_Mode.button_pressed = true
+		$Menu/Graphics/DifficultyRps.modulate = Color(1, 1, 1, 1)
+		$Menu/Graphics/DifficultyLh.modulate = Color(1,1,1, 0.5)
 
 
 func _on_zuckerberg_mode_toggled(toggled_on:bool):
 	if toggled_on:
 		Globals.mode = Globals.gamemode.lizard_hunter
 		$Menu/Buttons/RPS_Mode.button_pressed = false
+		$Menu/Graphics/DifficultyRps.modulate = Color(1, 1, 1, 1)
+		$Menu/Graphics/DifficultyLh.modulate = Color(1,1,1, 0.5)
 	else:
 		Globals.mode = Globals.gamemode.default
 		$Menu/Buttons/RPS_Mode.button_pressed = true
+		$Menu/Graphics/DifficultyRps.modulate = Color(1, 1, 1, 0.5)
+		$Menu/Graphics/DifficultyLh.modulate = Color(1,1,1, 1)
 
 
 func _on_consent_continue_pressed() -> void:

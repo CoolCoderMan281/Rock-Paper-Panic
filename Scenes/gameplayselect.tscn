@@ -77,6 +77,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="RPS_Mode" type="CheckBox" parent="Menu/Buttons"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 351.0
 offset_top = 331.0
@@ -86,6 +87,7 @@ scale = Vector2(8.09497, 4.22151)
 button_pressed = true
 
 [node name="Zuckerberg_Mode" type="CheckBox" parent="Menu/Buttons"]
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
 offset_left = 614.0
 offset_top = 324.0

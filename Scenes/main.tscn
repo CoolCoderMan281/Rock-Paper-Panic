@@ -833,6 +833,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Lizard" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(385, 225)
 scale = Vector2(0.143836, 0.149258)
 sprite_frames = SubResource("SpriteFrames_cjg1o")
@@ -848,6 +849,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Hunter" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
+visible = false
 position = Vector2(91, 225)
 scale = Vector2(0.143111, 0.148506)
 sprite_frames = SubResource("SpriteFrames_pqwk1")
