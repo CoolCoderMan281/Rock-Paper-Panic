@@ -166,6 +166,7 @@ is a mistake you need to rebuild."
 
 [node name="Settings" type="Control" parent="."]
 unique_name_in_owner = true
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
