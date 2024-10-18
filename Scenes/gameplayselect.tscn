@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://dte58gpdscy8f"]
+[gd_scene load_steps=10 format=3 uid="uid://dte58gpdscy8f"]
 
 [ext_resource type="Script" path="res://Code/GameplaySelect.gd" id="1_7t0e7"]
 [ext_resource type="Texture2D" uid="uid://cgpo8po2mh4kv" path="res://Assets/Default/paper_backing.png" id="6_q6a0p"]
 [ext_resource type="Texture2D" uid="uid://bvlr5u76swkfs" path="res://Assets/Default/Difficulty/Difficulty_Clipboard.png" id="7_rvr21"]
+[ext_resource type="Texture2D" uid="uid://bsk8wqobyc2x1" path="res://Assets/Default/Difficulty/back.png" id="8_fyeh8"]
 [ext_resource type="Texture2D" uid="uid://cyi5uapcucl2h" path="res://Assets/Default/Difficulty/Difficulty_Contract.png" id="8_vyp7y"]
 [ext_resource type="Texture2D" uid="uid://sxvf1gsdclj0" path="res://Assets/Default/Difficulty/Difficulty_RPS.png" id="9_hwx8o"]
 [ext_resource type="Texture2D" uid="uid://cf0wb32xcf85p" path="res://Assets/Default/Difficulty/Difficulty_LH.png" id="10_2mwjm"]
@@ -41,7 +42,7 @@ scale = Vector2(0.576, 0.358)
 texture = ExtResource("7_rvr21")
 
 [node name="DifficultyContract" type="Sprite2D" parent="Menu/Graphics"]
-position = Vector2(563, 402)
+position = Vector2(712, 402)
 scale = Vector2(0.409, 0.436)
 texture = ExtResource("8_vyp7y")
 
@@ -64,6 +65,11 @@ texture = ExtResource("11_jlo4s")
 position = Vector2(552, 318)
 scale = Vector2(0.44925, 0.423625)
 texture = ExtResource("12_lwmta")
+
+[node name="Back" type="Sprite2D" parent="Menu/Graphics"]
+position = Vector2(393, 209)
+scale = Vector2(0.362, 0.284)
+texture = ExtResource("8_fyeh8")
 
 [node name="Buttons" type="Control" parent="Menu"]
 anchors_preset = 0
@@ -111,20 +117,20 @@ text = "LArge"
 
 [node name="Back" type="Button" parent="Menu/Buttons"]
 unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 10.0
-offset_top = 55.0
-offset_right = 255.0
-offset_bottom = 146.0
+offset_left = 267.0
+offset_top = 163.0
+offset_right = 480.0
+offset_bottom = 176.0
 scale = Vector2(1.18406, 6.31162)
-text = "Someone forgot a back button"
 
 [node name="Contract" type="Button" parent="Menu/Buttons"]
 self_modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 391.0
+offset_left = 540.0
 offset_top = 163.0
-offset_right = 739.0
+offset_right = 888.0
 offset_bottom = 243.0
 
 [node name="Consent_HARD" type="Control" parent="."]

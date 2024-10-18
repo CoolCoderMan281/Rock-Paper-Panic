@@ -491,7 +491,6 @@ offset_bottom = 331.0
 
 [node name="Lizard" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
-visible = false
 position = Vector2(385, 225)
 scale = Vector2(0.175, 0.181597)
 sprite_frames = SubResource("SpriteFrames_cjg1o")
@@ -506,7 +505,6 @@ offset_bottom = 331.0
 
 [node name="Hunter" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
-visible = false
 position = Vector2(91, 225)
 scale = Vector2(0.175, 0.181597)
 sprite_frames = SubResource("SpriteFrames_pqwk1")

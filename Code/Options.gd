@@ -2,6 +2,8 @@ extends Node2D
 
 
 func _input(event):
+	if %Lose.visible:
+		return
 	if event.is_action_pressed("ui_cancel"):
 		visible = !visible
 		Globals.debug_stoptime = visible

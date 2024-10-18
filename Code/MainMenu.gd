@@ -23,7 +23,8 @@ func _ready():
 
 	# Update the UI based on the volume
 	_on_volume_value_changed(%Volume.value)  
-	AudioServer.remove_bus_effect(0,0)
+	if AudioServer.get_bus_effect_count(0) >= 1:
+		AudioServer.remove_bus_effect(0,0)
 	# Other initialization code...
 	if Globals.client_type == Globals.client_types.Web:
 		speed /= 2

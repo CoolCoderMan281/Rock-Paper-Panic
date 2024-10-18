@@ -99,12 +99,13 @@ func _on_rock_frame_changed() -> void:
 
 
 func end_game(state: String):
-	%Countdown.visible = false
+	$"Timer Text/Second".text = ">:O"
 	%Lose.visible = true
 	%Lose_Animation.play()
-	%Countdown.queue_free()
+	player.stop()
 	Globals.generic_telemetry("Final Score: ",str(%Player.score))
 	%Player.lose_music()
+	%Countdown.set_process(false)
 
 
 func sfx_play(name: AudioStreamMP3):
