@@ -17,9 +17,8 @@ func _ready() -> void:
 	pressed_timer.one_shot = true
 	add_child(pressed_timer)
 	pressed_timer.connect("timeout", Callable(self,"update_selection_images"))
-	var objects = [%Rock, %Paper, %Scissors, %Lizard, %Hunter]
-	for obj in objects:
-		obj.play("appear")
+	%Countdown_2.play("default")
+	
 
 func visual_pressed(button: String):
 	if button == "Rock":
@@ -134,3 +133,10 @@ func _on_rock_frame_changed() -> void:
 					_on_main_menu_pressed()
 				elif queued_lose_option == "quit":
 					_on_quit_pressed()
+
+
+func _on_countdown_2_animation_finished():
+	%Countdown_2.visible = false
+	var objects = [%Rock, %Paper, %Scissors, %Lizard, %Hunter]
+	for obj in objects:
+		obj.play("appear")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=70 format=3 uid="uid://bu6j0v2aj8gfi"]
+[gd_scene load_steps=82 format=3 uid="uid://bu6j0v2aj8gfi"]
 
 [ext_resource type="Texture2D" uid="uid://bgn1t0ghmm0fb" path="res://Assets/Default/factory_background_1.png" id="1_bhy67"]
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
@@ -37,19 +37,30 @@
 [ext_resource type="Texture2D" uid="uid://cejilhu1nobpi" path="res://Assets/Default/LoseAnimation/lose_12.png" id="15_qsjr0"]
 [ext_resource type="Texture2D" uid="uid://dhof58gkwn5wj" path="res://Assets/Default/Buttons/Scissors/idle.png" id="16_di70a"]
 [ext_resource type="Texture2D" uid="uid://c1325mygyvuu3" path="res://Assets/Default/Buttons/Scissors/down_1.png" id="17_38kub"]
+[ext_resource type="Texture2D" uid="uid://cu0rafvc5ncyf" path="res://Assets/Default/Countdown/countdown_1.png" id="17_tg2cm"]
+[ext_resource type="Texture2D" uid="uid://cx2pqeq3tsrfe" path="res://Assets/Default/Countdown/countdown_2.png" id="18_373vl"]
 [ext_resource type="Texture2D" uid="uid://bfpswktuuvrgq" path="res://Assets/Default/Buttons/Scissors/pressed.png" id="18_ie1kk"]
 [ext_resource type="Texture2D" uid="uid://0ej2eyn0axy0" path="res://Assets/Default/Buttons/Scissors/up_1.png" id="19_b7owd"]
+[ext_resource type="Texture2D" uid="uid://c3r8bemu2ebla" path="res://Assets/Default/Countdown/countdown_3.png" id="19_k55al"]
+[ext_resource type="Texture2D" uid="uid://byhhfs8tu0pog" path="res://Assets/Default/Countdown/countdown_4.png" id="20_3psdd"]
 [ext_resource type="Texture2D" uid="uid://d2cm6ahgtyl20" path="res://Assets/Default/Buttons/Lizard/idle.png" id="20_ola5f"]
 [ext_resource type="Texture2D" uid="uid://ck2mqkyqkrtq4" path="res://Assets/Default/Buttons/Lizard/down_1.png" id="21_e842l"]
+[ext_resource type="Texture2D" uid="uid://cp5nll1tgxgfp" path="res://Assets/Default/Countdown/countdown_5.png" id="21_lu45w"]
+[ext_resource type="Texture2D" uid="uid://b5yyy7bf7vast" path="res://Assets/Default/Countdown/countdown_6.png" id="22_alltn"]
 [ext_resource type="Texture2D" uid="uid://cpmdgg8t2xhwo" path="res://Assets/Default/Buttons/Lizard/pressed.png" id="22_thht2"]
+[ext_resource type="Texture2D" uid="uid://dlju0lk363r8k" path="res://Assets/Default/Countdown/countdown_7.png" id="23_5m53q"]
 [ext_resource type="Texture2D" uid="uid://bssp0pnefw3i6" path="res://Assets/Default/Buttons/Lose_Buttons/menu_1.png" id="23_ieiv7"]
 [ext_resource type="Texture2D" uid="uid://c6ox2cksue3o6" path="res://Assets/Default/Buttons/Lizard/up_1.png" id="23_opwan"]
 [ext_resource type="Texture2D" uid="uid://c22cg4wvsk4a1" path="res://Assets/Default/Buttons/Lose_Buttons/reset_1.png" id="23_vtos1"]
 [ext_resource type="Texture2D" uid="uid://pjg7sqgcybuq" path="res://Assets/Default/Buttons/Lose_Buttons/reset_2.png" id="24_1xakk"]
 [ext_resource type="Texture2D" uid="uid://cklhgfmo7tt05" path="res://Assets/Default/Buttons/Lose_Buttons/menu_2.png" id="24_5fkr8"]
 [ext_resource type="Texture2D" uid="uid://cqejkyc6ktg8l" path="res://Assets/Default/Buttons/Hunter/idle.png" id="24_eshyq"]
+[ext_resource type="Texture2D" uid="uid://c6u68u8c2o8a0" path="res://Assets/Default/Countdown/countdown_8.png" id="24_oyofy"]
+[ext_resource type="Texture2D" uid="uid://08t6nxxv6o3l" path="res://Assets/Default/Countdown/countdown_9.png" id="25_0cr1v"]
 [ext_resource type="Texture2D" uid="uid://bkp40ng2pol7s" path="res://Assets/Default/Buttons/Hunter/down_1.png" id="25_261ld"]
 [ext_resource type="Texture2D" uid="uid://bovx7q2pvnplq" path="res://Assets/Default/Buttons/Hunter/pressed.png" id="26_gnesw"]
+[ext_resource type="Texture2D" uid="uid://cnmk4coj1726f" path="res://Assets/Default/Countdown/countdown_10.png" id="26_x7tj5"]
+[ext_resource type="Texture2D" uid="uid://7347fhw7tjf0" path="res://Assets/Default/Countdown/countdown_11.png" id="27_rrubr"]
 [ext_resource type="Texture2D" uid="uid://bmfr8murlo20f" path="res://Assets/Default/Buttons/Hunter/up_1.png" id="27_x0xqs"]
 [ext_resource type="Texture2D" uid="uid://dfkcc82f8341e" path="res://Assets/Default/Buttons/Lose_Buttons/quit_1.png" id="33_xav28"]
 [ext_resource type="Texture2D" uid="uid://c54skck4aa4tx" path="res://Assets/Default/Buttons/Lose_Buttons/quit_2.png" id="34_j3bbp"]
@@ -116,6 +127,71 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": ExtResource("15_qsjr0")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_j8bq6"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("27_rrubr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_x7tj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_oyofy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5m53q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0cr1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3psdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lu45w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_alltn")
+}, {
+"duration": 12.0,
+"texture": ExtResource("17_tg2cm")
+}, {
+"duration": 12.0,
+"texture": ExtResource("18_373vl")
+}, {
+"duration": 12.0,
+"texture": ExtResource("19_k55al")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_3psdd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_lu45w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_alltn")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_5m53q")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_oyofy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_0cr1v")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_x7tj5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_rrubr")
 }],
 "loop": false,
 "name": &"default",
@@ -747,6 +823,7 @@ frame_progress = 0.709328
 
 [node name="Enemy" type="Sprite2D" parent="."]
 unique_name_in_owner = true
+process_mode = 3
 position = Vector2(230, -16)
 scale = Vector2(0.410002, 0.370002)
 texture = SubResource("CompressedTexture2D_xyrgs")
@@ -781,6 +858,14 @@ offset_right = 2057.0
 offset_bottom = 1157.0
 scale = Vector2(0.777778, 0.777778)
 texture = ExtResource("1_pv84b")
+
+[node name="Countdown_2" type="AnimatedSprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(231, 103)
+scale = Vector2(0.6, 0.6)
+sprite_frames = SubResource("SpriteFrames_j8bq6")
+frame = 18
+frame_progress = 1.0
 
 [node name="Player" type="Node2D" parent="."]
 unique_name_in_owner = true
@@ -1176,6 +1261,7 @@ offset_bottom = 364.0
 scale = Vector2(1.71181, 1.71181)
 text = "FPS Goal:"
 
+[connection signal="animation_finished" from="Countdown_2" to="Player" method="_on_countdown_2_animation_finished"]
 [connection signal="frame_changed" from="Player/Rock" to="Player" method="_on_rock_frame_changed"]
 [connection signal="frame_changed" from="Player/Rock" to="Countdown" method="_on_rock_frame_changed"]
 [connection signal="pressed" from="Player/Rock/Rock_Trigger" to="Player" method="_on_rock_trigger_pressed"]

@@ -37,7 +37,7 @@ func _ready():
 	sfx.volume_db = Globals.volume
 
 func _process(delta: float):
-	if !Globals.debug_stoptime:
+	if !Globals.debug_stoptime and !%Countdown_2.visible:
 		last_update_time += delta
 		if last_update_time >= 1.0:
 			last_update_time -= 1.0

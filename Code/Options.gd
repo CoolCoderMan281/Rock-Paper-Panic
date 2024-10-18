@@ -5,12 +5,13 @@ func _input(event):
 	if %Lose.visible:
 		return
 	if event.is_action_pressed("ui_cancel"):
-		visible = !visible
-		Globals.debug_stoptime = visible
-		if visible:
-			AudioServer.add_bus_effect(0,Globals.sfx_muffle,0)
-		else:
-			AudioServer.remove_bus_effect(0,0)
+		if !%Countdown_2.visible:
+			visible = !visible
+			Globals.debug_stoptime = visible
+			if visible:
+				AudioServer.add_bus_effect(0,Globals.sfx_muffle,0)
+			else:
+				AudioServer.remove_bus_effect(0,0)
 
 
 func _on_quit_pressed():

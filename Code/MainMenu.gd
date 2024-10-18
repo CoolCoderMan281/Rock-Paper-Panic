@@ -155,13 +155,13 @@ func _on_intro_button_pressed() -> void:
 	%"Tutorial-rps-select".visible = false
 
 
-
 func _on_full_off_pressed():
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_MAXIMIZED)
 
 func _on_full_on_pressed():
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
+	
 
 
 func _on_settings_back_pressed():
