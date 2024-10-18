@@ -21,6 +21,8 @@ var fps: int = 12
 var is_animating: bool = false  # Track if an animation is playing
 
 func _ready():
+	add_child(conveyor)
+	conveyor.volume_db = Globals.volume
 	if Globals.mode == Globals.gamemode.lizard_hunter:
 		options += ["Lizard", "Hunter"]
 		%Lizard.visible = true

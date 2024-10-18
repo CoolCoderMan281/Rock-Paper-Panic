@@ -9,6 +9,8 @@ func _ready() -> void:
 	%Factory_Background.play("default")
 	score = 0
 	update_score()
+	add_child(sfx)
+	sfx.volume_db = Globals.volume
 	pressed_timer = Timer.new()
 	pressed_timer.set_wait_time(0.5)
 	pressed_timer.one_shot = true

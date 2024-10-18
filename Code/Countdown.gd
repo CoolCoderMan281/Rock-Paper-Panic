@@ -13,6 +13,7 @@ var lh_mode: bool = false
 
 func _ready():
 	add_child(player)
+	add_child(sfx)
 	if Globals.mode == Globals.gamemode.lizard_hunter:
 		lh_mode = true
 	Globals.debug_autoplay = false
