@@ -142,24 +142,6 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_x7tj5")
 }, {
-"duration": 1.0,
-"texture": ExtResource("24_oyofy")
-}, {
-"duration": 1.0,
-"texture": ExtResource("23_5m53q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("25_0cr1v")
-}, {
-"duration": 1.0,
-"texture": ExtResource("20_3psdd")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_lu45w")
-}, {
-"duration": 1.0,
-"texture": ExtResource("22_alltn")
-}, {
 "duration": 12.0,
 "texture": ExtResource("17_tg2cm")
 }, {
@@ -864,7 +846,7 @@ unique_name_in_owner = true
 position = Vector2(231, 103)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_j8bq6")
-frame = 18
+frame = 12
 frame_progress = 1.0
 
 [node name="Player" type="Node2D" parent="."]
