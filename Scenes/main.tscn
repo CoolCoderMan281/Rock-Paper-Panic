@@ -126,6 +126,43 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_kih3g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_stxtg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_5jrsc")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_1xakk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_vtos1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}],
+"loop": false,
+"name": &"end_end_game",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("6_5jrsc")
 }, {
 "duration": 1.0,
@@ -208,6 +245,43 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6qivr"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_udtok")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_5uy8s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_4dk2a")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("24_5fkr8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_ieiv7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}],
+"loop": false,
+"name": &"end_end_game",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("12_4dk2a")
@@ -294,6 +368,43 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_ie1kk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_b7owd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_di70a")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("34_j3bbp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_xav28")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}],
+"loop": false,
+"name": &"end_end_game",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("16_di70a")
 }, {
 "duration": 1.0,
@@ -378,6 +489,43 @@ animations = [{
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_thht2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_opwan")
+}, {
+"duration": 1.0,
+"texture": ExtResource("20_ola5f")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_uldva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_386n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_tbftr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}],
+"loop": false,
+"name": &"end_end_game",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("20_ola5f")
 }, {
 "duration": 1.0,
@@ -460,6 +608,43 @@ animations = [{
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_pqwk1"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_fhc2l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_gnesw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_x0xqs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_eshyq")
+}],
+"loop": false,
+"name": &"appear",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("41_uldva")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_386n4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_tbftr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_32k0f")
+}],
+"loop": false,
+"name": &"end_end_game",
+"speed": 12.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("24_eshyq")
@@ -606,7 +791,7 @@ unique_name_in_owner = true
 position = Vector2(-45, 225)
 scale = Vector2(0.141685, 0.147026)
 sprite_frames = SubResource("SpriteFrames_srto4")
-animation = &"end_game"
+animation = &"appear"
 
 [node name="Rock_Trigger" type="Button" parent="Player/Rock"]
 modulate = Color(1, 1, 1, 0)
@@ -621,7 +806,7 @@ unique_name_in_owner = true
 position = Vector2(228, 225)
 scale = Vector2(0.143306, 0.148708)
 sprite_frames = SubResource("SpriteFrames_6qivr")
-animation = &"end_game"
+animation = &"appear"
 
 [node name="Paper_Trigger" type="Button" parent="Player/Paper"]
 modulate = Color(1, 1, 1, 0)
@@ -636,7 +821,7 @@ unique_name_in_owner = true
 position = Vector2(532, 225)
 scale = Vector2(0.140862, 0.146172)
 sprite_frames = SubResource("SpriteFrames_3b5bm")
-animation = &"end_game"
+animation = &"appear"
 
 [node name="Scissors_Trigger" type="Button" parent="Player/Scissors"]
 modulate = Color(1, 1, 1, 0)
@@ -648,11 +833,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Lizard" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
-visible = false
 position = Vector2(385, 225)
 scale = Vector2(0.143836, 0.149258)
 sprite_frames = SubResource("SpriteFrames_cjg1o")
-animation = &"end_game"
+animation = &"appear"
 
 [node name="Lizard_Trigger" type="Button" parent="Player/Lizard"]
 modulate = Color(1, 1, 1, 0)
@@ -664,11 +848,10 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Hunter" type="AnimatedSprite2D" parent="Player"]
 unique_name_in_owner = true
-visible = false
 position = Vector2(91, 225)
 scale = Vector2(0.143111, 0.148506)
 sprite_frames = SubResource("SpriteFrames_pqwk1")
-animation = &"end_game"
+animation = &"appear"
 
 [node name="Hunter_Trigger" type="Button" parent="Player/Hunter"]
 modulate = Color(1, 1, 1, 0)
@@ -991,6 +1174,7 @@ offset_bottom = 364.0
 scale = Vector2(1.71181, 1.71181)
 text = "FPS Goal:"
 
+[connection signal="frame_changed" from="Player/Rock" to="Player" method="_on_rock_frame_changed"]
 [connection signal="frame_changed" from="Player/Rock" to="Countdown" method="_on_rock_frame_changed"]
 [connection signal="pressed" from="Player/Rock/Rock_Trigger" to="Player" method="_on_rock_trigger_pressed"]
 [connection signal="pressed" from="Player/Paper/Paper_Trigger" to="Player" method="_on_paper_trigger_pressed"]

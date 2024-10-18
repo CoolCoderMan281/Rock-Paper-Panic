@@ -4,6 +4,7 @@ var score: int = 0
 var pressed_timer: Timer
 var can_press: bool = true
 var sfx = AudioStreamPlayer.new()
+var queued_lose_option = ""
 
 func _ready() -> void:
 	%Factory_Background.play("default")
@@ -16,6 +17,9 @@ func _ready() -> void:
 	pressed_timer.one_shot = true
 	add_child(pressed_timer)
 	pressed_timer.connect("timeout", Callable(self,"update_selection_images"))
+	var objects = [%Rock, %Paper, %Scissors, %Lizard, %Hunter]
+	for obj in objects:
+		obj.play("appear")
 
 func visual_pressed(button: String):
 	if button == "Rock":
@@ -36,13 +40,15 @@ func logic(choice: String = ""):
 		return
 	if %Lose.visible:
 		if choice == "Rock":
-			retry()
+			queued_lose_option = "retry"
 		elif choice == "Paper":
-			_on_main_menu_pressed()
+			queued_lose_option = "mainmenu"
 		elif choice == "Scissors":
-			_on_quit_pressed()
-		else:
-			return
+			queued_lose_option = "quit"
+		var objects = [%Rock, %Paper, %Scissors, %Lizard, %Hunter]
+		for obj in objects:
+			obj.play("end_end_game")
+		return
 	visual_pressed(choice)
 	sfx.stream = Globals.sfx_press
 	sfx.play()
@@ -113,3 +119,16 @@ func _on_hunter_trigger_pressed() -> void:
 
 func _on_lizard_trigger_pressed() -> void:
 	logic("Lizard")
+
+func _on_rock_frame_changed() -> void:
+	if queued_lose_option == "":
+		return
+	if %Lose.visible:
+		if %Rock.animation == "end_end_game":
+			if %Rock.frame == 3:
+				if queued_lose_option == "retry":
+					retry()
+				elif queued_lose_option == "mainmenu":
+					_on_main_menu_pressed()
+				elif queued_lose_option == "quit":
+					_on_quit_pressed()
