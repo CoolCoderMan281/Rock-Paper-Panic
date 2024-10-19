@@ -35,6 +35,8 @@ func visual_pressed(button: String):
 	pressed_timer.start()
 
 func logic(choice: String = ""):
+	if %Countdown_2.visible:
+		return
 	if !can_press:
 		return
 	if %Lose.visible:
