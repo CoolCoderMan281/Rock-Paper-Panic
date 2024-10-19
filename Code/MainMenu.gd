@@ -12,11 +12,11 @@ var player = AudioStreamPlayer.new()
 func _ready():
 	if Globals.debug_enabled:
 		print("Debug Mode is Enabled!")
+	$"%DebugNotice".visible = Globals.debug_enabled
 	$Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback.visible = Globals.feedback_welcome
 
 	# Convert Globals.volume from dB to a normalized value (0 to 1)
 	%Volume.value = ((Globals.volume + 30) / 30)*100
-	print(((Globals.volume + 30) / 30)*100)
 	%VolumeLabel.text = ""+str(%Volume.value)+"F"
 	# Update the UI based on the volume
 	_on_volume_value_changed(%Volume.value)  
@@ -50,7 +50,6 @@ func _on_volume_value_changed(value: float):
 	AudioServer.set_bus_volume_db(0, volume_db)
 	Globals.volume = volume_db  # Update the global volume in dB
 	player.volume_db = Globals.volume  # Update the player's volume
-	print(Globals.volume)
 	%VolumeLabel.text = ""+str(%Volume.value)+"F"
 
 	# Update the volume cover UI

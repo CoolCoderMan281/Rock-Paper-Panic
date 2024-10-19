@@ -1,6 +1,6 @@
 extends CanvasLayer
 
-var INITIAL_TIME: int = 10
+var INITIAL_TIME: int = 7
 var time_left: int = INITIAL_TIME
 var last_update_time: float = 0.0
 var win_tracker:int = -1
@@ -28,7 +28,6 @@ func _ready():
 		INITIAL_TIME = 5
 		player.stream = Globals.rpp_hard_theme
 	else:
-		print("Something has gone seriously wrong, there is no difficulty..")
 		win_req = 999
 	Globals.generic_telemetry("Difficulty: ",difficulty)
 	reset_timer()
@@ -62,10 +61,8 @@ func reset_timer():
 	win_tracker += 1
 	if (win_tracker >= win_req):
 		if(INITIAL_TIME > timer_min):
-			print("Wins: "+str(win_tracker)+" of: "+str(win_req))
 			win_tracker = 0
 			INITIAL_TIME -= 1
-			print("-1 Second on the timer!")
 		# Im cheating!!! Im also applying the option randomizer here MUHAUHAUHA!
 		selection_swap()
 
@@ -92,7 +89,6 @@ func _on_rock_frame_changed() -> void:
 		
 		for obj in objects: # Steal all positions
 			objectPos.append(obj.global_position)
-			print(obj.global_position)
 		objectPos.shuffle()
 		for i in range(objects.size()): # Swap the positions
 			objects[i].global_position = objectPos[i]

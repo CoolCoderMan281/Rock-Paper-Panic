@@ -19,7 +19,7 @@ var sfx_lose: AudioStreamMP3 = preload("res://Assets/Default/SFX/lose_sfx.mp3")
 var sfx_muffle: AudioEffect = AudioEffectLowPassFilter.new()
 
 var fps_goal: float = DisplayServer.screen_get_refresh_rate()
-var debug_enabled: bool = true
+var debug_enabled: bool = false
 var debug_stoptime: bool = false
 var debug_autoplay: bool = false
 var feedback_welcome: bool = true
@@ -57,11 +57,12 @@ func generate_uuid() -> String:
 
 
 func generic_telemetry(name: String, value: String):
-	var telemetry = {"name": name, "value": value, "client_uuid":client_uuid}
-	var http = HTTPRequest.new()
-	add_child(http)
-	var http_headers = ["Content-Type: application/json"]
-	http.request(telemetry_url,http_headers,HTTPClient.METHOD_POST,JSON.stringify(telemetry))
+	if debug_enabled:
+		var telemetry = {"name": name, "value": value, "client_uuid":client_uuid}
+		var http = HTTPRequest.new()
+		add_child(http)
+		var http_headers = ["Content-Type: application/json"]
+		http.request(telemetry_url,http_headers,HTTPClient.METHOD_POST,JSON.stringify(telemetry))
 
 
 func _ready():
@@ -79,12 +80,13 @@ func _ready():
 			client_type = client_types.Linux
 		"Web":
 			client_type = client_types.Web
-	var telemetry = {"client_uuid":client_uuid,"client_type":OS.get_name(),
-					"fps_goal":fps_goal,"debug_enabled":debug_enabled}
-	var http = HTTPRequest.new()
-	add_child(http)
-	var http_headers = ["Content-Type: application/json"]
-	http.request(telemetry_url,http_headers,HTTPClient.METHOD_POST,JSON.stringify(telemetry))
+	if debug_enabled:
+		var telemetry = {"client_uuid":client_uuid,"client_type":OS.get_name(),
+						"fps_goal":fps_goal,"debug_enabled":debug_enabled}
+		var http = HTTPRequest.new()
+		add_child(http)
+		var http_headers = ["Content-Type: application/json"]
+		http.request(telemetry_url,http_headers,HTTPClient.METHOD_POST,JSON.stringify(telemetry))
 	mainmenu_theme.loop = true
 	rpp_hard_theme.loop = true
 	rpp_normal_theme.loop = true
