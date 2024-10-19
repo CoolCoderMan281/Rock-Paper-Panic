@@ -89,3 +89,4 @@ func _ready():
 	rpp_hard_theme.loop = true
 	rpp_normal_theme.loop = true
 	selection_theme.loop = true
+	lose_theme.loop = true

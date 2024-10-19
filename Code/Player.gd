@@ -138,5 +138,6 @@ func _on_rock_frame_changed() -> void:
 func _on_countdown_2_animation_finished():
 	%Countdown_2.visible = false
 	var objects = [%Rock, %Paper, %Scissors, %Lizard, %Hunter]
+	%Countdown.start_music()
 	for obj in objects:
 		obj.play("appear")

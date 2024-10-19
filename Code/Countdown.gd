@@ -33,7 +33,7 @@ func _ready():
 	Globals.generic_telemetry("Difficulty: ",difficulty)
 	reset_timer()
 	player.volume_db = Globals.volume
-	player.play()
+	#player.play()
 	sfx.volume_db = Globals.volume
 
 func _process(delta: float):
@@ -106,6 +106,9 @@ func end_game(state: String):
 	Globals.generic_telemetry("Final Score: ",str(%Player.score))
 	%Player.lose_music()
 	%Countdown.set_process(false)
+
+func start_music():
+	player.play()
 
 
 func sfx_play(name: AudioStreamMP3):
