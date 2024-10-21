@@ -20,7 +20,8 @@ func _ready() -> void:
 	%Countdown_2.play("default")
 	%Intro_Animation.play("default")
 	%Intro_Animation.connect("animation_finished",appear_close)
-	
+	sfx.stream = Globals.sfx_lose
+	sfx.play()
 
 func visual_pressed(button: String):
 	if button == "Rock":
