@@ -93,7 +93,6 @@ func _on_play_mouse_entered():
 func _on_feedback_pressed() -> void:
 	OS.shell_open(Globals.feedback_url)
 
-
 func _on_tutorial_pressed() -> void:
 	$Tutorial.show()
 
@@ -103,56 +102,44 @@ func _on_back_2_pressed() -> void:
 func _on_credits_pressed() -> void:
 	$Credits.show()
 
-
 func _on_settings_pressed() -> void:
 	%Settings.show()
-
 
 func _on_tutorial_mouse_entered() -> void:
 	$Clipboard/ScrollContainer/VBoxContainer/ClipboardTutorial.modulate = Color(1, 1, 1, 0.5)
 
-
 func _on_tutorial_mouse_exited() -> void:
 	$Clipboard/ScrollContainer/VBoxContainer/ClipboardTutorial.modulate = Color(1, 1, 1, 1)
-
 
 func _on_credits_mouse_entered() -> void:
 	$Clipboard/ScrollContainer/VBoxContainer/ClipboardCredits.modulate = Color(1, 1, 1, 0.5)
 
-
 func _on_credits_mouse_exited() -> void:
 	$Clipboard/ScrollContainer/VBoxContainer/ClipboardCredits.modulate = Color(1, 1, 1, 1)
-
 
 func _on_back_3_pressed() -> void:
 	$Tutorial.hide()
 
-
 func _on_feedback_mouse_entered() -> void:
 	$Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback.modulate = Color(1, 1, 1, 0.5)
 
-
 func _on_feedback_mouse_exited() -> void:
 	$Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback.modulate = Color(1, 1, 1, 1)
-
 
 func _on_lh_button_pressed() -> void:
 	$Tutorial/Folder.texture = load("res://Assets/Default/Tutorial/Tutorial-LH.png")
 	%"Tutorial-intro-select".visible = true
 	%"Tutorial-rps-select".visible = true
 
-
 func _on_rps_button_pressed() -> void:
 	$Tutorial/Folder.texture = load("res://Assets/Default/Tutorial/Tutorial-RPS.png")
 	%"Tutorial-intro-select".visible = true
 	%"Tutorial-rps-select".visible = false
 
-
 func _on_intro_button_pressed() -> void:
 	$Tutorial/Folder.texture = load("res://Assets/Default/Tutorial/Tutorial-Intro.png")
 	%"Tutorial-intro-select".visible = false
 	%"Tutorial-rps-select".visible = false
-
 
 func _on_full_off_pressed():
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
@@ -160,8 +147,24 @@ func _on_full_off_pressed():
 
 func _on_full_on_pressed():
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_FULLSCREEN)
-	
-
 
 func _on_settings_back_pressed():
 	%Settings.visible = false
+
+func _on_settings_back_mouse_entered() -> void:
+	$Settings/SettingsBack.modulate = Color(1,1,1,0.5)
+
+func _on_settings_back_mouse_exited() -> void:
+	$Settings/SettingsBack.modulate = Color(1,1,1,1)
+
+func _on_full_on_mouse_entered() -> void:
+	$Settings/SettingsFullscreenOn.modulate = Color(1,1,1,0.85)
+
+func _on_full_on_mouse_exited() -> void:
+	$Settings/SettingsFullscreenOn.modulate = Color(1,1,1,1)
+
+func _on_full_off_mouse_entered() -> void:
+	$Settings/SettingsFullscreenOff.modulate = Color(1,1,1,0.85)
+
+func _on_full_off_mouse_exited() -> void:
+	$Settings/SettingsFullscreenOff.modulate = Color(1,1,1,1)

@@ -68,3 +68,39 @@ func _on_consent_continue_pressed() -> void:
 
 func _on_contract_pressed():
 	$Consent_HARD.visible = true
+
+func _on_back_mouse_entered() -> void:
+	$Menu/Graphics/Back.modulate = Color(1,1,1,0.5)
+
+func _on_back_mouse_exited() -> void:
+	$Menu/Graphics/Back.modulate = Color(1,1,1,1)
+
+func _on_contract_mouse_entered() -> void:
+	$Menu/Graphics/DifficultyContract.modulate = Color(1,1,1,0.5)
+
+func _on_contract_mouse_exited() -> void:
+	$Menu/Graphics/DifficultyContract.modulate = Color(1,1,1,1)
+
+#func _on_rps_mode_mouse_entered() -> void:
+	#$Menu/Graphics/DifficultyRps.modulate = Color(1,1,1,0.5)
+#
+#func _on_rps_mode_mouse_exited() -> void:
+	#$Menu/Graphics/DifficultyRps.modulate = Color(1,1,1,1)
+#
+#func _on_zuckerberg_mode_mouse_entered() -> void:
+	#$Menu/Graphics/DifficultyLh.modulate = Color(1,1,1,0.5)
+#
+#func _on_zuckerberg_mode_mouse_exited() -> void:
+	#$Menu/Graphics/DifficultyLh.modulate = Color(1,1,1,1)
+
+func _on_normal_mouse_entered() -> void:
+	$Menu/Graphics/DifficultyNormal.modulate = Color(1,1,1,0.5)
+
+func _on_normal_mouse_exited() -> void:
+	$Menu/Graphics/DifficultyNormal.modulate = Color(1,1,1,1)
+
+func _on_hard_mouse_entered() -> void:
+	$Menu/Graphics/DifficultyHard.modulate = Color(1,1,1,0.5)
+
+func _on_hard_mouse_exited() -> void:
+	$Menu/Graphics/DifficultyHard.modulate = Color(1,1,1,1)

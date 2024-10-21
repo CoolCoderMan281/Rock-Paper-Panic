@@ -161,10 +161,22 @@ offset_top = 476.0
 offset_right = 693.0
 offset_bottom = 581.0
 
+[connection signal="mouse_entered" from="Menu/Buttons/RPS_Mode" to="." method="_on_rps_mode_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Buttons/RPS_Mode" to="." method="_on_rps_mode_mouse_exited"]
 [connection signal="toggled" from="Menu/Buttons/RPS_Mode" to="." method="_on_rps_mode_toggled"]
+[connection signal="mouse_entered" from="Menu/Buttons/Zuckerberg_Mode" to="." method="_on_zuckerberg_mode_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Buttons/Zuckerberg_Mode" to="." method="_on_zuckerberg_mode_mouse_exited"]
 [connection signal="toggled" from="Menu/Buttons/Zuckerberg_Mode" to="." method="_on_zuckerberg_mode_toggled"]
+[connection signal="mouse_entered" from="Menu/Buttons/Normal" to="." method="_on_normal_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Buttons/Normal" to="." method="_on_normal_mouse_exited"]
 [connection signal="pressed" from="Menu/Buttons/Normal" to="." method="_on_normal_pressed"]
+[connection signal="mouse_entered" from="Menu/Buttons/Hard" to="." method="_on_hard_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Buttons/Hard" to="." method="_on_hard_mouse_exited"]
 [connection signal="pressed" from="Menu/Buttons/Hard" to="." method="_on_hard_pressed"]
+[connection signal="mouse_entered" from="Menu/Buttons/Back" to="." method="_on_back_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Buttons/Back" to="." method="_on_back_mouse_exited"]
 [connection signal="pressed" from="Menu/Buttons/Back" to="." method="_on_back_pressed"]
+[connection signal="mouse_entered" from="Menu/Buttons/Contract" to="." method="_on_contract_mouse_entered"]
+[connection signal="mouse_exited" from="Menu/Buttons/Contract" to="." method="_on_contract_mouse_exited"]
 [connection signal="pressed" from="Menu/Buttons/Contract" to="." method="_on_contract_pressed"]
 [connection signal="pressed" from="Consent_HARD/Consent_Continue" to="." method="_on_consent_continue_pressed"]

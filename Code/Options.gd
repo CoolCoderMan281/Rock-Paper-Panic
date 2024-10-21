@@ -26,3 +26,21 @@ func _on_resume_pressed() -> void:
 	visible = false
 	Globals.debug_stoptime = false
 	AudioServer.remove_bus_effect(0,0)
+
+func _on_resume_mouse_entered() -> void:
+	$Resume.modulate = Color(1,1,1,0.5)
+
+func _on_resume_mouse_exited() -> void:
+	$Resume.modulate = Color(1,1,1,1)
+
+func _on_quit_mouse_entered() -> void:
+	$Quit.modulate = Color(1,1,1,0.5)
+
+func _on_quit_mouse_exited() -> void:
+	$Quit.modulate = Color(1,1,1,1)
+
+func _on_mainmenu_mouse_entered() -> void:
+	$Main.modulate = Color(1,1,1,0.5)
+
+func _on_mainmenu_mouse_exited() -> void:
+	$Main.modulate = Color(1,1,1,1)
