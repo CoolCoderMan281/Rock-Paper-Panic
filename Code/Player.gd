@@ -4,6 +4,7 @@ var score: int = 0
 var pressed_timer: Timer
 var can_press: bool = true
 var sfx = AudioStreamPlayer.new()
+var countdown = AudioStreamPlayer.new()
 var queued_lose_option = ""
 
 func _ready() -> void:
@@ -11,7 +12,9 @@ func _ready() -> void:
 	score = 0
 	update_score()
 	add_child(sfx)
+	add_child(countdown)
 	sfx.volume_db = Globals.volume
+	countdown.volume_db = Globals.volume
 	pressed_timer = Timer.new()
 	pressed_timer.set_wait_time(0.5)
 	pressed_timer.one_shot = true
@@ -22,6 +25,8 @@ func _ready() -> void:
 	%Intro_Animation.connect("animation_finished",appear_close)
 	sfx.stream = Globals.sfx_lose
 	sfx.play()
+	countdown.stream = Globals.sfx_countdown
+	countdown.play()
 
 func visual_pressed(button: String):
 	if button == "Rock":

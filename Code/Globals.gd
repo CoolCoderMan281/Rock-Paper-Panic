@@ -17,6 +17,7 @@ var sfx_press: AudioStreamMP3 = preload("res://Assets/Default/SFX/press.mp3")
 var sfx_switch: AudioStreamMP3 = preload("res://Assets/Default/SFX/switch.mp3")
 var sfx_lose: AudioStreamMP3 = preload("res://Assets/Default/SFX/lose_sfx.mp3")
 var sfx_retry: AudioStreamMP3 = preload("res://Assets/Default/SFX/Retry.mp3")
+var sfx_countdown: AudioStreamMP3 = preload("res://Assets/Default/SFX/Countdown.mp3")
 var sfx_muffle: AudioEffect = AudioEffectLowPassFilter.new()
 
 var fps_goal: float = DisplayServer.screen_get_refresh_rate()
