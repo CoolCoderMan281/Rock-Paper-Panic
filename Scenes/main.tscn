@@ -1,4 +1,4 @@
-[gd_scene load_steps=85 format=3 uid="uid://bu6j0v2aj8gfi"]
+[gd_scene load_steps=89 format=3 uid="uid://bu6j0v2aj8gfi"]
 
 [ext_resource type="Texture2D" uid="uid://bgn1t0ghmm0fb" path="res://Assets/Default/factory_background_1.png" id="1_bhy67"]
 [ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
@@ -6,8 +6,11 @@
 [ext_resource type="Texture2D" uid="uid://bq4fmb7hlavyg" path="res://Assets/Default/battle_background.png" id="1_pv84b"]
 [ext_resource type="Texture2D" uid="uid://cvia3kunv6a62" path="res://Assets/Default/factory_background_2.png" id="2_2ctvc"]
 [ext_resource type="Texture2D" uid="uid://cadk4m03ehy0n" path="res://Assets/Default/LoseAnimation/lose_1.png" id="4_2lxt5"]
+[ext_resource type="Texture2D" uid="uid://bbdge7sqeyhld" path="res://Assets/Default/LoseAnimation/lose_up_1.png" id="4_bte0s"]
+[ext_resource type="Texture2D" uid="uid://ujxwl678cmoo" path="res://Assets/Default/LoseAnimation/lose_up_2.png" id="5_j0nkp"]
 [ext_resource type="Texture2D" uid="uid://b78yiohpn7hkk" path="res://Assets/Default/LoseAnimation/lose_2.png" id="5_xrjvi"]
 [ext_resource type="Texture2D" uid="uid://chob5ot3qp2i1" path="res://Assets/Default/Buttons/Rock/idle.png" id="6_5jrsc"]
+[ext_resource type="Texture2D" uid="uid://4p57tjew0qvo" path="res://Assets/Default/LoseAnimation/lose_up_3.png" id="6_i0dep"]
 [ext_resource type="Texture2D" uid="uid://cxqf0t4tflcmy" path="res://Assets/Default/LoseAnimation/lose_3.png" id="6_u1dmq"]
 [ext_resource type="Script" path="res://Code/Options.gd" id="7_1iy2a"]
 [ext_resource type="Texture2D" uid="uid://bbvf60e3q6gbk" path="res://Assets/Default/LoseAnimation/lose_4.png" id="7_2usor"]
@@ -91,6 +94,23 @@ animations = [{
 
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_xyrgs"]
 load_path = "res://.godot/imported/paper_idle.png-ff15289806a9704c53943c10aa6e49bb.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_r0rsm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_bte0s")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_j0nkp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_i0dep")
+}],
+"loop": false,
+"name": &"default",
+"speed": 12.0
+}]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3bpe1"]
 animations = [{
@@ -816,6 +836,19 @@ position = Vector2(230, -16)
 scale = Vector2(0.410002, 0.370002)
 texture = SubResource("CompressedTexture2D_xyrgs")
 script = ExtResource("1_oxske")
+
+[node name="Intro" type="Control" parent="."]
+unique_name_in_owner = true
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Intro_Animation" type="AnimatedSprite2D" parent="Intro"]
+unique_name_in_owner = true
+position = Vector2(238.25, 10.75)
+scale = Vector2(0.407031, 0.30787)
+sprite_frames = SubResource("SpriteFrames_r0rsm")
 
 [node name="Lose" type="Control" parent="."]
 unique_name_in_owner = true

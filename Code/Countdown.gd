@@ -97,7 +97,7 @@ func _on_rock_frame_changed() -> void:
 func end_game(state: String):
 	$"Timer Text/Second".text = ">:O"
 	%Lose.visible = true
-	%Lose_Animation.play()
+	%Lose_Animation.play("default")
 	player.stop()
 	Globals.generic_telemetry("Final Score: ",str(%Player.score))
 	%Player.lose_music()

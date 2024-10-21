@@ -18,6 +18,8 @@ func _ready() -> void:
 	add_child(pressed_timer)
 	pressed_timer.connect("timeout", Callable(self,"update_selection_images"))
 	%Countdown_2.play("default")
+	%Intro_Animation.play("default")
+	%Intro_Animation.connect("animation_finished",appear_close)
 	
 
 func visual_pressed(button: String):
@@ -143,3 +145,6 @@ func _on_countdown_2_animation_finished():
 	%Countdown.start_music()
 	for obj in objects:
 		obj.play("appear")
+
+func appear_close():
+	%Intro.visible = false
