@@ -128,18 +128,12 @@ func _on_feedback_mouse_exited() -> void:
 
 func _on_lh_button_pressed() -> void:
 	$Tutorial/Folder.texture = load("res://Assets/Default/Tutorial/Tutorial-LH.png")
-	%"Tutorial-intro-select".visible = true
-	%"Tutorial-rps-select".visible = true
 
 func _on_rps_button_pressed() -> void:
 	$Tutorial/Folder.texture = load("res://Assets/Default/Tutorial/Tutorial-RPS.png")
-	%"Tutorial-intro-select".visible = true
-	%"Tutorial-rps-select".visible = false
 
 func _on_intro_button_pressed() -> void:
 	$Tutorial/Folder.texture = load("res://Assets/Default/Tutorial/Tutorial-Intro.png")
-	%"Tutorial-intro-select".visible = false
-	%"Tutorial-rps-select".visible = false
 
 func _on_full_off_pressed():
 	DisplayServer.window_set_mode(DisplayServer.WINDOW_MODE_WINDOWED)
@@ -168,3 +162,6 @@ func _on_full_off_mouse_entered() -> void:
 
 func _on_full_off_mouse_exited() -> void:
 	$Settings/SettingsFullscreenOff.modulate = Color(1,1,1,1)
+
+func _on_basics_button_pressed() -> void:
+	$Tutorial/Folder.texture = load("res://Assets/Default/Tutorial/Tutorial-Basics.png")

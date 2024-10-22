@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ciqq51h6yi2e2"]
+[gd_scene load_steps=20 format=3 uid="uid://ciqq51h6yi2e2"]
 
 [ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
 [ext_resource type="Texture2D" uid="uid://cvlxrq3sng4ct" path="res://Assets/Default/MenuClipboard/Clipboard_Feedback.png" id="7_yrppq"]
@@ -15,10 +15,8 @@
 [ext_resource type="Texture2D" uid="uid://ck54o275ix1be" path="res://Assets/Default/Settings/settings_fullscreen_off.png" id="17_ra8p7"]
 [ext_resource type="Texture2D" uid="uid://c678nsdoixu2" path="res://Assets/Default/Credits/Credits_Menu.png" id="18_8bscp"]
 [ext_resource type="Texture2D" uid="uid://dbnwyd5pp1gpx" path="res://Assets/Default/MenuClipboard/Clipboard_Quit.png" id="18_kwkl8"]
-[ext_resource type="Texture2D" uid="uid://wg6hscr0sewi" path="res://Assets/Default/Tutorial/Tutorial-Intro.png" id="18_ty36c"]
-[ext_resource type="Texture2D" uid="uid://rhamnwgy52d7" path="res://Assets/Default/Tutorial/Tutorial-Back.png" id="19_qr86a"]
-[ext_resource type="Texture2D" uid="uid://bu5fmdqr8eus2" path="res://Assets/Default/Tutorial/Tutorial-Intro-Select.png" id="20_3jdgg"]
-[ext_resource type="Texture2D" uid="uid://bnq1jp3ae2jyu" path="res://Assets/Default/Tutorial/Tutorial-RPS-Select.png" id="21_jb6w5"]
+[ext_resource type="Texture2D" uid="uid://iiqj28jpq4gc" path="res://Assets/Default/Tutorial/Tutorial-Intro.png" id="18_ty36c"]
+[ext_resource type="Texture2D" uid="uid://cnlew4xym2bho" path="res://Assets/Default/Tutorial/Tutorial-Back.png" id="19_qr86a"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6j4f"]
 
@@ -295,65 +293,63 @@ offset_bottom = 40.0
 
 [node name="Background" type="ColorRect" parent="Tutorial"]
 layout_mode = 0
-offset_left = -620.0
-offset_top = -38.0
-offset_right = -550.0
-offset_bottom = 54.0
+offset_left = -631.0
+offset_top = -33.0
+offset_right = -561.0
+offset_bottom = 59.0
 scale = Vector2(29.24, 16.56)
 color = Color(0.87451, 0.682353, 0.298039, 1)
 
 [node name="Folder" type="Sprite2D" parent="Tutorial"]
-position = Vector2(661.5, 325)
-scale = Vector2(0.845313, 0.657407)
+position = Vector2(614, 344)
+scale = Vector2(0.65, 0.622222)
 texture = ExtResource("18_ty36c")
 
-[node name="Tutorial-back" type="Sprite2D" parent="Tutorial"]
-position = Vector2(750, 265)
-texture = ExtResource("19_qr86a")
-
-[node name="Back3" type="Button" parent="Tutorial/Tutorial-back"]
+[node name="Back3" type="Button" parent="Tutorial"]
 modulate = Color(1, 1, 1, 0)
-offset_left = -597.0
-offset_top = 203.0
-offset_right = -522.0
-offset_bottom = 356.0
+offset_left = 923.0
+offset_top = 19.0001
+offset_right = 1011.0
+offset_bottom = 172.0
 scale = Vector2(2.23739, 0.547341)
 theme_override_font_sizes/font_size = 86
 
 [node name="Intro-Button" type="Button" parent="Tutorial"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 44.0
-offset_top = 20.0
-offset_right = 160.0
-offset_bottom = 117.0
+offset_left = 9.0
+offset_top = 26.0
+offset_right = 221.0
+offset_bottom = 111.0
+
+[node name="Basics_Button" type="Button" parent="Tutorial"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 236.0
+offset_top = 19.0
+offset_right = 428.0
+offset_bottom = 100.0
 
 [node name="RPS-Button" type="Button" parent="Tutorial"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 163.0
-offset_right = 273.0
-offset_bottom = 97.0
-
-[node name="Tutorial-intro-select" type="Sprite2D" parent="Tutorial"]
-unique_name_in_owner = true
-visible = false
-position = Vector2(740, 447)
-texture = ExtResource("20_3jdgg")
-
-[node name="Tutorial-rps-select" type="Sprite2D" parent="Tutorial"]
-unique_name_in_owner = true
-visible = false
-position = Vector2(732, 469)
-texture = ExtResource("21_jb6w5")
+offset_left = 441.0
+offset_top = 19.0
+offset_right = 646.0
+offset_bottom = 99.0
 
 [node name="LH-Button" type="Button" parent="Tutorial"]
 modulate = Color(1, 1, 1, 0)
 layout_mode = 0
-offset_left = 278.0
-offset_top = -6.0
-offset_right = 388.0
-offset_bottom = 91.0
+offset_left = 666.0
+offset_top = 15.0
+offset_right = 898.0
+offset_bottom = 100.0
+
+[node name="Tutorial-back" type="Sprite2D" parent="Tutorial"]
+position = Vector2(1020, 62)
+scale = Vector2(0.401, 0.445)
+texture = ExtResource("19_qr86a")
 
 [connection signal="mouse_entered" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardPlay/Play" to="." method="_on_play_mouse_entered"]
 [connection signal="mouse_exited" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardPlay/Play" to="." method="_on_play_mouse_exited"]
@@ -384,7 +380,8 @@ offset_bottom = 91.0
 [connection signal="mouse_exited" from="Settings/SettingsBack/Settings_Back" to="." method="_on_settings_back_mouse_exited"]
 [connection signal="pressed" from="Settings/SettingsBack/Settings_Back" to="." method="_on_settings_back_pressed"]
 [connection signal="pressed" from="Credits/Back2" to="." method="_on_back_2_pressed"]
-[connection signal="pressed" from="Tutorial/Tutorial-back/Back3" to="." method="_on_back_3_pressed"]
+[connection signal="pressed" from="Tutorial/Back3" to="." method="_on_back_3_pressed"]
 [connection signal="pressed" from="Tutorial/Intro-Button" to="." method="_on_intro_button_pressed"]
+[connection signal="pressed" from="Tutorial/Basics_Button" to="." method="_on_basics_button_pressed"]
 [connection signal="pressed" from="Tutorial/RPS-Button" to="." method="_on_rps_button_pressed"]
 [connection signal="pressed" from="Tutorial/LH-Button" to="." method="_on_lh_button_pressed"]
