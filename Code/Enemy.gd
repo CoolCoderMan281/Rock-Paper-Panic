@@ -27,7 +27,9 @@ func _ready():
 		options += ["Lizard", "Hunter"]
 		%Lizard.visible = true
 		%Hunter.visible = true
-	new_choice()
+	choice = options.pick_random()
+	texture = get_texture_from_cache(choice, "idle")
+	#new_choice()
 
 func update_display() -> void:
 	# If an animation is already playing, stop it
