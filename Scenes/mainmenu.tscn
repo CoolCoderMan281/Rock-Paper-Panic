@@ -307,6 +307,7 @@ texture = ExtResource("18_ty36c")
 
 [node name="Back3" type="Button" parent="Tutorial"]
 modulate = Color(1, 1, 1, 0)
+layout_mode = 0
 offset_left = 923.0
 offset_top = 19.0001
 offset_right = 1011.0

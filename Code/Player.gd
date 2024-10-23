@@ -21,8 +21,12 @@ func _ready() -> void:
 	add_child(pressed_timer)
 	pressed_timer.connect("timeout", Callable(self,"update_selection_images"))
 	%Countdown_2.play("default")
-	%Intro_Animation.play("default")
-	%Intro_Animation.connect("animation_finished",appear_close)
+	if Globals.intro_animation:
+		%Intro_Animation.play("default")
+		%Intro_Animation.connect("animation_finished",appear_close)
+		Globals.intro_animation = false
+	else:
+		appear_close()
 	sfx.stream = Globals.sfx_lose
 	sfx.play()
 	countdown.stream = Globals.sfx_countdown
@@ -138,6 +142,7 @@ func _on_rock_frame_changed() -> void:
 		if %Rock.animation == "end_end_game":
 			if %Rock.frame == 3:
 				if queued_lose_option == "retry":
+					Globals.intro_animation = true
 					retry()
 				elif queued_lose_option == "mainmenu":
 					_on_main_menu_pressed()
