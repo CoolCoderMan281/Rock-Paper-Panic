@@ -17,6 +17,7 @@ config/custom_user_dir_name="NeededFiles"
 config/features=PackedStringArray("4.3", "Forward Plus")
 boot_splash/image="res://Assets/Default/game_logo.png"
 config/icon="res://Assets/Default/game_logo.png"
+config/windows_native_icon="res://Assets/Default/game_logo.ico"
 
 [autoload]
 
