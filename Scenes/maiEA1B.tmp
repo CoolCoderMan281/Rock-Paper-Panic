@@ -1,0 +1,618 @@
+[gd_scene load_steps=49 format=3 uid="uid://bu6j0v2aj8gfi"]
+
+[ext_resource type="Script" path="res://Code/Player.gd" id="1_kolsd"]
+[ext_resource type="Script" path="res://Code/Enemy.gd" id="1_oxske"]
+[ext_resource type="Texture2D" uid="uid://bq4fmb7hlavyg" path="res://Assets/Default/battle_background.png" id="1_pv84b"]
+[ext_resource type="Texture2D" uid="uid://s7802tp51tgs" path="res://Assets/Default/Conveyor/Rock/rock_idle.png" id="2_78lwk"]
+[ext_resource type="Texture2D" uid="uid://cbx3qlubqdacr" path="res://Assets/Default/Conveyor/Paper/paper_idle.png" id="3_4bkp2"]
+[ext_resource type="Texture2D" uid="uid://b36pof77p2gd" path="res://Assets/Default/Buttons/Rock/Center/rock_center.png" id="6_kk75n"]
+[ext_resource type="Script" path="res://Code/Options.gd" id="7_1iy2a"]
+[ext_resource type="Theme" uid="uid://74h4s6t66a2c" path="res://Assets/Fonts/Analog Clock FONT.tres" id="7_gp2xf"]
+[ext_resource type="Script" path="res://Code/Countdown.gd" id="7_hbh5k"]
+[ext_resource type="Script" path="res://Code/Debug.gd" id="8_1kwu8"]
+[ext_resource type="Texture2D" uid="uid://blyjptyotgnm7" path="res://Assets/Default/Buttons/Scissors/Center/scissors_center.png" id="8_2cgpk"]
+[ext_resource type="Texture2D" uid="uid://bcqu33v1hj56y" path="res://Assets/Default/Buttons/Paper/Center/paper_center.png" id="8_wt8no"]
+[ext_resource type="Texture2D" uid="uid://c7kqkhsw3pfuq" path="res://Assets/Game Over/fired_graphic.png" id="10_7dql5"]
+[ext_resource type="Texture2D" uid="uid://1o50x80pi0v6" path="res://Assets/Game Over/over_retry.png" id="10_dmq57"]
+[ext_resource type="Texture2D" uid="uid://4svxata1gobm" path="res://Assets/Game Over/over_main.png" id="11_f2tlh"]
+[ext_resource type="Texture2D" uid="uid://b28ik3602dudw" path="res://Assets/Game Over/over_quit.png" id="12_a5uiq"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c3dky"]
+load_path = "res://.godot/imported/arrive_paper0001.png-aa657533d2f6b354a3210221a489ed4d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_wuk23"]
+load_path = "res://.godot/imported/arrive_paper0002.png-2d25dcd4a5c06aeb90514645085339bb.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_p85ce"]
+load_path = "res://.godot/imported/arrive_paper0003.png-17641943593ac2aaf9a390bab25bee38.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_pib5i"]
+load_path = "res://.godot/imported/arrive_paper0004.png-270603718dfc7d368e2665e3ed19aaa5.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_hivkc"]
+load_path = "res://.godot/imported/arrive_paper0005.png-fc8a9c6ebbae73affa4994656c8d255a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_waend"]
+load_path = "res://.godot/imported/arrive_paper0006.png-0b4a3565e60aab1334f88f2ea698e9fb.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_1i7aq"]
+load_path = "res://.godot/imported/idle_paper.png-32410c0eb8f500bf1bdd218507cb04c6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rungj"]
+load_path = "res://.godot/imported/leave_paper0001.png-957e57aeaca4c3ebf3e9779aca9fe875.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ey07h"]
+load_path = "res://.godot/imported/leave_paper0002.png-73bf1d1b1eb8378b6ba7149a8c32dfdb.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tg153"]
+load_path = "res://.godot/imported/leave_paper0003.png-8e270682086568bb5b163875631d93f2.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mfbjn"]
+load_path = "res://.godot/imported/leave_paper0004.png-11b4df936aa2da1174ced2796c4c58f6.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2cic6"]
+load_path = "res://.godot/imported/leave_paper0005.png-deb02a05f351c7d46380546b970f04fb.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_w6mdn"]
+load_path = "res://.godot/imported/leave_paper0006.png-3e207f7fb6b3a3a9012ee0bd8278822a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_gpcga"]
+load_path = "res://.godot/imported/arrive_rock0001.png-3e20c1187321f48f77033c8852d6644d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_bsx0u"]
+load_path = "res://.godot/imported/arrive_rock0002.png-ba52d198348c7732458cb03d86fc95ff.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_y6e8g"]
+load_path = "res://.godot/imported/arrive_rock0003.png-df53f8f6aaf59a40e77034390ebc44b4.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_enq2h"]
+load_path = "res://.godot/imported/arrive_rock0004.png-aed3648e8ee6845ce9335840d17824ab.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_c1wdf"]
+load_path = "res://.godot/imported/arrive_rock0005.png-7302a572bded4f7517a8683c5d350b90.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6ex7q"]
+load_path = "res://.godot/imported/arrive_rock0006.png-b2b1a316a059be046ab998ea80cb2ade.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_swakb"]
+load_path = "res://.godot/imported/leave_rock0001.png-75202b0685dd6e8e038b58fed4965f1a.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_i75dr"]
+load_path = "res://.godot/imported/leave_rock0002.png-4614dee280567309397d93510517b408.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_a875q"]
+load_path = "res://.godot/imported/leave_rock0003.png-35a38309434faa45e430e101c017f859.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_84snj"]
+load_path = "res://.godot/imported/leave_rock0004.png-e9e540229940d1865e37efa0b9b92e12.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_35ckk"]
+load_path = "res://.godot/imported/leave_rock0005.png-eefb65550023789a9de4892e82ea260d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qfmrq"]
+load_path = "res://.godot/imported/leave_rock0006.png-e0b567e183a41745c5205e37950359fa.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_jdsr7"]
+load_path = "res://.godot/imported/conveyor_transition0001.png-20de7a818d6594267951a2587765387d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_6p67o"]
+load_path = "res://.godot/imported/conveyor_transition0002.png-98fc6950e647ac2d97577e0c13217f9e.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_fwjqo"]
+load_path = "res://.godot/imported/conveyor_transition0003.png-8ac04662ce3bddfaff4a95eee765503c.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7rmrl"]
+load_path = "res://.godot/imported/conveyor_transition0004.png-dbc1f9ec68557a4509a00b66f72685d0.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_50s6n"]
+load_path = "res://.godot/imported/conveyor_transition0005.png-d66e5308dcd2e409b66bd9aa77a90d2c.ctex"
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8jqtc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_c3dky")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_wuk23")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_p85ce")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_pib5i")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_hivkc")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_waend")
+}],
+"loop": false,
+"name": &"paper_enter",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_1i7aq")
+}],
+"loop": true,
+"name": &"paper_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_rungj")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_ey07h")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_tg153")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_mfbjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_2cic6")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_w6mdn")
+}],
+"loop": false,
+"name": &"paper_leave",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_gpcga")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_bsx0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_y6e8g")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_enq2h")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_c1wdf")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_6ex7q")
+}],
+"loop": false,
+"name": &"rock_enter",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_78lwk")
+}],
+"loop": false,
+"name": &"rock_idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_swakb")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_i75dr")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_a875q")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_84snj")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_35ckk")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_qfmrq")
+}],
+"loop": false,
+"name": &"rock_leave",
+"speed": 12.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_jdsr7")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_6p67o")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_fwjqo")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_7rmrl")
+}, {
+"duration": 1.0,
+"texture": SubResource("CompressedTexture2D_50s6n")
+}],
+"loop": true,
+"name": &"transition",
+"speed": 24.0
+}]
+
+[sub_resource type="GDScript" id="GDScript_a5fcu"]
+script/source = "extends CanvasLayer
+
+
+func _on_button_pressed():
+	%Lose.visible = false
+"
+
+[node name="Main" type="Node2D"]
+position = Vector2(345, 221)
+
+[node name="Enemy_Animated" type="AnimatedSprite2D" parent="."]
+visible = false
+position = Vector2(210, -12)
+scale = Vector2(0.360903, 0.360903)
+sprite_frames = SubResource("SpriteFrames_8jqtc")
+animation = &"rock_idle"
+
+[node name="README" type="Label" parent="Enemy_Animated"]
+offset_left = -1485.16
+offset_top = -3341.62
+offset_right = 1594.84
+offset_bottom = -2288.62
+theme_override_font_sizes/font_size = 191
+text = "This is currently here for when all
+animations are imported; Scissor
+animations are missing, so this
+AnimatedSprite2D is hidden!"
+
+[node name="Enemy" type="Sprite2D" parent="."]
+unique_name_in_owner = true
+position = Vector2(230, -16)
+scale = Vector2(0.410002, 0.370002)
+texture = ExtResource("3_4bkp2")
+script = ExtResource("1_oxske")
+
+[node name="Background" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = -345.0
+offset_top = -221.0
+offset_right = -305.0
+offset_bottom = -181.0
+scale = Vector2(0.72, 0.72)
+
+[node name="battle_bg" type="TextureRect" parent="Background"]
+layout_mode = 0
+offset_right = 2057.0
+offset_bottom = 1157.0
+scale = Vector2(0.777778, 0.777778)
+texture = ExtResource("1_pv84b")
+
+[node name="Player" type="Node2D" parent="."]
+unique_name_in_owner = true
+script = ExtResource("1_kolsd")
+
+[node name="Rock" type="TextureButton" parent="Player"]
+unique_name_in_owner = true
+offset_left = -42.0
+offset_top = 181.0
+offset_right = 158.0
+offset_bottom = 381.0
+scale = Vector2(0.5, 0.5)
+texture_normal = ExtResource("6_kk75n")
+metadata/_edit_use_anchors_ = true
+
+[node name="Paper" type="TextureButton" parent="Player"]
+unique_name_in_owner = true
+offset_left = 171.0
+offset_top = 173.0
+offset_right = 371.0
+offset_bottom = 373.0
+scale = Vector2(0.55, 0.55)
+texture_normal = ExtResource("8_wt8no")
+metadata/_edit_use_anchors_ = true
+
+[node name="Scissors" type="TextureButton" parent="Player"]
+unique_name_in_owner = true
+offset_left = 411.0
+offset_top = 174.0
+offset_right = 611.0
+offset_bottom = 374.0
+scale = Vector2(0.55, 0.55)
+texture_normal = ExtResource("8_2cgpk")
+metadata/_edit_use_anchors_ = true
+
+[node name="Score Text" type="Node2D" parent="Player"]
+position = Vector2(-220, 261)
+skew = 0.244346
+
+[node name="Score" type="Label" parent="Player/Score Text"]
+unique_name_in_owner = true
+offset_left = -70.4933
+offset_top = -10.3061
+offset_right = 540.506
+offset_bottom = 128.694
+rotation = 0.0385689
+theme = ExtResource("7_gp2xf")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Countdown" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+script = ExtResource("7_hbh5k")
+
+[node name="Timer Text" type="Node2D" parent="Countdown"]
+position = Vector2(652, 524)
+rotation = -0.0215411
+scale = Vector2(0.95, 0.85)
+skew = -0.296706
+
+[node name="Second" type="Label" parent="Countdown/Timer Text"]
+unique_name_in_owner = true
+anchors_preset = -1
+anchor_left = -0.132813
+anchor_bottom = 0.143519
+offset_left = 64.8548
+offset_top = 12.7919
+offset_right = 241.855
+offset_bottom = 67.7919
+theme = ExtResource("7_gp2xf")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_font_sizes/font_size = 40
+text = "10"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Lose" type="CanvasLayer" parent="."]
+unique_name_in_owner = true
+visible = false
+script = SubResource("GDScript_a5fcu")
+
+[node name="ColorRect" type="ColorRect" parent="Lose"]
+offset_right = 1161.0
+offset_bottom = 657.0
+color = Color(0.0611451, 0.0336918, 0, 1)
+
+[node name="fired_graphic" type="TextureRect" parent="Lose"]
+offset_left = 29.0
+offset_top = 29.0
+offset_right = 707.0
+offset_bottom = 414.0
+texture = ExtResource("10_7dql5")
+
+[node name="Label" type="Label" parent="Lose"]
+visible = false
+offset_left = 292.0
+offset_top = 42.0
+offset_right = 802.0
+offset_bottom = 179.0
+theme_override_font_sizes/font_size = 100
+text = "YOU LOSE!"
+horizontal_alignment = 1
+
+[node name="Retry" type="Button" parent="Lose"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 138.0
+offset_top = 471.0
+offset_right = 433.0
+offset_bottom = 587.0
+theme_override_font_sizes/font_size = 40
+text = "PLAY AGAIN"
+
+[node name="retry_texture" type="TextureRect" parent="Lose/Retry"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("10_dmq57")
+
+[node name="MainMenu" type="Button" parent="Lose"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 452.0
+offset_top = 471.0
+offset_right = 747.0
+offset_bottom = 587.0
+theme_override_font_sizes/font_size = 40
+text = "MAIN MENU"
+
+[node name="main_texture" type="TextureRect" parent="Lose/MainMenu"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("11_f2tlh")
+
+[node name="Quit" type="Button" parent="Lose"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = 763.0
+offset_top = 471.0
+offset_right = 1058.0
+offset_bottom = 587.0
+theme_override_font_sizes/font_size = 40
+text = "QUIT"
+
+[node name="quit_texture" type="TextureRect" parent="Lose/Quit"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("12_a5uiq")
+
+[node name="Final_Score" type="Label" parent="Lose"]
+unique_name_in_owner = true
+offset_left = 741.0
+offset_top = 137.0
+offset_right = 1334.0
+offset_bottom = 228.0
+scale = Vector2(0.6, 0.6)
+theme = ExtResource("7_gp2xf")
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_colors/font_shadow_color = Color(0.46, 0, 0.276, 0.364706)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_font_sizes/font_size = 125
+text = "FINAL SCORE: 
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Pause" type="Node2D" parent="."]
+unique_name_in_owner = true
+visible = false
+script = ExtResource("7_1iy2a")
+
+[node name="quit" type="Button" parent="Pause"]
+unique_name_in_owner = true
+offset_left = -324.0
+offset_top = -106.0
+offset_right = -285.0
+offset_bottom = -75.0
+scale = Vector2(8.24, 2.92)
+text = "quit"
+
+[node name="mainmenu" type="Button" parent="Pause"]
+unique_name_in_owner = true
+offset_left = -323.0
+offset_top = 66.0
+offset_right = -226.0
+offset_bottom = 97.0
+scale = Vector2(4.88, 2.92)
+text = "main menu"
+
+[node name="Debug" type="Node2D" parent="."]
+visible = false
+position = Vector2(0, -25)
+script = ExtResource("8_1kwu8")
+
+[node name="ColorRect" type="ColorRect" parent="Debug"]
+offset_left = 566.0
+offset_top = -110.0
+offset_right = 802.0
+offset_bottom = 397.0
+color = Color(0.46, 0.294707, 0.00919999, 1)
+
+[node name="Debug_AutoPlay" type="CheckBox" parent="Debug"]
+unique_name_in_owner = true
+offset_left = 570.0
+offset_top = -69.0
+offset_right = 672.0
+offset_bottom = -38.0
+scale = Vector2(1.76373, 1.82742)
+text = "Auto Play"
+
+[node name="Debug_StopTime" type="CheckBox" parent="Debug"]
+unique_name_in_owner = true
+offset_left = 570.0
+offset_top = -28.0
+offset_right = 676.0
+offset_bottom = 3.0
+scale = Vector2(1.76373, 1.82742)
+text = "Stop Time"
+
+[node name="Debug_ScoreIn" type="LineEdit" parent="Debug"]
+unique_name_in_owner = true
+offset_left = 578.0
+offset_top = 33.0
+offset_right = 695.0
+offset_bottom = 73.0
+placeholder_text = "New Score"
+
+[node name="Debug_ScoreSet" type="Button" parent="Debug"]
+offset_left = 700.0
+offset_top = 33.0
+offset_right = 789.0
+offset_bottom = 73.0
+text = "Set"
+
+[node name="Debug_CountdownIn" type="LineEdit" parent="Debug"]
+unique_name_in_owner = true
+offset_left = 578.0
+offset_top = 86.0
+offset_right = 714.0
+offset_bottom = 126.0
+placeholder_text = "Countdown Max"
+expand_to_text_length = true
+
+[node name="Debug_ResourcePath" type="LineEdit" parent="Debug"]
+unique_name_in_owner = true
+offset_left = 578.0
+offset_top = 133.0
+offset_right = 730.0
+offset_bottom = 173.0
+placeholder_text = "Resource Path"
+alignment = 2
+
+[node name="Debug_CountdownSet" type="Button" parent="Debug"]
+offset_left = 721.0
+offset_top = 86.0
+offset_right = 789.0
+offset_bottom = 126.0
+text = "Set"
+
+[node name="Debug_ResourcePathSet" type="Button" parent="Debug"]
+offset_left = 738.0
+offset_top = 133.0
+offset_right = 789.0
+offset_bottom = 173.0
+text = "Set"
+
+[node name="Debug_SkipRound" type="Button" parent="Debug"]
+offset_left = 578.0
+offset_top = 180.0
+offset_right = 790.0
+offset_bottom = 221.0
+text = "Skip Round"
+
+[node name="Debug_SelectionSwap" type="Button" parent="Debug"]
+offset_left = 578.0
+offset_top = 233.0
+offset_right = 790.0
+offset_bottom = 274.0
+text = "Selection Swap"
+
+[node name="Debug_Label" type="Label" parent="Debug"]
+offset_left = 582.0
+offset_top = -102.0
+offset_right = 702.0
+offset_bottom = -79.0
+scale = Vector2(1.72046, 1.68708)
+text = "Debug Options:"
+
+[node name="Debug_FPS_Label" type="Label" parent="Debug"]
+unique_name_in_owner = true
+offset_left = 578.0
+offset_top = 282.0
+offset_right = 610.0
+offset_bottom = 305.0
+scale = Vector2(2.15302, 2.15302)
+text = "FPS:"
+
+[node name="Debug_FPS_Label2" type="Label" parent="Debug"]
+unique_name_in_owner = true
+offset_left = 578.0
+offset_top = 341.0
+offset_right = 649.0
+offset_bottom = 364.0
+scale = Vector2(1.71181, 1.71181)
+text = "FPS Goal:"
+
+[connection signal="pressed" from="Player/Rock" to="Player" method="_on_rock_pressed"]
+[connection signal="pressed" from="Player/Paper" to="Player" method="_on_paper_pressed"]
+[connection signal="pressed" from="Player/Scissors" to="Player" method="_on_scissors_pressed"]
+[connection signal="pressed" from="Lose/Retry" to="Player" method="retry"]
+[connection signal="pressed" from="Lose/MainMenu" to="Player" method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Lose/Quit" to="Player" method="_on_quit_pressed"]
+[connection signal="pressed" from="Pause/quit" to="Pause" method="_on_quit_pressed"]
+[connection signal="pressed" from="Pause/mainmenu" to="Pause" method="_on_mainmenu_pressed"]
+[connection signal="pressed" from="Debug/Debug_AutoPlay" to="Debug" method="_on_debug_auto_play_pressed"]
+[connection signal="pressed" from="Debug/Debug_StopTime" to="Debug" method="_on_debug_stop_time_pressed"]
+[connection signal="pressed" from="Debug/Debug_ScoreSet" to="Debug" method="_on_debug_score_set_pressed"]
+[connection signal="pressed" from="Debug/Debug_CountdownSet" to="Debug" method="_on_debug_countdown_set_pressed"]
+[connection signal="pressed" from="Debug/Debug_ResourcePathSet" to="Debug" method="_on_debug_resource_path_set_pressed"]
+[connection signal="pressed" from="Debug/Debug_SkipRound" to="Debug" method="_on_debug_skip_round_pressed"]
+[connection signal="pressed" from="Debug/Debug_SelectionSwap" to="Debug" method="_on_debug_selection_swap_pressed"]

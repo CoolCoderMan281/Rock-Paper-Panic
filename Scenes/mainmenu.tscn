@@ -1,0 +1,388 @@
+[gd_scene load_steps=20 format=3 uid="uid://ciqq51h6yi2e2"]
+
+[ext_resource type="Script" path="res://Code/MainMenu.gd" id="1_glogx"]
+[ext_resource type="Texture2D" uid="uid://cvlxrq3sng4ct" path="res://Assets/Default/MenuClipboard/Clipboard_Feedback.png" id="7_yrppq"]
+[ext_resource type="Texture2D" uid="uid://dduxxa0cjmh6h" path="res://Assets/Default/Settings/settings_background.png" id="9_v2hv4"]
+[ext_resource type="FontFile" uid="uid://bwre6pl00l4mr" path="res://Assets/Fonts/digital-7.ttf" id="13_jh33e"]
+[ext_resource type="Texture2D" uid="uid://dfogsn5vna7vg" path="res://Assets/Default/MenuClipboard/Clipboard.png" id="13_tjvie"]
+[ext_resource type="Texture2D" uid="uid://cnf40e5k136oa" path="res://Assets/Default/Settings/settings_back.png" id="14_bpjlv"]
+[ext_resource type="Texture2D" uid="uid://b81j7k0e7d0ky" path="res://Assets/Default/MenuClipboard/Clipboard_Play.png" id="14_uvh60"]
+[ext_resource type="Texture2D" uid="uid://lnc0qn86v6tk" path="res://Assets/Default/MenuClipboard/Clipboard_Tutorial.png" id="15_7blyu"]
+[ext_resource type="Texture2D" uid="uid://ber4iuqt5sjkt" path="res://Assets/Default/Settings/settings_marker.png" id="15_qmt6g"]
+[ext_resource type="Texture2D" uid="uid://b5ukkw8fyc067" path="res://Assets/Default/Settings/settings_fullscreen_on.png" id="16_a7x13"]
+[ext_resource type="Texture2D" uid="uid://di23p201j05di" path="res://Assets/Default/MenuClipboard/Clipboard_Settings.png" id="16_wb5wj"]
+[ext_resource type="Texture2D" uid="uid://cqug1l022ycq6" path="res://Assets/Default/MenuClipboard/Clipboard_Credits.png" id="17_4b6ji"]
+[ext_resource type="Texture2D" uid="uid://ck54o275ix1be" path="res://Assets/Default/Settings/settings_fullscreen_off.png" id="17_ra8p7"]
+[ext_resource type="Texture2D" uid="uid://c678nsdoixu2" path="res://Assets/Default/Credits/Credits_Menu.png" id="18_8bscp"]
+[ext_resource type="Texture2D" uid="uid://dbnwyd5pp1gpx" path="res://Assets/Default/MenuClipboard/Clipboard_Quit.png" id="18_kwkl8"]
+[ext_resource type="Texture2D" uid="uid://iiqj28jpq4gc" path="res://Assets/Default/Tutorial/Tutorial-Intro.png" id="18_ty36c"]
+[ext_resource type="Texture2D" uid="uid://cnlew4xym2bho" path="res://Assets/Default/Tutorial/Tutorial-Back.png" id="19_qr86a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v6j4f"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_vo7qb"]
+load_path = "res://.godot/imported/settings_marker.png-37a2d758db643558a855c5adb8211206.ctex"
+
+[node name="Mainmenu" type="Node2D"]
+script = ExtResource("1_glogx")
+
+[node name="Clipboard" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 317.0
+offset_top = -367.0
+offset_right = 970.0
+offset_bottom = 532.0
+scale = Vector2(1.25, 1.25)
+
+[node name="Background" type="ColorRect" parent="Clipboard"]
+layout_mode = 0
+offset_left = -620.0
+offset_top = 48.0
+offset_right = -550.0
+offset_bottom = 135.0
+scale = Vector2(29.24, 16.56)
+color = Color(0.87451, 0.682353, 0.298039, 1)
+
+[node name="ScrollContainer" type="ScrollContainer" parent="Clipboard"]
+clip_contents = false
+layout_mode = 0
+offset_left = -254.0
+offset_top = 294.0
+offset_right = 668.0
+offset_bottom = 812.0
+scroll_vertical_custom_step = 1.0
+vertical_scroll_mode = 3
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Clipboard/ScrollContainer"]
+custom_minimum_size = Vector2(0, 1100)
+layout_mode = 2
+size_flags_stretch_ratio = 0.0
+
+[node name="Clipboard" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
+position = Vector2(462, 565.2)
+scale = Vector2(0.6744, 0.5664)
+texture = ExtResource("13_tjvie")
+
+[node name="ClipboardPlay" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
+position = Vector2(459.6, 513.2)
+scale = Vector2(0.6016, 0.4436)
+texture = ExtResource("14_uvh60")
+
+[node name="Play" type="Button" parent="Clipboard/ScrollContainer/VBoxContainer/ClipboardPlay"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -609.0
+offset_top = -539.0
+offset_right = 629.0
+offset_bottom = -236.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ClipboardTutorial" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
+position = Vector2(448.4, 536.4)
+scale = Vector2(0.6464, 0.5007)
+texture = ExtResource("15_7blyu")
+
+[node name="Tutorial" type="Button" parent="Clipboard/ScrollContainer/VBoxContainer/ClipboardTutorial"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -573.0
+offset_top = -227.0
+offset_right = 611.0
+offset_bottom = 50.0
+metadata/_edit_use_anchors_ = true
+
+[node name="ClipboardSettings" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
+position = Vector2(455.6, 545.2)
+scale = Vector2(0.612, 0.4468)
+texture = ExtResource("16_wb5wj")
+
+[node name="Settings" type="Button" parent="Clipboard/ScrollContainer/VBoxContainer/ClipboardSettings"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -596.078
+offset_top = 35.8102
+offset_right = 587.922
+offset_bottom = 312.81
+metadata/_edit_use_anchors_ = true
+
+[node name="ClipboardCredits" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
+position = Vector2(442.8, 544.4)
+scale = Vector2(0.6152, 0.4608)
+texture = ExtResource("17_4b6ji")
+
+[node name="Credits" type="Button" parent="Clipboard/ScrollContainer/VBoxContainer/ClipboardCredits"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -553.966
+offset_top = 302.083
+offset_right = 630.034
+offset_bottom = 579.083
+metadata/_edit_use_anchors_ = true
+
+[node name="ClipboardFeedback" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
+position = Vector2(453.2, 632.4)
+scale = Vector2(0.6152, 0.4416)
+texture = ExtResource("7_yrppq")
+
+[node name="Feedback" type="Button" parent="Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback"]
+modulate = Color(1, 1, 1, 0)
+anchors_preset = -1
+anchor_left = -1.69067e-05
+anchor_top = -0.0180289
+anchor_right = -1.69067e-05
+anchor_bottom = -0.0180289
+offset_left = -553.966
+offset_top = 384.058
+offset_right = 630.034
+offset_bottom = 661.058
+metadata/_edit_use_anchors_ = true
+
+[node name="ClipboardQuit" type="Sprite2D" parent="Clipboard/ScrollContainer/VBoxContainer"]
+position = Vector2(476, 671.6)
+scale = Vector2(0.6524, 0.4376)
+texture = ExtResource("18_kwkl8")
+
+[node name="Quit" type="Button" parent="Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit"]
+modulate = Color(1, 1, 1, 0)
+offset_left = -613.734
+offset_top = 550.274
+offset_right = 570.266
+offset_bottom = 827.274
+metadata/_edit_use_anchors_ = true
+
+[node name="Overlay" type="Node2D" parent="."]
+
+[node name="DebugNotice" type="Label" parent="Overlay"]
+unique_name_in_owner = true
+modulate = Color(1, 1, 1, 0.498039)
+offset_left = 8.0
+offset_top = 7.0
+offset_right = 259.0
+offset_bottom = 56.0
+scale = Vector2(1.13423, 1.16)
+theme_override_colors/font_color = Color(0.768627, 0.384314, 0, 1)
+theme_override_font_sizes/font_size = 16
+text = "Debug Menu is enabled, if this 
+is a mistake you need to rebuild."
+
+[node name="Settings" type="Control" parent="."]
+unique_name_in_owner = true
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_left = -85.0
+offset_top = -72.0
+offset_right = -45.0
+offset_bottom = -32.0
+scale = Vector2(1.18759, 1.18759)
+
+[node name="Background" type="ColorRect" parent="Settings"]
+layout_mode = 0
+offset_left = -21.0
+offset_top = -3.0
+offset_right = 20.0
+offset_bottom = 39.0
+scale = Vector2(29.24, 16.56)
+color = Color(0.87451, 0.682353, 0.298039, 1)
+
+[node name="SettingsBackground" type="Sprite2D" parent="Settings"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("9_v2hv4")
+
+[node name="SettingsFullscreenOn" type="Sprite2D" parent="Settings"]
+position = Vector2(740, 331)
+scale = Vector2(0.086, 0.0853334)
+texture = ExtResource("16_a7x13")
+
+[node name="SettingsFullscreenOff" type="Sprite2D" parent="Settings"]
+position = Vector2(826, 323)
+scale = Vector2(0.088, 0.08)
+texture = ExtResource("17_ra8p7")
+
+[node name="Volume" type="HSlider" parent="Settings"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 177.0
+offset_top = 243.0
+offset_right = 478.0
+offset_bottom = 293.0
+theme_override_icons/grabber = ExtResource("15_qmt6g")
+theme_override_icons/grabber_highlight = ExtResource("15_qmt6g")
+theme_override_icons/grabber_disabled = ExtResource("15_qmt6g")
+theme_override_styles/slider = SubResource("StyleBoxEmpty_v6j4f")
+value = 100.0
+ticks_on_borders = true
+
+[node name="SettingsMarker" type="Sprite2D" parent="Settings"]
+visible = false
+position = Vector2(473, 265)
+scale = Vector2(0.0786666, 0.064)
+texture = SubResource("CompressedTexture2D_vo7qb")
+
+[node name="full_on" type="Button" parent="Settings"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 708.0
+offset_top = 302.0
+offset_right = 774.0
+offset_bottom = 363.0
+
+[node name="full_off" type="Button" parent="Settings"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 794.0
+offset_top = 294.0
+offset_right = 860.0
+offset_bottom = 355.0
+
+[node name="VolumeLabel" type="Label" parent="Settings"]
+unique_name_in_owner = true
+layout_mode = 0
+offset_left = 260.0
+offset_top = 297.0
+offset_right = 382.0
+offset_bottom = 351.0
+theme_override_fonts/font = ExtResource("13_jh33e")
+theme_override_font_sizes/font_size = 74
+text = "100F"
+
+[node name="SettingsBack" type="Sprite2D" parent="Settings"]
+position = Vector2(593, 359)
+scale = Vector2(0.127667, 0.128)
+texture = ExtResource("14_bpjlv")
+
+[node name="Settings_Back" type="Button" parent="Settings/SettingsBack"]
+self_modulate = Color(1, 1, 1, 0)
+offset_left = -376.0
+offset_top = -133.0
+offset_right = 376.0
+offset_bottom = 141.0
+
+[node name="Credits" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background2" type="ColorRect" parent="Credits"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(29.24, 16.56)
+color = Color(0.556863, 0.423529, 0.141176, 0)
+
+[node name="CreditsMenu" type="Sprite2D" parent="Credits"]
+position = Vector2(576, 324)
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("18_8bscp")
+
+[node name="Back2" type="Button" parent="Credits"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 92.0
+offset_top = 541.0
+offset_right = 424.0
+offset_bottom = 667.0
+theme_override_font_sizes/font_size = 86
+
+[node name="Tutorial" type="Control" parent="."]
+visible = false
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Background" type="ColorRect" parent="Tutorial"]
+layout_mode = 0
+offset_left = -631.0
+offset_top = -33.0
+offset_right = -561.0
+offset_bottom = 59.0
+scale = Vector2(29.24, 16.56)
+color = Color(0.87451, 0.682353, 0.298039, 1)
+
+[node name="Folder" type="Sprite2D" parent="Tutorial"]
+position = Vector2(614, 344)
+scale = Vector2(0.65, 0.622222)
+texture = ExtResource("18_ty36c")
+
+[node name="Back3" type="Button" parent="Tutorial"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 923.0
+offset_top = 19.0001
+offset_right = 1011.0
+offset_bottom = 172.0
+scale = Vector2(2.23739, 0.547341)
+theme_override_font_sizes/font_size = 86
+
+[node name="Intro-Button" type="Button" parent="Tutorial"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 9.0
+offset_top = 26.0
+offset_right = 221.0
+offset_bottom = 111.0
+
+[node name="Basics_Button" type="Button" parent="Tutorial"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 236.0
+offset_top = 19.0
+offset_right = 428.0
+offset_bottom = 100.0
+
+[node name="RPS-Button" type="Button" parent="Tutorial"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 441.0
+offset_top = 19.0
+offset_right = 646.0
+offset_bottom = 99.0
+
+[node name="LH-Button" type="Button" parent="Tutorial"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 666.0
+offset_top = 15.0
+offset_right = 898.0
+offset_bottom = 100.0
+
+[node name="Tutorial-back" type="Sprite2D" parent="Tutorial"]
+position = Vector2(1020, 62)
+scale = Vector2(0.401, 0.445)
+texture = ExtResource("19_qr86a")
+
+[connection signal="mouse_entered" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardPlay/Play" to="." method="_on_play_mouse_entered"]
+[connection signal="mouse_exited" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardPlay/Play" to="." method="_on_play_mouse_exited"]
+[connection signal="pressed" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardPlay/Play" to="." method="_on_play_pressed"]
+[connection signal="mouse_entered" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardTutorial/Tutorial" to="." method="_on_tutorial_mouse_entered"]
+[connection signal="mouse_exited" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardTutorial/Tutorial" to="." method="_on_tutorial_mouse_exited"]
+[connection signal="pressed" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardTutorial/Tutorial" to="." method="_on_tutorial_pressed"]
+[connection signal="mouse_entered" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardSettings/Settings" to="." method="_on_settings_mouse_entered"]
+[connection signal="mouse_exited" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardSettings/Settings" to="." method="_on_settings_mouse_exited"]
+[connection signal="pressed" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardSettings/Settings" to="." method="_on_settings_pressed"]
+[connection signal="mouse_entered" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardCredits/Credits" to="." method="_on_credits_mouse_entered"]
+[connection signal="mouse_exited" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardCredits/Credits" to="." method="_on_credits_mouse_exited"]
+[connection signal="pressed" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardCredits/Credits" to="." method="_on_credits_pressed"]
+[connection signal="mouse_entered" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback/Feedback" to="." method="_on_feedback_mouse_entered"]
+[connection signal="mouse_exited" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback/Feedback" to="." method="_on_feedback_mouse_exited"]
+[connection signal="pressed" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardFeedback/Feedback" to="." method="_on_feedback_pressed"]
+[connection signal="mouse_entered" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit/Quit" to="." method="_on_quit_mouse_entered"]
+[connection signal="mouse_exited" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit/Quit" to="." method="_on_quit_mouse_exited"]
+[connection signal="pressed" from="Clipboard/ScrollContainer/VBoxContainer/ClipboardQuit/Quit" to="." method="_on_quit_pressed"]
+[connection signal="value_changed" from="Settings/Volume" to="." method="_on_volume_value_changed"]
+[connection signal="mouse_entered" from="Settings/full_on" to="." method="_on_full_on_mouse_entered"]
+[connection signal="mouse_exited" from="Settings/full_on" to="." method="_on_full_on_mouse_exited"]
+[connection signal="pressed" from="Settings/full_on" to="." method="_on_full_on_pressed"]
+[connection signal="mouse_entered" from="Settings/full_off" to="." method="_on_full_off_mouse_entered"]
+[connection signal="mouse_exited" from="Settings/full_off" to="." method="_on_full_off_mouse_exited"]
+[connection signal="pressed" from="Settings/full_off" to="." method="_on_full_off_pressed"]
+[connection signal="mouse_entered" from="Settings/SettingsBack/Settings_Back" to="." method="_on_settings_back_mouse_entered"]
+[connection signal="mouse_exited" from="Settings/SettingsBack/Settings_Back" to="." method="_on_settings_back_mouse_exited"]
+[connection signal="pressed" from="Settings/SettingsBack/Settings_Back" to="." method="_on_settings_back_pressed"]
+[connection signal="pressed" from="Credits/Back2" to="." method="_on_back_2_pressed"]
+[connection signal="pressed" from="Tutorial/Back3" to="." method="_on_back_3_pressed"]
+[connection signal="pressed" from="Tutorial/Intro-Button" to="." method="_on_intro_button_pressed"]
+[connection signal="pressed" from="Tutorial/Basics_Button" to="." method="_on_basics_button_pressed"]
+[connection signal="pressed" from="Tutorial/RPS-Button" to="." method="_on_rps_button_pressed"]
+[connection signal="pressed" from="Tutorial/LH-Button" to="." method="_on_lh_button_pressed"]

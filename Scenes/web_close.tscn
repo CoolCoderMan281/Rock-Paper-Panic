@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://b3revdt8vdvcm"]
+
+[node name="WebClose" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_right = 1167.0
+offset_bottom = 662.0
+
+[node name="Label" type="Label" parent="."]
+modulate = Color(0, 0, 0, 1)
+offset_left = 247.0
+offset_top = 98.0
+offset_right = 899.0
+offset_bottom = 121.0
+text = "Closing a browser tab through a script has been blocked by all browsers since 2010 :("
