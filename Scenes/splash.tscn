@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://cnkxowrdpvbk3"]
+
+[ext_resource type="VideoStream" uid="uid://cxwhoc6b3wyh0" path="res://studio_intro_hd.ogv" id="1_i8nxx"]
+[ext_resource type="Script" uid="uid://6xk8ag2sitse" path="res://Code/splash.gd" id="2_t3al1"]
+
+[node name="Splash" type="Node2D"]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_right = 1920.0
+offset_bottom = 1078.0
+scale = Vector2(0.60002726, 0.60115254)
+stream = ExtResource("1_i8nxx")
+autoplay = true
+script = ExtResource("2_t3al1")
+
+[connection signal="finished" from="VideoStreamPlayer" to="VideoStreamPlayer" method="_on_finished"]
+[connection signal="gui_input" from="VideoStreamPlayer" to="VideoStreamPlayer" method="_on_gui_input"]
