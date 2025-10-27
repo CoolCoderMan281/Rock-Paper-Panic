@@ -6,6 +6,7 @@ var can_press: bool = true
 var sfx = AudioStreamPlayer.new()
 var countdown = AudioStreamPlayer.new()
 var queued_lose_option = ""
+var can_lose_action:bool = false
 
 func _ready() -> void:
 	%Factory_Background.play("default")
@@ -52,6 +53,8 @@ func logic(choice: String = ""):
 	if !can_press:
 		return
 	if %Lose.visible:
+		if !can_lose_action:
+			return
 		if choice == "Rock":
 			queued_lose_option = "retry"
 		elif choice == "Paper":
@@ -98,6 +101,8 @@ func update_score():
 	%Final_Score.text = "FINAL SCORE: \n" + str(score)
 
 func retry():
+	if %Lose.visible and !can_lose_action:
+		return
 	get_tree().reload_current_scene()
 
 func lose_music():
@@ -108,16 +113,22 @@ func lose_music():
 	add_child(sfx1)
 	sfx1.stream = Globals.sfx_lose
 	sfx1.play()
-	%Rock.play("end_game",true)
-	%Paper.play("end_game",true)
-	%Scissors.play("end_game",true)
-	%Lizard.play("end_game",true)
-	%Hunter.play("end_game",true)
+	can_lose_action = false
+	queued_lose_option = ""
+	var objects = [%Rock, %Paper, %Scissors, %Lizard, %Hunter]
+	for obj in objects:
+		obj.play("end_game", true)
+	await %Rock.animation_finished
+	can_lose_action = true
 
 func _on_main_menu_pressed():
+	if %Lose.visible and !can_lose_action:
+		return
 	Globals.set_scene("res://Scenes/mainmenu.tscn")
 
 func _on_quit_pressed():
+	if %Lose.visible and !can_lose_action:
+		return
 	Globals.quit()
 
 func _on_rock_trigger_pressed() -> void:
